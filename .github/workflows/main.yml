@@ -9,6 +9,7 @@ jobs:
   build:
     name: Stencil Push
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v1
@@ -23,11 +24,11 @@ jobs:
           npm install -g @bigcommerce/stencil-cli
           yarn
 
-      - name: Connect to store
-            env:
-              URL: ${{ secrets.DEVELOPMENT_STORE_URL }}
-              TOKEN: ${{ secrets.DEVELOPEMENT_ACCESS_TOKEN }}
-            run: stencil init -u $URL -t $TOKEN -p 3000 -h https://api.bigcommerce.com
+      - name: Co nnect to store
+        env:    
+          URL: ${{ secrets.DEVELOPMENT_STORE_URL }}
+          TOKEN: ${{ secrets.DEVELOPEMENT_ACCESS_TOKEN }}
+        run: stencil init -u $URL -t $TOKEN -p 3000 -h https://api.bigcommerce.com
 
       - name: Push Theme
         run: |
