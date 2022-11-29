@@ -24,7 +24,7 @@ jobs:
           npm install -g @bigcommerce/stencil-cli
           yarn
 
-      - name: Co nnect to store
+      - name: Connect to store
         env:    
           URL: ${{ secrets.DEVELOPMENT_STORE_URL }}
           TOKEN: ${{ secrets.DEVELOPEMENT_ACCESS_TOKEN }}
