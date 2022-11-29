@@ -6,10 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 app/public/coverage.txt
+secrets.stencil.json
 
 # Dynamic Tests
 tests/ui/*.shard.spec.js
-report.json
+report.json 
 .output.json
 .output.json.zip
 app_custom_medicalert/cartridge/static/default/js/deploy.js
