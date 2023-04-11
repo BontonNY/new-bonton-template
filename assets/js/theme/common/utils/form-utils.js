@@ -41,7 +41,7 @@ function classifyInput(input, formFieldClass) {
     if (tagName === 'input') {
         const inputType = $input.prop('type');
 
-        if (['radio', 'checkbox', 'submit'].includes(inputType)) {
+        if (_.includes(['radio', 'checkbox', 'submit'], inputType)) {
             // ie: .form-field--checkbox, .form-field--radio
             className = `${formFieldClass}--${_.camelCase(inputType)}`;
         } else {
@@ -135,9 +135,8 @@ function announceInputErrorMessage({ element, result }) {
     }
     const activeInputContainer = $(element).parent();
     // the reason for using span tag is nod-validate lib
-    // which does not add error message class while initialising form.
-    // specific class is added since it can be multiple spans
-    const errorMessage = $(activeInputContainer).find('span.form-inlineMessage');
+    // which does not add error message class while initialising form
+    const errorMessage = $(activeInputContainer).find('span');
 
     if (errorMessage.length) {
         const $errMessage = $(errorMessage[0]);

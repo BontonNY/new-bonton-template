@@ -1,34 +1,282 @@
 <a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
 {{#if banners.top}}
-<div class="banners" data-banner-location="top">
-    {{#each (limit banners.top_metadata 1)}}
-    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
-        <div data-event-type="promotion-click">
-            {{{this.content}}}
+    <div class="banners" data-banner-location="top">
+        {{#each (limit banners.top_metadata 1)}}
+        <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+            <div data-event-type="promotion-click">
+                {{{this.content}}}
+            </div>
         </div>
+        {{/each}}
     </div>
-    {{/each}}
-</div>
 {{/if}}
-<header class="header" role="banner">
-    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-    </a>
-    {{> components/common/navigation}}
-
-    {{#if page_type '===' 'default'}}
-        <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </h1>
-    {{else}}
-        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
+<header class="header header-sticky{{#if theme_settings.halo_header_layout '==' 'header_layout_1'}} header-layout-1{{else}} header-layout-2{{/if}}" role="banner">
+    <div class="halo-topHeader">
+        <div class="container-full">
+            {{> components/common/navigation}}
         </div>
-    {{/if}}
-    <div class="navPages-container" id="menu" data-menu>
-        {{> components/common/navigation-menu}}
     </div>
-    {{{region name="header_navigation_bottom--global"}}}
+
+    <div class="halo-middleHeader">
+        <div class="container">
+            <div class="middleHeader-item text-left">
+                <div class="middleHeader-item__item item--hamburger">
+                    <a class="mobileMenu-toggle" href="#" data-mobile-menu-toggle="menu">
+                        <span class="mobileMenu-toggleIcon">{{lang 'common.toggle_menu'}}</span>
+                    </a>
+                </div>
+                <div class="middleHeader-item__item item--searchMobile">
+                    <a class="navUser-action" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">
+                        <div class="navUser-icon">
+                            <svg class="icon" role="img" aria-label="{{lang 'search.quick_search.input_label'}}">
+                                <title>{{lang 'search.quick_search.input_label'}}</title>
+                                <desc>{{lang 'search.quick_search.input_placeholder'}}</desc>
+                                <use xlink:href="#icon-search"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="middleHeader-item text-center">
+                <div class="middleHeader-item__item item--logo">
+                    {{#if page_type '===' 'default'}}
+                        <h1 class="header-logo">
+                            {{> components/common/store-logo}}
+                        </h1>
+                    {{else}}
+                        <div class="header-logo">
+                            {{> components/common/store-logo}}
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="middleHeader-item text-right">
+                <div class="middleHeader-item__item item--account">
+                    <a class="navUser-action" {{#if customer}}href="{{urls.account.index}}"{{else}}href="{{urls.auth.login}}"{{/if}} aria-label="{{lang 'common.login'}}" data-login-form>
+                        <div class="navUser-icon">
+                            <svg class="icon" role="img" aria-label="{{lang 'common.account'}}">
+                                <title>{{lang 'common.account'}}</title>
+                                <desc>{{lang 'common.account'}}</desc>
+                                <use xlink:href="#icon-user"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="middleHeader-item__item item--cart halo-cart">
+                    <a class="navUser-action" data-cart-preview data-options="align:right" href="{{urls.cart}}" aria-label="{{lang 'cart.nav_aria_label'}}">
+                        <div class="navUser-icon navUser-item-cartIcon">
+                            <svg class="icon" role="img" aria-label="{{lang 'cart.cart_preview'}}">
+                                <title>{{lang 'cart.cart_preview'}}</title>
+                                <desc>{{lang 'cart.cart_preview'}}</desc>
+                                <use xlink:href="#icon-cart"></use>
+                            </svg>
+                            <span class="countPill cart-quantity">{{#if cart.items}}{{cart.quantity}}{{else}}0{{/if}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="halo-bottomHeader{{#if theme_settings.halo_position_logo '==' 'center'}} header_logo--center{{/if}}" data-prevent-quick-search-close>
+        <div class="container bottomHeader-container">
+            {{#if theme_settings.halo_header_layout '==' 'header_layout_1'}}
+                {{#if theme_settings.halo_position_logo '==' 'left'}}
+                    <div class="bottomHeader-item text-left">
+                        <div class="bottomHeader-item__item item--sticky-logo">
+                            {{#if page_type '===' 'default'}}
+                                <h1 class="header-logo">
+                                    {{> components/common/store-logo}}
+                                </h1>
+                            {{else}}
+                                <div class="header-logo">
+                                    {{> components/common/store-logo}}
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{else}}
+                    <div class="bottomHeader-item text-left">
+                        <div class="navPages-container bottomHeader-item__item item--sticky-logo" id="menu" data-menu>
+                            {{> components/common/navigation-menu}}
+                        </div>
+                    </div>
+                {{/if}}
+
+                {{#if theme_settings.halo_position_logo '==' 'left'}}
+                    <div class="bottomHeader-item text-center">
+                        <div class="navPages-container bottomHeader-item__item" id="menu" data-menu>
+                            {{> components/common/navigation-menu}}
+                        </div>
+                    </div>
+                {{else}}
+                    <div class="bottomHeader-item text-center">
+                        <div class="bottomHeader-item__item item--sticky-logo">
+                            {{#if page_type '===' 'default'}}
+                                <h1 class="header-logo">
+                                    {{> components/common/store-logo}}
+                                </h1>
+                            {{else}}
+                                <div class="header-logo">
+                                    {{> components/common/store-logo}}
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/if}}
+
+                <div class="bottomHeader-item text-right">
+                    {{> components/common/navigation-2}}
+                </div>
+            {{else}}
+                {{#if theme_settings.halo_position_logo '==' 'left'}}
+                    <div class="bottomHeader-item text-left">
+                        <div class="bottomHeader-item__item item--sticky-logo">
+                            {{#if page_type '===' 'default'}}
+                                <h1 class="header-logo">
+                                    {{> components/common/store-logo}}
+                                </h1>
+                            {{else}}
+                                <div class="header-logo">
+                                    {{> components/common/store-logo}}
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{else}}
+                    <div class="bottomHeader-item text-left">
+                        {{#if theme_settings.halo_header_customText}}
+                            <ul class="navUser-section navUser-section--link">
+                                <li class="navUser-item">
+                                    <a class="navUser-action"
+                                       href="{{theme_settings.halo_header_customLink_1}}"
+                                       aria-label="{{theme_settings.halo_header_customText_1}}"
+                                    >
+                                        <span class="text">
+                                            <span>{{theme_settings.halo_header_customText_1}}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="navUser-item">
+                                    <a class="navUser-action"
+                                       href="{{theme_settings.halo_header_customLink_2}}"
+                                       aria-label="{{theme_settings.halo_header_customText_2}}"
+                                    >
+                                        <span class="text">
+                                            <span>{{theme_settings.halo_header_customText_2}}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="navUser-item">
+                                    <a class="navUser-action"
+                                       href="{{theme_settings.halo_header_customLink_3}}"
+                                       aria-label="{{theme_settings.halo_header_customText_3}}"
+                                    >
+                                        <span class="text">
+                                            <span>{{theme_settings.halo_header_customText_3}}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            {{> components/common/navigation-2}}
+                        {{/if}}
+                    </div>
+                {{/if}}
+
+                {{#if theme_settings.halo_position_logo '==' 'left'}}
+                    <div class="bottomHeader-item text-center">
+                        {{#if theme_settings.halo_header_customText}}
+                            <ul class="navUser-section navUser-section--link">
+                                <li class="navUser-item">
+                                    <a class="navUser-action"
+                                       href="{{theme_settings.halo_header_customLink_1}}"
+                                       aria-label="{{theme_settings.halo_header_customText_1}}"
+                                    >
+                                        <span class="text">
+                                            <span>{{theme_settings.halo_header_customText_1}}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="navUser-item">
+                                    <a class="navUser-action"
+                                       href="{{theme_settings.halo_header_customLink_2}}"
+                                       aria-label="{{theme_settings.halo_header_customText_2}}"
+                                    >
+                                        <span class="text">
+                                            <span>{{theme_settings.halo_header_customText_2}}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="navUser-item">
+                                    <a class="navUser-action"
+                                       href="{{theme_settings.halo_header_customLink_3}}"
+                                       aria-label="{{theme_settings.halo_header_customText_3}}"
+                                    >
+                                        <span class="text">
+                                            <span>{{theme_settings.halo_header_customText_3}}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            {{> components/common/navigation-2}}
+                        {{/if}}
+                    </div>
+                {{else}}
+                    <div class="bottomHeader-item text-center">
+                        <div class="bottomHeader-item__item item--sticky-logo">
+                            {{#if page_type '===' 'default'}}
+                                <h1 class="header-logo">
+                                    {{> components/common/store-logo}}
+                                </h1>
+                            {{else}}
+                                <div class="header-logo">
+                                    {{> components/common/store-logo}}
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/if}}
+
+                <div class="bottomHeader-item text-right">
+                    {{> components/common/navigation-3}}
+                </div>
+            {{/if}}
+
+            <div class="haloQuickSearchResults quickSearchResults haloCustomScrollbar" data-bind="html: results"></div>
+            {{#if theme_settings.halo-before-quick-results}}
+                <div class="haloQuickSearchResults quickSearchResultsCustom haloCustomScrollbar">
+                    {{> components/halothemes/search/halo-before-quick-results productsnew=products.new}}
+                </div>
+            {{/if}}
+        </div>
+        {{#if theme_settings.halo_header_layout '==' 'header_layout_2'}}
+            <div class="container nav-container">
+                <div class="bottomHeader-item text-left">
+                    <div class="bottomHeader-item__item item--sticky-logo">
+                        {{#if page_type '===' 'default'}}
+                            <h1 class="header-logo">
+                                {{> components/common/store-logo}}
+                            </h1>
+                        {{else}}
+                            <div class="header-logo">
+                                {{> components/common/store-logo}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="bottomHeader-item text-center">
+                    <div class="navPages-container bottomHeader-item__item item--sticky-logo" id="menu" data-menu>
+                        {{> components/common/navigation-menu}}
+                    </div>
+                </div>
+                <div class="bottomHeader-item text-right">
+                    <nav class="navUser">
+                        <div class="item--quicksearch halo-search halo-search-sticky"></div>
+                    </nav>
+                </div>
+            </div>
+        {{/if}}
+    </div>
 </header>
 {{{region name="header_bottom--global"}}}
 {{{region name="header_bottom"}}}

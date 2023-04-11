@@ -8,32 +8,77 @@ product:
         limit: {{theme_settings.productpage_related_products_count}}
     similar_by_views:
         limit: {{theme_settings.productpage_similar_by_views_count}}
+products:
+    new:
+        limit: 25
 ---
 {{inject 'productId' product.id}}
 
 {{#partial "page"}}
+    <div class="halo-productView-top">
+        <div class="container">
+            <div class="breadcrumbs-product">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}} 
+            </div>
 
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            {{> components/products/product-view}}
 
-    {{#each product.shipping_messages}}
-        {{> components/common/alert/alert-info message}}
-    {{/each}}
+            {{{region name="product_below_content"}}}
 
-    <div>
-        {{> components/products/product-view}}
+            {{> components/halothemes/product/halo-bundle-products}}
 
-        {{{region name="product_below_content"}}}
+            <div class="productView-tab productView-tab-2 halo-description">
+                {{> components/products/description-tabs-2}}
+            </div>
+        </div>
+    </div>
 
-        {{#if product.videos.list.length}}
-            {{> components/products/videos product.videos}}
+    <div class="halo-productView-bottom">
+        {{#if theme_settings.productpage_product_block-1 '==' 'Related'}}
+            {{> components/products/related
+                products=product.related_products
+                productsnew=products.new
+                title=theme_settings.productpage_product_block-1-title
+                block_id="halo-product-block-1"
+                block_limit=product.related_products.length
+                block_column=theme_settings.productpage_product_block_col
+            }}
+        {{else if theme_settings.productpage_product_block-1 '==' 'Customers'}}
+            {{> components/products/similar-by-view
+                products=product.similar_by_views
+                productsnew=products.new
+                title=theme_settings.productpage_product_block-1-title
+                block_id="halo-product-block-1"
+                block_limit=product.similar_by_views.length
+                block_column=theme_settings.productpage_product_block_col
+            }}
         {{/if}}
 
-        {{#all settings.show_product_reviews theme_settings.show_product_reviews (if theme_settings.show_product_details_tabs '!==' true)}}
-            {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
-        {{/all}}
-
-        {{> components/products/tabs}}
+        {{#if theme_settings.productpage_product_block-2 '==' 'Related'}}
+            {{> components/products/related
+                products=product.related_products
+                productsnew=products.new
+                title=theme_settings.productpage_product_block-2-title
+                block_id="halo-product-block-2"
+                block_limit=product.related_products.length
+                block_column=theme_settings.productpage_product_block_col
+            }}
+        {{else if theme_settings.productpage_product_block-2 '==' 'Customers'}}
+            {{> components/products/similar-by-view
+                products=product.similar_by_views
+                productsnew=products.new
+                title=theme_settings.productpage_product_block-2-title
+                block_id="halo-product-block-2"
+                block_limit=product.related_products.length
+                block_column=theme_settings.productpage_product_block_col
+            }}
+        {{/if}}
     </div>
+
+    {{{region name="product_banner--global"}}}
+    {{{region name="product_banner"}}}
+
+    {{{region name="category_below_content"}}}
 
     {{> components/products/schema}}
 {{/partial}}

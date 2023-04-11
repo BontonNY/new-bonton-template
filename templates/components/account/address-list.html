@@ -23,8 +23,8 @@
                     {{/if}}
                     <form action="{{delete_url}}" method="post" data-delete-address="{{lang 'forms.address.confirm_delete'}}">
                         <div class="form-actions">
-                            <a class="button button--primary button--small" href="{{edit_url}}">{{lang 'common.edit' }}</a>
-                            <button type="submit" class="button secondary button--small">{{lang 'common.delete' }}</button>
+                            <a class="button button--tertiary button--small" href="{{edit_url}}">{{lang 'common.edit' }}</a>
+                            <button type="submit" class="button button--primary button--small">{{lang 'common.delete' }}</button>
                         </div>
                     </form>
                 </div>
@@ -35,7 +35,9 @@
         <a class="panel panel--address panel--newAddress" href="{{urls.account.add_address}}">
             <span class="panel-body">
                 <span class="address-addNew">
-                    <span class="address-symbol">&plus;</span>
+                    <span class="address-symbol">
+                        <svg class="icon"><use xlink:href="#icon-add"></use></svg>
+                    </span>
                     <h5 class="address-title">{{lang 'account.addresses.new_address' }}</h5>
                 </span>
             </span>

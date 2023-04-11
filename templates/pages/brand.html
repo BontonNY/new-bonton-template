@@ -1,7 +1,15 @@
 ---
 brand:
+    shop_by_price: true
     products:
         limit: {{theme_settings.brandpage_products_per_page}}
+products:
+    featured:
+        limit: {{theme_settings.sidebar_products_per_page}}
+    new:
+        limit: 25
+    top_sellers:
+        limit: {{theme_settings.sidebar_products_per_page}}
 ---
 {{inject "brandProductsPerPage" theme_settings.brandpage_products_per_page}}
 {{#partial "head"}}
@@ -14,36 +22,104 @@ brand:
 {{/partial}}
 
 {{#partial "page"}}
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if brand.image}}
-    <div class="brand-image-container">
-        {{> components/common/responsive-img
-            image=brand.image
-            fallback_size=theme_settings.thumb_size
-            lazyload='disabled'
-        }}
-    </div>
-{{/if}}
-<h1 class="page-heading">{{brand.name}}</h1>
-{{{region name="brand_below_header"}}}
-<div class="page">
-    <aside class="page-sidebar" id="faceted-search-container">
-        {{> components/brand/sidebar}}
-    </aside>
+    {{{region name="brand_below_header"}}}
 
-    <div class="page-content" id="product-listing-container">
-        {{#if brand.search_error }}
-            <p>{{lang 'search.errorMessage'}}</p>
+    <div class="container">
+        <div class="breadcrumb-wrapper">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        </div>
+        {{#if theme_settings.show_top_banner_category}}
+            <div class="page-listing-header">
+                <div class="page-listing-header--banner">
+                    {{{region name="home_banner_brand--global"}}}
+                    {{{region name="home_banner_brand"}}}
+                </div>
+                <div class="page-listing-header--content">
+                    <div class="halo-description haloCustomScrollbar">
+                        <h1 class="page-heading">{{brand.name}}</h1>
+                    </div>
+                </div>
+            </div>
         {{else}}
-            {{#if brand.products}}
-                {{> components/brand/product-listing}}
-            {{else}}
-                <p>{{lang 'brands.no_products'}}</p>
-            {{/if}}
-            {{{region name="brand_below_content"}}}
+            <div class="page-listing-header">
+                <div class="page-listing-header--content no-banner">
+                    <div class="halo-description haloCustomScrollbar">
+                        <h1 class="page-heading">{{brand.name}}</h1>
+                    </div>
+                </div>
+            </div>
         {{/if}}
-    </div>
-</div>
+        <div class="page page-brand page-listing">
+            {{#if brand.image}}
+                <div class="page-header">
+                    {{#if brand.image}}
+                        <div class="page-image">
+                            {{> components/common/responsive-img
+                                image=brand.image
+                                fallback_size=theme_settings.zoom_size
+                                lazyload=theme_settings.lazyload_mode
+                                class="category-header-image"
+                            }}
+                        </div>
+                    {{/if}}
+                    {{{region name="brand_below_header"}}}
+                </div>
+            {{/if}}
+            {{#if theme_settings.halo-brand-sidebar}}
+                <div class="halo-toolbar has-sidebar">
+                    <div class="page-sidebar-mobile-wrapper">
+                        <div class="page-sidebar-mobile">
+                            <span class="text">{{lang 'common.sidebar'}}</span>
+                            <svg class="icon" role="img" aria-label="{{lang 'common.sidebar'}}">
+                                <title>{{lang 'common.sidebar'}}</title>
+                                <desc>{{lang 'common.sidebar'}}</desc>
+                                <use xlink:href="#icon-sidebar"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    {{#if brand.products}}
+                        {{> components/halothemes/gallery/halo-toolbar sort=pagination.brand.sort}}
+                    {{/if}}
+                </div>
+            {{else}}
+                {{#or (if theme_settings.haloStickyToolbar_viewAs) (if theme_settings.haloStickyToolbar_limit) (if theme_settings.haloStickyToolbar_sort)}}
+                    <div class="halo-toolbar">
+                        {{#if brand.products}}
+                            {{> components/halothemes/gallery/halo-toolbar sort=pagination.brand.sort}}
+                        {{/if}}
+                    </div>
+                {{/or}}
+            {{/if}}
+            {{#if theme_settings.halo-brand-sidebar}}
+                <aside class="page-sidebar{{#or (if theme_settings.haloStickyToolbar_viewAs) (if theme_settings.haloStickyToolbar_limit) (if theme_settings.haloStickyToolbar_sort)}} has-toolbar{{/or}}" id="faceted-search-container">
+                    <div class="page-sidebar-close">
+                        <span class="title">{{lang 'common.sidebar'}}</span>
+                        <a href="#" class="close">
+                            <svg class="icon" role="img" aria-label="{{lang 'common.close'}}">
+                                <title>{{lang 'common.close'}}</title>
+                                <desc>{{lang 'common.close'}}</desc>
+                                <use xlink:href="#icon-close"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    {{> components/brand/sidebar}}
+                </aside>
+            {{/if}}
+            <main class="page-content" id="product-listing-container">
+                <div class="product-listing-content">
+                    {{#if brand.products}}
+                        {{> components/brand/product-listing productsnew=products.new show_compare=brand.show_compare}}
+                    {{else}}
+                        <p class="page-no-products">{{lang 'brands.no_products'}}</p>
+                    {{/if}}
+                </div>
 
+                {{{region name="home_brand_text--global"}}}
+                {{{region name="home_brand_text"}}}
+
+                {{{region name="brand_below_content"}}}
+            </main>
+        </div>
+    </div>
 {{/partial}}
 {{> layout/base}}

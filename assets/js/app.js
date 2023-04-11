@@ -2,6 +2,9 @@ __webpack_public_path__ = window.__webpack_public_path__; // eslint-disable-line
 
 import Global from './theme/global';
 
+window.$ = $;
+window.jquery = $;
+
 const getAccount = () => import('./theme/account');
 const getLogin = () => import('./theme/auth');
 const noop = null;
@@ -27,8 +30,8 @@ const pageClasses = {
     createaccount: getLogin,
     getnewpassword: getLogin,
     forgotpassword: getLogin,
-    blog: noop,
-    blog_post: noop,
+    blog: () => import('./theme/blog'),
+    blog_post: () => import('./theme/blog'),
     brand: () => import('./theme/brand'),
     brands: noop,
     cart: () => import('./theme/cart'),
@@ -41,7 +44,7 @@ const pageClasses = {
     giftcertificates_balance: () => import('./theme/gift-certificate'),
     giftcertificates_redeem: () => import('./theme/gift-certificate'),
     default: noop,
-    page: noop,
+    page: () => import('./theme/page'),
     product: () => import('./theme/product'),
     amp_product_options: () => import('./theme/product'),
     search: () => import('./theme/search'),

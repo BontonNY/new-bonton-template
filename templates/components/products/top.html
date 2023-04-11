@@ -1,9 +1,67 @@
-<h2 class="page-heading">{{lang 'products.top' }}</h2>
-
-<ul class="productGrid productGrid--maxCol{{ columns }}" data-product-type="top_sellers"  {{#if settings.data_tag_enabled}} data-list-name="Most Popular Products" {{/if}}>
-{{#each products}}
-<li class="product">
-    {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
-</li>
-{{/each}}
-</ul>
+<div class="halo-block halo-block-product">
+    <div class="container{{#if theme_settings.halo_homepage_layout_2}} container--full{{/if}}">
+        {{#if link}}
+            <div class="halo-block-header halo-block-header-wrapper">
+                <h3 class="title">{{title}}</h3>
+                <a class="link" href="{{link}}" aria-label="{{lang 'common.view_all'}}"><span>{{lang 'common.view_all'}}</span></a>
+            </div>
+        {{else}}
+            <div class="halo-block-header">
+                <h3 class="title">{{title}}</h3>
+            </div>
+        {{/if}}
+        {{#if block_layout}}
+            {{#if settings.data_tag_enabled}}
+                {{> components/products/carousel
+                    products=products
+                    productsnew=productsnew
+                    customArrowClass='js-top-product-arrow'
+                    block_id=block_id
+                    block_limit=block_limit
+                    block_column=block_column
+                    show_dots_bar=show_dots_bar
+                    list="Most Popular Products"
+                }}
+            {{else}}
+                {{> components/products/carousel
+                    products=products
+                    productsnew=productsnew
+                    customArrowClass='js-top-product-arrow'
+                    block_id=block_id
+                    block_limit=block_limit
+                    block_column=block_column
+                    show_dots_bar=show_dots_bar
+                }}
+            {{/if}}
+        {{else}}
+            {{#if settings.data_tag_enabled}}
+                {{> components/products/no-carousel
+                    products=products
+                    productsnew=productsnew
+                    block_id=block_id
+                    block_limit=block_limit
+                    block_column=block_column
+                    show_dots_bar=show_dots_bar
+                    list="Most Popular Products"
+                }}
+            {{else}}
+                {{> components/products/no-carousel
+                    products=products
+                    productsnew=productsnew
+                    block_id=block_id
+                    block_limit=block_limit
+                    block_column=block_column
+                    show_dots_bar=show_dots_bar
+                }}
+            {{/if}}
+        {{/if}}
+        {{#if theme_settings.halo_homepage_layout_2}}
+            <div class="progress" role="progressbar" aria-label="Progress Bar" aria-valuemin="0" aria-valuemax="100" data-bars>
+                <div class="bar-thumb"></div>
+            </div>
+        {{/if}}
+    </div>
+</div>
+{{#if page_type '==' 'default'}}
+    {{{region name="home_below_top_products"}}}
+{{/if}}

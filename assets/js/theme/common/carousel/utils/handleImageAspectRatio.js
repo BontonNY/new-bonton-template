@@ -21,21 +21,22 @@ const setAspectRatioClass = (imageNode, $slides) => {
     if (imageNode.naturalHeight <= 1) return;
 
     const imageAspectRatio = imageNode.naturalHeight / imageNode.naturalWidth;
-    $slides.addClass(defineAspectRatioClass(imageAspectRatio));
+    $slides.each((idx, slide) => $(slide).addClass(defineAspectRatioClass(imageAspectRatio)));
 };
 
 export default ({ delegateTarget }, carouselObj) => {
     const {
         isAnalyzedSlide,
+        $slider,
         $activeSlide,
         $activeSlideImg,
         activeSlideImgNode,
-        $activeSlideAndClones,
     } = getActiveSlideInfo(carouselObj || delegateTarget.slick, IS_ANALYZED_DATA_ATTR);
 
     if (isAnalyzedSlide) return;
 
-    $activeSlideAndClones.data(IS_ANALYZED_DATA_ATTR, true);
+    const $activeSlideAndClones = $slider.find(`[data-hero-slide=${$activeSlide.data('hero-slide')}]`);
+    $activeSlideAndClones.each((idx, slide) => $(slide).data(IS_ANALYZED_DATA_ATTR, true));
 
     if ($activeSlide.find('.heroCarousel-content').length) return;
 

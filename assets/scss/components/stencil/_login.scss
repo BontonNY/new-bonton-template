@@ -2,43 +2,200 @@
 // LOGIN (CSS)
 // =============================================================================
 
-.login {
-    margin: spacing("double") auto spacing("double")*2;
-    max-width: remCalc(900px);
-}
-
 .login-row {
-    @include grid-row();
-    @include breakpoint("medium") {
-        margin-top: spacing("double")*2;
+    display: block;
+    font-size: 0;
+    letter-spacing: 0;
+    margin-top: 28px;
+
+    @media (min-width: 768px) {
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-bottom: 53px;
+
+        .page-login & {
+            margin-bottom: 28px;
+        }
     }
 }
 
 .login-form {
-    @include grid-column(12);
+    display: block;
+    width: 100%;
+    margin: 0 0 30px 0;
 
-    @include breakpoint("medium") {
-        @include grid-column(6);
+    .form-field {
+        margin-bottom: 0;
 
-        margin-top: spacing("double");
+        +.form-field {
+            margin-top: 20px;
+        }
+    }
+
+    .form-label {
+        line-height: 20px;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+    }
+
+    .form-actions {
+        display: block;
+        margin: 20px 0 0 0;
+        text-align: center;
+
+        .button {
+            display: block;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        .forgot-password {
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            color: $color-textLink-hover;
+            line-height: 1.75;
+            margin: 15px 0 0 0;
+            width: auto;
+            transition: unset;
+
+            .text {
+                padding: 0 0 1px 0;
+                background-image: linear-gradient(transparent 97%, $color-textLink 3%);
+                background-repeat: repeat-x;
+                background-position-y: -3px;
+
+                .home-layout-2 & {
+        background-position-y: 0;
+    }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+        padding: 0 15px;
+        margin-bottom: 0;
+
+        .form-field {
+            max-width: 615px;
+        }
+
+        .form-actions {
+            margin-top: 30px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .form-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+
+            .button {
+                display: inline-block;
+                vertical-align: top;
+                min-width: 170px;
+                width: auto;
+            }
+
+            .forgot-password {
+                margin-left: 30px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .form-actions {
+            .forgot-password {
+                &:hover {
+                    color: $color-textLink-hover;
+
+                    .text {
+                        background-image: linear-gradient(transparent 97%, $color-textLink-hover 3%);
+                    }
+                }
+            }
+        }
+    }
+
+    .form-field--error .form-field-error,
+    .form-field--error .form-inlineMessage {
+        font-size: $fontSize-root;
     }
 }
 
 .new-customer {
-    @include grid-column(12);
-    @include breakpoint("medium") {
-        @include grid-column(6);
+    display: block;
+    width: 100%;
+
+    .panel {
+        background: $color-custom-greyLight;
+        padding: 48px 30px 52px 30px;
     }
-}
 
-.new-customer-intro {
-    margin-bottom: 0;
-}
+    .panel-header,
+    .panel-body {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+    }
 
-.new-customer-fact-list {
-    margin-left: spacing("double");
-}
+    .panel-title {
+        font-size: 20px;
+        font-weight: $fontWeight-semibold;
+        letter-spacing: $letterSpacing-base;
+        line-height: 1;
+        margin: 0 0 25px 0;
+        text-transform: uppercase;
+    }
 
-.new-customer-fact {
-    padding-left: spacing("half");
+    .new-customer-intro {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        color: $color-textSecondary;
+        line-height: 1.75;
+        letter-spacing: $letterSpacing-base;
+    }
+
+    .new-customer-fact-list {
+        margin: 0;
+        list-style-position: inside;
+
+        .new-customer-fact {
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            color: $color-textBase;
+            letter-spacing: $letterSpacing-base;
+            line-height: 35px;
+        }
+    }
+
+    .button {
+        text-transform: uppercase;
+        margin-top: 35px;
+        min-width: 271px;
+    }
+
+    @media (min-width: 768px) {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+        padding: 0 15px;
+
+        .panel {
+            padding: 48px 50px 52px 50px;
+            max-width: 615px;
+            margin-left: auto;
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .panel {
+            padding: 98px 50px 102px 100px;
+        }
+    }
 }

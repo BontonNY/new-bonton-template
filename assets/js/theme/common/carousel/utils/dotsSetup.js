@@ -17,6 +17,7 @@ export default ($dots, activeSlideIdx, slidesQuantity, { carouselArrowAndDotAria
         const dotAriaLabel = `${dotLabelText}${dotSlideStatusText}`;
         const $dotButton = $(dot).find('[data-carousel-dot]');
 
+        $(dot).attr('data-index', idx + 1);
         tooltipSetup($dotButton.attr('aria-label', dotAriaLabel));
     });
 };

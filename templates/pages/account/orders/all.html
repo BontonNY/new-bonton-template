@@ -3,32 +3,38 @@ customer:
     orders:
         limit: 10
 ---
-
 {{#partial "page"}}
-
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-<h1 class="page-heading">{{lang 'account.orders.heading' }}</h1>
-{{> components/account/navigation account_page='orders'}}
-
-<div class="account account--fixed">
-    <div class="account-head">
-        {{#if customer.store_credit.value '>' 0}}
-            <div class="alertBox alertBox--storeCredit">
-                {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+    <div class="container--medium">
+        <div class="breadcrumb-wrapper">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        </div>
+        <div class="page page-account">
+            <div class="page-header">
+                <h1 class="page-heading">{{lang 'account.orders.heading' }}</h1>
             </div>
-        {{/if}}
+            {{> components/account/navigation account_page='orders'}}
+            <main class="page-content">
+                <div class="account">
+                    {{#if customer.store_credit.value '>' 0}}
+                        <div class="account-head">
+                            <div class="alertBox alertBox--storeCredit">
+                                {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+                            </div>
+                        </div>
+                    {{/if}}
+                    <div class="account-body">
+                        <section class="account-content account-content2">
+                            {{#if customer.orders.length}}
+                                {{> components/account/orders-list orders=customer.orders}}
+                                {{> components/common/small-paginator pagination.orders}}
+                            {{else}}
+                                {{> components/common/alert/alert-info (lang 'account.orders.none')}}
+                            {{/if}}
+                        </section>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
-    <div class="account-body">
-        <section class="account-content">
-            {{#if customer.orders.length}}
-                {{> components/account/orders-list orders=customer.orders}}
-                {{> components/common/small-paginator pagination.orders}}
-            {{else}}
-                {{> components/common/alert/alert-info (lang 'account.orders.none')}}
-            {{/if}}
-        </section>
-    </div>
-</div>
-
 {{/partial}}
 {{> layout/base}}

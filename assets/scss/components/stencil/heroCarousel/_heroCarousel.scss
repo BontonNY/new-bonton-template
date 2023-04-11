@@ -13,48 +13,258 @@
 //    from becoming cut off.
 // -----------------------------------------------------------------------------
 
+[data-page-type="default"] {
+    .body {
+        margin-top: 15px;
+    }
+
+    .heroCarousel {
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
+
+    &.home-layout-2 {
+        .heroCarousel {
+            margin-bottom: 0;
+        }
+    }
+}
+
+[data-page-type="page"] {
+    .body {
+        margin-top: 15px;
+    }
+
+    .heroCarousel {
+        margin-top: 0;
+        margin-bottom: 7px;
+    }
+}
+
 .heroCarousel {
-    margin-bottom: (spacing("double") + spacing("single"));
-    margin-top: -(spacing("single")); // 3
-    min-width: 100%;
     width: 1px;
+    min-width: 100%;
+    margin-bottom: 30px;
+    margin-top: -(spacing("single")); // 3
 
     @include breakpoint("medium") {
         margin-top: -(spacing("single") + spacing("base")); // 3
-    }
-
-    &.slick-initialized {
-        @include breakpoint("small") {
-            max-height: remCalc(400px);
-        }
-
-        @include breakpoint("medium") {
-            max-height: remCalc(600px);
-        }
-    }
-
-    // for IE
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        opacity: 0;
-
-        &.slick-initialized {
-            opacity: 1;
-        }
     }
 
     &:not(.slick-initialized) :not(.heroCarousel-slide--first).heroCarousel-slide {
         display: none;
     }
 
+    &:not(.slick-initialized) .heroCarousel-image-wrapper>.heroCarousel-image {
+        opacity: 0;
+    }
+
+    &.slick-initialized .heroCarousel-image-wrapper>.heroCarousel-image {
+        opacity: 1;
+        animation-name: fadeIn;
+        animation-duration: 0.8s;
+
+        .home-layout-2 & {
+            animation-name: animationRotate;
+        }
+    }
+
     a {
         text-decoration: none;
     }
 
+    .slick-arrow {
+        background-color: transparent;
+        border-color: transparent;
+        height: 50px;
+        width: 30px;
+
+        &.slick-prev {
+            left: 15px;
+
+            &:before {
+                @include carousel-arrow-color($color-white, 'prev');
+                height: 20px;
+                width: 10px;
+            }
+        }
+
+        &.slick-next {
+            right: 15px;
+
+            &:before {
+                @include carousel-arrow-color($color-white, 'next');
+                height: 20px;
+                width: 10px;
+            }
+        }
+
+        &:before,
+        &:after {
+            transition: $anchor-transition;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            opacity: .2;
+            background-color: $color-textBase;
+            border-color: $color-textBase;
+            z-index: -1;
+
+            .home-layout-2 & {
+                content: none;
+            }
+        }
+
+        @media(min-width: 1025px) {
+            &.slick-prev {
+                pointer-events: none;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(-100%) translateY(-50%);
+                transition: transform .3s ease;
+
+                .home-layout-2 & {
+                    left: 0;
+                    transform: translateX(0) translateY(-50%);
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    &:before {
+                        @include carousel-arrow-color($color-textBase, 'prev');
+                    }
+
+                    .home-layout-2 & {
+                        background-color: $color-white;
+                        border-color: $color-white;
+                    }
+                }
+            }
+
+            &.slick-next {
+                pointer-events: none;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(100%) translateY(-50%);
+                transition: transform .3s ease;
+
+                .home-layout-2 & {
+                    right: 0;
+                    transform: translateX(0) translateY(-50%);
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    &:before {
+                        @include carousel-arrow-color($color-textBase, 'next');
+                    }
+
+                    .home-layout-2 & {
+                        background-color: $color-white;
+                        border-color: $color-white;
+                    }
+                }
+            }
+
+            &:hover {
+                &:after {
+                    background-color: $color-white;
+                    border-color: $color-white;
+                    opacity: .5;
+
+                    .home-layout-2 & {
+                        content: none;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 550px) {
+            &.slick-prev {
+                left: 32%;
+            }
+
+            &.slick-next {
+                right: 32%;
+            }
+
+            &.slick-prev,
+            &.slick-next {
+                width: 24px;
+                height: 40px;
+                margin: 0;
+                transition: all .3s ease;
+                background-color: transparent;
+                visibility: visible;
+                opacity: 1;
+                cursor: pointer;
+                border: 0;
+                padding: 8px;
+                fill: #fff;
+                stroke: #fff;
+                top: initial;
+                transform: translate(0);
+                bottom: 15px;
+                box-shadow: none;
+
+                &:after {
+                    background-color: transparent;
+                }
+            }
+
+            .home-layout-2 & {
+                &.slick-prev {
+                    left: 32%;
+                }
+
+                &.slick-next {
+                    right: 32%;
+                }
+            }
+        }
+    }
+
+    @media(min-width: 1025px) {
+        &:hover {
+            .slick-arrow {
+
+                &.slick-prev,
+                &.slick-next {
+                    pointer-events: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(0) translateY(-50%);
+                }
+
+                &.slick-prev {
+                    .home-layout-2 & {
+                        transform: translateX(30px) translateY(-50%);
+                    }
+                }
+
+                &.slick-next {
+                    .home-layout-2 & {
+                        transform: translateX(-30px) translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
+
     .slick-next,
     .slick-prev {
-        margin: 0;
         top: 50%;
         transform: translateY(-50%);
+        margin: 0;
     }
 
     .slick-next {
@@ -74,14 +284,157 @@
     }
 
     .slick-dots {
-        bottom: spacing("third");
+        bottom: 40px;
+        height: 20px;
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        @include carouselOpaqueBackgrounds($slick-dot-bgColor);
 
-        @include breakpoint("medium") {
-            bottom: spacing("single");
+        .home-layout-2 & {
+            background-color: transparent;
         }
 
+        // scss-lint:disable SelectorDepth, NestingDepth
         li {
-            @include carouselOpaqueBackgrounds($slick-dot-bgColor);
+            height: 20px;
+            width: 24px;
+            padding: 4px 6px;
+
+            &:first-child,
+            &:last-child {
+                width: 20px;
+                padding: 4px;
+
+                @media(min-width: 551px) {
+                    .home-layout-2 & {
+                        width: 60px;
+                    }
+                }
+            }
+
+            button {
+                width: 12px;
+                height: 12px;
+                display: block;
+                margin: 0 auto;
+
+                &:before {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                @media(min-width: 551px) {
+                    top: -8px;
+
+                    .carousel-tooltip {
+                        display: block;
+                    }
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            .home-layout-2 & {
+                @media(min-width: 551px) {
+                    button {
+                        border: 1px solid $color-white;
+                    }
+
+                    &.slick-active {
+                        button {
+                            border: 1px solid $color-white;
+
+                            &:before {
+                                background: $color-white;
+                            }
+                        }
+                    }
+                }
+
+                @media(min-width: 1025px) {
+                    button {
+                        &:hover {
+                            &:before {
+                                background: $color-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 551px) and (max-width: 767px) {
+            display: none !important;
+        }
+
+        @media (max-width: 550px) {
+            position: absolute;
+            top: inherit;
+            left: 49%;
+            bottom: 30px;
+            margin: 0;
+            padding: 0;
+            width: 30px;
+            background-color: transparent !important;
+
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -13px;
+                height: 20px;
+                width: 190px;
+                height: 36px;
+                transform: translateX(-50%);
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            li {
+                width: auto;
+                height: auto;
+                padding: 0;
+                text-align: center;
+                width: 100%;
+                display: none;
+                width: 20px;
+                padding: 4px;
+
+                button {
+                    font-size: $fontSize-root;
+                    font-weight: $fontWeight-normal;
+                    letter-spacing: $letterSpacing-base;
+                    line-height: 24px;
+                    color: $color-white;
+                    border: 0;
+                    border-radius: 0;
+                    width: 30px;
+                    height: auto;
+                    position: relative;
+                    transition: $anchor-transition;
+                    border-bottom: 1px solid transparent;
+
+                    span {
+                        width: 10px;
+                        display: inline-block;
+                    }
+
+                    &:before {
+                        display: none;
+                    }
+                }
+
+                &.slick-active {
+                    display: block;
+
+                    button {
+                        color: $color-white;
+                    }
+                }
+            }
         }
     }
 
@@ -108,10 +461,46 @@
         }
 
         &.is-image-error {
-            .heroCarousel-image-wrapper {
-                background: url("../img/hero-carousel-image-load-error.svg") center center no-repeat;
-                background-size: contain;    
-            }
+            background: url("../img/hero-carousel-image-load-error.svg") center center no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .slick-slide {
+
+        .heroCarousel-subtitle,
+        .heroCarousel-title,
+        .heroCarousel-description,
+        .heroCarousel-action {
+            visibility: hidden;
+            animation-delay: 0ms;
+            animation-name: fadeOutDown;
+        }
+    }
+
+    .slick-current {
+        .heroCarousel-subtitle {
+            visibility: visible;
+            animation-delay: 50ms;
+            animation-name: fadeInUp;
+        }
+
+        .heroCarousel-title {
+            visibility: visible;
+            animation-delay: 100ms;
+            animation-name: fadeInUp;
+        }
+
+        .heroCarousel-description {
+            visibility: visible;
+            animation-delay: 150ms;
+            animation-name: fadeInUp;
+        }
+
+        .heroCarousel-action {
+            visibility: visible;
+            animation-delay: 200ms;
+            animation-name: fadeInUp;
         }
     }
 }
@@ -124,13 +513,27 @@
     }
 
     .heroCarousel-image {
-        height: 100%;
-        object-fit: contain;
-        object-position: 50% 0%;
+        @include lazy-loaded-img;
+        border: 0;
         width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
 
-        @include breakpoint("small") {
-            object-position: 50% 50%;
+        @media(max-width: 550px) {
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 0;
+                left: auto;
+                z-index: 2;
+                transform: none;
+                position: absolute;
+                transition: $anchor-transition;
+                background-color: rgba(0, 0, 0, .6);
+                background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, .6) 100%);
+            }
         }
     }
 
@@ -140,15 +543,18 @@
             object-position: 50% 50%;
         }
 
-        &.compat-object-fit { // 1
+        &.compat-object-fit {
+
+            // 1
             .heroCarousel-image {
-                height: 100%;
                 width: 100%;
+                height: 100%;
             }
         }
     }
 
-    &.compat-object-fit { // 1
+    &.compat-object-fit {
+        // 1
         overflow: hidden;
 
         .heroCarousel-image {
@@ -157,80 +563,467 @@
     }
 
     .heroCarousel-image-wrapper {
-        align-items: flex-start;
-        display: flex;
-        height: 56.25vw;
-        justify-content: center;
-        max-height: 100vh;
-        transition: height 0.3s ease;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        background: $color-custom-loading;
 
-        @include breakpoint("small") {
-            max-height: remCalc(400px);
+        &:after {
+            content: '';
+            display: block;
+            height: 0;
+            width: 100%;
+            padding-bottom: 43.5276836158192%;
         }
 
-        @include breakpoint("medium") {
-            max-height: remCalc(600px);
+        .heroCarousel-image-mobile {
+            display: none;
+            @include lazy-loaded-img;
+            border: 0;
+            width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+
+        @media(max-width: 550px) {
+            .heroCarousel-image-mobile {
+                display: block;
+
+                +.heroCarousel-image {
+                    display: none;
+                    width: 1px;
+                    height: 1px;
+                }
+            }
+
+            &:after {
+                padding-bottom: 130.33898%;
+            }
+        }
+    }
+}
+
+.heroCarousel-image {
+    img {
+        display: none;
+
+        &:not(.image-mobile) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        &.image-mobile {
+            display: block;
+        }
+
+        &.image-noMobile {
+            min-height: 400px;
+            object-fit: cover;
+        }
+
+        &.lazyload,
+        &.lazyloading {
+            width: auto;
+            height: auto;
+            max-height: 100vh;
+            margin: 0 auto;
+            object-fit: scale-down;
+
+            @media(max-width: 550px) {
+                max-height: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    @media (min-width: 551px) {
+        img {
+            display: block;
+            width: 100%;
+
+            &.lazyload,
+            &.lazyloading {
+                width: auto;
+            }
+
+            &.image-mobile {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+        img {
+            &:not(.image-mobile) {
+                @include lazy-loaded-img;
+                border: 0;
+                object-fit: contain;
+                width: 1px;
+                height: 1px;
+            }
         }
     }
 }
 
 .heroCarousel-content {
-    background-color: rgba($carousel-bgColor, 1);
-    padding: spacing("half") spacing("single") (spacing("double"));
+    position: absolute;
+    background-color: stencilColor('carousel-bgColor');
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    max-width: 500px;
     text-align: center;
+    padding: 0 15px;
+    transform: translateY(-50%);
+    white-space: normal;
+    margin: 0 auto;
+    padding-bottom: 8px;
 
-    @include breakpoint("small") {
-        @include carouselOpaqueBackgrounds;
-        background-color: rgba($carousel-bgColor, 0.9);
-        left: 0;
-        margin: 0 auto;
-        max-height: 80%;
-        overflow: auto;
-        padding: spacing("single") * 1.5;
-        padding: spacing("single");
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: remCalc(700px);
-        width: 70%;
+    &.heroCarousel-content--notEmpty {
+        padding: 15px;
+        max-width: 500px;
+    }
+
+    @media (min-width: 768px) {
+        right: unset;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (min-width: 992px) {
+        padding-left: 0;
+        padding-right: 0;
 
         &.heroCarousel-content--empty {
             background-color: transparent;
+        }
+    }
+
+    @media (min-width: 1025px) {
+        max-width: 430px;
+
+        .home-layout-2 & {
+            max-width: 480px;
+        }
+
+        &.heroCarousel-content--left {
+            left: 100px;
+            text-align: center;
+            transform: translateY(-50%);
+
+            .heroCarousel-countdown {
+                justify-content: flex-start;
+            }
+
+            .home-layout-2 & {
+                top: auto;
+                bottom: 130px;
+                transform: unset;
+                text-align: left;
+            }
+        }
+
+        &.heroCarousel-content--center {
             left: 50%;
-            overflow: visible;
-            padding: 0;
-            right: auto;
-            transform: translateX(-50%) translateY(-50%);
-            width: auto;
+            transform: translate(-50%, -50%);
+
+            .home-layout-2 & {
+                top: auto;
+                bottom: 130px;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        &.heroCarousel-content--right {
+            left: auto;
+            right: 100px;
+            text-align: center;
+            transform: translateY(-50%);
+
+            .heroCarousel-countdown {
+                justify-content: flex-end;
+            }
+
+            .home-layout-2 & {
+                top: auto;
+                bottom: 130px;
+                transform: unset;
+                text-align: right;
+            }
+        }
+    }
+
+    @media (min-width: 1600px) {
+        &.heroCarousel-content--left {
+            left: calc((100% - 1470px)/ 2);
+        }
+
+        &.heroCarousel-content--right {
+            right: calc((100% - 1470px)/ 2);
+        }
+    }
+
+    @media (min-width: 1920px) {
+        &.heroCarousel-content--left {
+            left: calc((100% - 1570px)/ 2);
+
+            .home-layout-2 & {
+                left: 160px;
+            }
+        }
+
+        &.heroCarousel-content--right {
+            right: calc((100% - 1570px)/ 2);
+
+            .home-layout-2 & {
+                right: 160px;
+            }
+        }
+    }
+}
+
+.heroCarousel-subtitle {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    color: $carousel-title-color;
+    font-size: $fontSize-root + 2px;
+    margin: 0 0 10px 0;
+    position: relative;
+    text-transform: capitalize;
+    letter-spacing: .02rem;
+
+    .home-layout-2 & {
+        font-size: $fontSize-root;
+    }
+
+    @media (min-width: 381px) {
+        margin-bottom: 15px;
+    }
+
+    @media (min-width: 1025px) {
+        margin-bottom: 13px;
+
+        .home-layout-2 & {
+            margin-bottom: 5px;
         }
     }
 }
 
 .heroCarousel-title {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    font-size: $fontSize-hero - 12px;
+    font-weight: $fontWeight-bold;
     color: $carousel-title-color;
-    font-size: fontSize("small");
-    margin: 0;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin: 0 0 10px 0;
 
-    @include breakpoint("medium") {
-        font-size: fontSize("hero");
+    .home-layout-2 & {
+        font-weight: $fontWeight-medium;
+    }
+
+    @media (min-width: 321px) {
+        font-size: 30px;
+    }
+
+    @media (min-width: 381px) {
+        margin-bottom: 15px;
+    }
+
+    @media (min-width: 1025px) {
+        font-size: $fontSize-hero;
+        margin-bottom: 20px;
+
+        .home-layout-2 & {
+            margin-bottom: 27px;
+        }
     }
 }
 
 .heroCarousel-description {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 10px 0;
+    line-height: 28px;
     color: $carousel-description-color;
-    font-size: fontSize("tiny");
-    margin: 0;
 
-    @include breakpoint("small") {
-        font-size: fontSize("smallest");
+    @media (min-width: 381px) {
+        margin-bottom: 15px;
     }
 
-    @include breakpoint("medium") {
-        font-size: fontSize("smaller");
+    @media (min-width: 1025px) {
+        margin-bottom: 22px;
+
+        .home-layout-2 & {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.heroCarousel-customLink {
+    display: block;
+    font-size: 0;
+    letter-spacing: 0;
+    margin: 0 0 10px 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+        font-size: $fontSize-root;
+
+        a {
+            display: block;
+            padding: 10px;
+            color: $carousel-description-color;
+            line-height: $lineHeight-large;
+            transition: unset;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                bottom: -1px;
+                height: 1px;
+                display: block;
+                background: $carousel-description-color;
+            }
+        }
+    }
+
+    @media (min-width: 551px) {
+        li {
+            a {
+                padding: 0px 24px 15px 24px;
+            }
+
+            &:first-child {
+                a {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1025px) {
+        li {
+            &:hover {
+                a {
+                    color: $color-textLink-hover;
+                }
+
+                span {
+                    &:before {
+                        background: $color-textLink-hover;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1600px) {
+        padding-bottom: 12px;
     }
 }
 
 .heroCarousel-action {
-    margin: spacing("single") 0 0;
+    margin: 10px 0 0 0;
+
+    .button {
+        min-width: 210px;
+
+        .home-layout-2 & {
+            font-size: $fontSize-root + 2;
+            font-weight: $fontWeight-medium;
+            text-transform: capitalize;
+            text-align: left;
+            padding: 0;
+            background-color: transparent;
+            color: $buttonStyle-primary-color;
+            border-color: $buttonStyle-primary-color;
+            border-width: 0 0 1px 0;
+            min-width: auto;
+            line-height: 28px;
+            height: 30px;
+            border-radius: 0;
+        }
+
+        &.button--custom {
+            color: #4f8b7b;
+            background-color: $color-white;
+            border-color: $color-white;
+            height: 55px;
+            line-height: 53px;
+            font-weight: 700;
+
+            @media (min-width: 1025px) {
+                &:hover {
+                    color: $color-white;
+                    background-color: $color-textBase;
+                    border-color: $color-textBase;
+                }
+            }
+
+            .home-layout-2 & {
+                &.button--custom {
+                    font-size: $fontSize-root + 2;
+                    font-weight: $fontWeight-medium;
+                    text-transform: capitalize;
+                    text-align: left;
+                    padding: 0;
+                    background-color: transparent;
+                    color: $buttonStyle-primary-color;
+                    border-color: $buttonStyle-primary-color;
+                    border-width: 0 0 1px 0;
+                    min-width: auto;
+                    line-height: 28px;
+                    height: 30px;
+                    border-radius: 0;
+                }
+            }
+        }
+
+        @media (max-width: 550px) {
+            min-width: 240px;
+
+            +.button {
+                margin-top: 10px;
+                margin-left: 0;
+
+                .home-layout-2 & {
+                    margin-top: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 551px) {
+        margin: 18px 0 0 0;
+
+        .button {
+            +.button {
+                margin-left: 5px;
+                margin-top: 0;
+
+                .home-layout-2 & {
+                    margin-left: 45px;
+                }
+            }
+        }
+    }
 }

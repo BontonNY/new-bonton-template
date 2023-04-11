@@ -9,3 +9,416 @@
 .category-header-image {
     width: 100%;
 }
+
+.page-listing-header {
+
+    .breadcrumbs,
+    .page-heading {
+        text-align: left;
+    }
+
+    +.page.page-category {
+        margin-top: 80px;
+    }
+}
+
+.page-listing-header--content {
+    max-width: 870px;
+    padding-right: 80px;
+
+    &.no-banner {
+        max-width: 100%;
+
+        .page-heading {
+            margin-top: 0;
+        }
+
+        .page-type-category & {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.page-listing-header {
+    position: relative;
+
+    &--banner {
+        display: block;
+        height: 240px;
+        background: #f0eeed;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+    }
+
+    .halo-listing-top-banner {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    >div {
+        &+.page-listing-header--content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 15px;
+            z-index: 1;
+            background-color: $color-white;
+            max-height: 210px;
+            padding: 35px 0 43px 10px;
+            display: flex;
+            align-items: center;
+
+            .halo-description {
+                max-height: 180px;
+                overflow-y: auto;
+                padding-right: 10px;
+            }
+
+            .page-description {
+                margin-bottom: 8px;
+            }
+
+            @media (min-width: 551px) {
+                padding: 35px 0 43px 20px;
+
+                .halo-description {
+                    padding-right: 20px;
+                }
+            }
+
+            @media (min-width: 1600px) {
+                padding: 35px 0 35px 40px;
+
+                .halo-description {
+                    padding-right: 60px;
+                }
+            }
+
+            .page-heading {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+#product-listing-container {
+    .card-option {
+        min-height: auto;
+    }
+}
+
+
+// Product Listing - Compare Button
+// -----------------------------------------------------------------------------
+.compare-link {
+    pointer-events: none;
+    display: none;
+
+    .button {
+        background: $color-white;
+        color: #323232;
+        border-color: $color-white;
+        text-transform: capitalize;
+        box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
+        min-width: 129px;
+        padding: 0 10px;
+        font-weight: $fontWeight-normal;
+        border-radius: 3px;
+
+        .countPill {
+            position: relative;
+            top: unset;
+            left: unset;
+            bottom: unset;
+            right: unset;
+            display: inline;
+            background: transparent;
+            border-radius: 0;
+            color: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            height: auto;
+            width: auto;
+            vertical-align: unset;
+        }
+
+        &:hover {
+            background: $color-textBase;
+            color: $color-white;
+            border-color: $color-textBase;
+        }
+    }
+
+    @media (min-width: 1025px) {
+        display: block;
+        position: fixed;
+        top: auto;
+        bottom: 130px;
+        right: 30px;
+        z-index: 100;
+        pointer-events: auto;
+        transform: translateY(-50%);
+
+        .button {
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+    }
+}
+
+// Product Listing Show More
+// -----------------------------------------------------------------------------
+.halo-product-show-more {
+    flex: 1;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0 0 20px 0;
+    @include clearfix;
+
+    .button {
+        width: 305px;
+        height: 60px;
+        line-height: 58px;
+        margin: auto;
+        text-transform: uppercase;
+        border: 2px solid #d8d8d8;
+
+        &.disable {
+            border-color: stencilColor('container-fill-dark');
+        }
+
+        &:before {
+            content: '';
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #c5c5cf;
+            border-radius: 100%;
+            border-top: 2px solid transparent;
+            -webkit-animation: load-animate infinite linear 1s;
+            animation: load-animate infinite linear 1s;
+        }
+
+        &.loading {
+            pointer-events: none;
+            font-size: 0;
+
+            svg {
+                display: none;
+            }
+
+            &:before {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            &:hover {
+                border-color: $buttonStyle-primary-borderColorHover;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
+}
+
+.haloSubCategories {
+    padding: 35px 0 45px;
+
+    .haloSubCategories__container {
+        font-size: 0;
+    }
+
+    .haloSubCategories__carousel {
+        padding: 0;
+        text-align: center;
+        white-space: nowrap;
+
+        .haloSubCategories__item {
+            font-size: stencilNumber("fontSize-root");
+            width: 16.6667%;
+            vertical-align: top;
+            padding: 0;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            white-space: normal;
+
+            .haloSubCategories__img {
+                margin-bottom: 0;
+                width: 80px;
+                display: inline-block;
+                vertical-align: middle;
+
+                >a {
+                    position: relative;
+                    display: block;
+                    overflow: hidden;
+
+                    img {
+                        @include lazy-loaded-img;
+                        border: 0;
+                        width: 100%;
+                        max-height: 100%;
+                        object-fit: contain;
+
+                        &.lazyload,
+                        &.lazyloading {
+                            width: auto;
+                            height: auto;
+                            object-fit: contain;
+                            margin: auto;
+                        }
+                    }
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        height: 0;
+                        width: 100%;
+                        padding-bottom: 100%;
+                    }
+
+                }
+            }
+
+            .haloSubCategories__icon {
+                margin-bottom: 0;
+                width: 80px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .haloSubCategories__content {
+                padding: 0 0 0 20px;
+                width: calc(100% - 100px);
+                display: inline-block;
+                vertical-align: middle;
+
+                .haloSubCategories__name {
+                    font-size: 16px;
+                    font-weight: $fontWeight-semibold;
+                    color: stencilColor("color-textBase");
+                    text-decoration: none;
+                    margin-bottom: 0;
+                    display: inline-block;
+                    background-size: 0 1px;
+                    background-repeat: no-repeat;
+                    transition: background-size .3s;
+                    background-image:
+                        linear-gradient(to right, rgba(247, 247, 247, 1), rgba(247, 247, 247, 1)),
+                        linear-gradient(to right, rgba(76, 76, 76, 1), rgba(76, 76, 76, 1));
+                    background-position: 100% 100%, 0 85%;
+
+                    @media(min-width: 1025px) {
+                        &:hover {
+                            background-size: 100% 1px;
+                        }
+                    }
+                }
+
+                .haloSubCategories__count {
+                    line-height: 26px;
+                    color: #848484;
+                }
+
+                .haloSubCategories__des {
+                    line-height: 24px;
+                    margin-top: 10px;
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        &:not(.slick-initialized) .haloSubCategories__item {
+            display: inline-block;
+
+            &:nth-child(n+7) {
+                display: none;
+            }
+        }
+
+        @media(max-width: 1399px) {
+            &:not(.slick-initialized) .haloSubCategories__item {
+                width: 20%;
+
+                &:nth-child(n+6) {
+                    display: none;
+                }
+            }
+        }
+
+        @media(max-width: 1024px) {
+            &:not(.slick-initialized) .haloSubCategories__item {
+                width: 25%;
+
+                &:nth-child(n+5) {
+                    display: none;
+                }
+            }
+        }
+
+        @media(max-width: 800px) {
+            &:not(.slick-initialized) .haloSubCategories__item {
+                width: 33.3334%;
+
+                &:nth-child(n+4) {
+                    display: none;
+                }
+            }
+        }
+
+        @media(max-width: 600px) {
+            &:not(.slick-initialized) .haloSubCategories__item {
+                width: 50%;
+
+                &:nth-child(n+3) {
+                    display: none;
+                }
+            }
+        }
+
+        @media(max-width: 480px) {
+            overflow: hidden;
+
+            .slick-list {
+                padding-right: 110px;
+            }
+
+            &:not(.slick-initialized) .haloSubCategories__item {
+                width: 70%;
+
+                &:nth-child(n+3) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .halo-comingSoon {
+        background-color: $color-white;
+    }
+}

@@ -1,5 +1,10 @@
-<h3 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h3>
-<p>{{lang 'newsletter.subscribe_intro'}}</p>
+<h3 class="footer-info-heading"> We’re filling up our store!</h3>
+
+<strong>Come back often as we continue to add new products...
+
+</strong>
+    <p class="footer-newsletter-summary">And receive 20% off your next order plus be the first to know about new arrivals, special offers, style news and more!</p>
+
 
 <form class="form" action="{{urls.subscribe.action}}" method="post">
     <fieldset class="form-fieldset">
@@ -17,16 +22,12 @@
                        placeholder="{{lang 'newsletter.email_placeholder'}}"
                        aria-describedby="alertBox-message-text"
                        aria-required="true"
-                       required
                 >
-                <input class="button button--primary form-prefixPostfix-button--postfix"
+                <input class="button button--tertiary form-prefixPostfix-button--postfix"
                        type="submit"
                        value="{{lang 'newsletter.subscribe_submit'}}"
                 >
             </div>
-            {{#if settings.show_newsletter_summary }}
-                <div class="footer-newsletter-summary">{{settings.newsletter_summary}}</div>
-            {{/if}}
         </div>
     </fieldset>
 </form>

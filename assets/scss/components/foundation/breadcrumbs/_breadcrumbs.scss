@@ -12,35 +12,111 @@
 //
 // -----------------------------------------------------------------------------
 
-ol.breadcrumbs {
-    display: none; // 1
-    font-size: 0; // 2
-    overflow: visible;
-    text-align: center;
-    @include breakpoint("small") {
-        display: block; // 1
+.breadcrumb-wrapper {
+    padding: 0;
+    background-color: transparent;
+    text-align: left;
+
+    @media (min-width: 1025px) {
+        padding: 0;
+    }
+}
+
+.breadcrumbs {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+
+    @media (max-width: 767px) {
+        display: block;
+        white-space: nowrap;
+        overflow: auto hidden;
+        margin: 0 -10px;
+        padding: 0 10px;
+
+        .breadcrumb {
+            &.is-active {
+                .breadcrumb-label {
+                    padding-right: 20px;
+                }
+            }
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(270deg, hsla(0, 0, 100%, 1) 0%, hsla(0, 0, 100%, .1));
+            width: 12px;
+            height: 40px;
+            z-index: 1;
+            transform: rotate(180deg);
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(270deg, hsla(0, 0, 100%, 1) 0%, hsla(0, 0, 100%, .1));
+            width: 50px;
+            height: 40px;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            float: none;
+        }
     }
 }
 
 .breadcrumb {
     display: inline-block;
-    float: none;
-    margin-right: 0.25rem;
+    vertical-align: top;
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    color: #6f6f6f;
+    padding: 0;
+    line-height: 35px;
+    letter-spacing: $letterSpacing-base;
+    text-transform: capitalize;
 
-    &.is-active {
-        > .breadcrumb-label {
-            cursor: pointer;
-            font-weight: 700;
+    .breadcrumb-label {
+        color: inherit;
+        font-size: inherit;
+    }
+
+    &:not(:first-child) {
+        &:before {
+            content: '/';
+            font-size: inherit;
+            font-weight: inherit;
+            display: inline-block;
+            vertical-align: initial;
+            margin: 0 4px 0 6px;
+            color: #6f6f6f;
+            position: relative;
+            top: 0px;
         }
     }
 
-    // needs to override common bigcommerce styles for accessibility improvements
-    &:not(:first-child)::before {
-        border-right: 0.1em solid $primary-color;
-        content: "";
-        display: inline-block;
-        height: 0.8em;
-        margin: 0 0.25rem;
-        transform: rotate(15deg);
+    &.is-active {
+        .breadcrumb-label {
+            color: #6f6f6f;
+        }
+    }
+}
+
+.page {
+    .breadcrumb {
+        color: #6f6f6f;
+        padding-top: 2px;
     }
 }

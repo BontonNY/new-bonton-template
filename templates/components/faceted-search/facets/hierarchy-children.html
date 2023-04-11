@@ -7,12 +7,14 @@
             rel="nofollow"
             data-id="{{id}}"
             data-faceted-search-facet>
-                {{{sanitize title}}}
-                {{#if ../show_product_counts}}
-                    {{#if count}}
-                        <span>({{count}})</span>
+                <span class="text">
+                    {{{sanitize title}}}
+                    {{#if ../show_product_counts}}
+                        {{#if count}}
+                            <span>({{count}})</span>
+                        {{/if}}
                     {{/if}}
-                {{/if}}
+                </span>
             </a>
             {{#if children}}
                 {{> components/faceted-search/facets/hierarchy-children children}}

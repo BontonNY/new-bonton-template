@@ -1,21 +1,23 @@
-<nav>
+<nav class="haloCustomScrollbar">
+    {{> components/halothemes/sidebar/halo-all-categories breadcrumbs=breadcrumbs}}
+
     {{#if brand.faceted_search_enabled}}
         {{> components/faceted-search/index brand}}
     {{else}}
+        {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
         {{#if shop_by_brand}}
-        <div class="sidebarBlock">
-            <h5 class="sidebarBlock-heading">{{lang 'brand.label'}}</h5>
-            <ul class="navList">
-                {{#each shop_by_brand}}
-                    <li class="navList-item">
-                        <a class="navList-action" href="{{url}}">{{name}}</a>
-                    </li>
-                {{/each}}
-                <li class="navList-item">
-                    <a class="navList-action" href="{{urls.brands}}">{{lang 'common.view_all'}}</a>
-                </li>
-            </ul>
-        </div>
+            {{> components/halothemes/sidebar/halo-shop-by-brand}}
         {{/if}}
     {{/if}}
+
+    {{#if theme_settings.halo-sidebar-products}}
+        {{#if products.top_sellers}}
+            {{> components/halothemes/sidebar/halo-product-sidebar products=products.top_sellers title=theme_settings.halo-sidebar-products-title}}
+        {{else}}
+            {{> components/halothemes/sidebar/halo-product-sidebar products=products.featured title=theme_settings.halo-sidebar-products-title}}
+        {{/if}}
+    {{/if}}
+    
+    {{> components/halothemes/sidebar/halo-advertisement-image}}
+    {{> components/halothemes/sidebar/halo-advertisement-content}}
 </nav>

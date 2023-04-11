@@ -5,14 +5,23 @@
 </div>
 
 <div class="modal-body">
-    <div class="previewCart">
+    <div class="previewCartPopupHeader">
+        {{#and (if theme_settings.halo_CalculateFreeShipping) (if cart.items.length)}}
+            <div class="halo-free-shipping-message animated-loading">
+                <div class="progress-shipping" role="progressbar">
+                    <div class="progress-meter" style="width: 0"></div>
+                </div>
+                <div class="shipping-message">
+                    <span class="message"></span>
+                    <span class="progress-percent">0%</span>
+                </div>
+            </div>
+        {{/and}}
+    </div>
+    <div class="previewCart previewCartPopUp">
         <section class="previewCartCheckout">
             {{#if cart.show_primary_checkout_button}}
-                {{#if cart.additional_checkout_buttons}}
-                    <div data-cart-accelerated-checkout-buttons class="previewCartCheckout-acceleratedCheckoutButtons"></div>
-                {{/if}}
-
-                <a href="{{urls.checkout.single_address}}" class="button button--primary" data-primary-checkout-now-action>
+                <a href="{{urls.checkout.single_address}}" class="button button--checkout">
                     {{lang 'cart.added_to_cart.proceed_to_checkout'}}
                 </a>
             {{/if}}
@@ -35,7 +44,7 @@
                 {{lang 'cart.added_to_cart.order_subtotal'}}
 
                 <strong class="previewCartCheckout-price">
-                    {{#or customer (unless settings.hide_price_from_guests)}}
+                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
                         {{cart.sub_total.formatted}}
                     {{else}}
                         {{> components/common/login-for-pricing}}
@@ -47,11 +56,11 @@
                 {{lang 'cart.added_to_cart.your_cart_contains' num_products=cart.quantity}}
             </p>
 
-            <a href="#" class="button button--primary" role="button" data-reveal-close>
+            <a href="#" class="button button--secondary" role="button" data-reveal-close>
                 {{lang 'cart.added_to_cart.continue_shopping'}}
             </a>
 
-            <a href="{{urls.cart}}" class="button">
+            <a href="{{urls.cart}}" class="button button--secondary">
                 {{lang 'cart.added_to_cart.view_or_edit_cart'}}
             </a>
         </section>
@@ -73,26 +82,23 @@
                     <h2 class="productView-title">
                         {{name}}
                     </h2>
-
                     <div class="productView-brand">
                         {{brand.name}}
                     </div>
-
                     <div class="productView-price">
-                        {{#or ../customer (unless ../settings.hide_price_from_guests)}}
+                        {{#or ../customer (if ../theme_settings.restrict_to_login '!==' true)}}
                             {{quantity}} &times; {{price.formatted}}
                         {{else}}
                             {{> components/common/login-for-pricing}}
                         {{/or}}
                     </div>
-
                     {{#each options}}
                         <dl class="productView-info">
                             <dt class="productView-info-name">
                                 {{name}}
                             </dt>
                             <dd class="productView-info-value">
-                                {{> components/common/product-options}}
+                                {{{ sanitize value}}}
                             </dd>
                         </dl>
                     {{/each}}

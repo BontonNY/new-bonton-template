@@ -9,7 +9,7 @@
 .table {
     margin-top: $table-marginTop;
 
-    td + td {
+    td+td {
         border-left: $table-td-borderLeft;
     }
 
@@ -42,10 +42,21 @@
             width: auto;
         }
 
-        + .button {
+        // scss-lint:disable NestingDepth
+        +.button {
 
             @include breakpoint("small") {
                 margin-left: spacing("quarter");
+            }
+        }
+
+        // scss-lint:enable NestingDepth
+        // 
+        @media (max-width: 550px) {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }
@@ -64,7 +75,9 @@
         border-color: container("borderColor");
         border-width: 0 0 1px;
 
+        // scss-lint:disable SelectorDepth, NestingDepth
         tr {
+
             th {
                 padding-left: 0;
                 padding-right: 0;
@@ -81,7 +94,7 @@
                     }
                 }
 
-                + th {
+                +th {
                     padding-left: spacing("single");
                 }
             }
@@ -91,6 +104,7 @@
     tr {
         border-color: container("border");
 
+        // scss-lint:disable SelectorDepth, NestingDepth
         td {
             display: block;
             padding-left: 0;
@@ -108,13 +122,13 @@
                 }
             }
 
-            + td {
+            +td {
                 padding-left: spacing("single");
             }
         }
     }
 
-    td + td {
+    td+td {
         border-left: 0;
     }
 }

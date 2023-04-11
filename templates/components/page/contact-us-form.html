@@ -21,9 +21,7 @@
         {{/if}}
 
         <div class="form-field">
-            <label class="form-label" for="contact_email">{{lang 'forms.contact_us.email'}}
-                <small>{{lang 'common.required' }}</small>
-            </label>
+            <label class="form-label" for="contact_email">{{lang 'forms.contact_us.email'}}<small>{{lang 'common.required' }}</small></label>
             <input class="form-input" type="text" id="contact_email" name="contact_email" value="{{customer.email}}">
         </div>
 
@@ -50,15 +48,13 @@
     </div>
 
     <div class="form-field">
-        <label class="form-label" for="contact_question">{{lang 'forms.contact_us.question'}}
-            <small>{{lang 'common.required' }}</small>
-        </label>
-        <textarea name="contact_question" id="contact_question" rows="5" cols="50" class="form-input"></textarea>
+        <label class="form-label" for="contact_question">{{lang 'forms.contact_us.question'}}<small>{{lang 'common.required' }}</small></label>
+        <textarea name="contact_question" id="contact_question" rows="3" cols="50" class="form-input"></textarea>
     </div>
 
     {{{forms.contact.recaptcha.markup}}}
 
     <div class="form-actions">
-        <input class="button button--primary" type="submit" value="{{lang 'forms.contact_us.submit' }}">
+        <input class="button button--tertiary" type="submit" value="{{lang 'forms.contact_us.submit' }}">
     </div>
 </form>

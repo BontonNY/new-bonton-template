@@ -5,9 +5,9 @@ const TOOLTIP_NODE = `<span ${TOOLTIP_DATA_SELECTOR} class="${TOOLTIP_CLASS}"></
 export default ($node) => {
     const $existedTooltip = $node.find(`[${TOOLTIP_DATA_SELECTOR}]`);
     if ($existedTooltip.length) {
-        $existedTooltip.attr('aria-label', $node.attr('aria-label'));
+        $existedTooltip.attr('aria-label');
     } else {
-        const $tooltip = $(TOOLTIP_NODE).attr('aria-label', $node.attr('aria-label'));
+        const $tooltip = $(TOOLTIP_NODE).attr('aria-label');
         $node.append($tooltip);
     }
 };

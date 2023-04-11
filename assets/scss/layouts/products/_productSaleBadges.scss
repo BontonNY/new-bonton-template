@@ -1,199 +1,91 @@
 // =============================================================================
 // PRODUCT Sale Badges (CSS)
 // =============================================================================
-
-@mixin setFlagColors($badge-color, $text-color) {
-    background: stencilColor($badge-color);
-    color: stencilColor($text-color);
-}
-// BURST BADGE
-// -----------------------------------------------------------------------------
-
-%base-flag-star {
-    content: "";
-    display: block;
-    height: rem-calc(50px);
-    left: 0;
-    overflow: visible;
+.halo-badges {
     position: absolute;
     top: 0;
-    transform: scaleX(1) scaleY(1) scaleZ(1);
-    transform-origin: 50% 50% 0;
-    transition: background-color 800ms ease;
-    width: rem-calc(50px);
     z-index: zIndex("lower");
+    display: flex;
+    flex-direction: column;
 
-    &::before {
-        transform: rotateZ(30deg) scaleX(1) scaleY(1) scaleZ(1);
+    &.halo-badges-left {
+        left: 24px;
+        align-items: flex-start;
     }
-    
-    &::after {
-        transform: rotateZ(60deg) scaleX(1) scaleY(1) scaleZ(1);
+
+    &.halo-badges-right {
+        left: auto;
+        right: 24px;
+        align-items: flex-end;
     }
-}
 
-.sale-flag-star,
-.sale-flag-star::before,
-.sale-flag-star::after {
-    @extend %base-flag-star;
-    background: stencilColor("color_badge_product_sale_badges");
-}
+    .card & {
+        top: 0;
 
-.sold-out-flag-star,
-.sold-out-flag-star::before,
-.sold-out-flag-star::after {
-    @extend %base-flag-star;
-    background: stencilColor("color_badge_product_sold_out_badges");
-}
-
-.starwrap {
-    height: rem-calc(50px);
-    left: 12px;
-    position: absolute;
-    top: 12px;
-    width: rem-calc(50px);
-}
-
-.listItem-figure {
-    .starwrap {
-        transform: scale(0.7);
-
-        @include breakpoint("small") {
-            top: 0;
-            transform: scale(0.6);
+        &.halo-badges-left {
+            left: 0;
         }
 
-        @include breakpoint("large") {
-            top: 10px;
-            transform: scale(0.7);
+        &.halo-badges-right {
+            left: auto;
+            right: 0;
+        }
+
+        .home-layout-2 & {
+            top: 15px;
+
+            &.halo-badges-left {
+                left: 15px;
+            }
+
+            &.halo-badges-right {
+                left: auto;
+                right: 15px;
+            }
         }
     }
 }
 
-%base-text-burst {
-    font-weight: 600;
-    line-height: rem-calc(15px);
-    position: absolute;
-    text-align: center;
-    top: 20%;
-    width: rem-calc(50px);
-    z-index: zIndex("high");
-}
+.halo-badge {
+    font-size: $fontSize-root - 2;
+    font-weight: $fontWeight-normal;
+    line-height: 18px;
+    height: 20px;
+    padding: 0 7.5px;
+    margin: 0;
+    text-transform: capitalize;
+    min-width: 40px;
 
-.sale-text-burst {
-    @extend %base-text-burst;
-    color: stencilColor("color_text_product_sale_badges");
-}
-
-.sold-out-text-burst {
-    @extend %base-text-burst;
-    color: stencilColor("color_text_product_sold_out_badges");
-}
-
-.product:hover .starwrap {
-    .sale-flag-star,
-    .sale-flag-star::before,
-    .sale-flag-star::after {
-        background: stencilColor("color_hover_product_sale_badges");
+    .home-layout-2 & {
+        font-size: $fontSize-root - 4;
+        border-radius: 3px;
     }
-    
-    .sold-out-flag-star,
-    .sold-out-flag-star::before,
-    .sold-out-flag-star::after {
-        background: stencilColor("color_hover_product_sold_out_badges");
-    }    
-}
 
-// -----------------------------------------------------------------------------
-// TOP LEFT BADGE
-// -----------------------------------------------------------------------------
-%base-flag-side {
-    border-radius: 0 50px 50px 0;
-    font-size: 15px;
-    font-weight: 700;
-    height: rem-calc(20px);
-    line-height: rem-calc(16px);
-    padding-left: spacing("third");
-    padding-right: spacing("half");
-    padding-top: spacing("eighth") / 2;
-    position: absolute;
-    transition: background-color 800ms ease;
-    z-index: zIndex("lower");
-}
-
-.sale-flag-side {
-    @extend %base-flag-side;
-    @include setFlagColors("color_badge_product_sale_badges", "color_text_product_sale_badges");
-}
-
-.sold-out-flag-side {
-    @extend %base-flag-side;
-    @include setFlagColors("color_badge_product_sold_out_badges", "color_text_product_sold_out_badges");
-}
-
-.product:hover .sale-flag-side {
-    background: stencilColor("color_hover_product_sale_badges");
-}
-
-.product:hover .sold-out-flag-side {
-    background: stencilColor("color_hover_product_sold_out_badges");
-}
-
-// -----------------------------------------------------------------------------
-// SASH BADGE
-// -----------------------------------------------------------------------------
-%base-flag-sash {
-    font-size: 15px;
-    font-weight: 700;
-    height: rem-calc(20px);
-    left: -25px;
-    line-height: rem-calc(16px);
-    padding-top: spacing("eighth") / 2;
-    position: absolute;
-    text-align: center;
-    top: 25px;
-    transform: rotate(-45deg);
-    transition: background-color 800ms ease;
-    width: rem-calc(119px);
-    z-index: zIndex("lower");
-}
-
-.sale-flag-sash {
-    @extend %base-flag-sash;
-    @include setFlagColors("color_badge_product_sale_badges", "color_text_product_sale_badges");
-}
-
-.sold-out-flag-sash {
-    @extend %base-flag-sash;
-    @include setFlagColors("color_badge_product_sold_out_badges", "color_text_product_sold_out_badges");
-}
-
-.listItem-figure {
-    .sale-flag-sash,
-    .sold-out-flag-sash {
-        top: 24px;
-
-        @include breakpoint("small") {
-            left: -20px;
-            top: 19px;
-        }
-
-        @include breakpoint("large") {
-            left: -15px;
-            top: 24px;
-        }
-
+    +.halo-badge {
+        margin-top: 5px;
     }
-}
 
-.product:hover .sale-flag-sash {
-    background: stencilColor("color_hover_product_sale_badges");
-}
+    &.sale-badge {
+        background: stencilColor("color_bg_product_sale_badges");
+        color: stencilColor("color_text_product_sale_badges");
+        border: 1px solid stencilColor("color_border_product_sale_badges");
+    }
 
-.product:hover .sold-out-flag-sash {
-    background: stencilColor("color_hover_product_sold_out_badges");
-}
+    &.soldOut-badge {
+        background: stencilColor("color_bg_product_soldOut_badges");
+        color: stencilColor("color_text_product_soldOut_badges");
+        border: 1px solid stencilColor("color_border_product_soldOut_badge");
+    }
 
-.product {
-    overflow: hidden;
+    &.new-badge {
+        background: stencilColor("color_bg_product_new_badges");
+        color: stencilColor("color_text_product_new_badges");
+        border: 1px solid stencilColor("color_border_product_new_badges");
+    }
+
+    &.custom-badge {
+        background: stencilColor("color_bg_product_custom_badges");
+        color: stencilColor("color_text_product_custom_badges");
+        border: 1px solid stencilColor("color_border_product_custom_badges");
+    }
 }

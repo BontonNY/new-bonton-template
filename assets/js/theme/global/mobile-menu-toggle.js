@@ -25,16 +25,17 @@ function optionsFromData($element) {
  */
 export class MobileMenuToggle {
     constructor($toggle, {
-        headerSelector = '.header',
+        headerSelector = 'header',
         menuSelector = '#menu',
         scrollViewSelector = '.navPages',
     } = {}) {
         this.$body = $('body');
         this.$menu = $(menuSelector);
-        this.$navList = $('.navPages-list.navPages-list-depth-max');
+        this.$headerMenu = $('.halo-sidebar-header');
+        this.$navList = $('.navPages-list:not(.navPages-list--user)');
         this.$header = $(headerSelector);
         this.$scrollView = $(scrollViewSelector, this.$menu);
-        this.$subMenus = this.$navList.find('.navPages-action');
+        this.$subMenus = this.$navList.find('.navPages-action:not(.no-subMenu)');
         this.$toggle = $toggle;
         this.mediumMediaQueryList = mediaQueryListFactory('medium');
 
@@ -66,6 +67,28 @@ export class MobileMenuToggle {
         if (this.mediumMediaQueryList && this.mediumMediaQueryList.addListener) {
             this.mediumMediaQueryList.addListener(this.onMediumMediaQueryMatch);
         }
+
+        $('.navPages-list--user .currencies #currency_selector').on('click', function(ev){
+            const $closestActionParent = $(event.target).parent();
+            const $parentSiblings = $closestActionParent.siblings();
+            const $closestActionLevel = $closestActionParent.data('level');
+            const $beforeMenuHeight = $('.navPages-list--user').height();
+            const $currentmenuHeight = $parentSiblings.height();
+            $closestActionParent.addClass('is-open');
+            $parentSiblings.addClass('is-hidden');
+            $('.navPages-list--user').attr('data-level-list', $closestActionLevel);
+            $('.navPages-list--user').attr('data-before',$beforeMenuHeight);
+            $('.navPages-list--user').css('min-height',$currentmenuHeight);
+        });
+        $('.navPages-list--user .currencies .navPage-subMenu-title').on('click', function(ev){
+            const $closestAction = $(event.target).closest('.currencies');
+            const $parentSiblings = $closestAction.siblings();
+            const $beforeMenuHeight = $('.navPages-list--user').data('before');
+            $closestAction.removeClass('is-open');
+            $parentSiblings.removeClass('is-hidden');
+            $('.navPages-list--user').attr('data-level-list', 1);
+            $('.navPages-list--user').css('min-height',$beforeMenuHeight);
+        });
     }
 
     unbindEvents() {
@@ -92,10 +115,34 @@ export class MobileMenuToggle {
             .addClass('is-open')
             .attr('aria-expanded', true);
 
-        this.$menu.addClass('is-open');
+        this.$menu
+            .addClass('is-open')
+            .attr('aria-hidden', false);
 
         this.$header.addClass('is-open');
         this.$scrollView.scrollTop(0);
+
+        if ($(window).width() > 1024) {
+            if (($('.page-type-category').length > 0) || ($('.page-type-search').length > 0) || ($('.page-type-brand').length > 0) || ($('.page-type-product').length > 0)) {
+                if ($('header:not(.is-sticky)').length) {
+                    if ($('.halo-topHeader-visible').length > 0) {
+                        var height = this.$header.outerHeight() + 40;
+                        $('.halo-menu-sidebar').css({'top': height});
+                    } else {
+                        var height = this.$header.outerHeight();
+                        $('.halo-menu-sidebar').css({'top': height});
+                    }
+                } else {
+                    var height = this.$header.outerHeight();
+                    $('.halo-menu-sidebar').css({'top': height});
+                }
+            } else {
+                var height = this.$header.outerHeight();
+                $('.halo-menu-sidebar').css({'top': height});
+            }
+        } else {
+            $('.halo-menu-sidebar').css('top', 0);
+        }
 
         this.resetSubMenus();
     }
@@ -107,7 +154,9 @@ export class MobileMenuToggle {
             .removeClass('is-open')
             .attr('aria-expanded', false);
 
-        this.$menu.removeClass('is-open');
+        this.$menu
+            .removeClass('is-open')
+            .attr('aria-hidden', true);
 
         this.$header.removeClass('is-open');
 
@@ -136,28 +185,54 @@ export class MobileMenuToggle {
     }
 
     onSubMenuClick(event) {
-        const $closestAction = $(event.target).closest('.navPages-action');
-        const $parentSiblings = $closestAction.parent().siblings();
-        const $parentAction = $closestAction.closest('.navPage-subMenu-horizontal').siblings('.navPages-action');
+        const $closestAction = $(event.target).parent();
+        const $parentSiblings = $closestAction.siblings();
 
-        if (this.$subMenus.hasClass('is-open')) {
-            this.$navList.addClass('subMenu-is-open');
-        } else {
-            this.$navList.removeClass('subMenu-is-open');
-        }
+        if (!$closestAction.hasClass('navPage-subMenu-title')) {
+            if (!$closestAction.hasClass('navPages-action-end')) {
+                if($closestAction.hasClass('has-dropdown')){
+                    $closestAction.toggleClass('is-open');
+                }
+            }
 
-        if ($(event.target).hasClass('is-open')) {
-            $parentSiblings.addClass('is-hidden');
-            $parentAction.addClass('is-hidden');
+            if (this.$subMenus.hasClass('is-open')) {
+                this.$navList.addClass('subMenu-is-open');
+            } else {
+                this.$navList.removeClass('subMenu-is-open');
+            }
+
+            if ($closestAction.hasClass('is-open')) {
+                $parentSiblings.addClass('is-hidden');
+                $closestAction.parents('.halo-menu-sidebar').find('.halo-sidebar-header').addClass('is-hidden');
+            }
         } else {
-            $parentSiblings.removeClass('is-hidden');
-            $parentAction.removeClass('is-hidden');
+            const $closestAction2 = $(event.target).closest('.navPage-subMenu');
+            const $closestAction3 = $closestAction2.find('.has-dropdown');
+            const $parentSiblings2 = $closestAction2.parent();
+            const $parentAction2 = $parentSiblings2.siblings();
+
+            if (this.$subMenus.hasClass('is-open')) {
+                this.$navList.addClass('subMenu-is-open');
+            } else {
+                this.$navList.removeClass('subMenu-is-open');
+            }
+
+            if (!$('.navPage-subMenu-item-child.is-open').length) {
+                $closestAction.parents('.halo-menu-sidebar').find('.halo-sidebar-header').removeClass('is-hidden');
+            }
+
+            $parentSiblings2.removeClass('is-open');
+            $parentAction2.removeClass('is-hidden');
         }
     }
-
+    
     resetSubMenus() {
         this.$navList.find('.is-hidden').removeClass('is-hidden');
+        this.$headerMenu.removeClass('is-hidden');
+        this.$navList.find('.is-open').removeClass('is-open');
         this.$navList.removeClass('subMenu-is-open');
+        $('.navPages-list--user').attr('data-level-list', 1);
+        this.$navList.css('min-height', 'unset');
     }
 }
 

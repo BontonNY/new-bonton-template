@@ -3,6 +3,9 @@
 
     <div id="facetedSearch-content--{{dashcase facet}}" class="accordion-content{{#unless start_collapsed}} is-open{{/unless}}">
         <form id="facet-range-form" class="form" method="get" data-faceted-search-range novalidate>
+            {{#each current_selected_items}}
+                <input type="hidden" name="{{param_name}}[]" value="{{param_value}}"/>
+            {{/each}}
             <input type="hidden" name="search_query" value="{{search_query}}">
             {{#if this.sort}}
                 <input type="hidden" name="sort" value="{{this.sort}}">
@@ -34,14 +37,20 @@
                     </div>
 
                     <div class="form-field">
-                        <button class="button button--small" type="submit">
+                        <button class="button button--primary button--small" type="submit">
                             {{lang 'search.faceted.range.update'}}
                         </button>
                     </div>
                 </div>
-
                 <div class="form-inlineMessage"></div>
             </fieldset>
         </form>
+        {{#if selected}}
+            <div class="navView-clear">
+                <a href="{{remove_url}}" class="toggleLink toggleLink-clear facetedSearch-clearLink" data-faceted-search-facet>
+                    <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.clear'}}</span>
+                </a>
+            </div>
+        {{/if}}
     </div>
 </div>

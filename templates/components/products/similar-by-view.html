@@ -1,0 +1,58 @@
+{{#if theme_settings.halo_homepage_layout_1}}
+	<div class="halo-block halo-block-product" id="halo-similar-products">
+		<div class="container">
+			<div class="halo-block-header">
+		        <h2 class="title">{{title}}</h2>
+		    </div>
+		    {{#if settings.data_tag_enabled}}
+		    	{{> components/products/carousel
+		    		products=products
+		    		productsnew=productsnew
+		    		block_id=block_id
+		    		block_limit=block_limit
+		    		block_column=block_column
+		    		list="Customers also viewed"
+		    	}}
+		    {{else}}
+		    	{{> components/products/carousel
+		    		products=products
+		    		productsnew=productsnew
+		    		block_id=block_id
+		    		block_limit=block_limit
+		    		block_column=block_column
+		    	}}
+		    {{/if}}
+		</div>
+	</div>
+{{else}}
+	<div class="halo-block halo-block-product" id="halo-similar-products">
+		<div class="container container--full">
+			<div class="halo-block-header">
+		        <h2 class="title">{{title}}</h2>
+		    </div>
+		    {{#if settings.data_tag_enabled}}
+		    	{{> components/products/carousel
+		    		products=products
+		    		productsnew=productsnew
+		    		block_id=block_id
+		    		block_limit=block_limit
+		    		block_column=block_column
+		    		show_dots_bar="true"
+		    		list="Customers also viewed"
+		    	}}
+		    {{else}}
+		    	{{> components/products/carousel
+		    		products=products
+		    		productsnew=productsnew
+		    		block_id=block_id
+		    		block_limit=block_limit
+		    		show_dots_bar="true"
+		    		block_column=block_column
+		    	}}
+		    {{/if}}
+		    <div class="progress" role="progressbar" aria-label="Progress Bar" aria-valuemin="0" aria-valuemax="100" data-bars>
+                <div class="bar-thumb"></div>
+            </div>
+		</div>
+	</div>
+{{/if}}

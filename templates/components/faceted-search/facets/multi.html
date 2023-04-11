@@ -3,7 +3,7 @@
     {{> components/faceted-search/faceted-search-navigation}}
 
     <div id="facetedSearch-content--{{dashcase facet}}" class="accordion-content{{#unless start_collapsed}} is-open{{/unless}}">
-        <ul id="facetedSearch-navList--{{dashcase facet}}" data-facet="{{facet}}" class="navList" data-has-more-results="{{has_more_results}}">
+        <ul id="facetedSearch-navList--{{dashcase facet}}" data-facet="{{facet}}" class="navList haloCustomScrollbar" data-has-more-results="{{has_more_results}}">
             {{#each items}}
                 <li class="navList-item">
                     <a
@@ -11,11 +11,12 @@
                         class="navList-action navList-action--checkbox{{#if selected}} is-selected{{/if}}"
                         rel="nofollow"
                         data-faceted-search-facet>
-                        {{{sanitize title}}}
-                        {{#if ../show_product_counts}}
-                            <span>({{count}})</span>
-                        {{/if}}
-
+                        <span class="text">
+                            {{{sanitize title}}}
+                            {{#if ../show_product_counts}}
+                                <span>({{count}})</span>
+                            {{/if}}
+                        </span>
                         <span class="navList-action-close" aria-hidden="true">
                             <svg class="icon">
                                 <use xlink:href="#icon-close"/>
@@ -27,9 +28,18 @@
         </ul>
 
         {{#if show_more_toggle}}
-            <a href="#facetedSearch-navList--{{dashcase facet}}" role="button" class="toggleLink">
-                <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.show-more'}}</span>
-            </a>
+            <div class="navView-all">
+                <a href="#facetedSearch-navList--{{dashcase facet}}" role="button" class="toggleLink toggleLink-viewMore">
+                    <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.show-more'}}</span>
+                </a>
+            </div>
+        {{/if}}
+        {{#if selected}}
+            <div class="navView-clear">
+                <a href="{{remove_url}}" class="toggleLink toggleLink-clear facetedSearch-clearLink" data-faceted-search-facet>
+                    <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.clear'}}</span>
+                </a>
+            </div>
         {{/if}}
     </div>
 </div>

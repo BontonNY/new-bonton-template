@@ -1,75 +1,78 @@
 [
   {
-    "name": "i18n.Global",
+    "name": "Global",
     "settings": [
       {
         "type": "heading",
-        "content": "i18n.BackgroundAndLines"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BannerBackground",
-        "id": "color-primary"
-      },
-      {
-        "type": "color",
-        "label": "i18n.PageBackground",
-        "id": "body-bg"
-      },
-      {
-        "type": "color",
-        "label": "i18n.CommonDarkBackground",
-        "id": "container-fill-dark"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ModalOverlayBackground",
-        "id": "overlay-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.AlertPopupBoxBackground",
-        "id": "alert-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.AlertPopupTextColor",
-        "id": "alert-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.HorizontalLine",
-        "id": "container-border-global-color-base"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.BodyTextAndLinks"
+        "content": "Body Text And Links"
       },
       {
         "type": "font",
-        "label": "i18n.BodyTextFontFamily",
-        "id": "body-font",
+        "label": "Heading Font Family",
+        "id": "headings-font",
         "options": [
           {
-            "group": "i18n.Karla",
-            "label": "i18n.Karla",
-            "value": "Google_Karla_400"
+            "group": "Jost",
+            "label": "Jost",
+            "value": "Google_Jost_400"
           },
           {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
+          },
+          {
+            "group": "OpenSans",
+            "label": "Open Sans",
+            "value": "Google_Open+Sans_400"
+          },
+          {
+            "group": "OpenSans",
+            "label": "Open Sans Bold",
+            "value": "Google_Open+Sans_700"
+          },
+          {
+            "group": "Roboto",
+            "label": "Roboto",
             "value": "Google_Roboto_400"
           },
           {
-            "group": "i18n.SourceSansPro",
-            "label": "i18n.SourceSansPro",
+            "group": "Volkhov",
+            "label": "Volkhov",
+            "value": "Google_Volkhov_400"
+          }
+        ]
+      },
+      {
+        "type": "font",
+        "label": "Body Text Font Family",
+        "id": "body-font",
+        "options": [
+          {
+            "group": "Jost",
+            "label": "Jost",
+            "value": "Google_Jost_400"
+          },
+          {
+            "group": "Karla",
+            "label": "Karla",
+            "value": "Google_Karla_400"
+          },
+          {
+            "group": "Roboto",
+            "label": "Roboto",
+            "value": "Google_Roboto_400"
+          },
+          {
+            "group": "SourceSansPro",
+            "label": "SourceSansPro",
             "value": "Google_Source+Sans+Pro_400"
           }
         ]
       },
       {
         "type": "select",
-        "label": "i18n.BodyTextFontSize",
+        "label": "Body Text Font Size",
         "id": "fontSize-root",
         "options": [
           {
@@ -96,1337 +99,2664 @@
       },
       {
         "type": "color",
-        "label": "i18n.BodyTextColor",
+        "label": "Heading Text Color",
+        "id": "color-textHeading"
+      },
+      {
+        "type": "color",
+        "label": "Body Text Color",
         "id": "color-textBase"
       },
       {
         "type": "color",
-        "label": "i18n.BodyTextHoverColor",
+        "label": "Body Text Hover Color",
         "id": "color-textBase--hover"
       },
       {
         "type": "color",
-        "label": "i18n.SecondaryTextColor",
+        "label": "Secondary Text Color",
         "id": "color-textSecondary"
       },
       {
         "type": "color",
-        "label": "i18n.SecondaryTextHoverColor",
+        "label": "Secondary Text Hover Color",
         "id": "color-textSecondary--hover"
       },
       {
         "type": "color",
-        "label": "i18n.LinkColor",
+        "label": "Link Color",
         "id": "color-textLink"
       },
       {
         "type": "color",
-        "label": "i18n.LinkHoverColor",
+        "label": "Link Hover Color",
         "id": "color-textLink--hover"
       },
       {
         "type": "color",
-        "label": "i18n.LinkActiveColor",
+        "label": "Link Active Color",
         "id": "color-textLink--active"
       },
       {
         "type": "heading",
-        "content": "i18n.Headings"
-      },
-      {
-        "type": "font",
-        "label": "i18n.HeadingFontFamily",
-        "id": "headings-font",
-        "options": [
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratLight",
-            "value": "Google_Montserrat_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSans",
-            "value": "Google_Open+Sans_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSansBold",
-            "value": "Google_Open+Sans_700"
-          },
-          {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
-            "value": "Google_Roboto_400"
-          },
-          {
-            "group": "i18n.Volkhov",
-            "label": "i18n.Volkhov",
-            "value": "Google_Volkhov_400"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.Heading1",
-        "id": "fontSize-h1",
-        "options": [
-          {
-            "value": 24,
-            "label": "24px"
-          },
-          {
-            "value": 26,
-            "label": "26px"
-          },
-          {
-            "value": 28,
-            "label": "28px"
-          },
-          {
-            "value": 32,
-            "label": "32px"
-          },
-          {
-            "value": 36,
-            "label": "36px"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.Heading2",
-        "id": "fontSize-h2",
-        "options": [
-          {
-            "value": 21,
-            "label": "21px"
-          },
-          {
-            "value": 23,
-            "label": "23px"
-          },
-          {
-            "value": 25,
-            "label": "25px"
-          },
-          {
-            "value": 29,
-            "label": "29px"
-          },
-          {
-            "value": 33,
-            "label": "33px"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.Heading3",
-        "id": "fontSize-h3",
-        "options": [
-          {
-            "value": 18,
-            "label": "18px"
-          },
-          {
-            "value": 20,
-            "label": "20px"
-          },
-          {
-            "value": 22,
-            "label": "22px"
-          },
-          {
-            "value": 26,
-            "label": "26px"
-          },
-          {
-            "value": 30,
-            "label": "30px"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.Heading4",
-        "id": "fontSize-h4",
-        "options": [
-          {
-            "value": 16,
-            "label": "16px"
-          },
-          {
-            "value": 18,
-            "label": "18px"
-          },
-          {
-            "value": 20,
-            "label": "20px"
-          },
-          {
-            "value": 24,
-            "label": "24px"
-          },
-          {
-            "value": 28,
-            "label": "28px"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.Heading5",
-        "id": "fontSize-h5",
-        "options": [
-          {
-            "value": 11,
-            "label": "11px"
-          },
-          {
-            "value": 13,
-            "label": "13px"
-          },
-          {
-            "value": 15,
-            "label": "15px"
-          },
-          {
-            "value": 19,
-            "label": "19px"
-          },
-          {
-            "value": 23,
-            "label": "23px"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.Heading6",
-        "id": "fontSize-h6",
-        "options": [
-          {
-            "value": 9,
-            "label": "9px"
-          },
-          {
-            "value": 11,
-            "label": "11px"
-          },
-          {
-            "value": 13,
-            "label": "13px"
-          },
-          {
-            "value": 17,
-            "label": "17px"
-          },
-          {
-            "value": 21,
-            "label": "21px"
-          }
-        ]
+        "content": "Buttons And Icons"
       },
       {
         "type": "color",
-        "label": "i18n.HeadingTextColor",
-        "id": "color-textHeading"
+        "label": "Button Text Color",
+        "id": "button--primary-color"
+      },
+      {
+        "type": "color",
+        "label": "Button Text Hover Color",
+        "id": "button--primary-colorHover"
+      },
+      {
+        "type": "color",
+        "label": "Button Text Active Color",
+        "id": "button--primary-colorActive"
+      },
+      {
+        "type": "color",
+        "label": "Button Background",
+        "id": "button--primary-backgroundColor"
+      },
+      {
+        "type": "color",
+        "label": "Button Background Hover",
+        "id": "button--primary-backgroundColorHover"
+      },
+      {
+        "type": "color",
+        "label": "Button Background Active",
+        "id": "button--primary-backgroundColorActive"
+      },
+      {
+        "type": "color",
+        "label": "Button Border",
+        "id": "button--primary--borderColor"
+      },
+      {
+        "type": "color",
+        "label": "Button Border Hover",
+        "id": "button--primary--borderColorHover"
+      },
+      {
+        "type": "color",
+        "label": "Button Border Active",
+        "id": "button--primary--borderColorActive"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Button Text Color",
+        "id": "button--default-color"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Button Text Hover Color",
+        "id": "button--default-colorHover"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Button Text Active Color",
+        "id": "button--default-colorActive"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Background",
+        "id": "button--default-backgroundColor"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Background Hover",
+        "id": "button--default-backgroundColorHover"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Background Active",
+        "id": "button--default-backgroundColorActive"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Button Border",
+        "id": "button--default-borderColor"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Button Border Hover",
+        "id": "button--default-borderColorHover"
+      },
+      {
+        "type": "color",
+        "label": "Secondary Button: Button Border Active",
+        "id": "button--default-borderColorActive"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Button Text Color",
+        "id": "button--tertiary-color"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Button Text Hover Color",
+        "id": "button--tertiary-colorHover"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Button Text Active Color",
+        "id": "button--tertiary-colorActive"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Background",
+        "id": "button--tertiary-backgroundColor"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Background Hover",
+        "id": "button--tertiary-backgroundColorHover"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Background Active",
+        "id": "button--tertiary-backgroundColorActive"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Button Border",
+        "id": "button--tertiary-borderColor"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Button Border Hover",
+        "id": "button--tertiary-borderColorHover"
+      },
+      {
+        "type": "color",
+        "label": "Tertiary Button: Button Border Active",
+        "id": "button--tertiary-borderColorActive"
       },
       {
         "type": "heading",
-        "content": "i18n.LoadingIndicators"
+        "content": "Icons"
       },
       {
         "type": "color",
-        "label": "i18n.PageLoadingBar",
-        "id": "pace-progress-backgroundColor"
+        "label": "Icon Color",
+        "id": "icon-color"
       },
       {
         "type": "color",
-        "label": "i18n.SpinnerLightHalf",
-        "id": "spinner-borderColor-light"
+        "label": "Icon Color Hover",
+        "id": "icon-color-hover"
       },
       {
         "type": "color",
-        "label": "i18n.SpinnerDarkHalf",
-        "id": "spinner-borderColor-dark"
+        "label": "Star Review Icon Full",
+        "id": "icon-ratingFull"
       },
       {
         "type": "color",
-        "label": "i18n.ModalLoadingBackground",
-        "id": "loadingOverlay-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ProductThumbnailLoadingBackground",
-        "id": "container-fill-base"
+        "label": "Star Review Icon Empty",
+        "id": "icon-ratingEmpty"
       },
       {
         "type": "heading",
-        "content": "i18n.ImageLoading"
+        "content": "Other Colors"
       },
       {
-        "type": "paragraph",
-        "content": "i18n.CornerstoneDoesntLoadMostImages"
+        "type": "color",
+        "label": "Page Background",
+        "id": "body-bg"
+      },
+      {
+        "type": "heading",
+        "content": "Lazyload"
       },
       {
         "type": "select",
         "id": "lazyload_mode",
         "force_reload": true,
-        "label": "i18n.LazyloadingMode",
+        "label": "Lazy loading Mode",
         "options": [
           {
             "value": "lazyload",
-            "label": "i18n.Lazyload"
+            "label": "Lazyload"
           },
           {
             "value": "lazyload+lqip",
-            "label": "i18n.LazyloadWithLQIP"
+            "label": "Lazyload With LQIP"
           },
           {
             "value": "disabled",
-            "label": "i18n.Disabled"
+            "label": "Disabled"
           }
         ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.Pages"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.HideBreadcrumbs",
-        "force_reload": true,
-        "id": "hide_breadcrumbs"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.HidePageHeading",
-        "force_reload": true,
-        "id": "hide_page_heading"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.HideCategoryPageHeading",
-        "force_reload": true,
-        "id": "hide_category_page_heading"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.HideBlogPageHeading",
-        "force_reload": true,
-        "id": "hide_blog_page_heading"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.HideContactUsPageHeading",
-        "force_reload": true,
-        "id": "hide_contact_us_page_heading"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.Products"
-      },
-      {
-        "type": "select",
-        "id": "product_list_display_mode",
-        "force_reload": true,
-        "label": "i18n.DisplayStyle",
-        "options": [
-          {
-            "value": "grid",
-            "label": "i18n.ShowProductsInAGrid"
-          },
-          {
-            "value": "list",
-            "label": "i18n.ShowProductsInAList"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.Blog"
-      },
-      {
-        "type": "imageDimension",
-        "id": "blog_size",
-        "force_reload": true,
-        "label": "i18n.SizeOfImages",
-        "options": [
-          {
-            "value": "190x250",
-            "label": "i18n.OptimizedForTheme"
-          },
-          {
-            "value": "custom",
-            "label": "i18n.SpecifyDimensions"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.Pricing"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.ShowPriceRangesForProducts",
-        "force_reload": true,
-        "id": "price_ranges"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.PurchaseOptions"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.FormInputFields"
-      },
-      {
-        "type": "color",
-        "label": "i18n.LabelTextColor",
-        "id": "form-label-font-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldTextColor",
-        "id": "input-font-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldBackground",
-        "id": "input-bg-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldBackgroundDisabled",
-        "id": "input-disabled-bg"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldBorder",
-        "id": "input-border-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldBorderActive",
-        "id": "input-border-color-active"
       }
     ]
   },
   {
-    "name": "i18n.HeaderAndFooter",
+    "name": "Header",
     "settings": [
       {
         "type": "heading",
-        "content": "i18n.Header"
+        "content": "Header Settings"
+      },
+      {
+        "type": "select",
+        "label": "Header layout",
+        "id": "halo_header_layout",
+        "options": [
+          {
+            "value": "header_layout_1",
+            "label": "Header layout 1"
+          },
+          {
+            "value": "header_layout_2",
+            "label": "Header layout 2"
+          }
+        ],
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Sticky Header",
+        "id": "halo_headerSticky",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Header Style"
       },
       {
         "type": "color",
-        "label": "i18n.HeaderBackground",
+        "label": "Header Top Background",
+        "id": "header-topBackgroundColor"
+      },
+      {
+        "type": "color",
+        "label": "Header Background",
         "id": "header-backgroundColor"
       },
       {
         "type": "heading",
-        "content": "i18n.Logo"
+        "content": "Promotion Text"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Promotion Text",
+        "id": "halo_top_bar_promotion",
+        "force_reload": true
+      },
+      {
+        "type": "input",
+        "label": "Text",
+        "id": "halo_top_bar_promotion_text",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Live Help"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Live Help",
+        "id": "haloLiveHelp",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Heading 1",
+        "id": "haloLiveHelp-heading-1"
+      },
+      {
+        "type": "input",
+        "label": "Description 1",
+        "id": "haloLiveHelp-desc1"
+      },
+      {
+        "type": "input",
+        "label": "Description 2",
+        "id": "haloLiveHelp-desc2"
+      },
+      {
+        "type": "text",
+        "label": "Heading 2",
+        "id": "haloLiveHelp-heading-2"
+      },
+      {
+        "type": "input",
+        "label": "Description",
+        "id": "haloLiveHelp-desc3"
+      },
+      {
+        "type": "text",
+        "label": "Button",
+        "id": "haloLiveHelp-button"
+      },
+      {
+        "type": "text",
+        "label": "Button Link",
+        "id": "haloLiveHelp-buttonLink"
+      },
+      {
+        "type": "heading",
+        "content": "Logo"
       },
       {
         "type": "select",
-        "label": "i18n.LogoPosition",
-        "id": "logo-position",
-        "force_reload": true,
+        "label": "Logo Position",
+        "id": "halo_position_logo",
         "options": [
           {
-            "value": "right",
-            "label": "i18n.Right"
+            "value": "left",
+            "label": "Left"
           },
           {
             "value": "center",
-            "label": "i18n.Center"
-          },
-          {
-            "value": "left",
-            "label": "i18n.Left"
+            "label": "Center"
           }
-        ]
+        ],
+        "force_reload": true
       },
       {
         "type": "imageDimension",
-        "label": "i18n.LogoImageSize",
+        "label": "Logo Image Size",
         "id": "logo_size",
         "description": "Please specify a maximum image size for desktop display. We'll automatically scale down the image for smaller devices.",
         "force_reload": true,
         "options": [
           {
             "value": "250x100",
-            "label": "i18n.OptimizedForTheme"
+            "label": "Optimized For Theme"
           },
           {
             "value": "original",
-            "label": "i18n.OriginalAsUploaded"
+            "label": "Original As Uploaded"
           },
           {
             "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "label": "Specify Dimensions"
           }
         ]
       },
       {
-        "type": "select",
-        "label": "i18n.LogoFontSize",
-        "id": "logo_fontSize",
-        "options": [
-          {
-            "value": 14,
-            "label": "14px"
-          },
-          {
-            "value": 16,
-            "label": "16px"
-          },
-          {
-            "value": 18,
-            "label": "18px"
-          },
-          {
-            "value": 20,
-            "label": "20px"
-          },
-          {
-            "value": 22,
-            "label": "22px"
-          },
-          {
-            "value": 24,
-            "label": "24px"
-          },
-          {
-            "value": 26,
-            "label": "26px"
-          },
-          {
-            "value": 28,
-            "label": "28px"
-          },
-          {
-            "value": 30,
-            "label": "30px"
-          },
-          {
-            "value": 32,
-            "label": "32px"
-          },
-          {
-            "value": 34,
-            "label": "34px"
-          },
-          {
-            "value": 36,
-            "label": "36px"
-          },
-          {
-            "value": 38,
-            "label": "38px"
-          },
-          {
-            "value": 40,
-            "label": "40px"
-          },
-          {
-            "value": 42,
-            "label": "42px"
-          },
-          {
-            "value": 44,
-            "label": "44px"
-          },
-          {
-            "value": 46,
-            "label": "46px"
-          },
-          {
-            "value": 48,
-            "label": "48px"
-          },
-          {
-            "value": 50,
-            "label": "50px"
-          },
-          {
-            "value": 52,
-            "label": "52px"
-          },
-          {
-            "value": 54,
-            "label": "54px"
-          },
-          {
-            "value": 56,
-            "label": "56px"
-          },
-          {
-            "value": 58,
-            "label": "58px"
-          },
-          {
-            "value": 60,
-            "label": "60px"
-          },
-          {
-            "value": 62,
-            "label": "62px"
-          },
-          {
-            "value": 64,
-            "label": "64px"
-          },
-          {
-            "value": 66,
-            "label": "66px"
-          },
-          {
-            "value": 68,
-            "label": "68px"
-          },
-          {
-            "value": 70,
-            "label": "70px"
-          },
-          {
-            "value": 72,
-            "label": "72px"
-          },
-          {
-            "value": 74,
-            "label": "74px"
-          }
-        ]
-      },
-      {
-        "type": "color",
-        "label": "i18n.LogoTextColor",
-        "id": "storeName-color"
-      },
-      {
         "type": "heading",
-        "content": "i18n.UtilityNavigation"
-      },
-      {
-        "type": "color",
-        "label": "i18n.TextColor",
-        "id": "navUser-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.TextHoverColor",
-        "id": "navUser-color-hover"
-      },
-      {
-        "type": "color",
-        "label": "i18n.CartDropdownBackground",
-        "id": "navUser-dropdown-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.CartDropdownBorder",
-        "id": "navUser-dropdown-borderColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.CartCounterBackground",
-        "id": "navUser-indicator-backgroundColor"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.MainNavigation"
+        "content": "Custom Link",
+        "reference": "halo_homepage_layout_1",
+        "reference_default": false
       },
       {
         "type": "checkbox",
-        "label": "i18n.HideLinksToWebPages",
-        "force_reload": true,
-        "id": "hide_content_navigation"
-      },
-      {
-        "type": "color",
-        "label": "i18n.TextColor",
-        "id": "navPages-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.TextHoverColor",
-        "id": "navPages-color-hover"
-      },
-      {
-        "type": "color",
-        "label": "i18n.DropdownMenuBackground",
-        "id": "navPages-subMenu-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.DropdownMenuBorder",
-        "id": "navPages-subMenu-separatorColor"
-      },
-      {
-        "type": "select",
-        "label": "i18n.DropdownMenuDisplayMode",
-        "id": "navigation_design",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "simple",
-            "label": "i18n.SimpleMenuDisplayDepthOf"
-          },
-          {
-            "value": "alternate",
-            "label": "i18n.AlternateMaxMenuDisplayDepth"
-          }
-        ]
-      },
-      {
-        "type": "color",
-        "label": "i18n.QuickSearchBackground",
-        "id": "dropdown--quickSearch-backgroundColor"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.SocialMediaIcons"
-      },
-      {
-        "type": "paragraph",
-        "content": "i18n.SocialAccountsMustBeSet"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.ShowSocialMediaIcons",
-        "force_reload": true,
-        "id": "social_icon_placement_top"
-      },
-      {
-        "type": "select",
-        "label": "i18n.FooterPlacement",
-        "id": "social_icon_placement_bottom",
-        "force_reload": true,
-        "reference": "social_icon_placement_top",
+        "label": "Enable Custom Link",
+        "id": "halo_header_customText",
+        "reference": "halo_homepage_layout_1",
         "reference_default": false,
-        "options": [
-          {
-            "value": "bottom_none",
-            "label": "i18n.None"
-          },
-          {
-            "value": "bottom_right",
-            "label": "i18n.Right"
-          },
-          {
-            "value": "bottom_left",
-            "label": "i18n.Left"
-          }
-        ]
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 1",
+        "id": "halo_header_customText_1",
+        "reference": "halo_homepage_layout_1",
+        "reference_default": false,
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Link 1",
+        "id": "halo_header_customLink_1",
+        "reference": "halo_homepage_layout_1",
+        "reference_default": false,
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 2",
+        "id": "halo_header_customText_2",
+        "reference": "halo_homepage_layout_1",
+        "reference_default": false,
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Link 2",
+        "id": "halo_header_customLink_2",
+        "reference": "halo_homepage_layout_1",
+        "reference_default": false,
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 3",
+        "id": "halo_header_customText_3",
+        "reference": "halo_homepage_layout_1",
+        "reference_default": false,
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Link 3",
+        "id": "halo_header_customLink_3",
+        "reference": "halo_homepage_layout_1",
+        "reference_default": false,
+        "force_reload": true
       },
       {
         "type": "heading",
-        "content": "i18n.Footer"
+        "content": "Quick Search"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Before You Search",
+        "id": "halo-before-quick-results"
+      },
+      {
+        "type": "checkbox",
+        "label": "Trending Now",
+        "id": "halo-before-quick-results-trending-now"
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "halo-before-quick-results-trending-now-title"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 1",
+        "id": "halo-before-quick-results-trending-now-1"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 2",
+        "id": "halo-before-quick-results-trending-now-2"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 3",
+        "id": "halo-before-quick-results-trending-now-3"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 4",
+        "id": "halo-before-quick-results-trending-now-4"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 5",
+        "id": "halo-before-quick-results-trending-now-5"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 6",
+        "id": "halo-before-quick-results-trending-now-6"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 7",
+        "id": "halo-before-quick-results-trending-now-7"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 8",
+        "id": "halo-before-quick-results-trending-now-8"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 9",
+        "id": "halo-before-quick-results-trending-now-9"
+      },
+      {
+        "type": "text",
+        "label": "Keyword 10",
+        "id": "halo-before-quick-results-trending-now-10"
+      },
+      {
+        "type": "checkbox",
+        "label": "Popular Product",
+        "id": "halo-before-quick-results-popular"
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "halo-before-quick-results-popular-title"
+      },
+      {
+        "type": "text",
+        "label": "Product IDs",
+        "id": "quickSearchPopularId"
+      },
+      {
+        "type": "text",
+        "label": "Limit",
+        "id": "quickSearchResultLimit",
+        "force_reload": true
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Footer Settings"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Copyright",
+        "id": "show_copyright_footer",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Powered By BigCommerce",
+        "id": "show_powered_by",
+        "force_reload": true
+      },
+      {
+        "type": "input",
+        "label": "Power By: Text",
+        "id": "powered_by-text"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Site Info",
+        "id": "show_site_info_footer",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Footer Style"
       },
       {
         "type": "color",
-        "label": "i18n.FooterBackground",
+        "label": "Background",
         "id": "footer-backgroundColor"
       },
       {
-        "type": "heading",
-        "content": "i18n.DisplaySettings"
+        "type": "color",
+        "label": "Heading Color",
+        "id": "footer_title_color"
       },
       {
-        "type": "checkbox",
-        "label": "i18n.ShowPoweredByBigCommerce",
-        "force_reload": true,
-        "id": "show_powered_by"
+        "type": "color",
+        "label": "Text Color",
+        "id": "footer_text_color"
       },
       {
-        "type": "checkbox",
-        "label": "i18n.ShowBrandsInFooter",
-        "force_reload": true,
-        "id": "shop_by_brand_show_footer"
+        "type": "color",
+        "label": "Text Hover Color",
+        "id": "footer_text_colorHover"
       },
       {
-        "type": "checkbox",
-        "label": "i18n.ShowCurrentYearAnd",
-        "force_reload": true,
-        "id": "show_copyright_footer"
+        "type": "color",
+        "label": "Footer Bottom Background",
+        "id": "footer-bgBottom-color"
       },
       {
         "type": "heading",
-        "content": "i18n.PaymentIcons"
+        "content": "Column 1 (Info)"
+      },
+      {
+        "type": "text",
+        "label": "Logo Footer",
+        "id": "footer_info_logo",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Email Footer",
+        "id": "info_email_support",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Column 2 (Categories)"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer-info-1-heading",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Number Of Categories",
+        "id": "categories_show_footer_limit",
+        "options": [
+          {
+            "value": 5,
+            "label": "5"
+          },
+          {
+            "value": 6,
+            "label": "6"
+          },
+          {
+            "value": 7,
+            "label": "7"
+          }
+        ],
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Column 3 (Custom Links)"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer-info-2-heading",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 1",
+        "id": "footer-info-2-text1"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 1",
+        "id": "footer-info-2-link1"
+      },
+      {
+        "type": "text",
+        "label": "Text 2",
+        "id": "footer-info-2-text2"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 2",
+        "id": "footer-info-2-link2"
+      },
+      {
+        "type": "text",
+        "label": "Text 3",
+        "id": "footer-info-2-text3"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 3",
+        "id": "footer-info-2-link3"
+      },
+      {
+        "type": "text",
+        "label": "Text 4",
+        "id": "footer-info-2-text4"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 4",
+        "id": "footer-info-2-link4"
+      },
+      {
+        "type": "text",
+        "label": "Text 5",
+        "id": "footer-info-2-text5"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 5",
+        "id": "footer-info-2-link5"
+      },
+      {
+        "type": "text",
+        "label": "Text 6",
+        "id": "footer-info-2-text6"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 6",
+        "id": "footer-info-2-link6"
+      },
+      {
+        "type": "text",
+        "label": "Text 7",
+        "id": "footer-info-2-text7"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 7",
+        "id": "footer-info-2-link7"
+      },
+      {
+        "type": "heading",
+        "content": "Column 4 (Custom Links)"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer-info-3-heading",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 1",
+        "id": "footer-info-3-text1"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 1",
+        "id": "footer-info-3-link1"
+      },
+      {
+        "type": "text",
+        "label": "Text 2",
+        "id": "footer-info-3-text2"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 2",
+        "id": "footer-info-3-link2"
+      },
+      {
+        "type": "text",
+        "label": "Text 3",
+        "id": "footer-info-3-text3"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 3",
+        "id": "footer-info-3-link3"
+      },
+      {
+        "type": "text",
+        "label": "Text 4",
+        "id": "footer-info-3-text4"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 4",
+        "id": "footer-info-3-link4"
+      },
+      {
+        "type": "text",
+        "label": "Text 5",
+        "id": "footer-info-3-text5"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 5",
+        "id": "footer-info-3-link5"
+      },
+      {
+        "type": "text",
+        "label": "Text 6",
+        "id": "footer-info-3-text6"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 6",
+        "id": "footer-info-3-link6"
+      },
+      {
+        "type": "text",
+        "label": "Text 7",
+        "id": "footer-info-3-text7"
+      },
+      {
+        "type": "text",
+        "label": "Link Text 7",
+        "id": "footer-info-3-link7"
+      },
+      {
+        "type": "heading",
+        "content": "Column 5 (Brands)"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer-info-4-heading",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Number Of Brands",
+        "id": "brand_show_footer_limit",
+        "options": [
+          {
+            "value": 5,
+            "label": "5"
+          },
+          {
+            "value": 6,
+            "label": "6"
+          },
+          {
+            "value": 7,
+            "label": "7"
+          }
+        ],
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Column 6 (Social Links and Subscription Form)"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer-info-5-heading",
+        "force_reload": true
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowAmericanExpress",
-        "force_reload": true,
+        "label": "Show Subscription Form",
+        "id": "halo_subscription_form",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Payment Icons"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Payment Icons",
+        "id": "show_payments_footer",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show American Express",
         "id": "show_accept_amex"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowDiscover",
-        "force_reload": true,
+        "label": "Show Discover",
         "id": "show_accept_discover"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowMastercard",
-        "force_reload": true,
+        "label": "Show Master card",
         "id": "show_accept_mastercard"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowPayPal",
-        "force_reload": true,
+        "label": "Show PayPal",
         "id": "show_accept_paypal"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowVisa",
-        "force_reload": true,
+        "label": "Show Visa",
         "id": "show_accept_visa"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowAmazonPay",
-        "force_reload": true,
+        "label": "Show Amazon Pay",
         "id": "show_accept_amazonpay"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowGooglePay",
-        "force_reload": true,
+        "label": "Show Google Pay",
         "id": "show_accept_googlepay"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowKlarna",
-        "force_reload": true,
+        "label": "Show Klarna",
         "id": "show_accept_klarna"
       }
     ]
   },
   {
-    "name": "i18n.HomePage",
+    "name": "Menu",
     "settings": [
       {
         "type": "heading",
-        "content": "i18n.Carousel"
+        "content": "Menu Settings"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowCarousel",
+        "label": "Hide Links To Web Pages",
         "force_reload": true,
-        "id": "homepage_show_carousel"
+        "id": "hide_content_navigation"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowCarouselArrows",
+        "label": "Enable MegaMenu",
+        "id": "haloMegamenu",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "id": "haloMegamenuType",
         "force_reload": true,
-        "id": "homepage_show_carousel_arrows"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.ShowCarouselPlayPauseButton",
-        "force_reload": true,
-        "id": "homepage_show_carousel_play_pause_button"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.AllowImageToStretchOn",
-        "force_reload": true,
-        "id": "homepage_stretch_carousel_images"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ContentBackground",
-        "id": "carousel-bgColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.HeaderText",
-        "id": "carousel-title-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.DescriptionText",
-        "id": "carousel-description-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.Indicator",
-        "id": "carousel-dot-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.IndicatorActive",
-        "id": "carousel-dot-color-active"
-      },
-      {
-        "type": "color",
-        "label": "i18n.IndicatorBackground",
-        "id": "carousel-dot-bgColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.Arrow",
-        "id": "carousel-arrow-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ArrowBackground",
-        "id": "carousel-arrow-bgColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ArrowBorder",
-        "id": "carousel-arrow-borderColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.PlayPauseButtonText",
-        "id": "carousel-play-pause-button-textColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.PlayPauseButtonBackground",
-        "id": "carousel-play-pause-button-bgColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.PlayPauseButtonBorder",
-        "id": "carousel-play-pause-button-borderColor"
+        "label": "Edit MegaMenu",
+        "options": [
+          {
+            "value": "Editor",
+            "label": "Theme Editor"
+          },
+          {
+            "value": "Source",
+            "label": "Theme Source"
+          }
+        ]
       },
       {
         "type": "heading",
-        "content": "i18n.Products"
+        "content": "Menu Style"
       },
       {
-        "type": "select",
-        "label": "i18n.NumberOfFeaturedProducts",
-        "id": "homepage_featured_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "i18n.Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
+        "type": "color",
+        "label": "Text Color",
+        "id": "navPages-color"
       },
       {
-        "type": "select",
-        "label": "i18n.NumberOfMostPopularProducts",
-        "id": "homepage_top_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "i18n.Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
+        "type": "color",
+        "label": "Text Hover Color",
+        "id": "navPages-color-hover"
       },
       {
-        "type": "select",
-        "label": "i18n.NumberOfNewProducts",
-        "id": "homepage_new_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "i18n.Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
+        "type": "color",
+        "label": "Menu Level 2 Color",
+        "id": "navPages-lv2-color"
+      },
+      {
+        "type": "color",
+        "label": "Menu Level 2 Hover Color",
+        "id": "navPages-lv2-color-hover"
+      },
+      {
+        "type": "color",
+        "label": "Menu Level 3 Color",
+        "id": "navPages-lv3-color"
+      },
+      {
+        "type": "color",
+        "label": "Menu Level 3 Hover Color",
+        "id": "navPages-lv3-color-hover"
+      },
+      {
+        "type": "color",
+        "label": "Dropdown Menu Background",
+        "id": "navPages-subMenu-backgroundColor"
+      },
+      {
+        "type": "color",
+        "label": "Dropdown Menu Border",
+        "id": "navPages-subMenu-separatorColor"
+      },
+      {
+        "type": "heading",
+        "content": "Mega Menu Style 1"
+      },
+      {
+        "type": "text",
+        "label": "Position",
+        "id": "mega_menu_style1_item",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 1",
+        "id": "mega_menu_style1_item1_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 1",
+        "id": "mega_menu_style1_item1_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 2",
+        "id": "mega_menu_style1_item2_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 2",
+        "id": "mega_menu_style1_item2_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 3",
+        "id": "mega_menu_style1_item3_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 3",
+        "id": "mega_menu_style1_item3_link"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 1",
+        "id": "mega_menu_style1_item_custom_linktext1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 1",
+        "id": "mega_menu_style1_item_custom_link1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 2",
+        "id": "mega_menu_style1_item_custom_linktext2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 2",
+        "id": "mega_menu_style1_item_custom_link2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 3",
+        "id": "mega_menu_style1_item_custom_linktext3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 3",
+        "id": "mega_menu_style1_item_custom_link3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 4",
+        "id": "mega_menu_style1_item_custom_linktext4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 4",
+        "id": "mega_menu_style1_item_custom_link4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 5",
+        "id": "mega_menu_style1_item_custom_linktext5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 5",
+        "id": "mega_menu_style1_item_custom_link5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 6",
+        "id": "mega_menu_style1_item_custom_linktext6"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 6",
+        "id": "mega_menu_style1_item_custom_link6"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Title",
+        "id": "mega_menu_style2_item_subMenuBlock"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 1",
+        "id": "mega_menu_style1_item_custom_img1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 1",
+        "id": "mega_menu_style1_item_custom_linktext7"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 1",
+        "id": "mega_menu_style1_item_custom_link7"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 2",
+        "id": "mega_menu_style1_item_custom_img2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 2",
+        "id": "mega_menu_style1_item_custom_linktext8"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 2",
+        "id": "mega_menu_style1_item_custom_link8"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 3",
+        "id": "mega_menu_style1_item_custom_img3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 3",
+        "id": "mega_menu_style1_item_custom_linktext9"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 3",
+        "id": "mega_menu_style1_item_custom_link9"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 4",
+        "id": "mega_menu_style1_item_custom_img4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 4",
+        "id": "mega_menu_style1_item_custom_linktext10"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 4",
+        "id": "mega_menu_style1_item_custom_link10"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 5",
+        "id": "mega_menu_style1_item_custom_img5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 5",
+        "id": "mega_menu_style1_item_custom_linktext11"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 5",
+        "id": "mega_menu_style1_item_custom_link11"
+      },
+      {
+        "type": "heading",
+        "content": "Mega Menu Style 2"
+      },
+      {
+        "type": "text",
+        "label": "Position",
+        "id": "mega_menu_style2_item",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 1",
+        "id": "mega_menu_style2_item_img1"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 1",
+        "id": "mega_menu_style2_item_link1"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 2",
+        "id": "mega_menu_style2_item_img2"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 2",
+        "id": "mega_menu_style2_item_link2"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 3",
+        "id": "mega_menu_style2_item_img3"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 3",
+        "id": "mega_menu_style2_item_link3"
+      },
+      {
+        "type": "text",
+        "label": "Brand Block: Title",
+        "id": "mega_menu_style2_item_productBlock"
+      },
+      {
+        "type": "text",
+        "label": "Brand Block: View All",
+        "id": "mega_menu_style2_item_productBlock_btnAll"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 1",
+        "id": "mega_menu_style2_item_custom_linktext1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 1",
+        "id": "mega_menu_style2_item_custom_link1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 2",
+        "id": "mega_menu_style2_item_custom_linktext2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 2",
+        "id": "mega_menu_style2_item_custom_link2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 3",
+        "id": "mega_menu_style2_item_custom_linktext3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 3",
+        "id": "mega_menu_style2_item_custom_link3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 4",
+        "id": "mega_menu_style2_item_custom_linktext4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 4",
+        "id": "mega_menu_style2_item_custom_link4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 5",
+        "id": "mega_menu_style2_item_custom_linktext5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 5",
+        "id": "mega_menu_style2_item_custom_link5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 6",
+        "id": "mega_menu_style2_item_custom_linktext6"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 6",
+        "id": "mega_menu_style2_item_custom_link6"
+      },
+      {
+        "type": "heading",
+        "content": "Mega Menu Style 3"
+      },
+      {
+        "type": "text",
+        "label": "Position",
+        "id": "mega_menu_style3_item",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 1",
+        "id": "mega_menu_style3_item_img1"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 1",
+        "id": "mega_menu_style3_item_link1"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 2",
+        "id": "mega_menu_style3_item_img2"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 2",
+        "id": "mega_menu_style3_item_link2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Text Bottom: Text",
+        "id": "mega_menu_style3_item_bottomCates"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 1",
+        "id": "mega_menu_style3_item_custom_linktext1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 1",
+        "id": "mega_menu_style3_item_custom_link1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 2",
+        "id": "mega_menu_style3_item_custom_linktext2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 2",
+        "id": "mega_menu_style3_item_custom_link2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 3",
+        "id": "mega_menu_style3_item_custom_linktext3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 3",
+        "id": "mega_menu_style3_item_custom_link3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 4",
+        "id": "mega_menu_style3_item_custom_linktext4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 4",
+        "id": "mega_menu_style3_item_custom_link4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 5",
+        "id": "mega_menu_style3_item_custom_linktext5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 5",
+        "id": "mega_menu_style3_item_custom_link5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 6",
+        "id": "mega_menu_style3_item_custom_linktext6"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 6",
+        "id": "mega_menu_style3_item_custom_link6"
+      },
+      {
+        "type": "heading",
+        "content": "Menu Label"
+      },
+      {
+        "type": "text",
+        "label": "New Label",
+        "id": "mega_menu_new_label",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text",
+        "id": "mega_menu_new_label_text"
+      },
+      {
+        "type": "color",
+        "label": "Text Color",
+        "id": "mega_menu_new_label_textColor"
+      },
+      {
+        "type": "color",
+        "label": "Background Color",
+        "id": "mega_menu_new_label_bgColor"
+      },
+      {
+        "type": "text",
+        "label": "Hot Label",
+        "id": "mega_menu_hot_label",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text",
+        "id": "mega_menu_hot_label_text"
+      },
+      {
+        "type": "color",
+        "label": "Text Color",
+        "id": "mega_menu_hot_label_textColor"
+      },
+      {
+        "type": "color",
+        "label": "Background Color",
+        "id": "mega_menu_hot_label_bgColor"
+      },
+      {
+        "type": "text",
+        "label": "Sale Label",
+        "id": "mega_menu_sale_label",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text",
+        "id": "mega_menu_sale_label_text"
+      },
+      {
+        "type": "color",
+        "label": "Text Color",
+        "id": "mega_menu_sale_label_textColor"
+      },
+      {
+        "type": "color",
+        "label": "Background Color",
+        "id": "mega_menu_sale_label_bgColor"
       }
     ]
   },
   {
-    "name": "i18n.Products",
+    "name": "Home Default Page",
     "settings": [
       {
         "type": "heading",
-        "content": "i18n.ProductSaleBadges"
+        "content": "Main Carousel"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Carousel",
+        "id": "homepage_show_carousel",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Carousel Arrows",
+        "id": "homepage_show_carousel_arrows",
+        "force_reload": true
+      },
+      {
+        "type": "color",
+        "label": "Content Background",
+        "id": "carousel-bgColor"
+      },
+      {
+        "type": "color",
+        "label": "Heading Text Color",
+        "id": "carousel-title-color"
+      },
+      {
+        "type": "color",
+        "label": "Description Text Color",
+        "id": "carousel-description-color"
+      },
+      {
+        "type": "text",
+        "label": "Slider 1: Mobile Image",
+        "id": "homepage_show_carousel_0_mobile-image"
+      },
+      {
+        "type": "text",
+        "label": "Slider 1: Sub Heading",
+        "id": "homepage_show_carousel_0_subheading",
+        "force_reload": true
       },
       {
         "type": "select",
-        "label": "i18n.ShowProductSaleBadges",
-        "id": "product_sale_badges",
-        "force_reload": true,
+        "label": "Slider 1: Content Alignment",
+        "id": "homepage_show_carousel_0_position-content",
         "options": [
           {
-            "value": "none",
-            "label": "i18n.None"
+            "value": "left",
+            "label": "Left"
           },
           {
-            "value": "topleft",
-            "label": "i18n.TopLeft"
+            "value": "center",
+            "label": "Center"
           },
           {
-            "value": "sash",
-            "label": "i18n.Diagonal"
-          },
-          {
-            "value": "burst",
-            "label": "i18n.Burst"
+            "value": "right",
+            "label": "Right"
           }
         ]
       },
       {
         "type": "text",
-        "label": "i18n.ProductSaleBadgeLabel",
-        "force_reload": true,
-        "id": "pdp_sale_badge_label",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
+        "label": "Slider 1: Custom Button Text",
+        "id": "homepage_show_carousel_0_customtextbtn",
+        "force_reload": true
       },
       {
         "type": "text",
-        "label": "i18n.ProductPriceLabelSale",
-        "force_reload": true,
-        "id": "pdp-sale-price-label",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
+        "label": "Slider 1: Custom Button Link",
+        "id": "homepage_show_carousel_0_custombtn",
+        "force_reload": true
       },
       {
         "type": "text",
-        "label": "i18n.ProductPriceLabelBeforeSale",
-        "force_reload": true,
-        "id": "pdp-non-sale-price-label",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
+        "label": "Slider 2: Mobile Image",
+        "id": "homepage_show_carousel_1_mobile-image"
       },
       {
         "type": "text",
-        "label": "i18n.ProductPriceLabelRetail",
-        "force_reload": true,
-        "id": "pdp-retail-price-label",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
-      },
-      {
-        "type": "text",
-        "label": "i18n.ProductPriceLabel",
-        "force_reload": true,
-        "id": "pdp-price-label",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
-      },
-      {
-        "type": "paragraph",
-        "content": "i18n.TheProductPriceLabel",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BadgeTextColor",
-        "id": "color_text_product_sale_badges",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BadgeColor",
-        "id": "color_badge_product_sale_badges",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BadgeHoverColor",
-        "id": "color_hover_product_sale_badges",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
-      },
-      {
-        "type": "paragraph",
-        "content": "i18n.ForTextureSwatchesMaxDimensions",
-        "reference": "product_sale_badges",
-        "reference_default": "none"
+        "label": "Slider 2: Sub Heading",
+        "id": "homepage_show_carousel_1_subheading",
+        "force_reload": true
       },
       {
         "type": "select",
-        "label": "i18n.ShowProductSoldOutBadges",
-        "id": "product_sold_out_badges",
-        "force_reload": true,
+        "label": "Slider 2: Content Alignment",
+        "id": "homepage_show_carousel_1_position-content",
         "options": [
           {
-            "value": "none",
-            "label": "i18n.None"
+            "value": "left",
+            "label": "Left"
           },
           {
-            "value": "topleft",
-            "label": "i18n.TopLeft"
+            "value": "center",
+            "label": "Center"
           },
           {
-            "value": "sash",
-            "label": "i18n.Diagonal"
-          },
-          {
-            "value": "burst",
-            "label": "i18n.Burst"
+            "value": "right",
+            "label": "Right"
           }
         ]
       },
       {
         "type": "text",
-        "label": "i18n.ProductSoldOutBadgeLabel",
-        "force_reload": true,
-        "id": "pdp_sold_out_label",
-        "reference": "product_sold_out_badges",
-        "reference_default": "none"
+        "label": "Slider 2: Custom Button Text",
+        "id": "homepage_show_carousel_1_customtextbtn",
+        "force_reload": true
       },
       {
-        "type": "color",
-        "label": "i18n.BadgeTextColor",
-        "id": "color_text_product_sold_out_badges",
-        "reference": "product_sold_out_badges",
-        "reference_default": "none"
+        "type": "text",
+        "label": "Slider 2: Custom Button Link",
+        "id": "homepage_show_carousel_1_custombtn",
+        "force_reload": true
       },
       {
-        "type": "color",
-        "label": "i18n.BadgeColor",
-        "id": "color_badge_product_sold_out_badges",
-        "reference": "product_sold_out_badges",
-        "reference_default": "none"
+        "type": "text",
+        "label": "Slider 3: Mobile Image",
+        "id": "homepage_show_carousel_2_mobile-image"
       },
       {
-        "type": "color",
-        "label": "i18n.BadgeHoverColor",
-        "id": "color_hover_product_sold_out_badges",
-        "reference": "product_sold_out_badges",
-        "reference_default": "none"
+        "type": "text",
+        "label": "Slider 3: Sub Heading",
+        "id": "homepage_show_carousel_2_subheading",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Slider 3: Content Alignment",
+        "id": "homepage_show_carousel_2_position-content",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Slider 3: Custom Button Text",
+        "id": "homepage_show_carousel_2_customtextbtn",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Slider 3: Custom Button Link",
+        "id": "homepage_show_carousel_2_custombtn",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Slider 4: Mobile Image",
+        "id": "homepage_show_carousel_3_mobile-image"
+      },
+      {
+        "type": "text",
+        "label": "Slider 4: Sub Heading",
+        "id": "homepage_show_carousel_3_subheading",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Slider 4: Content Alignment",
+        "id": "homepage_show_carousel_3_position-content",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Slider 4: Custom Button Text",
+        "id": "homepage_show_carousel_3_customtextbtn",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Slider 4: Custom Button Link",
+        "id": "homepage_show_carousel_3_custombtn",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Slider 5: Mobile Image",
+        "id": "homepage_show_carousel_4_mobile-image"
+      },
+      {
+        "type": "text",
+        "label": "Slider 5: Sub Heading",
+        "id": "homepage_show_carousel_4_subheading",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Slider 5: Content Alignment",
+        "id": "homepage_show_carousel_4_position-content",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Slider 5: Custom Button Text",
+        "id": "homepage_show_carousel_4_customtextbtn",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Slider 5: Custom Button Link",
+        "id": "homepage_show_carousel_4_custombtn",
+        "force_reload": true
       },
       {
         "type": "heading",
-        "content": "i18n.DisplaySettings"
+        "content": "Product Tabs"
       },
       {
-        "type": "checkbox",
-        "label": "i18n.ShowQuickviewButtonOnProduct",
+        "type": "select",
+        "label": "Type",
+        "id": "home_product_block_tab",
         "force_reload": true,
-        "id": "show_product_quick_view"
+        "options": [
+          {
+            "value": "0",
+            "label": "Don't Show"
+          },
+          {
+            "value": "Featured",
+            "label": "Featured Products"
+          },
+          {
+            "value": "New",
+            "label": "New Products"
+          },
+          {
+            "value": "Top",
+            "label": "Most Popular Products"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "home_product_block_tab-title"
+      },
+      {
+        "type": "select",
+        "label": "Number Of Product Per Tab",
+        "id": "home_product_block-id-tab-limit",
+        "options": [
+          {
+            "value": 5,
+            "label": "5"
+          },
+          {
+            "value": 6,
+            "label": "6"
+          },
+          {
+            "value": 7,
+            "label": "7"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Number Of Category",
+        "id": "home_product_block-id-tab-cate-limit",
+        "options": [
+          {
+            "value": 5,
+            "label": "5"
+          },
+          {
+            "value": 100,
+            "label": "All"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Product Block 1"
+      },
+      {
+        "type": "select",
+        "label": "Product Block: Type",
+        "id": "home_product_block-1",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "0",
+            "label": "Don't Show"
+          },
+          {
+            "value": "Featured",
+            "label": "Featured Products"
+          },
+          {
+            "value": "New",
+            "label": "New Products"
+          },
+          {
+            "value": "Top",
+            "label": "Most Popular Products"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Product Block: Title",
+        "id": "home_product_block-1-title"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowQuantitySelectionOnProduct",
+        "label": "Product Block: Carousel",
+        "id": "home_product_block_1_layout",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Product Block 2"
+      },
+      {
+        "type": "select",
+        "label": "Product Block: Type",
+        "id": "home_product_block-3",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "0",
+            "label": "Don't Show"
+          },
+          {
+            "value": "Featured",
+            "label": "Featured Products"
+          },
+          {
+            "value": "New",
+            "label": "New Products"
+          },
+          {
+            "value": "Top",
+            "label": "Most Popular Products"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Product Block: Title",
+        "id": "home_product_block-3-title"
+      },
+      {
+        "type": "checkbox",
+        "label": "Product Block: Carousel",
+        "id": "home_product_block_3_layout",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Number Of Product",
+        "id": "home_product_block_limit",
+        "force_reload": true,
+        "options": [
+          {
+            "value": 5,
+            "label": "5"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          },
+          {
+            "value": 10,
+            "label": "10"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Home Recent Blog"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Recent Blog",
+        "id": "halo_recent_post",
+        "force_reload": true
+      }
+    ]
+  },
+  {
+    "name": "Home Landing page",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Menu Tab"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Menu tab",
+        "id": "halo_menu_tab",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Menu tab: Home Default",
+        "id": "halo_menu_tab_title_1",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Menu tab: Home Landing Page",
+        "id": "halo_menu_tab_title_2",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Home Landing Page: Link",
+        "id": "halo_landing_page_link",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Mega Menu Style 1"
+      },
+      {
+        "type": "text",
+        "label": "Position",
+        "id": "mega_menu_custom_style1_item",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 1",
+        "id": "mega_menu_custom_style1_item1_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 1",
+        "id": "mega_menu_custom_style1_item1_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 2",
+        "id": "mega_menu_custom_style1_item2_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 2",
+        "id": "mega_menu_custom_style1_item2_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 3",
+        "id": "mega_menu_custom_style1_item3_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 3",
+        "id": "mega_menu_custom_style1_item3_link"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 1",
+        "id": "mega_menu_custom_style1_item_custom_linktext1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 1",
+        "id": "mega_menu_custom_style1_item_custom_link1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 2",
+        "id": "mega_menu_custom_style1_item_custom_linktext2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 2",
+        "id": "mega_menu_custom_style1_item_custom_link2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 3",
+        "id": "mega_menu_custom_style1_item_custom_linktext3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 3",
+        "id": "mega_menu_custom_style1_item_custom_link3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 4",
+        "id": "mega_menu_custom_style1_item_custom_linktext4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 4",
+        "id": "mega_menu_custom_style1_item_custom_link4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 5",
+        "id": "mega_menu_custom_style1_item_custom_linktext5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 5",
+        "id": "mega_menu_custom_style1_item_custom_link5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 6",
+        "id": "mega_menu_custom_style1_item_custom_linktext6"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 6",
+        "id": "mega_menu_custom_style1_item_custom_link6"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Title",
+        "id": "mega_menu_custom_style2_item_subMenuBlock"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 1",
+        "id": "mega_menu_custom_style1_item_custom_img1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 1",
+        "id": "mega_menu_custom_style1_item_custom_linktext7"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 1",
+        "id": "mega_menu_custom_style1_item_custom_link7"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 2",
+        "id": "mega_menu_custom_style1_item_custom_img2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 2",
+        "id": "mega_menu_custom_style1_item_custom_linktext8"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 2",
+        "id": "mega_menu_custom_style1_item_custom_link8"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 3",
+        "id": "mega_menu_custom_style1_item_custom_img3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 3",
+        "id": "mega_menu_custom_style1_item_custom_linktext9"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 3",
+        "id": "mega_menu_custom_style1_item_custom_link9"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 4",
+        "id": "mega_menu_custom_style1_item_custom_img4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 4",
+        "id": "mega_menu_custom_style1_item_custom_linktext10"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 4",
+        "id": "mega_menu_custom_style1_item_custom_link10"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Image 5",
+        "id": "mega_menu_custom_style1_item_custom_img5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Text 5",
+        "id": "mega_menu_custom_style1_item_custom_linktext11"
+      },
+      {
+        "type": "text",
+        "label": "Custom Subcategories: Link 5",
+        "id": "mega_menu_custom_style1_item_custom_link11"
+      },
+      {
+        "type": "heading",
+        "content": "Mega Menu Style 2"
+      },
+      {
+        "type": "text",
+        "label": "Position",
+        "id": "mega_menu_custom_style2_item",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 1",
+        "id": "mega_menu_custom_style2_item_img1"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 1",
+        "id": "mega_menu_custom_style2_item_link1"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 2",
+        "id": "mega_menu_custom_style2_item_img2"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 2",
+        "id": "mega_menu_custom_style2_item_link2"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 3",
+        "id": "mega_menu_custom_style2_item_img3"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 3",
+        "id": "mega_menu_custom_style2_item_link3"
+      },
+      {
+        "type": "text",
+        "label": "Brand Block: Title",
+        "id": "mega_menu_custom_style2_item_productBlock"
+      },
+      {
+        "type": "text",
+        "label": "Brand Block: View All",
+        "id": "mega_menu_custom_style2_item_productBlock_btnAll"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 1",
+        "id": "mega_menu_custom_style2_item_custom_linktext1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 1",
+        "id": "mega_menu_custom_style2_item_custom_link1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 2",
+        "id": "mega_menu_custom_style2_item_custom_linktext2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 2",
+        "id": "mega_menu_custom_style2_item_custom_link2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 3",
+        "id": "mega_menu_custom_style2_item_custom_linktext3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 3",
+        "id": "mega_menu_custom_style2_item_custom_link3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 4",
+        "id": "mega_menu_custom_style2_item_custom_linktext4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 4",
+        "id": "mega_menu_custom_style2_item_custom_link4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 5",
+        "id": "mega_menu_custom_style2_item_custom_linktext5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 5",
+        "id": "mega_menu_custom_style2_item_custom_link5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 6",
+        "id": "mega_menu_custom_style2_item_custom_linktext6"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 6",
+        "id": "mega_menu_custom_style2_item_custom_link6"
+      },
+      {
+        "type": "heading",
+        "content": "Mega Menu Style 3"
+      },
+      {
+        "type": "text",
+        "label": "Position",
+        "id": "mega_menu_custom_style3_item",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 1",
+        "id": "mega_menu_custom_style3_item_img1"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 1",
+        "id": "mega_menu_custom_style3_item_link1"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Image 2",
+        "id": "mega_menu_custom_style3_item_img2"
+      },
+      {
+        "type": "text",
+        "label": "Banner: Link 2",
+        "id": "mega_menu_custom_style3_item_link2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Text Bottom: Text",
+        "id": "mega_menu_custom_style3_item_bottomCates"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 1",
+        "id": "mega_menu_custom_style3_item_custom_linktext1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 1",
+        "id": "mega_menu_custom_style3_item_custom_link1"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 2",
+        "id": "mega_menu_custom_style3_item_custom_linktext2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 2",
+        "id": "mega_menu_custom_style3_item_custom_link2"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 3",
+        "id": "mega_menu_custom_style3_item_custom_linktext3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 3",
+        "id": "mega_menu_custom_style3_item_custom_link3"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 4",
+        "id": "mega_menu_custom_style3_item_custom_linktext4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 4",
+        "id": "mega_menu_custom_style3_item_custom_link4"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 5",
+        "id": "mega_menu_custom_style3_item_custom_linktext5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 5",
+        "id": "mega_menu_custom_style3_item_custom_link5"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Text 6",
+        "id": "mega_menu_custom_style3_item_custom_linktext6"
+      },
+      {
+        "type": "text",
+        "label": "Custom Block: Link 6",
+        "id": "mega_menu_custom_style3_item_custom_link6"
+      },
+      {
+        "type": "heading",
+        "content": "Menu Label"
+      },
+      {
+        "type": "text",
+        "label": "New Label",
+        "id": "mega_menu_custom_new_label",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text",
+        "id": "mega_menu_custom_new_label_text"
+      },
+      {
+        "type": "text",
+        "label": "Hot Label",
+        "id": "mega_menu_custom_hot_label",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text",
+        "id": "mega_menu_custom_hot_label_text"
+      },
+      {
+        "type": "text",
+        "label": "Sale Label",
+        "id": "mega_menu_custom_sale_label",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text",
+        "id": "mega_menu_custom_sale_label_text"
+      },
+      {
+        "type": "heading",
+        "content": "Product Block"
+      },
+      {
+        "type": "select",
+        "label": "Product Block: Type",
+        "id": "home_product_block-2",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "0",
+            "label": "Don't Show"
+          },
+          {
+            "value": "Featured",
+            "label": "Featured Products"
+          },
+          {
+            "value": "New",
+            "label": "New Products"
+          },
+          {
+            "value": "Top",
+            "label": "Most Popular Products"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Product Block: Title",
+        "id": "home_product_block-2-title"
+      },
+      {
+        "type": "checkbox",
+        "label": "Product Block: Carousel",
+        "id": "home_product_block_2_layout",
+        "force_reload": true
+      }
+    ]
+  },
+  {
+    "name": "Product Listing Page",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Product Listing Settings"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Top Banner",
+        "id": "show_top_banner_category",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Toolbar",
+        "id": "haloStickyToolbar"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show View As",
+        "id": "haloStickyToolbar_viewAs",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Item Per Page",
+        "id": "haloStickyToolbar_limit",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Sort By",
+        "id": "haloStickyToolbar_sort",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "id": "product_list_display_mode",
+        "label": "Gallery View",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "grid",
+            "label": "Show Products In A Grid"
+          },
+          {
+            "value": "list",
+            "label": "Show Products In A List"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "product_list_display_col",
+        "label": "Number Of Product Per Row",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "3",
+            "label": "3 Columns"
+          },
+          {
+            "value": "4",
+            "label": "4 Columns"
+          },
+          {
+            "value": "5",
+            "label": "5 Columns"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Category Page",
+        "id": "categorypage_products_per_page",
+        "force_reload": true,
+        "options": [
+          {
+            "value": 12,
+            "label": "12"
+          },
+          {
+            "value": 16,
+            "label": "16"
+          },
+          {
+            "value": 20,
+            "label": "20"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Show More Products",
+        "id": "halo-product-show-more",
+        "force_reload": true
+      }
+    ]
+  },
+  {
+    "name": "Product Detail Page",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Product Detail Settings"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Quantity Selection On Product",
         "force_reload": true,
         "id": "show_product_quantity_box"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowProductDescriptionTabs",
-        "force_reload": true,
-        "id": "show_product_details_tabs"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.ProductCustomFieldsInTabs",
-        "force_reload": true,
-        "id": "show_custom_fields_tabs"
-      },
-      {
-        "type": "text",
-        "label": "i18n.ProductCustomFieldsTabLabel",
-        "force_reload": true,
-        "reference": "show_custom_fields_tabs",
-        "reference_default": false,
-        "id": "pdp-custom-fields-tab-label"
-      },
-      {
-        "type": "checkbox",
-        "label": "i18n.ShowProductWeight",
+        "label": "Show Product Weight",
         "force_reload": true,
         "id": "show_product_weight"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowProductDimensions",
+        "label": "Show Product Dimensions",
         "force_reload": true,
         "id": "show_product_dimensions"
       },
       {
-        "type": "checkbox",
-        "label": "i18n.ShowProductSwatchNames",
+        "type": "select",
+        "label": "Product Page Related Products",
+        "id": "productpage_related_products_count",
         "force_reload": true,
-        "id": "show_product_swatch_names"
+        "options": [
+          {
+            "value": 0,
+            "label": "Disable"
+          },
+          {
+            "value": 4,
+            "label": "4"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          },
+          {
+            "value": 10,
+            "label": "10"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Product Page Customers Also Viewed",
+        "id": "productpage_similar_by_views_count",
+        "force_reload": true,
+        "options": [
+          {
+            "value": 0,
+            "label": "Disable"
+          },
+          {
+            "value": 4,
+            "label": "4"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          },
+          {
+            "value": 10,
+            "label": "10"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Image Dimension"
+      },
+      {
+        "type": "imageDimension",
+        "label": "Main Product Images",
+        "id": "product_size",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "670x993",
+            "label": "OptimizedForTheme"
+          },
+          {
+            "value": "custom",
+            "label": "SpecifyDimensions"
+          }
+        ]
+      },
+      {
+        "type": "imageDimension",
+        "label": "Thumbnail Image In Product Page",
+        "id": "productview_thumb_size",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "70x104",
+            "label": "Optimized For Theme"
+          },
+          {
+            "value": "custom",
+            "label": "Specify Dimensions"
+          }
+        ]
+      },
+      {
+        "type": "imageDimension",
+        "label": "Zoomed Image",
+        "id": "zoom_size",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "1280x1280",
+            "label": "Optimized For Theme"
+          },
+          {
+            "value": "custom",
+            "label": "Specify Dimensions"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Social Sharing"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowShopByPriceIn",
+        "label": "Show Social Sharing",
+        "id": "show_halo_share",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Type",
+        "id": "halo_share",
         "force_reload": true,
-        "id": "shop_by_price_visibility"
+        "options": [
+          {
+            "value": "default",
+            "label": "Using default with Social Media"
+          },
+          {
+            "value": "custom",
+            "label": "Using custom script"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Time",
+        "reference": "halo_share",
+        "reference_default": "default",
+        "id": "halo_share_code"
+      },
+      {
+        "type": "heading",
+        "content": "Product Reviews"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowProductReviews",
+        "label": "Show Product Reviews",
         "force_reload": true,
         "id": "show_product_reviews"
       },
       {
         "type": "select",
-        "label": "i18n.NumberOfProductReviews",
+        "label": "Number Of Product Reviews",
         "id": "productpage_reviews_count",
         "reference": "show_product_reviews",
         "reference_default": false,
         "force_reload": true,
         "options": [
           {
-            "value": 1,
-            "label": "1"
-          },
-          {
             "value": 2,
             "label": "2"
           },
           {
-            "value": 3,
-            "label": "3"
+            "value": 4,
+            "label": "4"
           },
+          {
+            "value": 6,
+            "label": "6"
+          },
+          {
+            "value": 8,
+            "label": "8"
+          },
+          {
+            "value": 10,
+            "label": "10"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "content": "Product Block"
+      },
+      {
+        "type": "select",
+        "label": "Columns",
+        "id": "productpage_product_block_col",
+        "force_reload": true,
+        "options": [
           {
             "value": 4,
             "label": "4"
@@ -1438,623 +2768,771 @@
           {
             "value": 6,
             "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
           }
         ]
       },
       {
-        "type": "color",
-        "label": "i18n.WishlistDropdownBackground",
-        "id": "dropdown--wishList-backgroundColor"
+        "type": "select",
+        "label": "Product Block 1: Type",
+        "id": "productpage_product_block-1",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "0",
+            "label": "Don't Show"
+          },
+          {
+            "value": "Related",
+            "label": "Related Products"
+          },
+          {
+            "value": "Customers",
+            "label": "Customers Also Viewed"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Product Block 1: Title",
+        "id": "productpage_product_block-1-title"
+      },
+      {
+        "type": "select",
+        "label": "Product Block 2: Type",
+        "id": "productpage_product_block-2",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "0",
+            "label": "Don't Show"
+          },
+          {
+            "value": "Related",
+            "label": "Related Products"
+          },
+          {
+            "value": "Customers",
+            "label": "Customers Also Viewed"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Product Block 2: Title",
+        "id": "productpage_product_block-2-title"
+      },
+      {
+        "type": "heading",
+        "content": "Previous / Next Products"
       },
       {
         "type": "checkbox",
-        "label": "i18n.ShowQuickPaymentButtons",
-        "force_reload": true,
-        "id": "show_quick_payment_buttons"
+        "label": "Enable Previous / Next Products",
+        "id": "halo-next-product"
       },
       {
         "type": "heading",
-        "content": "i18n.NumberOfProductsDisplayed"
+        "content": "Sold In Last"
       },
       {
-        "type": "select",
-        "label": "i18n.CategoryPage",
-        "id": "categorypage_products_per_page",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          },
-          {
-            "value": 15,
-            "label": "15"
-          },
-          {
-            "value": 16,
-            "label": "16"
-          },
-          {
-            "value": 18,
-            "label": "18"
-          },
-          {
-            "value": 20,
-            "label": "20"
-          }
-        ]
+        "type": "checkbox",
+        "label": "Enable Sold In Last",
+        "id": "product_soldProduct",
+        "force_reload": true
       },
       {
-        "type": "select",
-        "label": "i18n.BrandPage",
-        "id": "brandpage_products_per_page",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          },
-          {
-            "value": 15,
-            "label": "15"
-          },
-          {
-            "value": 16,
-            "label": "16"
-          },
-          {
-            "value": 18,
-            "label": "18"
-          },
-          {
-            "value": 20,
-            "label": "20"
-          }
-        ]
+        "type": "text",
+        "label": "Quantity",
+        "id": "product_soldProduct_products"
       },
       {
-        "type": "select",
-        "label": "i18n.SearchResultPage",
-        "id": "searchpage_products_per_page",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          },
-          {
-            "value": 15,
-            "label": "15"
-          },
-          {
-            "value": 16,
-            "label": "16"
-          },
-          {
-            "value": 18,
-            "label": "18"
-          },
-          {
-            "value": 20,
-            "label": "20"
-          }
-        ]
+        "type": "text",
+        "label": "Hour",
+        "id": "product_soldProduct_hours"
       },
       {
-        "type": "select",
-        "label": "i18n.ProductPageRelatedProducts",
-        "id": "productpage_related_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "i18n.Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
+        "type": "text",
+        "label": "Text 1",
+        "id": "product_soldProduct_text"
       },
       {
-        "type": "select",
-        "label": "i18n.ProductPageCustomersAlsoViewed",
-        "id": "productpage_similar_by_views_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "i18n.Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
+        "type": "text",
+        "label": "Text 2",
+        "id": "product_soldProduct_hours_text"
       },
       {
         "type": "heading",
-        "content": "i18n.ProductCards"
+        "content": "Viewing By Customers"
       },
       {
-        "type": "color",
-        "label": "i18n.ProductHeaderTextColor",
-        "id": "card-title-color"
+        "type": "checkbox",
+        "label": "Enable Viewing By Customers",
+        "id": "product_viewingProduct",
+        "force_reload": true
       },
       {
-        "type": "color",
-        "label": "i18n.ProductHeaderTextHoverColor",
-        "id": "card-title-color-hover"
+        "type": "text",
+        "label": "Quantity",
+        "id": "product_viewingProduct_viewer"
       },
       {
-        "type": "color",
-        "label": "i18n.ButtonTextColor",
-        "id": "card-figcaption-button-color"
+        "type": "text",
+        "label": "Text",
+        "id": "product_viewingProduct_text",
+        "force_reload": true
       },
       {
-        "type": "color",
-        "label": "i18n.ButtonBackground",
-        "id": "card-figcaption-button-background"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.ProductCardsQuickSearch"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BackgroundColor",
-        "id": "card--alternate-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BorderColor",
-        "id": "card--alternate-borderColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.TextHoverColor",
-        "id": "card--alternate-color--hover"
+        "type": "text",
+        "label": "Switch After (s)",
+        "id": "product_viewingProduct_change"
       },
       {
         "type": "heading",
-        "content": "i18n.ImageSizes"
+        "content": "CountDown"
       },
       {
-        "type": "paragraph",
-        "content": "i18n.PleaseSpecifyAMaximumImage"
+        "type": "checkbox",
+        "label": "Enable CountDown",
+        "id": "halo_product_countdown_show",
+        "force_reload": true
       },
       {
-        "type": "imageDimension",
-        "label": "i18n.MainProductImages",
-        "id": "product_size",
+        "type": "select",
+        "label": "Type",
+        "id": "halo_product_countdown",
         "force_reload": true,
         "options": [
           {
-            "value": "500x659",
-            "label": "i18n.OptimizedForTheme"
+            "value": "all",
+            "label": "Same For All Products"
           },
           {
             "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "label": "Different For Each Product"
+          },
+          {
+            "value": "sale",
+            "label": "Display For Products with Sale Price"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Time",
+        "reference": "halo-product-countdown",
+        "reference_default": "custom",
+        "id": "halo_product_countdown_time",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Hot Stock"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Hot Stock",
+        "id": "halo_stock_level",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "The Maximum Level Of Inventory",
+        "id": "halo_stock_level_limit"
+      },
+      {
+        "type": "heading",
+        "content": "Sizechart"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Sizechart",
+        "id": "halo_sizechart",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Type",
+        "id": "halo_sizechart_type",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "all",
+            "label": "Same For All Products"
+          },
+          {
+            "value": "custom",
+            "label": "Different For Each Product"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Image",
+        "reference": "halo_sizechart_type",
+        "reference_default": "custom",
+        "id": "halo_sizechart_image",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Compare Colors"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Compare Colors",
+        "id": "halo-compare-colors"
+      },
+      {
+        "type": "heading",
+        "content": "Notify Me: Out Of Stock"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Notify Me: Out Of Stock",
+        "id": "halo_notify_me",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 1",
+        "id": "halo_notify_me_text1",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 2",
+        "id": "halo_notify_me_text2",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Mail",
+        "id": "halo_notify_me_mailto"
+      },
+      {
+        "type": "text",
+        "label": "Subject",
+        "id": "halo_notify_me_subject"
+      },
+      {
+        "type": "heading",
+        "content": "Sticky Add To Cart"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Sticky Add To Cart",
+        "id": "halo_sticky_add_to_cart",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Sticky Add To Cart Mobile",
+        "id": "halo_sticky_add_to_cart_mobile",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Buy It Now"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Buy It Now",
+        "id": "halo_buy_it_now",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Secure Images"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Secure Images",
+        "id": "halo-product-security-image"
+      },
+      {
+        "type": "text",
+        "label": "Image 1",
+        "id": "halo-product-security-image-1"
+      },
+      {
+        "type": "text",
+        "label": "Image 2",
+        "id": "halo-product-security-image-2"
+      },
+      {
+        "type": "text",
+        "label": "Image 3",
+        "id": "halo-product-security-image-3"
+      },
+      {
+        "type": "text",
+        "label": "Image 4",
+        "id": "halo-product-security-image-4"
+      },
+      {
+        "type": "heading",
+        "content": "Product Tabs"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Product Tabs",
+        "id": "show_product_details_tabs",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Read More for Description Tab on Mobile",
+        "id": "show_more_description_tabs_mb",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Warranty Tab",
+        "id": "show_warranty_tabs",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Shipping & Return Tab",
+        "id": "show_shipping_tab",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Type",
+        "id": "show_shipping_tab_type",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "all",
+            "label": "Same For All Products"
+          },
+          {
+            "value": "custom",
+            "label": "Different For Each Product"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Get Content From URL",
+        "reference": "show_shipping_tab_type",
+        "reference_default": "custom",
+        "id": "show_shipping_tab_link"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Custom Tab",
+        "id": "show_custom_tab",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Type",
+        "id": "show_custom_tab_type",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "all",
+            "label": "Same For All Products"
+          },
+          {
+            "value": "custom",
+            "label": "Different For Each Product"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "label": "Get Content From URL",
+        "reference": "show_custom_tab_type",
+        "reference_default": "custom",
+        "id": "show_custom_tab_link"
+      }
+    ]
+  },
+  {
+    "name": "Sidebar",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Sidebar Settings"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Sidebar On Category Page",
+        "id": "halo-category-sidebar"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Sidebar On Brand Page",
+        "id": "halo-brand-sidebar"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Sidebar On Search Page",
+        "id": "halo-search-sidebar"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Sidebar On Blog/Blog Details Page",
+        "id": "halo-blog-sidebar"
+      },
+      {
+        "type": "heading",
+        "content": "BLock Settings"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show All Categories",
+        "id": "halo-sidebar-all-categories"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Shop By Price",
+        "id": "shop_by_price_visibility",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Shop By Brand",
+        "id": "halo-sidebar-shop-by-brand",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Products Block",
+        "id": "halo-sidebar-products",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "halo-sidebar-products-title"
+      },
+      {
+        "type": "text",
+        "label": "Advertisement Image",
+        "id": "halo-sidebar-image"
+      },
+      {
+        "type": "text",
+        "label": "Link",
+        "id": "halo-sidebar-image-link"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Custom Block",
+        "id": "halo-sidebar-custom-block"
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "halo-sidebar-custom-block-title"
+      },
+      {
+        "type": "input",
+        "label": "Text",
+        "id": "halo-sidebar-custom-block-text"
+      }
+    ]
+  },
+  {
+    "name": "Product Card",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Product Card Settings"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Brand On Card",
+        "id": "halo_card_brand",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Ratings On Card",
+        "id": "halo_card_ratings",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Quick view Button On Product",
+        "force_reload": true,
+        "id": "show_product_quick_view"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Quickview On Mobile / Tablet",
+        "id": "show_product_quick_view_mobile",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Image Dimension"
+      },
+      {
+        "type": "imageDimension",
+        "label": "List / Grid Layout",
+        "id": "gallery_size",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "300x300",
+            "label": "Optimized For Theme"
+          },
+          {
+            "value": "custom",
+            "label": "Specify Dimensions"
           }
         ]
       },
       {
         "type": "imageDimension",
-        "label": "i18n.ThumbnailImageInProductPage",
-        "id": "productview_thumb_size",
+        "label": "Lookbook",
+        "id": "product_lookbook_size",
         "force_reload": true,
         "options": [
           {
-            "value": "50x50",
-            "label": "i18n.OptimizedForTheme"
+            "value": "210x270",
+            "label": "Optimized For Theme"
           },
           {
             "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "label": "Specify Dimensions"
           }
         ]
       },
       {
         "type": "imageDimension",
-        "label": "i18n.ThumbnailImageInCartAnd",
-        "id": "productthumb_size",
+        "label": "Quick Search",
+        "id": "product_quicksearch_size",
         "force_reload": true,
         "options": [
           {
-            "value": "100x100",
-            "label": "i18n.OptimizedForTheme"
+            "value": "170x220",
+            "label": "Optimized For Theme"
           },
           {
             "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "label": "Specify Dimensions"
           }
         ]
       },
       {
         "type": "imageDimension",
-        "label": "i18n.ZoomedImage",
-        "id": "zoom_size",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "1280x1280",
-            "label": "i18n.OptimizedForTheme"
-          },
-          {
-            "value": "custom",
-            "label": "i18n.SpecifyDimensions"
-          }
-        ]
-      },
-      {
-        "type": "imageDimension",
-        "label": "i18n.ImageInGalleryView",
+        "label": "Image In Gallery View",
         "id": "productgallery_size",
         "force_reload": true,
         "options": [
           {
-            "value": "500x659",
-            "label": "i18n.OptimizedForTheme"
+            "value": "500x632",
+            "label": "OptimizedForTheme"
           },
           {
             "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "label": "SpecifyDimensions"
           }
         ]
       },
       {
-        "type": "imageDimension",
-        "label": "i18n.BrandImageInGalleryView",
-        "id": "brand_size",
+        "type": "heading",
+        "content": "Title"
+      },
+      {
+        "type": "select",
+        "id": "halo_card_title",
+        "label": "Card Title",
         "force_reload": true,
         "options": [
           {
-            "value": "190x250",
-            "label": "i18n.OptimizedForTheme"
+            "value": "full",
+            "label": "Full Text"
           },
           {
-            "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "value": "ellipsis",
+            "label": "Limit (x) line(s)"
           }
         ]
       },
       {
-        "label": "i18n.ProductSwatchImages",
-        "type": "imageDimension",
-        "id": "swatch_option_size",
+        "type": "select",
+        "id": "halo_card_title-line",
+        "label": "Card Title: Line(s)",
+        "reference": "halo_card_title",
+        "reference_default": "full",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "label": "Product Header Text Color",
+        "id": "card-title-color"
+      },
+      {
+        "type": "color",
+        "label": "Product Header Text Hover Color",
+        "id": "card-title-color-hover"
+      },
+      {
+        "type": "heading",
+        "content": "Labels"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Product Labels",
+        "id": "halo-label-product"
+      },
+      {
+        "type": "color",
+        "label": "Badge Text Color",
+        "id": "color_text_product_sale_badges"
+      },
+      {
+        "type": "color",
+        "label": "Sale Label: Background",
+        "id": "color_bg_product_sale_badges"
+      },
+      {
+        "type": "color",
+        "label": "New Label: Text Color",
+        "id": "color_text_product_new_badges"
+      },
+      {
+        "type": "color",
+        "label": "New Label: Background",
+        "id": "color_bg_product_new_badges"
+      },
+      {
+        "type": "color",
+        "label": "Custom Label: Text Color",
+        "id": "color_text_product_custom_badges"
+      },
+      {
+        "type": "color",
+        "label": "Custom Label: Background",
+        "id": "color_bg_product_custom_badges"
+      },
+      {
+        "type": "color",
+        "label": "Sold Out Label: Text Color",
+        "id": "color_text_product_soldOut_badges"
+      },
+      {
+        "type": "color",
+        "label": "Sold Out Label: Background",
+        "id": "color_bg_product_soldOut_badges"
+      },
+      {
+        "type": "heading",
+        "content": "Prices"
+      },
+      {
+        "type": "checkbox",
+        "label": "Hide purchase options (price and add to cart button) for customers who aren't logged in",
+        "force_reload": true,
+        "id": "restrict_to_login"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show price ranges for products with variants. If disabled it will show the product price",
+        "force_reload": true,
+        "id": "price_ranges"
+      },
+      {
+        "type": "text",
+        "label": "Product Price Label Sale",
+        "id": "pdp-sale-price-label"
+      },
+      {
+        "type": "text",
+        "label": "Product Price Label Before Sale",
+        "id": "pdp-non-sale-price-label"
+      },
+      {
+        "type": "text",
+        "label": "Product Price Label Retail",
+        "id": "pdp-retail-price-label"
+      },
+      {
+        "type": "text",
+        "label": "Product Price Label",
+        "id": "pdp-price-label"
+      },
+      {
+        "type": "color",
+        "label": "Sale Price Color",
+        "id": "sale_price_color"
+      },
+      {
+        "type": "heading",
+        "content": "Functions"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Product Image Swap",
+        "id": "halo_card_image_swap",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Ajax Add To Cart",
+        "id": "haloAjaxAddToCart",
+        "force_reload": true
+      },
+      {
+        "type": "select",
+        "label": "Add To Cart Action",
+        "id": "haloAddToCartAction",
         "force_reload": true,
         "options": [
           {
-            "value": "22x22",
-            "label": "i18n.Standard"
+            "value": "sidebar",
+            "label": "Open Side Cart"
           },
           {
-            "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "value": "cart",
+            "label": "Redirect To Cart Page"
           }
         ]
+      },
+      {
+        "type": "heading",
+        "content": "Add Option For Products"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Add Option For Products",
+        "id": "haloAddOptionForProduct",
+        "force_reload": true
       }
     ]
   },
   {
-    "name": "i18n.ButtonsAndIcons",
-    "settings": [
-      {
-        "type": "heading",
-        "content": "i18n.PrimaryActionButton"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonTextColor",
-        "id": "button--primary-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonTextHoverColor",
-        "id": "button--primary-colorHover"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonTextActiveColor",
-        "id": "button--primary-colorActive"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBackground",
-        "id": "button--primary-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBackgroundHover",
-        "id": "button--primary-backgroundColorHover"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBackgroundActive",
-        "id": "button--primary-backgroundColorActive"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.SecondaryActionButton"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonTextColor",
-        "id": "button--default-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonTextHoverColor",
-        "id": "button--default-colorHover"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonTextActiveColor",
-        "id": "button--default-colorActive"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBorder",
-        "id": "button--default-borderColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBorderHover",
-        "id": "button--default-borderColorHover"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBorderActive",
-        "id": "button--default-borderColorActive"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.TertiaryActionButton"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBackground",
-        "id": "select-bg-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonArrowIcon",
-        "id": "select-arrow-color"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.DisabledButton"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonTextColor",
-        "id": "button--disabled-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBackground",
-        "id": "button--disabled-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBorder",
-        "id": "button--disabled-borderColor"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.Icons"
-      },
-      {
-        "type": "color",
-        "label": "i18n.SocialMediaIcon",
-        "id": "icon-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.SocialMediaIconHover",
-        "id": "icon-color-hover"
-      },
-      {
-        "type": "color",
-        "label": "i18n.StarReviewIconFull",
-        "id": "icon-ratingFull"
-      },
-      {
-        "type": "color",
-        "label": "i18n.StarReviewIconEmpty",
-        "id": "icon-ratingEmpty"
-      },
-      {
-        "type": "color",
-        "label": "i18n.IncreasedecreaseButtonIcon",
-        "id": "button--icon-svg-color"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.CheckboxesAndRadioButtons"
-      },
-      {
-        "type": "color",
-        "label": "i18n.CheckboxAndRadioIcon",
-        "id": "checkRadio-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBackground",
-        "id": "checkRadio-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ButtonBorder",
-        "id": "checkRadio-borderColor"
-      }
-    ]
-  },
-  {
-    "name": "i18n.CheckoutPage",
+    "name": "Checkout Page",
     "enable": "ucoEnabled",
     "settings": [
       {
         "type": "heading",
-        "content": "i18n.Header"
+        "content": "Header"
       },
       {
         "type": "checkbox",
-        "label": "i18n.UseBackgroundImage",
+        "label": "Use Background Image",
         "id": "optimizedCheckout-show-backgroundImage"
       },
       {
         "type": "optimizedCheckout-image",
-        "label": "i18n.1000X400pxRecommended",
+        "label": "1000X400px Recommended",
         "reference": "optimizedCheckout-show-backgroundImage",
         "reference_default": false,
         "id": "optimizedCheckout-backgroundImage"
@@ -2062,58 +3540,58 @@
       {
         "type": "imageDimension",
         "description": "Please specify a maximum image size for desktop display. We'll automatically scale down the image for smaller devices.",
-        "label": "i18n.HeaderImageSize",
+        "label": "Header Image Size",
         "reference": "optimizedCheckout-backgroundImage",
         "reference_default": "",
         "id": "optimizedCheckout-backgroundImage-size",
         "options": [
           {
             "value": "1000x400",
-            "label": "i18n.OptimizedForTheme"
+            "label": "Optimized For Theme"
           },
           {
             "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "label": "Specify Dimensions"
           }
         ]
       },
       {
         "type": "color",
-        "label": "i18n.BackgroundColor",
+        "label": "Background Color",
         "id": "optimizedCheckout-header-backgroundColor"
       },
       {
         "type": "color",
-        "label": "i18n.HeaderTextColor",
+        "label": "Header Text Color",
         "id": "optimizedCheckout-header-textColor"
       },
       {
         "type": "color",
-        "label": "i18n.HeaderBorder",
+        "label": "Header Border",
         "id": "optimizedCheckout-header-borderColor"
       },
       {
         "type": "heading",
-        "content": "i18n.Logo"
+        "content": "Logo"
       },
       {
         "type": "select",
-        "label": "i18n.LogoType",
+        "label": "Logo Type",
         "id": "optimizedCheckout-show-logo",
         "options": [
           {
             "value": "none",
-            "label": "i18n.Text"
+            "label": "Text"
           },
           {
             "value": "custom",
-            "label": "i18n.Image"
+            "label": "Image"
           }
         ]
       },
       {
         "type": "optimizedCheckout-image",
-        "label": "i18n.250X100pxRecommended",
+        "label": "250X100px Recommended",
         "reference": "optimizedCheckout-show-logo",
         "reference_default": "none",
         "force_reload": true,
@@ -2130,1327 +3608,731 @@
         "options": [
           {
             "value": "250x100",
-            "label": "i18n.OptimizedForTheme"
+            "label": "Optimized For Theme"
           },
           {
             "value": "custom",
-            "label": "i18n.SpecifyDimensions"
+            "label": "Specify Dimensions"
           }
         ]
       },
       {
         "type": "select",
-        "label": "i18n.LogoPosition",
+        "label": "Logo Position",
         "id": "optimizedCheckout-logo-position",
         "options": [
           {
             "value": "left",
-            "label": "i18n.Left"
+            "label": "Left"
           },
           {
             "value": "center",
-            "label": "i18n.Center"
+            "label": "Center"
           },
           {
             "value": "right",
-            "label": "i18n.Right"
+            "label": "Right"
           }
         ]
       },
       {
         "type": "heading",
-        "content": "i18n.DiscountBanner"
+        "content": "Order Summary Box"
       },
       {
         "type": "color",
-        "label": "i18n.BannerBackground",
-        "id": "optimizedCheckout-discountBanner-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BannerTextColor",
-        "id": "optimizedCheckout-discountBanner-textColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BannerIcon",
-        "id": "optimizedCheckout-discountBanner-iconColor"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.OrderSummaryBox"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BoxBackground",
+        "label": "Box Background",
         "id": "optimizedCheckout-orderSummary-backgroundColor"
       },
       {
         "type": "color",
-        "label": "i18n.BoxBorder",
+        "label": "Box Border",
         "id": "optimizedCheckout-orderSummary-borderColor"
       },
       {
         "type": "heading",
-        "content": "i18n.CheckoutSteps"
+        "content": "Checkout Steps"
       },
       {
         "type": "color",
-        "label": "i18n.IconBackground",
+        "label": "Icon Background",
         "id": "optimizedCheckout-step-backgroundColor"
       },
       {
         "type": "color",
-        "label": "i18n.IconBorder",
+        "label": "Icon Border",
         "id": "optimizedCheckout-step-borderColor"
       },
       {
         "type": "color",
-        "label": "i18n.IconTextColor",
+        "label": "Icon Text Color",
         "id": "optimizedCheckout-step-textColor"
       },
       {
         "type": "heading",
-        "content": "i18n.Headings"
-      },
-      {
-        "type": "font",
-        "label": "i18n.Heading1FontFamily",
-        "id": "optimizedCheckout-headingPrimary-font",
-        "options": [
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSans",
-            "value": "Google_Open+Sans_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSansBold",
-            "value": "Google_Open+Sans_700"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratLight",
-            "value": "Google_Montserrat_400"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratBold",
-            "value": "Google_Montserrat_700"
-          },
-          {
-            "group": "i18n.Karla",
-            "label": "i18n.Karla",
-            "value": "Google_Karla_400"
-          },
-          {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
-            "value": "Google_Roboto_400"
-          },
-          {
-            "group": "i18n.SourceSansPro",
-            "label": "i18n.SourceSansPro",
-            "value": "Google_Source+Sans+Pro_400"
-          },
-          {
-            "group": "i18n.Volkhov",
-            "label": "i18n.Volkhov",
-            "value": "Google_Volkhov_400"
-          }
-        ]
+        "content": "Headings"
       },
       {
         "type": "color",
-        "label": "i18n.Heading1TextColor",
+        "label": "Heading 1 Text Color",
         "id": "optimizedCheckout-headingPrimary-color"
       },
       {
-        "type": "font",
-        "label": "i18n.Heading2FontFamily",
-        "id": "optimizedCheckout-headingSecondary-font",
-        "options": [
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSans",
-            "value": "Google_Open+Sans_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSansBold",
-            "value": "Google_Open+Sans_700"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratLight",
-            "value": "Google_Montserrat_400"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratBold",
-            "value": "Google_Montserrat_700"
-          },
-          {
-            "group": "i18n.Karla",
-            "label": "i18n.Karla",
-            "value": "Google_Karla_400"
-          },
-          {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
-            "value": "Google_Roboto_400"
-          },
-          {
-            "group": "i18n.SourceSansPro",
-            "label": "i18n.SourceSansPro",
-            "value": "Google_Source+Sans+Pro_400"
-          },
-          {
-            "group": "i18n.Volkhov",
-            "label": "i18n.Volkhov",
-            "value": "Google_Volkhov_400"
-          }
-        ]
-      },
-      {
         "type": "color",
-        "label": "i18n.Heading2TextColor",
+        "label": "Heading 2 Text Color",
         "id": "optimizedCheckout-headingSecondary-color"
       },
       {
         "type": "heading",
-        "content": "i18n.Body"
+        "content": "Body"
       },
       {
         "type": "color",
-        "label": "i18n.PageBackground",
+        "label": "Page Background",
         "id": "optimizedCheckout-body-backgroundColor"
       },
       {
-        "type": "color",
-        "label": "i18n.FocusColor",
-        "id": "optimizedCheckout-colorFocus"
-      },
-      {
         "type": "heading",
-        "content": "i18n.BodyTextAndLinks"
-      },
-      {
-        "type": "font",
-        "label": "i18n.BodyTextFontFamily",
-        "id": "optimizedCheckout-contentPrimary-font",
-        "options": [
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSans",
-            "value": "Google_Open+Sans_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSansBold",
-            "value": "Google_Open+Sans_700"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratLight",
-            "value": "Google_Montserrat_400"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.Montserrat",
-            "value": "Google_Montserrat_500"
-          },
-          {
-            "group": "i18n.Karla",
-            "label": "i18n.Karla",
-            "value": "Google_Karla_400"
-          },
-          {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
-            "value": "Google_Roboto_400"
-          },
-          {
-            "group": "i18n.SourceSansPro",
-            "label": "i18n.SourceSansPro",
-            "value": "Google_Source+Sans+Pro_400"
-          },
-          {
-            "group": "i18n.Volkhov",
-            "label": "i18n.Volkhov",
-            "value": "Google_Volkhov_400"
-          }
-        ]
+        "content": "Body Text And Links"
       },
       {
         "type": "color",
-        "label": "i18n.BodyTextColor",
+        "label": "Body Text Color",
         "id": "optimizedCheckout-contentPrimary-color"
       },
       {
-        "type": "font",
-        "label": "i18n.SecondaryTextFontFamily",
-        "id": "optimizedCheckout-contentSecondary-font",
-        "options": [
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSans",
-            "value": "Google_Open+Sans_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSansBold",
-            "value": "Google_Open+Sans_700"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratLight",
-            "value": "Google_Montserrat_400"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.Montserrat",
-            "value": "Google_Montserrat_500"
-          },
-          {
-            "group": "i18n.Karla",
-            "label": "i18n.Karla",
-            "value": "Google_Karla_400"
-          },
-          {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
-            "value": "Google_Roboto_400"
-          },
-          {
-            "group": "i18n.SourceSansPro",
-            "label": "i18n.SourceSansPro",
-            "value": "Google_Source+Sans+Pro_400"
-          },
-          {
-            "group": "i18n.Volkhov",
-            "label": "i18n.Volkhov",
-            "value": "Google_Volkhov_400"
-          }
-        ]
-      },
-      {
         "type": "color",
-        "label": "i18n.SecondaryTextColor",
+        "label": "Secondary Text Color",
         "id": "optimizedCheckout-contentSecondary-color"
       },
       {
-        "type": "font",
-        "label": "i18n.LinkFontFamily",
-        "id": "optimizedCheckout-link-font",
-        "options": [
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSans",
-            "value": "Google_Open+Sans_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSansBold",
-            "value": "Google_Open+Sans_700"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratLight",
-            "value": "Google_Montserrat_400"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.Montserrat",
-            "value": "Google_Montserrat_500"
-          },
-          {
-            "group": "i18n.Karla",
-            "label": "i18n.Karla",
-            "value": "Google_Karla_400"
-          },
-          {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
-            "value": "Google_Roboto_400"
-          },
-          {
-            "group": "i18n.SourceSansPro",
-            "label": "i18n.SourceSansPro",
-            "value": "Google_Source+Sans+Pro_400"
-          },
-          {
-            "group": "i18n.Volkhov",
-            "label": "i18n.Volkhov",
-            "value": "Google_Volkhov_400"
-          }
-        ]
-      },
-      {
         "type": "color",
-        "label": "i18n.LinkColor",
+        "label": "Link Color",
         "id": "optimizedCheckout-link-color"
       },
       {
         "type": "color",
-        "label": "i18n.LinkHoverColor",
+        "label": "Link Hover Color",
         "id": "optimizedCheckout-link-hoverColor"
       },
       {
         "type": "heading",
-        "content": "i18n.PrimaryActionButton"
-      },
-      {
-        "type": "font",
-        "label": "i18n.ButtonTextFontFamily",
-        "id": "optimizedCheckout-buttonPrimary-font",
-        "options": [
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSans",
-            "value": "Google_Open+Sans_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSansBold",
-            "value": "Google_Open+Sans_700"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratLight",
-            "value": "Google_Montserrat_400"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.Montserrat",
-            "value": "Google_Montserrat_500"
-          },
-          {
-            "group": "i18n.Karla",
-            "label": "i18n.Karla",
-            "value": "Google_Karla_400"
-          },
-          {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
-            "value": "Google_Roboto_400"
-          },
-          {
-            "group": "i18n.SourceSansPro",
-            "label": "i18n.SourceSansPro",
-            "value": "Google_Source+Sans+Pro_400"
-          },
-          {
-            "group": "i18n.Volkhov",
-            "label": "i18n.Volkhov",
-            "value": "Google_Volkhov_400"
-          }
-        ]
+        "content": "Primary Action Button"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonTextColor",
+        "label": "Button Text Color",
         "id": "optimizedCheckout-buttonPrimary-color"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonTextHoverColor",
+        "label": "Button Text Hover Color",
         "id": "optimizedCheckout-buttonPrimary-colorHover"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonTextActiveColor",
+        "label": "Button Text Active Color",
         "id": "optimizedCheckout-buttonPrimary-colorActive"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonTextDisabledColor",
+        "label": "Button Text Disabled Color",
         "id": "optimizedCheckout-buttonPrimary-colorDisabled"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBackground",
+        "label": "Button Background",
         "id": "optimizedCheckout-buttonPrimary-backgroundColor"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBackgroundHover",
+        "label": "Button Background Hover",
         "id": "optimizedCheckout-buttonPrimary-backgroundColorHover"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBackgroundActive",
+        "label": "Button Background Active",
         "id": "optimizedCheckout-buttonPrimary-backgroundColorActive"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBackgroundDisabled",
+        "label": "Button Background Disabled",
         "id": "optimizedCheckout-buttonPrimary-backgroundColorDisabled"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBorder",
+        "label": "Button Border",
         "id": "optimizedCheckout-buttonPrimary-borderColor"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBorderHover",
+        "label": "Button Border Hover",
         "id": "optimizedCheckout-buttonPrimary-borderColorHover"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBorderActive",
+        "label": "Button Border Active",
         "id": "optimizedCheckout-buttonPrimary-borderColorActive"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBorderDisabled",
+        "label": "Button Border Disabled",
         "id": "optimizedCheckout-buttonPrimary-borderColorDisabled"
       },
       {
         "type": "heading",
-        "content": "i18n.SecondaryActionButton"
-      },
-      {
-        "type": "font",
-        "label": "i18n.ButtonTextFontFamily",
-        "id": "optimizedCheckout-buttonSecondary-font",
-        "options": [
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSans",
-            "value": "Google_Open+Sans_400"
-          },
-          {
-            "group": "i18n.OpenSans",
-            "label": "i18n.OpenSansBold",
-            "value": "Google_Open+Sans_700"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.MontserratLight",
-            "value": "Google_Montserrat_400"
-          },
-          {
-            "group": "i18n.Montserrat",
-            "label": "i18n.Montserrat",
-            "value": "Google_Montserrat_500"
-          },
-          {
-            "group": "i18n.Karla",
-            "label": "i18n.Karla",
-            "value": "Google_Karla_400"
-          },
-          {
-            "group": "i18n.Roboto",
-            "label": "i18n.Roboto",
-            "value": "Google_Roboto_400"
-          },
-          {
-            "group": "i18n.SourceSansPro",
-            "label": "i18n.SourceSansPro",
-            "value": "Google_Source+Sans+Pro_400"
-          },
-          {
-            "group": "i18n.Volkhov",
-            "label": "i18n.Volkhov",
-            "value": "Google_Volkhov_400"
-          }
-        ]
+        "content": "Secondary Action Button"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonTextColor",
+        "label": "Button Text Color",
         "id": "optimizedCheckout-buttonSecondary-color"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonTextHoverColor",
+        "label": "Button Text Hover Color",
         "id": "optimizedCheckout-buttonSecondary-colorHover"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonTextActiveColor",
+        "label": "Button Text Active Color",
         "id": "optimizedCheckout-buttonSecondary-colorActive"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBackground",
+        "label": "Button Background",
         "id": "optimizedCheckout-buttonSecondary-backgroundColor"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBackgroundHover",
+        "label": "Button Background Hover",
         "id": "optimizedCheckout-buttonSecondary-backgroundColorHover"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBackgroundActive",
+        "label": "Button Background Active",
         "id": "optimizedCheckout-buttonSecondary-backgroundColorActive"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBorder",
+        "label": "Button Border",
         "id": "optimizedCheckout-buttonSecondary-borderColor"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBorderHover",
+        "label": "Button Border Hover",
         "id": "optimizedCheckout-buttonSecondary-borderColorHover"
       },
       {
         "type": "color",
-        "label": "i18n.ButtonBorderActive",
+        "label": "Button Border Active",
         "id": "optimizedCheckout-buttonSecondary-borderColorActive"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.FormInputFields1"
-      },
-      {
-        "type": "color",
-        "label": "i18n.LabelTextColor",
-        "id": "optimizedCheckout-form-textColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldTextColor",
-        "id": "optimizedCheckout-formField-textColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldPlaceholderTextColor",
-        "id": "optimizedCheckout-formField-placeholderColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldErrorTextColor",
-        "id": "optimizedCheckout-formField-errorColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldBackground",
-        "id": "optimizedCheckout-formField-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldInnerShadow",
-        "id": "optimizedCheckout-formField-shadowColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FieldBorder",
-        "id": "optimizedCheckout-formField-borderColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.CheckboxButtonBackground",
-        "id": "optimizedCheckout-formField-inputControlColor"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.FormChecklist"
-      },
-      {
-        "type": "color",
-        "label": "i18n.BackgroundColor",
-        "id": "optimizedCheckout-formChecklist-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FormBackground",
-        "id": "optimizedCheckout-formChecklist-backgroundColorSelected"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FormHeaderTextColor",
-        "id": "optimizedCheckout-formChecklist-color"
-      },
-      {
-        "type": "color",
-        "label": "i18n.FormBorderColor",
-        "id": "optimizedCheckout-formChecklist-borderColor"
-      },
-      {
-        "type": "heading",
-        "content": "i18n.LoadingToaster"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ToasterBackground",
-        "id": "optimizedCheckout-loadingToaster-backgroundColor"
-      },
-      {
-        "type": "color",
-        "label": "i18n.ToasterTextColor",
-        "id": "optimizedCheckout-loadingToaster-textColor"
       }
     ]
   },
   {
-    "name": "i18n.PaymentButtons",
-    "enable": "smartButtons",
+    "name": "Other Pages",
     "settings": [
       {
         "type": "heading",
-        "content": "i18n.PaymentButtonsContainer"
+        "content": "Brands Page"
+      },
+      {
+        "type": "checkbox",
+        "label": "A To Z Layout",
+        "id": "halo_brandAZlayout",
+        "force_reload": true
+      },
+      {
+        "type": "heading",
+        "content": "Cart Page"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Secure Images",
+        "id": "halo-cart-secure-image"
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "halo-cart-secure-image-label"
+      },
+      {
+        "type": "text",
+        "label": "Image 1",
+        "id": "halo-cart-secure-image-1"
+      },
+      {
+        "type": "text",
+        "label": "Image 2",
+        "id": "halo-cart-secure-image-2"
+      },
+      {
+        "type": "text",
+        "label": "Image 3",
+        "id": "halo-cart-secure-image-3"
+      },
+      {
+        "type": "text",
+        "label": "Image 4",
+        "id": "halo-cart-secure-image-4"
+      },
+      {
+        "type": "text",
+        "label": "Image 5",
+        "id": "halo-cart-secure-image-5"
+      },
+      {
+        "type": "text",
+        "label": "Image 6",
+        "id": "halo-cart-secure-image-6"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Cart Notification",
+        "id": "halo-cart-notification"
+      },
+      {
+        "type": "text",
+        "label": "Text 1",
+        "id": "halo-cart-notification-text1"
+      },
+      {
+        "type": "text",
+        "label": "Text 2",
+        "id": "halo-cart-notification-text2"
       },
       {
         "type": "select",
-        "label": "i18n.ButtonContainer",
+        "label": "CountDown (x) Minutes",
+        "id": "halo-cart-notification-time",
         "force_reload": true,
-        "id": "paymentbuttons-container",
         "options": [
           {
-            "value": "small",
-            "label": "Small"
+            "value": "10",
+            "label": "10"
           },
           {
-            "value": "medium",
-            "label": "Medium"
+            "value": "15",
+            "label": "15"
           },
           {
-            "value": "large",
-            "label": "Large"
+            "value": "20",
+            "label": "20"
+          },
+          {
+            "value": "30",
+            "label": "30"
           }
         ]
       },
       {
         "type": "heading",
-        "content": "i18n.QuickPaymentButtons"
+        "content": "Contact Us Page"
       },
       {
-        "type": "select",
-        "label": "i18n.NumberOfButtonsAlwaysVisible",
-        "force_reload": true,
-        "id": "paymentbuttons-number-of-buttons",
-        "options": [
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          }
-        ]
-      },
-      {
-        "type": "sort",
-        "label": "i18n.ProviderSortingOrderLabel",
-        "id": "paymentbuttons-provider-sorting",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "paypal",
-            "label": "i18n.PayPalProviderSortingLabel",
-            "enabledBy": "paypal"
-          },
-          {
-            "value": "paypal-credit",
-            "label": "i18n.PayPalCreditProviderSortingLabel",
-            "enabledBy": "paypal-credit"
-          },
-          {
-            "value": "paypal-venmo",
-            "label": "i18n.PayPalVenmoProviderSortingLabel",
-            "enabledBy": "paypal-venmo"
-          },
-          {
-            "value": "sepa",
-            "label": "i18n.PayPalSepaProviderSortingLabel",
-            "enabledBy": "sepa"
-          },
-          {
-            "value": "googlepay",
-            "label": "i18n.GooglepayProviderSortingLabel",
-            "enabledBy": "googlepay"
-          },
-          {
-            "value": "applepay",
-            "label": "i18n.ApplepayProviderSortingLabel",
-            "enabledBy": "applepay"
-          },
-          {
-            "value": "afterpay",
-            "label": "i18n.AfterpayProviderSortingLabel",
-            "enabledBy": "afterpay"
-          },
-          {
-            "value": "amazonpay",
-            "label": "i18n.AmazonProviderSortingLabel",
-            "enabledBy": "amazonpay"
-          },
-          {
-            "value": "masterpass",
-            "label": "i18n.MasterpassProviderSortingLabel",
-            "enabledBy": "masterpass"
-          }
-        ]
+        "type": "checkbox",
+        "label": "Show Google Map",
+        "id": "halo-google-map"
       },
       {
         "type": "heading",
-        "content": "i18n.PaypalAcceleratedCheckoutButton",
-        "enable": "payPalAcceleratedCheckoutEnabled"
+        "content": "FAQs Page"
       },
       {
-        "type": "color",
-        "label": "i18n.ButtonColor",
-        "id": "paymentbuttons-paypal-accelerated-checkout-color",
-        "enable": "payPalAcceleratedCheckoutEnabled"
+        "type": "checkbox",
+        "label": "Show Sidebar On FAQs Page",
+        "id": "halo-faqs-sidebar"
       },
       {
-        "type": "color",
-        "label": "i18n.ContentColor",
-        "id": "paymentbuttons-paypal-accelerated-content-color",
-        "enable": "payPalAcceleratedCheckoutEnabled"
+        "type": "text",
+        "label": "Title",
+        "id": "halo-faqs-sidebar-title"
       },
       {
-        "type": "select",
-        "label": "i18n.ButtonContent",
-        "id": "paymentbuttons-paypal-accelerated-content-label",
-        "enable": "payPalAcceleratedCheckoutEnabled",
-        "options": [
-          {
-            "value": "buy",
-            "label": "i18n.Buy"
-          },
-          {
-            "value": "checkout",
-            "label": "i18n.Checkout"
-          },
-          {
-            "value": "pay",
-            "label": "i18n.Pay"
-          },
-          {
-            "value": "buynow",
-            "label": "i18n.BuyNow"
-          },
-          {
-            "value": "paynow",
-            "label": "i18n.PayNow"
-          },
-          {
-            "value": "checkoutnow",
-            "label": "i18n.CheckoutNow"
-          },
-          {
-            "value": "proceedtocheckout",
-            "label": "i18n.ProceedToCheckout"
-          }
-        ]
+        "type": "text",
+        "label": "Text Icon 1",
+        "id": "halo-faqs-sidebar-icon1"
       },
       {
-        "type": "color",
-        "label": "i18n.BorderColor",
-        "id": "paymentbuttons-paypal-accelerated-border-color",
-        "enable": "payPalAcceleratedCheckoutEnabled"
+        "type": "text",
+        "label": "Link Icon 1",
+        "id": "halo-faqs-sidebar-icon1-link"
       },
       {
-        "type": "heading",
-        "content": "i18n.SmartPaypalButton",
-        "enable": "payPalProvidersEnabled"
+        "type": "text",
+        "label": "Text Icon 2",
+        "id": "halo-faqs-sidebar-icon2"
       },
       {
-        "type": "select",
-        "label": "i18n.ButtonColor",
-        "id": "paymentbuttons-paypal-color",
-        "enable": "payPalProvidersEnabled",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "gold",
-            "label": "i18n.Gold"
-          },
-          {
-            "value": "blue",
-            "label": "i18n.Blue"
-          },
-          {
-            "value": "silver",
-            "label": "i18n.Silver"
-          },
-          {
-            "value": "black",
-            "label": "i18n.Black"
-          },
-          {
-            "value": "white",
-            "label": "i18n.White"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonShape",
-        "id": "paymentbuttons-paypal-shape",
-        "enable": "payPalProvidersEnabled",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "pill",
-            "label": "i18n.Pill"
-          },
-          {
-            "value": "rect",
-            "label": "i18n.Rectangle"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonContent",
-        "id": "paymentbuttons-paypal-label",
-        "enable": "payPalProvidersEnabled",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "checkout",
-            "label": "i18n.PayPalCheckout"
-          },
-          {
-            "value": "pay",
-            "label": "i18n.PayWithPayPal"
-          },
-          {
-            "value": "buynow",
-            "label": "i18n.BuyNow"
-          },
-          {
-            "value": "paypal",
-            "label": "i18n.PayPal"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.DisplayStyle",
-        "id": "paymentbuttons-paypal-layout",
-        "enable": "payPalProvidersEnabled",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "horizontal",
-            "label": "i18n.ShowButtonsHorizontally"
-          },
-          {
-            "value": "vertical",
-            "label": "i18n.ShowButtonsVertically"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.CheckoutPayPalButton",
-        "enable": "payPalProvidersEnabled"
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonColor",
-        "id": "checkout-paymentbuttons-paypal-color",
-        "enable": "payPalProvidersEnabled",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "gold",
-            "label": "i18n.Gold"
-          },
-          {
-            "value": "blue",
-            "label": "i18n.Blue"
-          },
-          {
-            "value": "silver",
-            "label": "i18n.Silver"
-          },
-          {
-            "value": "black",
-            "label": "i18n.Black"
-          },
-          {
-            "value": "white",
-            "label": "i18n.White"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonShape",
-        "id": "checkout-paymentbuttons-paypal-shape",
-        "enable": "payPalProvidersEnabled",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "pill",
-            "label": "i18n.Pill"
-          },
-          {
-            "value": "rect",
-            "label": "i18n.Rectangle"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonSize",
-        "id": "checkout-paymentbuttons-paypal-size",
-        "enable": "payPalProvidersEnabled",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "small",
-            "label": "i18n.Small"
-          },
-          {
-            "value": "medium",
-            "label": "i18n.Medium"
-          },
-          {
-            "value": "large",
-            "label": "i18n.Large"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonContent",
-        "id": "checkout-paymentbuttons-paypal-label",
-        "enable": "payPalProvidersEnabled",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "checkout",
-            "label": "i18n.PayPalCheckout"
-          },
-          {
-            "value": "pay",
-            "label": "i18n.PayWithPayPal"
-          },
-          {
-            "value": "buynow",
-            "label": "i18n.BuyNow"
-          },
-          {
-            "value": "paypal",
-            "label": "i18n.PayPal"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.GooglePaySettings",
-        "enable": "googleProvidersEnabled"
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonColor",
-        "id": "googlepay-button-color",
-        "enable": "googleProvidersEnabled",
-        "options": [
-          {
-            "value": "black",
-            "label": "i18n.BlackWhiteText"
-          },
-          {
-            "value": "white",
-            "label": "i18n.WhiteBlackText"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.ApplePaySettings",
-        "enable": "appleProvidersEnabled"
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonColor",
-        "id": "applePay-button",
-        "enable": "appleProvidersEnabled",
-        "options": [
-          {
-            "value": "black",
-            "label": "i18n.BlackWhiteText"
-          },
-          {
-            "value": "white",
-            "label": "i18n.WhiteBlackText"
-          },
-          {
-            "value": "white-border",
-            "label": "i18n.WhiteBlackTextWithBorder"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.AfterPaySettings",
-        "enable": "afterpayProvidersEnabled"
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonColor",
-        "id": "afterpay-button-color",
-        "enable": "afterpayProvidersEnabled",
-        "options": [
-          {
-            "value": "black-mint",
-            "label": "i18n.BlackOnMintText"
-          },
-          {
-            "value": "mint-black",
-            "label": "i18n.MintOnBlackText"
-          },
-          {
-            "value": "white",
-            "label": "i18n.BlackWhiteText"
-          },
-          {
-            "value": "black",
-            "label": "i18n.WhiteBlackText"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.AmazonSettings",
-        "enable": "amazonProvidersEnabled"
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonColor",
-        "id": "amazon-button-color",
-        "enable": "amazonProvidersEnabled",
-        "options": [
-          {
-            "value": "Gold",
-            "label": "i18n.Gold"
-          },
-          {
-            "value": "LightGray",
-            "label": "i18n.LightGray"
-          },
-          {
-            "value": "DarkGray",
-            "label": "i18n.DarkGray"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "content": "i18n.MasterpassSettings",
-        "enable": "masterpassProvidersEnabled"
-      },
-      {
-        "type": "select",
-        "label": "i18n.ButtonColor",
-        "id": "masterpass-button-color",
-        "enable": "masterpassProvidersEnabled",
-        "options": [
-          {
-            "value": "black",
-            "label": "i18n.BlackWhiteText"
-          },
-          {
-            "value": "white",
-            "label": "i18n.WhiteBlackText"
-          }
-        ]
+        "type": "text",
+        "label": "Link Icon 2",
+        "id": "halo-faqs-sidebar-icon2-link"
       }
     ]
   },
   {
-    "name": "i18n.PaymentBanners",
-    "enable": "paymentBanners",
+    "name": "Other Settings",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "i18n.BannersMessaging"
+        "type": "heading",
+        "content": "Newsletter Popup"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Newsletter Popup",
+        "id": "halo_newsletter_popup",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Don't Show Again",
+        "id": "halo_newsletter_popup_again",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Number Of Seconds To Show",
+        "id": "halo_newsletter_popup_time"
+      },
+      {
+        "type": "text",
+        "label": "Number Of Days To Show Again",
+        "id": "halo_newsletter_popup_expires_date"
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "halo_newsletter_subscribe",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Image",
+        "id": "halo_newsletter_popup_image",
+        "force_reload": true
       },
       {
         "type": "heading",
-        "content": "i18n.ProductPageBanner"
+        "content": "Ask An Expert"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Ask An Expert",
+        "id": "halo_ask_an_expert",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "halo_ask_an_expert_title",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 1",
+        "id": "halo_ask_an_expert_desc1",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 2",
+        "id": "halo_ask_an_expert_desc2",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Text 3",
+        "id": "halo_ask_an_expert_desc3",
+        "force_reload": true
+      },
+      {
+        "type": "text",
+        "label": "Mail",
+        "id": "halo_ask_an_expert_mailto"
+      },
+      {
+        "type": "text",
+        "label": "Mail Subject",
+        "id": "halo_ask_an_expert_subject_mail"
+      },
+      {
+        "type": "heading",
+        "content": "Recently Bought Popup"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Recently Bought Popup",
+        "id": "haloRecentlyBought",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Recently Bought Popup (Mobile)",
+        "id": "haloRecentlyBought_mobile"
+      },
+      {
+        "type": "text",
+        "label": "Text",
+        "id": "recently_bought_text_name"
+      },
+      {
+        "type": "text",
+        "label": "Info",
+        "id": "recently_bought_text_info"
+      },
+      {
+        "type": "text",
+        "label": "Hours",
+        "id": "recently_bought_hours"
+      },
+      {
+        "type": "text",
+        "label": "Product IDs",
+        "id": "recently_bought_productID"
+      },
+      {
+        "type": "text",
+        "label": "City - Country 1",
+        "id": "recently_bought_location1"
+      },
+      {
+        "type": "text",
+        "label": "City - Country 2",
+        "id": "recently_bought_location2"
+      },
+      {
+        "type": "text",
+        "label": "City - Country 3",
+        "id": "recently_bought_location3"
+      },
+      {
+        "type": "text",
+        "label": "City - Country 4",
+        "id": "recently_bought_location4"
+      },
+      {
+        "type": "text",
+        "label": "City - Country 5",
+        "id": "recently_bought_location5"
+      },
+      {
+        "type": "text",
+        "label": "City - Country 6",
+        "id": "recently_bought_location6"
+      },
+      {
+        "type": "text",
+        "label": "City - Country 7",
+        "id": "recently_bought_location7"
+      },
+      {
+        "type": "text",
+        "label": "City - Country 8",
+        "id": "recently_bought_location8"
       },
       {
         "type": "select",
-        "label": "i18n.BannerStyleColor",
-        "id": "paymentbanners-proddetailspage-color",
+        "label": "Switch After (s)",
+        "id": "recently_bought_changeSlides",
         "force_reload": true,
         "options": [
           {
-            "value": "blue",
-            "label": "i18n.Blue"
+            "value": 5,
+            "label": "5"
           },
           {
-            "value": "black",
-            "label": "i18n.Black"
+            "value": 10,
+            "label": "10"
           },
           {
-            "value": "white",
-            "label": "i18n.White"
+            "value": 15,
+            "label": "15"
           },
           {
-            "value": "white-no-border",
-            "label": "i18n.White-no-border"
+            "value": 30,
+            "label": "30"
           },
           {
-            "value": "gray",
-            "label": "i18n.gray"
-          },
-          {
-            "value": "monochrome",
-            "label": "i18n.monochrome"
-          },
-          {
-            "value": "grayscale",
-            "label": "i18n.grayscale"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "i18n.BannerStyleRatio",
-        "id": "paymentbanners-proddetailspage-ratio",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "8x1",
-            "label": "i18n.8x1"
-          },
-          {
-            "value": "20x1",
-            "label": "i18n.20x1"
+            "value": 60,
+            "label": "60"
           }
         ]
       },
       {
         "type": "heading",
-        "content": "i18n.HomePageBanner"
+        "content": "Recently Viewed Popup"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Recently Viewed Popup",
+        "id": "halo_recently_viewed_products",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Back To Top",
+        "id": "halo_recently_viewed_products_top",
+        "force_reload": true
       },
       {
         "type": "select",
-        "label": "i18n.BannerStyleColor",
-        "id": "paymentbanners-homepage-color",
+        "label": "Number Of Products",
+        "id": "halo_recently_viewed_products_count",
         "force_reload": true,
         "options": [
           {
-            "value": "blue",
-            "label": "i18n.Blue"
+            "value": 5,
+            "label": "5"
           },
           {
-            "value": "black",
-            "label": "i18n.Black"
-          },
-          {
-            "value": "white",
-            "label": "i18n.White"
-          },
-          {
-            "value": "white-no-border",
-            "label": "i18n.White-no-border"
-          },
-          {
-            "value": "gray",
-            "label": "i18n.gray"
-          },
-          {
-            "value": "monochrome",
-            "label": "i18n.monochrome"
-          },
-          {
-            "value": "grayscale",
-            "label": "i18n.grayscale"
+            "value": 10,
+            "label": "10"
           }
         ]
       },
       {
+        "type": "text",
+        "label": "Title",
+        "id": "halo_recently_viewed_products_title",
+        "force_reload": true
+      },
+      {
         "type": "select",
-        "label": "i18n.BannerStyleRatio",
-        "id": "paymentbanners-homepage-ratio",
-        "force_reload": true,
+        "label": "Expires Date",
+        "id": "halo_recently_viewed_products_expires_date",
         "options": [
           {
-            "value": "8x1",
-            "label": "i18n.8x1"
+            "value": 10,
+            "label": "10"
           },
           {
-            "value": "20x1",
-            "label": "i18n.20x1"
+            "value": 20,
+            "label": "20"
+          },
+          {
+            "value": 30,
+            "label": "30"
           }
         ]
       },
       {
         "type": "heading",
-        "content": "i18n.CartPageBanner"
+        "content": "Before You Leave"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Before You Leave",
+        "id": "halo_before_you_leave",
+        "force_reload": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Quick Search",
+        "id": "halo-before-you-leave-search"
+      },
+      {
+        "type": "text",
+        "label": "Show After (minutes)",
+        "id": "halo-before-you-leave-time"
+      },
+      {
+        "type": "text",
+        "label": "Image",
+        "id": "halo-before-you-leave-img"
+      },
+      {
+        "type": "text",
+        "label": "Title",
+        "id": "halo-before-you-leave-title"
+      },
+      {
+        "type": "text",
+        "label": "Text 1",
+        "id": "halo-before-you-leave-text-1"
+      },
+      {
+        "type": "text",
+        "label": "Sub Title 1",
+        "id": "halo-before-you-leave-heading-1"
+      },
+      {
+        "type": "text",
+        "label": "Text 2",
+        "id": "halo-before-you-leave-text-2"
+      },
+      {
+        "type": "text",
+        "label": "Sub Title 2",
+        "id": "halo-before-you-leave-heading-2"
+      },
+      {
+        "type": "text",
+        "label": "Button Text",
+        "id": "halo-before-you-leave-btn-text"
+      },
+      {
+        "type": "text",
+        "label": "Recommended Tab: Product IDs",
+        "id": "halo_before_you_leave_recommended_id"
+      },
+      {
+        "type": "heading",
+        "content": "Calculate Free Shipping"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Calculate Free Shipping",
+        "id": "halo_CalculateFreeShipping",
+        "force_reload": true
       },
       {
         "type": "select",
-        "label": "i18n.BannerTextStyleColor",
-        "id": "paymentbanners-cartpage-text-color",
+        "label": "Layout",
+        "id": "halo_CalculateFreeShipping_type",
         "force_reload": true,
         "options": [
           {
-            "value": "black",
-            "label": "i18n.Black"
+            "value": "all",
+            "label": "All Shipping Zones"
           },
           {
-            "value": "white",
-            "label": "i18n.White"
-          },
-          {
-            "value": "monochrome",
-            "label": "i18n.monochrome"
-          },
-          {
-            "value": "grayscale",
-            "label": "i18n.grayscale"
+            "value": "custom",
+            "label": "Specify Country"
           }
         ]
       },
       {
-        "type": "select",
-        "label": "i18n.BannerStyleLogoPosition",
-        "id": "paymentbanners-cartpage-logo-position",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "left",
-            "label": "i18n.left"
-          },
-          {
-            "value": "right",
-            "label": "i18n.right"
-          },
-          {
-            "value": "top",
-            "label": "i18n.top"
-          }
-        ]
+        "type": "text",
+        "label": "Specify Country",
+        "reference": "halo_CalculateFreeShipping_type",
+        "reference_default": "all",
+        "id": "halo_CalculateFreeShipping_list"
       },
       {
-        "type": "select",
-        "label": "i18n.BannerStyleLogoType",
-        "id": "paymentbanners-cartpage-logo-type",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "inline",
-            "label": "i18n.inline"
-          },
-          {
-            "value": "primary",
-            "label": "i18n.primary"
-          },
-          {
-            "value": "alternative",
-            "label": "i18n.alternative"
-          },
-          {
-            "value": "none",
-            "label": "i18n.none"
-          }
-        ]
+        "type": "text",
+        "label": "'Required' Message",
+        "id": "halo_CalculateFreeShipping_required"
+      },
+      {
+        "type": "text",
+        "label": "'Matched' Message",
+        "id": "halo_CalculateFreeShipping_matched"
+      },
+      {
+        "type": "text",
+        "label": "'Remaining' Message",
+        "id": "halo_CalculateFreeShipping_remaining"
+      },
+      {
+        "type": "heading",
+        "content": "Quick Edit Cart"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Quick Edit Cart",
+        "id": "halo_QuickEditCart",
+        "force_reload": true
       }
     ]
   }

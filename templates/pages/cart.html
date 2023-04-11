@@ -1,76 +1,73 @@
 ---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
 cart: true
 ---
 {{inject 'cancelButtonText' (lang 'common.cancel')}}
 {{#partial "page"}}
 {{inject 'invalidEntryMessage' (lang 'cart.invalid_entry_message')}}
-<div class="page">
-
-    <div class="page-content" data-cart>
-        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-        {{> components/cart/page-title}}
-
-        <div data-cart-status>
-            {{> components/cart/status-messages}}
+<div class="container">
+    <div class="page page-cart{{#if theme_settings.halo_CalculateFreeShipping}} has-calculate-shipping{{/if}}">
+        <div class="page-header">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            {{> components/cart/page-title}}
         </div>
-
-        {{#if cart.items.length}}
-            <div class="loadingOverlay"></div>
-
-            <div data-cart-content class="cart-content-padding-right">
-                {{> components/cart/content}}
-            </div>
-
-            <div data-cart-totals class="cart-content-padding-right">
-                {{> components/cart/totals}}
-            </div>
-
-            {{{region name="cart_below_totals"}}}
-
-            {{#or customer (unless settings.hide_price_from_guests)}}
-                {{#if cart.additional_checkout_buttons}}
-                    <div data-cart-accelerated-checkout-buttons class="cart-acceleratedCheckoutButtons cart-content-padding-right"></div>
-                {{/if}}
-
-                {{#if cart.show_primary_checkout_button}}
-                    <div class="cart-actions cart-content-padding-right">
-                        <a
-                                class="button button--primary"
-                                href="{{urls.checkout.single_address}}"
-                                title="{{lang 'cart.checkout.title'}}"
-                                data-primary-checkout-now-action
-                        >
-                            {{lang 'cart.checkout.button'}}
-                        </a>
-                        {{#if cart.show_multiple_address_shipping}}
-                            <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
-                                {{lang 'cart.preview.checkout_multiple'}}
-                            </a>
-                        {{/if}}
-                    </div>
-                {{else}}
-                    <div class="cart-actions cart-content-padding-right">
-                        <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
-                    </div>
-                {{/if}}
-
-                {{#if cart.additional_checkout_buttons}}
-                    <div data-cart-additional-checkout-buttons class="cart-additionalCheckoutButtons cart-content-padding-right">
-                        {{> components/cart/additional-checkout-buttons}}
-                    </div>
-                {{/if}}
-            {{else}}
-                <div class="cart-actions cart-content-padding-right">
-                    <a class="button" href="{{urls.auth.login}}" title="{{lang 'cart.login_to_checkout'}}">{{lang 'cart.login_to_checkout'}}</a>
+        {{#and (if theme_settings.halo_CalculateFreeShipping) (if cart.items.length)}}
+            <div class="halo-free-shipping-message animated-loading">
+                <div class="progress-shipping" role="progressbar">
+                    <div class="progress-meter" style="width: 0"></div>
                 </div>
-            {{/or}}
+                <div class="shipping-message">
+                    <span class="message"></span>
+                    <span class="progress-percent">0%</span>
+                </div>
+            </div>
+        {{/and}}
+        <div class="cart-notification">
+            {{#if cart.items.length}}
+                {{#if theme_settings.halo-cart-notification}}
+                    <div class="halo-cart-notification" data-coundown="{{theme_settings.halo-cart-notification-time}}">
+                        <span class="icon"><svg><use xlink:href="#icon-info"></use></svg></span>
+                        <span class="text">{{theme_settings.halo-cart-notification-text1}} {{theme_settings.halo-cart-notification-text2}} <span class="time"></span> {{lang 'cart.minutes'}}.</span>
+                    </div>
+                {{/if}}
+            {{/if}}
+        </div>
+        <div class="page-content" data-cart>
+            <div data-cart-status>
+                {{> components/cart/status-messages}}
+            </div>
 
-        {{else}}
-            <h3 tabindex="0">{{lang 'cart.checkout.empty_cart'}}</h3>
-        {{/if}}
-
+            {{#if cart.items.length}}
+                <div class="loadingOverlay"></div>
+                <div class="cart-content-wrapper">
+                    <div data-cart-content class="cart-content-item">
+                        {{> components/cart/content}}
+                    </div>
+                    <div data-cart-totals class="cart-content-item">
+                        {{> components/cart/totals}}
+                    </div>
+                </div>
+                {{{region name="cart_below_totals"}}}
+                
+            {{else}}
+                <h3 class="cart-content-empty" tabindex="0">{{lang 'cart.checkout.empty_cart'}}</h3>
+            {{/if}}
+        </div>
     </div>
 </div>
+<div class="haloRecommendedBlock">
+    {{> components/halothemes/product/halo-product-recommended-block 
+        enable=theme_settings.haloRecommendedBlock_cart 
+        title_recommended=theme_settings.haloRecommendedBlock_cart_title 
+        type=theme_settings.haloRecommendedBlock_cart_type
+    }}
+</div>
+
 {{/partial}}
 {{> layout/base}}

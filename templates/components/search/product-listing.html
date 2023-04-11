@@ -1,9 +1,6 @@
 {{inject 'noCompareMessage' (lang 'compare.no_compare')}}
 
-{{#if product_results.products.length}}
-    {{> components/products/filter sort=pagination.product_results.sort}}
-{{/if}}
-<div {{#if settings.data_tag_enabled}} data-list-name="Search Results" {{/if}}>
+<form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Search Results" {{/if}} data-product-compare>
     {{#if theme_settings.product_list_display_mode '===' 'grid'}}
         {{#if settings.data_tag_enabled}}
             {{> components/products/grid products=product_results.products show_compare=product_results.show_compare event="list" theme_settings=theme_settings}}
@@ -17,6 +14,15 @@
             {{> components/products/list products=product_results.products show_compare=product_results.show_compare theme_settings=theme_settings}}
         {{/if}}
     {{/if}}
-</div>
+</form>
 
-{{> components/common/paginator pagination.product_results}}
+{{> components/common/paginator pagination.product_results total=pagination.product_results.total page_type=page_type theme_settings=theme_settings}}
+
+{{#if show_compare}}
+    <div class="compare-link">
+        <a href="{{urls.compare}}" class="button" data-compare-nav>{{lang 'common.compare'}}
+            (<span class="countPill">0</span>)
+        </a>
+    </div>
+{{/if}}
+

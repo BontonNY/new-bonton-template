@@ -3,8 +3,16 @@ category:
     shop_by_price: true
     products:
         limit: {{theme_settings.categorypage_products_per_page}}
+products:
+    featured:
+        limit: {{theme_settings.sidebar_products_per_page}}
+    new:
+        limit: {{theme_settings.sidebar_products_per_page}}
+    top_sellers:
+        limit: {{theme_settings.sidebar_products_per_page}}
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{inject "categoryId" category.id}}
 {{#partial "head"}}
     {{#if pagination.category.previous}}
         <link rel="prev" href="{{pagination.category.previous}}">
@@ -15,43 +23,103 @@ category:
 {{/partial}}
 
 {{#partial "page"}}
-
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if category.image}}
-    {{> components/common/responsive-img
-        image=category.image
-        fallback_size=theme_settings.zoom_size
-        lazyload=theme_settings.lazyload_mode
-        class="category-header-image"
-    }}
-{{/if}}
-{{#unless theme_settings.hide_category_page_heading }}
-    <h1 class="page-heading">{{category.name}}</h1>
     {{{region name="category_below_header"}}}
-{{/unless}}
-{{{category.description}}}
-<div class="page">
-    {{#if category.faceted_search_enabled}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.shop_by_price}}
-        {{#if theme_settings.shop_by_price_visibility}}
-             <aside class="page-sidebar" id="faceted-search-container">
-                {{> components/category/sidebar}}
-            </aside>
+
+    <div class="container">
+        <div class="breadcrumb-wrapper">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        </div>
+        {{#if theme_settings.show_top_banner_category}}
+            <div class="page-listing-header">
+                <div class="page-listing-header--banner">
+                    {{{region name="home_banner_category--global"}}}
+                    {{{region name="home_banner_category"}}}
+                </div>
+                <div class="page-listing-header--content">
+                    <div class="halo-description haloCustomScrollbar">
+                        <h1 class="page-heading">{{category.name}}</h1>
+                        {{#if category.description}}
+                            <div class="page-description">
+                                {{{category.description}}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="page-listing-header">
+                <div class="page-listing-header--content no-banner">
+                    <div class="halo-description haloCustomScrollbar">
+                        <h1 class="page-heading">{{category.name}}</h1>
+                        {{#if category.description}}
+                            <div class="page-description">
+                                {{{category.description}}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
         {{/if}}
-    {{/if}}
+        {{> components/halothemes/category/halo-subcategories}}
+        <div class="page page-category page-listing">
+            {{#if theme_settings.halo-category-sidebar}}
+                <div class="halo-toolbar has-sidebar">
+                    <div class="page-sidebar-mobile-wrapper">
+                        <div class="page-sidebar-mobile">
+                            <span class="text">{{lang 'common.sidebar'}}</span>
+                            <svg class="icon" role="img" aria-label="{{lang 'common.sidebar'}}">
+                                <title>{{lang 'common.sidebar'}}</title>
+                                <desc>{{lang 'common.sidebar'}}</desc>
+                                <use xlink:href="#icon-sidebar"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    {{#if category.products}}
+                        {{> components/halothemes/gallery/halo-toolbar sort=pagination.category.sort}}
+                    {{/if}}
+                </div>
+            {{else}}
+                {{#or (if theme_settings.haloStickyToolbar_viewAs) (if theme_settings.haloStickyToolbar_limit) (if theme_settings.haloStickyToolbar_sort)}}
+                    <div class="halo-toolbar">
+                        {{#if category.products}}
+                            {{> components/halothemes/gallery/halo-toolbar sort=pagination.category.sort}}
+                        {{/if}}
+                    </div>
+                {{/or}}
+            {{/if}}
+            {{#if theme_settings.halo-category-sidebar}}
+                <aside class="page-sidebar{{#or (if theme_settings.haloStickyToolbar_viewAs) (if theme_settings.haloStickyToolbar_limit) (if theme_settings.haloStickyToolbar_sort)}} has-toolbar{{/or}}" id="faceted-search-container">
+                    <div class="page-sidebar-close">
+                        <span class="title">{{lang 'common.sidebar'}}</span>
+                        <a href="#" class="close">
+                            <svg class="icon" role="img" aria-label="{{lang 'common.close'}}">
+                                <title>{{lang 'common.close'}}</title>
+                                <desc>{{lang 'common.close'}}</desc>
+                                <use xlink:href="#icon-close"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    {{> components/category/sidebar}}
+                </aside>
+            {{/if}}
+            <main id="product-listing-container" class="page-content">
+                <div class="product-listing-content">
+                    {{#if category.products}}
+                        {{> components/category/product-listing productsnew=products.new show_compare=category.show_compare}}
+                    {{else}}
+                        <p class="page-no-products">{{lang 'categories.no_products'}}</p>
+                    {{/if}}
+                    {{#if theme_settings.halo-category-sidebar-right}}
+                        <div class="footer-cetgory-product productGrid col-{{theme_settings.product_list_display_col}}"></div>
+                    {{/if}}
+                </div>
 
-    <div class="page-content" id="product-listing-container">
-        {{> components/category/product-listing}}
-        {{{region name="category_below_content"}}}
+                {{{region name="home_category_text--global"}}}
+                {{{region name="home_category_text"}}}
+
+                {{{region name="category_below_content"}}}
+            </main>
+        </div>
     </div>
-</div>
-
 {{/partial}}
 {{> layout/base}}

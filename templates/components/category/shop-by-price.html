@@ -1,6 +1,6 @@
 {{#and theme_settings.shop_by_price_visibility shop_by_price}}
-    <div class="sidebarBlock">
-        <h2 class="sidebarBlock-heading" data-shop-by-price>{{lang 'category.shop_by_price'}}</h2>
+    <div class="sidebarBlock" id="shopByPrices">
+        <h3 class="sidebarBlock-heading">{{lang 'category.shop_by_price'}}</h3>
         <ul class="navList">
             {{#each shop_by_price}}
             <li class="navList-item">
@@ -8,22 +8,23 @@
                     {{#if selected }} 
                         class="navList-action is-active"
                         role="status"
-                        aria-live="assertive"
+                        aria-live="polite"
                    {{else}}
                         class="navList-action"
                    {{/if}}
                    href="{{url}}"
+                   title="{{low.formatted}} - {{high.formatted}}"
+                   aria-label="{{{lang 'category.shop_by_price_range_aria' from=low.formatted to=high.formatted}}}"
                 >
-                   {{lang 'category.filter_price_range'}} {{low.formatted}} - {{high.formatted}}
+                    <span class="text">{{low.formatted}} - {{high.formatted}}</span>
                 </a>
-                <span class="price-filter-message aria-description--hidden">{{lang 'category.filter_select_announcement'}}</span>
             </li>
             {{/each}}
 
             {{#any shop_by_price selected=true}}
-                <li class="navList-item">
+                <li class="navList-item navList-reset">
                     <a href="{{category_url}}" class="navList-action reset-btn">
-                        {{lang 'category.reset'}}
+                        <span class="text">{{lang 'category.reset'}}</span>
                     </a>
                     <span class="reset-message aria-description--hidden">{{lang 'category.filter_reset_announcement'}}</span>
                 </li>

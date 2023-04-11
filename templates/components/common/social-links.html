@@ -2,18 +2,36 @@
     <ul class="socialLinks socialLinks--alt">
         {{#each social_media}}
             <li class="socialLinks-item">
-                <a class="icon icon--{{display_name}}"
-                   href="{{url}}"
-                   target="_blank"
-                   rel="noopener"
-                   title="{{{capitalize display_name}}}"
-                >
-                    <span class="aria-description--hidden">{{{capitalize display_name}}}</span>
-                    <svg>
-                        <use xlink:href="#icon-{{display_name}}"/>
+                <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank" rel="noopener" aria-label="Open {{display_name}} in a new tab">
+                    <svg class="icon" role="img" aria-label="{{display_name}}">
+                        <title>{{display_name}}</title>
+                        <desc>{{display_name}}</desc>
+                        <use xlink:href="#icon-{{display_name}}"></use>
                     </svg>
                 </a>
             </li>
         {{/each}}
+        {{#if theme_settings.social_icon_google_plus_link}}
+            <li class="socialLinks-item google-plus">
+                <a class="icon icon--google-plus" href="{{theme_settings.social_icon_google_plus_link}}" target="_blank" rel="noopener" aria-label="Open Google Plus Social Media in a new tab">
+                    <svg class="icon" role="img" aria-label="Google Plus">
+                        <title>Google Plus</title>
+                        <desc>Google Plus</desc>
+                        <use xlink:href="#icon-google-plus"></use>
+                    </svg>
+                </a>
+            </li>
+        {{/if}}
+        {{#if theme_settings.social_icon_snapchat_link}}
+            <li class="socialLinks-item snapchat">
+                <a class="icon icon--snapchat" href="{{theme_settings.social_icon_snapchat_link}}" target="_blank" rel="noopener" aria-label="Open Snapchat Social Media in a new tab">
+                    <svg class="icon" role="img" aria-label="Snapchat Ghost">
+                        <title>Snapchat Ghost</title>
+                        <desc>Snapchat Ghost</desc>
+                        <use xlink:href="#icon-snapchat-ghost"></use>
+                    </svg>
+                </a>
+            </li>
+        {{/if}}
     </ul>
 {{/if}}

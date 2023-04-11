@@ -1,11 +1,22 @@
-<div class="heroCarousel-content{{#and (if heading '==' false) (if text '==' false)}} heroCarousel-content--empty{{/and}}">
+<div class="heroCarousel-content{{#unless show_background}} heroCarousel-content--empty{{/unless}} {{#unless hasBackground '==' 'transparent'}} heroCarousel-content--notEmpty{{/unless}} heroCarousel-content--{{position}}">
+    {{#if subheading}}
+        <span class="heroCarousel-subtitle animated">{{subheading}}</span>
+    {{/if}}
     {{#if heading}}
-        <p class="heroCarousel-title">{{{heading}}}</p>
+        <h2 class="heroCarousel-title animated">{{{heading}}}</h2>
     {{/if}}
     {{#if text}}
-        <p class="heroCarousel-description">{{{text}}}</p>
+        <p class="heroCarousel-description animated">{{{text}}}</p>
     {{/if}}
-    {{#if button_text}}
-        <a href="{{url}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}, {{button_text}}" class="heroCarousel-action button button--primary button--large">{{{button_text}}}</a>
-    {{/if}}
+    {{#or (if button_text) (if customTextBtn)}}
+        <div class="heroCarousel-action animated">
+            {{#if button_text}}
+                <a href="{{url}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}, {{button_text}}" class="button button--primary{{#if customTextBtn}} button--custom{{/if}}">{{button_text}}</a>
+            {{/if}}
+            {{#if customTextBtn}}
+                <a href="{{customBtn}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}, {{button_text}}" class="button button--primary button--custom">{{customTextBtn}}</a>
+            {{/if}}
+        </div>
+    {{/or}}
 </div>
+

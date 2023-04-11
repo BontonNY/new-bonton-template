@@ -5,17 +5,78 @@
 
 // Block
 // -----------------------------------------------------------------------------
-
 .sidebarBlock {
-    + .sidebarBlock {
-        border-top: container("border");
-        margin-top: spacing("single") + spacing("third");
-        padding-top: spacing("single") + spacing("third");
+    margin: 0 0 12px 0;
+    padding: 0 0 25px 0;
+    position: relative;
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    &#recentPost-content {
+        padding: 0 0 10px 0;
+    }
+
+    &#blog-tags {
+        .sidebarBlock-heading {
+            margin: 0 0 25px 0;
+        }
+    }
+
+    &#featured-products {
+        padding-bottom: 5px;
+        margin-bottom: 45px;
+        position: relative;
+    }
+
+    &.featured-products {
+        padding-bottom: 5px;
+        margin-bottom: 45px;
+        position: relative;
+    }
+
+    &#allCategories {
+        padding-bottom: 27px;
+    }
+
+    &#shopByPrices {
+        padding-bottom: 33px;
+    }
+
+    &#shopByBrands {
+        padding-bottom: 37px;
+    }
+
+    &#advertisement-image {
+        padding-bottom: 45px;
+    }
+
+    .loadingOverlay {
+        display: block;
     }
 }
 
 .sidebarBlock-heading {
-    font-size: remCalc(15px);
-    margin-top: 0;
-    text-transform: inherit;
+    font-size: 18px;
+    font-weight: $fontWeight-semibold;
+    letter-spacing: $letterSpacing-base;
+    line-height: 1;
+    color: $color-textBase;
+    margin: 0 0 13px 0;
+    text-transform: capitalize;
+    border-bottom: 1px solid $color-greyLighter;
+    padding-bottom: 17px;
+}
+
+.menu-custom-is-load {
+    #allCategories {
+        .all-categories-list {
+            >.navPages-item:not(.current-cate) {
+                display: none;
+            }
+        }
+    }
 }

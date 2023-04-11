@@ -2,11 +2,9 @@
 // MODAL (CSS)
 //
 // // 1. Fix for content shifted to top in modal window when bottom variant option selected
-// // 2. Icon styles and icon animations moved from the removed "sweetalert2" library
 // =============================================================================
 
 .modal {
-    left: 50%;
     margin: 0;
     max-height: 90%;
     max-width: 95%;
@@ -14,63 +12,133 @@
     outline: none;
     overflow: hidden;
     padding: 0;
+    left: 50%;
     top: 50% !important;
     transform: translate(-50%, -50%);
 
-    .form-field {
-        position: relative; // 1
+    &.modal--standard {
+        width: 100%;
     }
-}
 
-.modal--large {
-    @include breakpoint("large") {
-        width: $modal-width--large;
+    &.modal--editOptions {
+        .modal-body {
+            overflow: auto;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0 0 140px 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+        &.modal--standard.halo-ask-an-expert {
+            width: 700px;
+        }
+    }
+
+    @media (min-width: 1025px) {
+        &.modal--medium {
+            width: 100%;
+            max-width: 990px;
+        }
+
+        &.modal--medium#compare-color-popup {
+            max-width: 940px;
+        }
+
+        &.modal--standard {
+            width: 890px;
+            max-width: 100%;
+        }
+
+        &.modal--editOptions {
+            width: 100%;
+            max-width: 854px;
+        }
+
+        &.modal--giftWrapping {
+            width: 100%;
+            max-width: 854px;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        &.modal--large {
+            width: $modal-width--large;
+            max-width: $modal-width--large;
+        }
+
+        &.modal--quickView {
+            width: 100%;
+            max-width: $modal-width--large;
+
+            .modal-body {
+                padding: 52px;
+            }
+        }
     }
 }
 
 .modal-header {
-    padding-left: $reveal-modal-paddingHorizontal;
-    padding-right: remCalc($reveal-close-height) + $reveal-close-side;
-}
+    display: block;
+    position: relative;
+    background-color: $color-custom-greyLightest;
+    border-bottom-color: $color-custom-greyLightest;
+    padding: 12px 30px 11px;
 
-.modal-header-title {
-    font-size: fontSize("large");
-    text-align: center;
-
-    @include breakpoint("medium") {
-        font-size: fontSize("larger");
+    &-title {
+        display: block;
+        font-family: $fontFamily-sans;
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-semibold;
+        letter-spacing: $letterSpacing-base;
+        line-height: 26px;
+        text-transform: capitalize;
+        margin: 0;
+        text-align: center;
     }
 }
 
 .modal-close {
-    @include square($reveal-close-height);
-
-    @include addFocusTooltip;
-    color: stencilColor("icon-color");
-    font-size: 26px;
-    line-height: remCalc($reveal-close-height);
+    line-height: 1;
     padding: 0;
     position: absolute;
     text-align: center;
-    text-decoration: none;
     z-index: zIndex("high");
+    top: 10px;
+    right: 10px;
+    font-size: 0;
+    color: $color-textBase;
 
-    @include breakpoint("medium") {
-        font-size: 32px;
+    .icon {
+        display: none;
+        width: 17px;
+        height: 17px;
+        fill: $header-font-color;
     }
 
-    &:hover {
-        color: stencilColor("icon-color-hover");
+    span {
+        &:not(.aria-description--hidden) {
+            display: block;
+            width: 17px;
+            height: 17px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 612 612' id='icon-close' style='&%2310; fill: %23323232;&%2310;'%3E%3Cpolygon points='612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397 306,341.411 576.521,611.397 612,575.997 341.459,306.011 '/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+        }
     }
 
-    &::before {
-        right: 50%;
-        transform: translateX(50%);
-    }
+    @media(min-width: 1025px) {
+        top: 18px;
+        right: 30px;
+        transform: rotate(0);
+        transition: opacity .1s ease, transform .5s ease;
 
-    &::after {
-        right: 50%;
-        transform: translateX(remCalc(10px));
+        &:hover {
+            transform: rotate(90deg);
+        }
+
+        .home-layout-2 & {
+            transition: opacity .1s ease, transform .3s ease;
+        }
     }
 }
 
@@ -78,75 +146,30 @@
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     padding: $reveal-modal-padding;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #a6a6a6;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #787878;
+    }
 }
 
 .modal--alert {
     background-color: $alert-modal-bgColor;
     border-radius: $alert-modal-borderRadius;
     font-family: $alert-font-body;
-    padding: 40px 20px 20px;
+    padding: 40px 20px 20px 20px;
     text-align: center;
-
-    .alert-icon { // 2
-        border: 0.25em solid transparent;
-        border-radius: 50%;
-        box-sizing: content-box;
-        cursor: default;
-        display: flex;
-        font-family: inherit;
-        height: 5em;
-        justify-content: center;
-        line-height: 5em;
-        margin: 1.25em auto 1.875em;
-        position: relative;
-        user-select: none;
-        width: 5em;
-    }
-
-    .error-icon {
-        animation: animate-icon 0.5s;
-        border-color: #f27474;
-        color: #f27474;
-
-        .icon-content {
-            animation: animate-icon-content 0.5s;
-            flex-grow: 1;
-            position: relative;
-
-            .line {
-                background-color: #f27474;
-                border-radius: 0.125em;
-                display: block;
-                height: 0.3125em;
-                position: absolute;
-                top: 2.3125em;
-                width: 2.9375em;
-
-                &-left {
-                    left: 1.0625em;
-                    transform: rotate(45deg);
-                }
-
-                &-right {
-                    right: 1em;
-                    transform: rotate(-45deg);
-                }
-            }
-        }
-    }
-
-    .warning-icon { 
-        animation: animate-icon 0.5s;
-        border-color: #facea8;
-        color: #f8bb86;
-
-        .icon-content {
-            align-items: center;
-            animation: animate-icon-content 0.5s;
-            display: flex;
-            font-size: 3.75em;
-        }
-    }
 
     .modal-content {
         color: $alert-font-bodyColor;
@@ -181,40 +204,86 @@
     opacity: 0;
 }
 
-//Icon animations
-@keyframes animate-icon { // 2
-    0% {
-        opacity: 0;
-        transform: rotateX(100deg);
-    }
-
-    100% {
-        opacity: 1;
-        transform: rotateX(0deg);
+#video-gallery-pc-popup {
+    .modal-body {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: $fontSize-root;
     }
 }
 
-@keyframes animate-icon-content {
-    0% {
-        margin-top: 1.625em;
-        opacity: 0;
-        transform: scale(0.4);
+#video-gallery-popup {
+    .modal-body {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: $fontSize-root;
+    }
+}
+
+#modal-size-chart-form {
+    min-height: 500px;
+
+    .modal-body {
+        padding: 0;
     }
 
-    50% {
-        margin-top: 1.625em;
-        opacity: 0;
-        transform: scale(0.4);
+    .productView-sizeChartimg {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
     }
 
-    80% {
-        margin-top: -0.375em;
-        transform: scale(1.15);
+    img {
+
+        &.lazyload,
+        &.lazyloading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            transform: translate3d(-50%, -50%, 0);
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            margin: auto;
+        }
+
+        &.lazyloaded {
+            width: auto;
+            height: auto;
+        }
     }
 
-    100% {
-        margin-top: 0;
-        opacity: 1;
-        transform: scale(1);
+    @media only screen and (min-width: 551px) {
+        &.modal {
+            width: 700px;
+        }
     }
+}
+
+#compare-color-popup {
+    .modal-body {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .modal-header-title {
+        text-align: left;
+    }
+}
+
+#modal-review-form {
+    .modal-body {
+        padding-top: 50px;
+        padding-bottom: 40px;
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+}
+
+.modal--quickShop {
+    overflow: auto;
 }

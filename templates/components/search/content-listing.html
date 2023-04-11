@@ -1,5 +1,4 @@
 {{#if content_results}}
-    {{> components/search/content-sort-box sort=pagination.content_results.sort}}
     <ul>
         {{#each content_results}}
             <strong><a href="{{url}}">{{{title}}}</a></strong>({{type}})

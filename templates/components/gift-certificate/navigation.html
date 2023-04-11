@@ -1,34 +1,34 @@
-<nav class="navBar navBar--sub">
+<nav class="navBar navBar--account navBar--account2">
     <ul class="navBar-section account-navigation">
         {{#if gift_page '===' 'purchase'}}
             <li class="navBar-item is-active">
-                {{lang 'gift_certificate.purchase.heading'}}
+                <span class="navBar-action">{{lang 'gift_certificate.purchase.heading'}}</span>
             </li>
         {{else}}
             <li class="navBar-item">
-                <a class="navBar-action" href="{{urls.gift_certificate.purchase}}">
+                <a class="navBar-action" href="{{urls.gift_certificate.purchase}}" aria-label="{{lang 'gift_certificate.purchase.heading'}}">
                     {{lang 'gift_certificate.purchase.heading'}}
                 </a>
             </li>
         {{/if}}
         {{#if gift_page '===' 'redeem'}}
             <li class="navBar-item is-active">
-                {{lang 'gift_certificate.redeem.heading'}}
+                <span class="navBar-action">{{lang 'gift_certificate.redeem.heading'}}</span>
             </li>
         {{else}}
             <li class="navBar-item">
-                <a class="navBar-action" href="{{urls.gift_certificate.redeem}}">
+                <a class="navBar-action" href="{{urls.gift_certificate.redeem}}" aria-label="{{lang 'gift_certificate.redeem.heading'}}">
                     {{lang 'gift_certificate.redeem.heading'}}
                 </a>
             </li>
         {{/if}}
         {{#if gift_page '===' 'balance'}}
             <li class="navBar-item is-active">
-                {{lang 'gift_certificate.balance.heading'}}
+                <span class="navBar-action">{{lang 'gift_certificate.balance.heading'}}</span>
             </li>
         {{else}}
             <li class="navBar-item">
-                <a class="navBar-action" href="{{urls.gift_certificate.balance}}">
+                <a class="navBar-action" href="{{urls.gift_certificate.balance}}" aria-label="{{lang 'gift_certificate.balance.heading'}}">
                     {{lang 'gift_certificate.balance.heading'}}
                 </a>
             </li>

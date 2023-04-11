@@ -1,7 +1,7 @@
+<div class="modal-header">
+    <h2 class="modal-header-title facet-quick-heading">{{all_facets}}</h2>
+</div>
 <div class="modal-body">
-    <h1 class="facet-quick-heading">
-        {{all_facets}}
-    </h1>
     <div class="form-field" id="facetedSearch-filterItems">
         <input class="form-input" type="search" placeholder="{{lang 'forms.search.search'}}">
     </div>
@@ -17,12 +17,14 @@
                         data-id="{{id}}"
                         data-faceted-search-facet
                         >
-                            {{{title}}}
-                            {{#if ../show_product_counts}}
-                                {{#if count}}
-                                    <span>({{count}})</span>
+                            <span class="text">
+                                {{{title}}}
+                                {{#if ../show_product_counts}}
+                                    {{#if count}}
+                                        <span>({{count}})</span>
+                                    {{/if}}
                                 {{/if}}
-                            {{/if}}
+                            </span>
                         </a>
                     </li>
                 {{/each}}

@@ -2,6 +2,11 @@
 // COMPARE (CSS)
 // =============================================================================
 
+.page-compare {
+    .page-content {
+        padding-top: 32px;
+    }
+}
 
 // Compare table layout
 // -----------------------------------------------------------------------------
@@ -11,15 +16,44 @@
 // -----------------------------------------------------------------------------
 
 .compareTable {
-    border-top: container("border");
+    border: 1px solid $color-custom-grey;
+    border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
+    margin: 0;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+.compareText {
+    display: block;
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    margin: 0;
+    line-height: 1.75;
+    letter-spacing: $letterSpacing-base;
+    color: $color-textSecondary;
+
+    @media (min-width: 801px) {
+        display: none;
+    }
 }
 
 .compareTable-row {
     vertical-align: top;
 
-    + .compareTable-row {
+    .compareTable-item {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        line-height: 1.75;
+        letter-spacing: $letterSpacing-base;
+        color: $color-textSecondary;
+    }
+
+    +.compareTable-row {
+
         .compareTable-heading,
         .compareTable-item {
             border-top: container("border");
@@ -36,28 +70,22 @@
 // -----------------------------------------------------------------------------
 
 .compareTable-heading {
-    font-family: fontFamily("headingSans");
-    font-size: fontSize("smaller");
-    font-weight: fontWeight("normal");
-    padding: (spacing("base") + spacing("sixth")) spacing("base");
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-medium;
+    letter-spacing: $letterSpacing-base;
+    color: $color-textBase;
+    padding: 11px 15px;
     position: relative;
-    text-align: right;
+    text-align: center;
     width: 0;
 
-    @include breakpoint("medium") {
+    @media (min-width: 1025px) {
         width: grid-calc(3, $total-columns);
     }
 }
 
 .compareTable-headingText {
-    position: absolute;
-    top: spacing("base") + spacing("sixth");
     white-space: nowrap;
-
-    @include breakpoint("medium") {
-        position: inherit;
-        top: inherit;
-    }
 }
 
 
@@ -72,61 +100,139 @@
     }
 }
 
-
-// Remove product
-// -----------------------------------------------------------------------------
-
-.compareTable-removeProduct {
-    background-color: container("fill", "dark");
-    border-radius: 50%;
-    height: spacing("single") + spacing("base");
-    position: absolute;
-    right: -(spacing("base"));
-    top: -(spacing("base"));
-    transition: background-color 0.15s ease;
-    width: spacing("single") + spacing("base");
-
-    .icon {
-        fill: stencilColor("icon-color");
-        height: spacing("single");
-        margin-top: spacing("third");
-        width: spacing("single");
-    }
-}
-
-
-// Compare product card
-// -----------------------------------------------------------------------------
-
-.compareTable-product {
-    font-weight: fontWeight("normal");
-    padding: (spacing("single") + spacing("third")) spacing("base") (spacing("base") + spacing("sixth"));
-
-    .card {
-        margin-bottom: 0;
-    }
-
-    .card-body {
-        min-height: spacing("single") * 4;
-        padding-top: spacing("base");
-    }
-
-    .card-figure {
-        overflow: visible;
-    }
-}
-
-
 // Compare action
 // -----------------------------------------------------------------------------
 
-.compareTable-action {
-    padding: 0 spacing("base") spacing("base");
+.compareTable {
 
-    .button {
-        display: block;
-        padding-left: spacing("half");
-        padding-right: spacing("half");
-        width: 100%;
+    th,
+    td {
+        border: 1px solid $color-custom-grey;
+        border-spacing: 0px;
+    }
+
+    thead {
+        text-align: center;
+    }
+
+    .compareTable-item.text-center,
+    .compareTable-heading.text-center {
+        width: 150px;
+    }
+}
+
+.compareTable-product {
+    padding: 2rem 1rem;
+
+    .card {
+        border: none;
+        text-align: center;
+
+        .card-img-container {
+            .card-image {
+                border: 0;
+            }
+
+            &:before {
+                content: none;
+            }
+
+            &:after {
+                padding-bottom: 0;
+            }
+        }
+
+        .card-body {
+            text-align: center;
+
+            .card-brand {
+                margin: 15px 0 5px 0;
+                color: $color-textSecondary;
+            }
+
+            .card-figcaption-group {
+                max-width: 270px;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+
+                span {
+                    border-bottom: none;
+                }
+            }
+
+            .card-action {
+                padding-top: 0;
+                padding-bottom: 0;
+                line-height: 45px;
+
+                span {
+
+                    &:before,
+                    &:after {
+                        background-color: $color-white;
+                        -webkit-transition: all .5s ease;
+                        -moz-transition: all .5s ease;
+                        -ms-transition: all .5s ease;
+                        -o-transition: all .5s ease;
+                        transition: all .5s ease;
+                    }
+                }
+
+                @media (min-width: 1025px) {
+                    &:hover {
+                        span {
+
+                            &:before,
+                            &:after {
+                                background-color: $color-textBase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .card-title {
+                margin-bottom: 10px;
+            }
+
+            .card-price {
+                justify-content: center;
+            }
+        }
+    }
+
+    .compareTable-removeProduct {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        padding: 10px;
+        background-color: $buttonStyle-primary-backgroundColor;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+            display: block;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            fill: $buttonStyle-primary-color;
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .compareTable-removeProduct {
+            &:hover {
+                background-color: $buttonStyle-primary-backgroundColorHover;
+
+                .icon {
+                    fill: $buttonStyle-primary-colorHover;
+                }
+            }
+        }
     }
 }

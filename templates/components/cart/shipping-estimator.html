@@ -4,7 +4,9 @@
 {{#if shipping_cost}}
     <div class="cart-total-value">
         <div class="subtotal shipping-estimate-show">
-            <a href="#" class="shipping-estimate-value">{{shipping_cost.formatted}}</a>
+            <a href="#" class="shipping-estimate-value">
+                <span class="text">{{shipping_cost.formatted}}</span>
+            </a>
         </div>
     </div>
 {{else}}
@@ -34,7 +36,8 @@
                     {{/each}}
                 </select>
             </dd>
-
+        </dl>
+        <dl>
             <dt class="estimator-form-label">
                 <label class="form-label" for="shipping-state">{{lang 'cart.shipping_estimator.select_a_state'}}</label>
             </dt>
@@ -53,22 +56,24 @@
                     <input class="form-input" type="text" id="shipping-state" name="shipping-state" data-field-type="State" placeholder="{{lang 'cart.shipping_estimator.select_a_state'}}">
                 {{/if}}
             </dd>
-
+        </dl>
+        <dl>
             <dt class="estimator-form-label">
                 <label class="form-label" for="shipping-city">{{lang 'cart.shipping_estimator.suburb_city'}}</label>
             </dt>
             <dd class="estimator-form-input">
                 <input class="form-input" type="text" id="shipping-city" name="shipping-city" value="{{selected_city}}" placeholder="{{lang 'cart.shipping_estimator.suburb_city'}}">
             </dd>
-
+        </dl>
+        <dl>
             <dt class="estimator-form-label">
                 <label class="form-label" for="shipping-zip">{{lang 'cart.shipping_estimator.zip_postal_code'}}</label>
             </dt>
             <dd class="estimator-form-input">
                 <input class="form-input" type="text" id="shipping-zip" name="shipping-zip" value="{{selected_zip}}" placeholder="{{lang 'cart.shipping_estimator.zip_postal_code'}}">
             </dd>
-            <button class="button button--primary button--small shipping-estimate-submit">{{lang 'cart.shipping_estimator.estimate_shipping'}}</button>
+            <button class="button button--tertiary shipping-estimate-submit">{{lang 'cart.shipping_estimator.estimate_shipping'}}</button>
         </dl>
     </form>
-    <div class="shipping-quotes" role="alert" aria-atomic="true" aria-live="assertive"></div>
+    <div class="shipping-quotes"></div>
 </div>

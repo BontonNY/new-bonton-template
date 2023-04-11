@@ -1,20 +1,26 @@
-import 'easyzoom';
+import 'jquery-zoom';
+import _ from 'lodash';
+import { Fancybox } from 'fancybox';
 
 export default class ImageGallery {
     constructor($gallery) {
         this.$mainImage = $gallery.find('[data-image-gallery-main]');
         this.$mainImageNested = $gallery.find('[data-main-image]');
+        this.$selectOption = $gallery.find('.slick-current [data-image-gallery-main]');
         this.$selectableImages = $gallery.find('[data-image-gallery-item]');
+        this.$swipThumbnails = $gallery.find('.productView-for');
+        this.$swipImage = $gallery.find('.productView-nav');
         this.currentImage = {};
     }
 
     init() {
         this.bindEvents();
         this.setImageZoom();
+        this.fancyboxZoom();
     }
 
     setMainImage(imgObj) {
-        this.currentImage = { ...imgObj };
+        this.currentImage = _.clone(imgObj);
 
         this.setActiveThumb();
         this.swapMainImage();
@@ -30,6 +36,11 @@ export default class ImageGallery {
             };
         }
         this.setMainImage(imgObj);
+
+        if ($(window).width() > 1024) {
+            this.$mainImage.trigger('zoom.destroy');
+            this.$mainImage.zoom({ url: this.$mainImage.attr('data-zoom-image'), touch: false });
+        }
     }
 
     restoreImage() {
@@ -52,6 +63,41 @@ export default class ImageGallery {
         this.setMainImage(imgObj);
     }
 
+    selectNewImage2(e) {
+        const $target = $(e.currentTarget).find('.slick-current [data-image-gallery-item]');
+        const imgObj = {
+            mainImageUrl: $target.attr('data-image-gallery-new-image-url'),
+            zoomImageUrl: $target.attr('data-image-gallery-zoom-image-url'),
+            mainImageSrcset: $target.attr('data-image-gallery-new-image-srcset'),
+            $selectedThumb: $(e.currentTarget).find('.slick-current'),
+        };
+        
+        this.setMainImage(imgObj);
+
+        if ($(window).width() > 1024) {
+            this.$mainImage.trigger('zoom.destroy');
+            this.$mainImage.zoom({ url: $target.data('image-gallery-zoom-image-url')});
+        }
+    }
+
+    selectNewImage3(e) {
+        const $target = this.$swipThumbnails.find('.slick-current [data-image-gallery-item]');
+        const imgObj = {
+            mainImageUrl: $target.attr('data-image-gallery-new-image-url'),
+            zoomImageUrl: $target.attr('data-image-gallery-zoom-image-url'),
+            mainImageSrcset: $target.attr('data-image-gallery-new-image-srcset'),
+            $selectedThumb: $('.productView-for').find('.slick-current'),
+            mainImageAlt: $target.children().first().attr('alt'),
+        };
+
+        this.setMainImage(imgObj);
+
+        if ($(window).width() > 1024) {
+            this.$mainImage.trigger('zoom.destroy');
+            this.$mainImage.zoom({ url: $target.data('image-gallery-zoom-image-url')});
+        }
+    }
+
     setActiveThumb() {
         this.$selectableImages.removeClass('is-active');
         if (this.currentImage.$selectedThumb) {
@@ -62,15 +108,15 @@ export default class ImageGallery {
     swapMainImage() {
         const isBrowserIE = navigator.userAgent.includes('Trident');
 
-        this.easyzoom.data('easyZoom').swap(
-            this.currentImage.mainImageUrl,
-            this.currentImage.zoomImageUrl,
-            this.currentImage.mainImageSrcset,
-        );
+        this.$mainImage.attr({ 'data-zoom-image': this.currentImage.zoomImageUrl, })
+            .find('a').attr({href: this.currentImage.mainImageUrl})
+            .find('img').attr({src: this.currentImage.mainImageUrl});
 
-        this.$mainImage.attr({
-            'data-zoom-image': this.currentImage.zoomImageUrl,
-        });
+        this.$mainImage.find('.productView-img-container img').attr({srcset: this.currentImage.mainImageUrl});  
+
+        this.$mainImage.find('img.zoomImg').attr({src: this.currentImage.zoomImageUrl})
+            .find('img.zoomImg').attr({srcset: this.currentImage.zoomImageUrl});
+
         this.$mainImageNested.attr({
             alt: this.currentImage.mainImageAlt,
             title: this.currentImage.mainImageAlt,
@@ -78,7 +124,7 @@ export default class ImageGallery {
 
         if (isBrowserIE) {
             const fallbackStylesIE = {
-                'background-image': `url(${this.currentImage.mainImageUrl})`,
+                'background-image': `url(${this.currentImage.mainImageUrl}&ampimbypass=on)`,
                 'background-position': 'center',
                 'background-repeat': 'no-repeat',
                 'background-origin': 'content-box',
@@ -89,29 +135,29 @@ export default class ImageGallery {
         }
     }
 
-    checkImage() {
-        const $imageContainer = $('.productView-image');
-        const containerHeight = $imageContainer.height();
-        const containerWidth = $imageContainer.width();
-
-        const $image = this.easyzoom.data('easyZoom').$zoom;
-        const height = $image.height();
-        const width = $image.width();
-
-        if (height < containerHeight || width < containerWidth) {
-            this.easyzoom.data('easyZoom').hide();
+    setImageZoom() {
+        if ($(window).width() > 1024) {
+           this.$mainImage.zoom({ url: this.$mainImage.attr('data-zoom-image'), touch: false });
         }
     }
 
-    setImageZoom() {
-        this.easyzoom = this.$mainImage.easyZoom({
-            onShow: () => this.checkImage(),
-            errorNotice: '',
-            loadingNotice: '',
-        });
+    fancyboxZoom() {
+        if($('.productView-nav').length > 0){
+            var $imageProductRow = $('.productView-nav').find('.productView-image');
+                fancyBoxImage($imageProductRow.find('[data-fancybox]'));
+        }
+        function fancyBoxImage($image){
+            Fancybox.bind('[data-fancybox="images"]', {
+                infinite: true,
+            });
+        }
     }
 
     bindEvents() {
-        this.$selectableImages.on('click', this.selectNewImage.bind(this));
+        if ($(window).width() > 550) {
+            this.$selectableImages.on('click', this.selectNewImage.bind(this));
+            this.$swipThumbnails.on('afterChange', this.selectNewImage2.bind(this));
+            this.$swipImage.on('afterChange', this.selectNewImage3.bind(this));
+        }
     }
 }

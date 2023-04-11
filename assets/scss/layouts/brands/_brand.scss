@@ -1,18 +1,34 @@
-.brand-image-container {
+// =============================================================================
+// BRAND (CSS)
+// =============================================================================
 
-    @include lazy-loaded-padding("thumb_size");
-    max-width: get-width(stencilString("thumb_size"));
+.page-listing-header {
+
+    .breadcrumbs,
+    .page-heading {
+        text-align: left;
+    }
+
+    +.page.page-brand {
+        margin-top: 80px;
+    }
+}
+
+.brand-image-container {
     position: relative;
+    max-width: get-width(stencilString('thumb_size'));
 
     img {
         @include lazy-loaded-img;
     }
+
+    @include lazy-loaded-padding('thumb_size');
 }
 
 .brand {
     .card-img-container {
+        max-width: get-width(stencilString('brand_size'));
 
-        @include lazy-loaded-padding("brand_size");
-        max-width: get-width(stencilString("brand_size"));
+        @include lazy-loaded-padding('brand_size');
     }
 }

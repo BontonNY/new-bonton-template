@@ -33,12 +33,16 @@
     text-align: left;
 
     &:first-child {
+
+        // scss-lint:disable NestingDepth
         > a {
             padding-top: spacing("half");
         }
     }
 
     &:last-child {
+
+        // scss-lint:disable NestingDepth
         > a {
             padding-bottom: spacing("base");
         }
@@ -53,42 +57,14 @@
 
 .form-wishlist {
     position: relative;
-
-    @include breakpoint("small") {
-        float: left;
-        padding: 0 remCalc(10);
-        width: 50%;
-    }
-
-    @include breakpoint("medium") {
-        padding: 0;
-        width: auto;
-    }
-
-    @include breakpoint("large") {
-        display: inline-block;
-        margin-top: 1rem;
-    }
-
-    .button {
-        width: 100%;
-
-        @include breakpoint("medium") {
-            width: auto;
-        }
-
-        @include breakpoint("large") {
-            margin-right: spacing("half");
-        }
-    }
 }
 
 .dropdown-menu-button {
     width: 100%;
 
     &.is-open {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
 
     .icon {
@@ -107,15 +83,15 @@
     max-width: none !important;
     width: 100% !important;
 
-    @include breakpoint("small") {
+    @include breakpoint('small') {
         padding-right: 20px;
     }
 
-    @include breakpoint("medium") {
-        padding-right: 0;
+    @include breakpoint('medium') {
+        padding-right: 0px;
     }
 
-    @include breakpoint("large") {
+    @include breakpoint('large') {
         padding-right: 11px;
     }
 
@@ -124,15 +100,14 @@
     }
 
     [data-wishlist] {
-        border-top: 0;
-        margin-bottom: 0;
+        border-top: none;
+        margin-bottom: 0px;
         width: 100%;
     }
 
     .button {
-        background-color: stencilColor("dropdown--wishList-backgroundColor");
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
         width: 100%;
     }
 
@@ -141,9 +116,9 @@
     }
 
     li:not(:last-child) .button {
-        border-bottom: 0;
-        border-radius: 0;
-        border-top: 0;
-        margin-bottom: 0;
+        border-bottom: none;
+        border-radius: 0px;
+        border-top: none;
+        margin-bottom: 0px;
     }
 }

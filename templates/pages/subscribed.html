@@ -1,23 +1,25 @@
 {{#partial "page"}}
 
-<section class="page">
-    <div class="page-content page-content--centered">
-        <h1 class="page-heading" tabindex="0" role="status" aria-live="assertive">
+<div class="container--medium">
+    <div class="page">
+        <div class="page-content page-content--centered">
+            <h1 class="page-heading" tabindex="0" role="status" aria-live="assertive">
+                {{#if subscription.error}}
+                    {{lang 'newsletter.subscribed_heading_error'}}
+                {{else}}
+                    {{lang 'newsletter.subscribed_heading'}}
+                {{/if}}
+            </h1>
+
             {{#if subscription.error}}
-                {{lang 'newsletter.subscribed_heading_error'}}
+                {{> components/common/alert/alert-error subscription.error}}
             {{else}}
-                {{lang 'newsletter.subscribed_heading'}}
+                {{> components/common/alert/alert-success (lang 'newsletter.subscribed_message')}}
             {{/if}}
-        </h1>
 
-        {{#if subscription.error}}
-            {{> components/common/alert/alert-error subscription.error}}
-        {{else}}
-            {{> components/common/alert/alert-success (lang 'newsletter.subscribed_message')}}
-        {{/if}}
-
+        </div>
     </div>
-</section>
+</div>
 
 <script>
     const subscriptionStatusElement = document.querySelector('.page-content > .page-heading');

@@ -25,7 +25,8 @@ $body-fontSize:                 fontSize("base");
 $code-font-size:                null;
 
 // Anchor tags
-$anchor-transition:             color 0.15s ease;
+$anchor-transition:             all 0.3s ease;
+$anchor-transition-2:           all 0.5s ease;
 
 // Blockquote vars
 $blockquote-borderColor:        null;

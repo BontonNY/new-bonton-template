@@ -13,7 +13,7 @@ function incrementCounter(counter, item) {
 }
 
 function updateCounterNav(counter, $link, urls) {
-    if (counter.length !== 0) {
+    if (counter.length > 1) {
         if (!$link.is('visible')) {
             $link.addClass('show');
         }
@@ -49,6 +49,16 @@ export default function ({ noCompareMessage, urls }) {
         }
 
         updateCounterNav(compareCounter, $clickedCompareLink, urls);
+    });
+
+    $('body').on('submit', '[data-product-compare]', event => {
+        const $this = $(event.currentTarget);
+        const productsToCompare = $this.find('input[name="products\[\]"]:checked');
+
+        if (productsToCompare.length <= 1) {
+            showAlertModal(noCompareMessage);
+            event.preventDefault();
+        }
     });
 
     $('body').on('click', 'a[data-compare-nav]', () => {

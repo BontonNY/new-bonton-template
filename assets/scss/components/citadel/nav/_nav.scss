@@ -9,21 +9,150 @@
 // 1. Remove the margin-left we add to default lists.
 //
 // -----------------------------------------------------------------------------
-
-.navList,
 .navBar {
-    margin-left: 0; // 1
+    list-style-type: none;
+    margin: 0;
 }
 
-.navList-action,
-.navBar-action {
-    text-decoration: none;
+.navList {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 2px;
+
+    .navList-item {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: 5px 0;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            line-height: 35px;
+            letter-spacing: $letterSpacing-base;
+            text-transform: unset;
+            color: $color-textBase;
+            padding: 0;
+            transition: unset;
+            width: auto;
+
+            >.text {
+                line-height: initial;
+                display: block;
+            }
+
+            &.navList-action--rating {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 0;
+
+                .rating--small {
+                    margin-right: 5px;
+                }
+            }
+
+            &.is-active {
+                color: $color-textLink-hover;
+
+                >.text {
+                    background-image: linear-gradient(transparent 97%, $color-textLink-hover 3%);
+                    background-repeat: repeat-x;
+                    background-position-y: 3px;
+                }
+            }
+        }
+
+        &.navList-reset {
+            a {
+                color: $color-textLink;
+
+                >.text {
+                    background-image: linear-gradient(transparent 97%, $color-textLink-hover 3%);
+                    background-repeat: repeat-x;
+                    background-position-y: -3px;
+
+                    .home-layout-2 & {
+                        background-position-y: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.haloCustomScrollbar {
+        max-height: 280px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #a6a6a6;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #787878;
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .navList-item {
+            a {
+                &:hover {
+                    color: $color-textLink-hover;
+
+                    >.text {
+                        background-image: linear-gradient(transparent 97%, $color-textLink-hover 3%);
+                        background-repeat: repeat-x;
+                        background-position-y: -3px;
+
+                        .home-layout-2 & {
+                            background-position-y: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-.navList-action.is-active {
-    font-weight: $navList-action-fontWeight--active;
-}
+.navView-all,
+.navView-clear {
+    display: block;
+    margin: 12px 0 0 0;
+    @include clearfix;
 
+    a {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        color: $color-textLink;
+        letter-spacing: $letterSpacing-base;
+        line-height: 1.5;
+
+        >span {
+            padding: 0 0 1px 0;
+            background-image: linear-gradient(transparent 97%, $color-textLink-hover 3%);
+            background-repeat: repeat-x;
+            background-position-y: -3px;
+
+            .home-layout-2 & {
+                background-position-y: 0;
+            }
+        }
+    }
+}
 
 // NavList action checkbox
 // -----------------------------------------------------------------------------
@@ -39,16 +168,16 @@
     @include checkRadioBase();
     @include checkBox-base();
 
-    &::before,
-    &::after {
+    &:before,
+    &:after {
         top: 50%; // 1
     }
 
-    &::before {
+    &:before {
         margin-top: -$checkRadio-outerSize / 2;
     }
 
-    &::after {
+    &:after {
         margin-top: -$checkRadio-outerSize / 2 + remCalc(1);
     }
 
@@ -112,12 +241,13 @@
             display: inline-block;
         }
 
+        // scss-lint:disable SelectorDepth, NestingDepth
         &.is-active {
             @include breakpoint("medium") {
                 border-bottom: 1px solid stencilColor("color-textBase");
             }
 
-            > .navBar-action {
+            >.navBar-action {
                 color: color("greys", "dark");
             }
         }
@@ -136,8 +266,93 @@
         font-size: fontSize("base");
         padding: 0;
 
+        // scss-lint:disable NestingDepth
         &:hover {
             color: stencilColor("color-textSecondary--hover");
+        }
+    }
+
+    &.navBar--account {
+        margin-bottom: 0;
+
+        .navBar-section {
+            display: block;
+            font-size: 0;
+            letter-spacing: 0;
+            float: none;
+            margin: 0;
+            text-align: center;
+            white-space: nowrap;
+            overflow-x: auto;
+            border: 1px solid #e4e7e6;
+
+            .navBar-item {
+                display: inline-block;
+                vertical-align: top;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                width: 260px;
+                float: none;
+                border-bottom: none;
+
+                .navBar-action {
+                    font-size: $fontSize-root;
+                    font-weight: $fontWeight-medium;
+                    color: $color-textBase;
+                    letter-spacing: $letterSpacing-base;
+                    background-color: #fafafa;
+                    padding: 11px 15px 10px 15px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-transform: uppercase;
+                    transition: unset;
+                }
+
+                &.is-active {
+                    .navBar-action {
+                        color: #1e1e1e !important;
+                        background-color: $color-white !important;
+                    }
+                }
+
+                +.navBar-item {
+                    border-left: 1px solid #e4e7e6;
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            &.navBar--account2 {
+                .navBar-section {
+                    width: 100%;
+                    max-width: 1110px;
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    .navBar-item {
+                        width: calc(100%/3);
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .navBar-section {
+                .navBar-item {
+                    width: calc(100%/3);
+
+                    .navBar-action {
+                        &:hover {
+                            color: $buttonStyle-primary-colorHover;
+                            background-color: $buttonStyle-primary-backgroundColorHover;
+                        }
+                    }
+                }
+            }
         }
     }
 }

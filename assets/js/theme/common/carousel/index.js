@@ -75,17 +75,33 @@ export default function (context) {
         }
 
         const isMultipleSlides = $carousel.children().length > 1;
-        const customPaging = isMultipleSlides
-            ? () => (
-                '<button data-carousel-dot type="button"></button>'
-            )
-            : () => {};
 
-        $carousel.slick({
-            accessibility: false,
-            arrows: isMultipleSlides,
-            customPaging,
-            dots: isMultipleSlides,
-        });
+        if ($carousel.hasClass('heroCarousel') || $carousel.hasClass('productView-nav-mobile')) {
+            const customPaging = isMultipleSlides
+                ? (slick, index) => (
+                    '<button data-carousel-dot type="button"><span>'+ (index + 1)+ '</span><span data-dots-totals>|</span><span>'+ slick.slideCount +'</span></button>'
+                )
+                : () => {};
+
+            $carousel.slick({
+                accessibility: false,
+                arrows: isMultipleSlides,
+                customPaging,
+                dots: isMultipleSlides,
+            });
+        } else{
+            const customPaging = isMultipleSlides
+                ? () => (
+                    '<button data-carousel-dot type="button"></button>'
+                )
+                : () => {};
+
+            $carousel.slick({
+                accessibility: false,
+                arrows: isMultipleSlides,
+                customPaging,
+                dots: isMultipleSlides,
+            });
+        }
     });
 }

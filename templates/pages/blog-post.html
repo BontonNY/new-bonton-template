@@ -1,8 +1,66 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.blog_posts_per_page}}
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+---
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container--medium">
+	<div class="breadcrumb-wrapper">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    </div>
+    <div class="page-header">
+        {{#unless theme_settings.hide_blog_page_heading }}
+	        <h1 class="page-heading">{{ blog.name }}</h1>
+	    {{/unless}}
+    </div>
 
-{{> components/blog/post post=blog.post show_tags=true is_blog_post=true}}
+    <div class="page page-blog">
+        {{#if theme_settings.halo-blog-sidebar}}
+            <aside class="page-sidebar">
+                <div class="page-sidebar-close">
+                    <span class="title">{{lang 'common.sidebar'}}</span>
+                    <a href="#" class="close">
+                        <svg class="icon" role="img" aria-label="{{lang 'common.close'}}">
+                            <title>{{lang 'common.close'}}</title>
+                            <desc>{{lang 'common.close'}}</desc>
+                            <use xlink:href="#icon-close"></use>
+                        </svg>
+                    </a>
+                </div>
+                {{> components/blog/sidebar post=blog.recent_posts}}
+            </aside>
+        {{/if}}
+
+        <main class="page-content">
+            {{#if theme_settings.halo-blog-sidebar}}
+                <div class="page-sidebar-mobile-wrapper">
+                    <div class="page-sidebar-mobile">
+                        <span class="text">{{lang 'common.sidebar'}}</span>
+                        <svg class="icon" role="img" aria-label="{{lang 'common.sidebar'}}">
+                            <title>{{lang 'common.sidebar'}}</title>
+                            <desc>{{lang 'common.sidebar'}}</desc>
+                            <use xlink:href="#icon-sidebar"></use>
+                        </svg>
+                    </div>
+                </div>
+            {{/if}}
+
+            <div class="halo-blog-detail">
+            	{{> components/blog/post post=blog.post show_tags=true class="blog" settings=settings theme_settings=theme_settings}}
+            </div>
+        </main>
+    </div>
+</div>
+
+
 
 {{/partial}}
 {{> layout/base}}

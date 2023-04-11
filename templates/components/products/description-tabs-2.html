@@ -1,0 +1,61 @@
+<section class="productDescription">
+    <div class="productDescription__block">
+        <div class="productDescription__title">
+            <h2 class="title">{{lang 'products.description'}}</h2>
+        </div>
+        <div class="productDescription__content">
+            {{{product.description}}}
+        </div>
+    </div>
+</section>
+{{#if settings.show_product_reviews}}
+    {{#if product.reviews.total}}
+        <section class="toggle productReviews" id="product-reviews" data-product-reviews>
+            <div class="toggle-title">
+                <h4 class="page-heading">{{lang 'products.reviews.header'}}</h4>
+                <span class="number-review">{{lang 'products.reviews.number_review' total=product.reviews.total}}</span>
+                <a class="write-review" href="{{product.url}}{{#if is_ajax}}#write_review{{/if}}"
+                   {{#unless is_ajax }}data-reveal-id="modal-review-form"{{/unless}}>
+                   {{lang 'products.reviews.write_a_review'}}
+                </a>
+                <a class="toggleLink" data-collapsible href="#productReviews-content" aria-expanded="false">
+                    <svg class="icon"><use xlink:href="#icon-chevron-down"/></svg>
+                    <span class="toggleLink-text toggleLink-text--on">
+                        {{lang 'products.reviews.hide'}}
+                    </span>
+                    <span class="toggleLink-text toggleLink-text--off">
+                        {{lang 'products.reviews.show'}}
+                    </span>
+                </a>
+            </div>
+            <div class="toggle-content" id="productReviews-content" aria-hidden="true">
+                <ul class="productReviews-list" id="productReviews-list">
+                    {{#each product.reviews.list}}
+                    <li class="productReview">
+                        <article>
+                            <header>
+                                <h5 class="productReview-title">{{ title }}</h5>
+                                <span class="productReview-rating rating--small">
+                                    {{> components/products/ratings rating=rating}}
+                                    <span class="productReview-ratingNumber">{{ rating }}</span>
+                                </span>
+                                {{#if name}}
+                                    <p class="productReview-author">
+                                        {{lang 'products.reviews.post_on_by' date=date name=name }}
+                                    </p>
+                                {{else}}
+                                    <p class="productReview-author">
+                                        {{lang 'products.reviews.post_on_by' date=date name=(lang 'products.reviews.anonymous_poster')}}
+                                    </p>
+                                {{/if}}
+                            </header>
+                            <p class="productReview-body">{{nl2br text}}</p>
+                        </article>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+    {{/if}}
+    {{{snippet 'reviews'}}}
+{{/if}}

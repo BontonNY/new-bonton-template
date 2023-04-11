@@ -7,48 +7,204 @@
 //
 // 1. Kill extra display inline-block spacing
 // -----------------------------------------------------------------------------
+.productView-reviews-wrapper {
+    display: block;
+    position: relative;
+    padding: 0;
+
+    .alertBox {
+        margin-bottom: 0;
+
+        +.button-createReview {
+            margin-top: 15px;
+        }
+    }
+
+    .productReview-total {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        font-style: italic;
+        line-height: 30px;
+        color: $color-textSecondary;
+        letter-spacing: $letterSpacing-base;
+        text-align: left;
+    }
+
+    .productReviews-list {
+        margin-top: 20px;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+        .productReview {
+            width: 100%;
+        }
+    }
+
+    .pagination {
+        margin-top: 0;
+
+        .pagination-list {
+            margin-left: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            font-size: 0;
+            letter-spacing: 0;
+        }
+
+        .pagination-item {
+            +.pagination-item {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .button-createReview {
+        margin: 30px 0 0 0;
+
+        .button {
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: $fontWeight-bold;
+            line-height: 48px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .pagination {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            +.button-createReview {
+                .button {
+                    width: auto;
+                    min-width: 180px;
+                }
+            }
+        }
+
+        .alertBox,
+        .productReviews-list {
+            +.button-createReview {
+                text-align: center;
+
+                .button {
+                    width: auto;
+                    min-width: 250px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding-top: 33px;
+
+        .alertBox {
+            +.button-createReview {
+                margin-top: 30px;
+            }
+        }
+
+        .productReviews-list {
+            margin-top: 34px;
+        }
+
+        .pagination {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .button-createReview {
+            margin-top: 30px;
+
+            .button {
+                min-width: 250px;
+                width: auto;
+            }
+        }
+    }
+}
 
 .productReviews-list {
-    @include u-listBullets("none");
-    @include grid-row($behavior: "nest");
-    font-size: 0; // 1
+    display: block;
+    margin: 28px 0 0 0;
+    list-style: none;
 }
 
 
 // Review item
 // -----------------------------------------------------------------------------
 
-.productReview {
-    @include grid-column(12);
-    display: inline-block;
-    float: none;
-    font-size: fontSize("base");
-    vertical-align: top;
+// =============================================================================
+// PRODUCT REVIEWS (CSS)
+// =============================================================================
 
-    @include breakpoint("medium") {
-        width: grid-calc(6, $total-columns);
+
+.productReviews {
+    .productReviews-list {
+        margin: 0;
     }
 
-    @include breakpoint("large") {
-        width: grid-calc(4, $total-columns);
+    .productReview {
+        width: 100%;
+        float: none;
+        font-size: $body-fontSize;
+        display: block;
+        vertical-align: top;
+        margin-bottom: 0;
+        padding: 20px 0;
+        border-bottom: 1px solid $color-custom-grey;
+
+        .productReview-title {
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 15px 0 0;
+            text-transform: capitalize;
+            color: $color-textBase;
+            font-family: $fontFamily-headings;
+            font-weight: $fontWeight-semibold;
+        }
+
+        .productReview-rating {
+            line-height: 1;
+            display: inline-block;
+            vertical-align: middle;
+
+            .icon {
+                margin-right: -1.25px;
+            }
+        }
+
+        .productReview-author {
+            color: #a6a6a6;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .productReview-ratingNumber {
+            display: none;
+        }
+
+        .productReview-body {
+            margin-bottom: 0;
+            line-height: 26px;
+        }
     }
 }
 
-.productReview-title {
-    margin: 0;
-    text-transform: none;
+.btn-createReview {
+    margin-top: 5px;
+    float: left;
+    width: 100%;
 }
 
-.productReview-author {
-    color: stencilColor("color-textSecondary");
-    margin-bottom: spacing("base");
-}
-
-.productReview-rating {
-    display: inline-block;
-    margin-bottom: spacing("quarter");
-}
-
-.productReview-ratingNumber {
-    @include u-hidden("visually");
+.productReviews {
+    .pagination {
+        margin: 30px 0 0 0;
+    }
 }

@@ -1,5 +1,5 @@
 <div class="page">
-    <div class="page-content page-content--centered">
+    <div class="page-content">
         <form class="advancedSearch-form toggle-content" action="{{forms.search.action}}" data-advanced-search-form id="advanced-search-content" aria-hidden="true">
             <input type="hidden" name="mode" value="1">
             <h5 class="advancedSearch-title">{{lang 'forms.search.title'}}</h5>
@@ -45,7 +45,7 @@
                     <p class="form-label" for="search-form-price_from">
                         {{lang 'forms.search.price_range' }}
                     </p>
-                    <label>
+                    <label class="from">
                         <span class="is-srOnly">{{lang 'forms.search.price_range' }}</span>
                         <span>{{lang 'common.from'}}</span><input type="number" step="any" class="form-input" name="price_from" id="search-form-price_from" value="{{forms.search.values.price_from}}">
                     </label>

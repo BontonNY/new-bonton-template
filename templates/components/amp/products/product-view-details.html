@@ -3,7 +3,7 @@
         <h1 class="productView-title">{{product.title}}</h1>
         {{#if product.brand }}
         <h2 class="productView-brand">
-            <a href="{{product.brand.url}}"><span>{{product.brand.name}}</span></a>
+            <a href="{{product.brand.url}}">{{product.brand.name}}</span></a>
         </h2>
         {{/if}}
         {{#if product.call_for_price}}
@@ -19,9 +19,6 @@
         {{product.detail_messages}}
         {{#if settings.show_product_rating}}
             {{> components/amp/products/ratings rating=product.rating}}
-        {{/if}}
-        {{#if product.release_date }}
-            <p>{{product.release_date}}</p>
         {{/if}}
         <dl class="productView-info">
             {{#if product.sku}}
@@ -104,7 +101,10 @@
                 </div>
             {{/if}}
 
-            {{> components/products/custom-fields }}
+            {{#each product.custom_fields}}
+                <dt class="productView-info-name">{{name}}:</dt>
+                <dd class="productView-info-value">{{{value}}}</dd>
+            {{/each}}
         </dl>
     </div>
 </section>

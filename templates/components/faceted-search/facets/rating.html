@@ -7,20 +7,29 @@
             {{#each items}}
                 <li class="navList-item">
                     <a href="{{url}}"
-                       class="navList-action{{#if selected}} is-selected{{/if}}"
+                       class="navList-action navList-action--rating{{#if selected}} is-selected{{/if}}"
                        rel="nofollow"
                        data-faceted-search-facet>
                         <span class="rating--small">
                             {{> components/products/ratings rating=title}}
                         </span>
-                        {{lang 'search.faceted.rating.and-up'}}
-                        {{#if ../show_product_counts}}
-                            <span>({{count}})</span>
-                        {{/if}}
+                        <span class="text">
+                            {{lang 'search.faceted.rating.and-up'}}
+                            {{#if ../show_product_counts}}
+                                <span>({{count}})</span>
+                            {{/if}}
+                        </span>
                     </a>
                 </li>
             {{/each}}
         </ul>
+        {{#if selected}}
+            <div class="navView-clear">
+                <a href="{{remove_url}}" class="toggleLink toggleLink-clear facetedSearch-clearLink" data-faceted-search-facet>
+                    <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.clear'}}</span>
+                </a>
+            </div>
+        {{/if}}
     </div>
 </div>
 {{/if}}

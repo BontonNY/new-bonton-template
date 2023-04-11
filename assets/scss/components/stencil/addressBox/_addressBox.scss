@@ -11,135 +11,162 @@
 // -----------------------------------------------------------------------------
 
 .addressList {
-    font-size: 0; // 1
     list-style: none;
-    margin-left: -(spacing("half"));
-    margin-right: -(spacing("half"));
+    margin: 40px 0 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+
+    @media (min-width: 768px) {
+        margin: 40px -15px 0;
+        margin-bottom: -30px;
+    }
 }
 
 .address {
     display: inline-block;
-    padding: 0 spacing("half");
     vertical-align: top;
     width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    border: 1px solid $color-custom-grey;
+    border-radius: 0;
+    margin: 0;
+    background: #fafafa;
 
-    @include breakpoint("small") {
-        width: grid-calc(6, $total-columns);
+    +.address {
+        margin-top: 20px;
     }
 
-    @include breakpoint("large") {
-        width: grid-calc(4, $total-columns);
+    @media (min-width: 768px) {
+        width: calc(50% - 30px);
+        margin-right: 15px;
+        margin-left: 15px;
+        margin-bottom: 30px;
+        justify-content: center;
+        padding: 20px 25px;
+
+        +.address {
+            margin-top: 0;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        width: calc(33.33% - 30px);
     }
 }
 
+.address-title {
+    display: block;
+    font-family: $fontFamily-sans;
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-medium;
+    letter-spacing: $letterSpacing-base;
+    color: $color-textBase;
+    line-height: 2;
+    text-transform: capitalize;
+    margin: 0;
+}
 
-// Address
-// -----------------------------------------------------------------------------
-//
-// 1. Redefine the font-size as we're removing white-space on the parent by
-//    reducing the size to 0.
-// 2. Adding a min-height to improve the consistency of the address blocks.
-// 3. On larger screens we position: absolute; the .form-actions so they're
-//    consistently in line. We need to adjust padding to accommodate this.
-//
-// -----------------------------------------------------------------------------
+.address-details {
+    list-style-type: none;
+    margin: 0;
+
+    &.address-details--postal {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        line-height: 1.75;
+        letter-spacing: $letterSpacing-base;
+        color: $color-textBase;
+    }
+}
+
+.address-addNew {
+    display: block;
+    text-align: center;
+
+    .address-symbol {
+        display: block;
+        margin: 0 0 10px 0;
+        text-align: center;
+
+        svg {
+            width: 40px;
+            height: 40px;
+            fill: $color-textBase;
+        }
+    }
+}
 
 .panel--address {
-    font-size: fontSize("base"); // 1
     position: relative;
+    width: 100%;
 
     .panel-body {
-        min-height: remCalc(250px); // 2
-        padding: spacing("single");
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
 
-        @include breakpoint("small") {
-            padding: spacing("single") spacing("single") (spacing("single") + spacing("double")); // 3
+    form {
+        .form-actions {
+            display: block;
+            margin: 20px 0 0;
+
+            .button {
+                vertical-align: top;
+
+                +.button {
+                    margin-top: 20px;
+                }
+
+                @media (max-width: 767px) {
+                    margin-left: 0;
+                }
+            }
         }
     }
 
-    .form-actions {
-        margin-bottom: -(spacing("half"));
-        margin-top: spacing("single");
-        text-align: left;
 
-        @include breakpoint("small") { // 3
-            bottom: spacing("single");
-            position: absolute;
-            width: auto;
+    &.panel--newAddress {
+        margin: auto;
+
+        .panel-body {
+            display: flex;
+            min-height: 295px;
+            align-items: center;
+            justify-content: center;
         }
+    }
 
-        .button {
-            margin-bottom: spacing("half");
+    @media (min-width: 768px) {
+        form {
+            .form-actions {
+                display: block;
 
-            + .button {
-                margin-left: 0;
-                margin-top: 0;
+                .button {
+                    width: auto;
+                    vertical-align: top;
 
-                @include breakpoint("small") {
-                    margin-left: spacing("quarter");
+                    +.button {
+                        margin-top: 0;
+                    }
                 }
             }
         }
     }
 }
 
-.address-title {
-    margin: 0 0 spacing("half");
-    text-transform: none;
-}
-
-.address-details {
-    list-style: none;
-    margin: 0 0 spacing("half");
-}
-
-.address-details--postal {
-    font-size: fontSize("smaller");
-}
-
-.address-label,
-.address-description {
-    display: inline-block;
-    font-size: fontSize("base");
-    margin: 0;
-}
-
+.address-description,
 .address-label {
-    color: stencilColor("color-textSecondary");
-    font-weight: fontWeight("normal");
-}
-
-.panel--newAddress {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-
-    &:hover {
-        .address-title {
-            color: stencilColor("color-textLink--hover");
-        }
-    }
-
-    .panel-body {
-        background-color: transparent;
-        border: container("border");
-        display: block;
-    }
-
-    .address-title {
-        margin-bottom: 0;
-        transition: all 0.15s ease;
-    }
-}
-
-.address-addNew {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-50%) translateY(-55%);
-}
-
-.address-symbol {
-    font-size: fontSize("hero");
-    line-height: 1;
+    display: inline-block;
+    margin: 0;
 }

@@ -1,11 +1,9 @@
-<h3 class="account-heading">{{lang 'account.messages.heading' }}</h3>
-
 <ul class="account-list">
     {{#each messages}}
-    <li class="account-listItem">
-        <div class="account-message">
+        <li class="account-listItem">
+            <div class="account-message">
                 <div class="account-orderStatus">
-                    <span>{{date}}</span>
+                    <span class="account-orderStatus-label">{{date}}</span>
                 </div>
 
                 <h5 class="account-product-title {{#unless unread}}is-read{{/unless}}">
@@ -19,7 +17,7 @@
                     {{/if}}
                     {{message}}
                 </p>
-        </div>
-    </li>
+            </div>
+        </li>
     {{/each}}
 </ul>

@@ -7,5 +7,7 @@ $header-height:                             55px;
 $header-toggle-width:                       $header-height;
 $header-logo-marginVertical:                spacing("half");
 $header-logo-paddingVertical:               $header-logo-marginVertical;
+$header-color:               				stencilColor("header-textColor");
+$header-top-color:               			stencilColor("header-topBackgroundColor");
 
 $storeName-color:                           stencilColor("storeName-color");

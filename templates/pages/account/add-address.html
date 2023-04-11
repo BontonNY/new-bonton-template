@@ -1,44 +1,47 @@
 {{#partial "page"}}
-
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-    {{#if forms.address.address_id}}
-        <h2 class="page-heading">{{lang 'forms.address.edit.heading'}}</h2>
-    {{else}}
-        <h2 class="page-heading">{{lang 'forms.address.add.heading'}}</h2>
-    {{/if}}
-
-    {{> components/account/navigation account_page='addresses'}}
-
-    <div class="account account--fixed">
-
-        {{#if forms.address.error}}
-            {{> components/common/alert/alert-error forms.address.error}}
-        {{/if}}
-
-        <div class="account-body">
-
-            <form action="{{forms.address.action}}" data-address-form class="form" method="post">
-                {{#if forms.address.address_id }}
-                    <input type="hidden" name="shipid" value="{{forms.address.address_id}}">
+    <div class="container--medium">
+        <div class="breadcrumb-wrapper">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        </div>
+        <div class="page page-account">
+            <div class="page-header">
+                {{#if forms.address.address_id}}
+                    <h1 class="page-heading">{{lang 'forms.address.edit.heading'}}</h1>
+                {{else}}
+                    <h1 class="page-heading">{{lang 'forms.address.add.heading'}}</h1>
                 {{/if}}
-                <fieldset class="form-fieldset">
-                    <div class="form-row form-row--half">
-                        {{#each forms.address.shipping_fields }}
-                            {{{dynamicComponent 'components/common/forms'}}}
-                        {{/each}}
+            </div>
+            {{> components/account/navigation account_page='addresses'}}
+            <main class="page-content">
+                <div class="account">
+                    <div class="account-body">
+                        <section class="account-content account-content2">
+                            {{#if forms.address.error}}
+                                {{> components/common/alert/alert-error forms.address.error}}
+                            {{/if}}
+                            <form action="{{forms.address.action}}" data-address-form class="form" method="post">
+                                {{#if forms.address.address_id }}
+                                    <input type="hidden" name="shipid" value="{{forms.address.address_id}}">
+                                {{/if}}
+                                <fieldset class="form-fieldset">
+                                    <div class="form-row form-row--half">
+                                        {{#each forms.address.shipping_fields }}
+                                            {{{dynamicComponent 'components/common/forms'}}}
+                                        {{/each}}
+                                    </div>
+                                </fieldset>
+                                <div class="form-actions">
+                                    <input type="submit" class="button button--tertiary" value="{{lang 'forms.address.submit_value'}}">
+                                    <a href="{{urls.account.addresses}}" class="button button--primary">{{lang 'common.cancel'}}</a>
+                                    {{inject 'required' (lang 'common.required')}}
+                                    {{inject 'state_error' (lang 'errors.state_error')}}
+                                </div>
+                            </form>
+                        </section>
                     </div>
-                </fieldset>
-                <div class="form-actions">
-                    <input type="submit" class="button button--primary" value="{{lang 'forms.address.submit_value'}}">
-                    <a href="{{urls.account.addresses}}" class="button">{{lang 'common.cancel'}}</a>
-                    {{inject 'required' (lang 'common.required')}}
-                    {{inject 'state_error' (lang 'errors.state_error')}}
                 </div>
-            </form>
-
+            </main>
         </div>
     </div>
-
 {{/partial}}
 {{> layout/base}}

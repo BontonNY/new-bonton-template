@@ -13,6 +13,7 @@
             margin-bottom: spacing("double") * 2;
         }
 
+        // scss-lint:disable SelectorDepth, NestingDepth
         tr {
             display: block;
             padding: spacing("single") 0;
@@ -34,8 +35,9 @@
                 padding-top: spacing("half");
             }
 
-            + th,
-            + td {
+            // scss-lint:disable NestingDepth
+            +th,
+            +td {
                 padding-left: 0;
 
                 @include breakpoint("small") {
@@ -44,7 +46,7 @@
             }
         }
 
-        .return-itemTitle + .definitionList {
+        .return-itemTitle+.definitionList {
             margin-top: spacing("eighth");
         }
 
@@ -68,6 +70,7 @@
             display: table-header-group;
         }
 
+        // scss-lint:disable SelectorDepth, NestingDepth
         th {
             font-size: fontSize("smaller");
         }
@@ -88,27 +91,56 @@
 
 
 .return-itemName {
-    font-size: fontSize("smaller");
-    font-weight: fontWeight("bold");
+    color: $header-font-color;
 
-    @include breakpoint("small") {
-        font-size: fontSize("base");
-        font-weight: fontWeight("normal");
+    .return-itemTitle {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-medium;
+        letter-spacing: $letterSpacing-base;
+        line-height: 28px;
+        margin: 0 0 5px 0;
+        text-transform: capitalize;
+        display: block;
+    }
+
+    .definitionList {
+
+        .definitionList-label,
+        .definitionList-description {
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            line-height: 1.75;
+            letter-spacing: $letterSpacing-base;
+            color: $color-textSecondary;
+        }
+
+        .definitionList-label {
+            float: left;
+            margin: 0 0.375rem 0 0;
+        }
+
+        .definitionList-description {
+            font-weight: $fontWeight-normal;
+            margin: 0;
+        }
     }
 }
 
 .return-itemPrice {
-    color: color("greys", "light");
+    font-size: $fontSize-root + 2px;
+    font-weight: $fontWeight-medium;
+    color: $header-font-color;
     margin-bottom: spacing("quarter");
 
-    @include breakpoint("small") {
-        color: inherit;
+    @media (min-width: 551px) {
         margin-bottom: 0;
         text-align: center;
     }
 }
 
 .return-itemQuantity {
+    color: $header-font-color;
+
     .form-label {
         display: inline;
         margin-right: spacing("quarter");
@@ -118,11 +150,6 @@
         }
     }
 }
-
-
-
-
-
 
 .account--addReturn-row {
     @include grid-row($behavior: "nest");

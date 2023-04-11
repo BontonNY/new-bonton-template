@@ -45,7 +45,7 @@ export default class WishList extends PageManager {
 
                     cb(result);
                 },
-                errorMessage: this.context.enterWishlistNameError,
+                errorMessage: 'You must enter a wishlist name.',
             },
         ]);
 

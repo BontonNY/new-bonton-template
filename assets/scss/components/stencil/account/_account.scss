@@ -7,35 +7,194 @@
 // -----------------------------------------------------------------------------
 
 .navBar--account {
-    display: none;
+    display: block;
+    padding-top: 5px;
 
-    @include breakpoint("medium") {
+    .navBar-section {
         display: block;
+        font-size: 0;
+        letter-spacing: 0;
+        float: none;
+        margin: 0 10px 2px 10px;
+        text-align: center;
+        white-space: nowrap;
+        overflow-x: auto;
+        border: 1px solid #cbcbcb;
+
+        .navBar-item {
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            width: 220px;
+            float: none;
+
+            .navBar-action {
+                font-size: $fontSize-root;
+                font-weight: $fontWeight-normal;
+                color: $color-textSecondary;
+                letter-spacing: $letterSpacing-base;
+                background-color: #fafafa;
+                padding: 11px 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+                transition: unset;
+            }
+
+            &.is-active {
+                .navBar-action {
+                    color: $color-textBase !important;
+                    background-color: $color-white !important;
+                }
+            }
+
+            +.navBar-item {
+                border-left: 1px solid #cbcbcb;
+            }
+        }
+    }
+
+    &.navBar--account2 {
+        .navBar-section {
+            .navBar-item {
+                .navBar-action {
+                    padding: 16px 15px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
+    @media (min-width: 1025px) {
+        &.navBar--account2 {
+            .navBar-section {
+                border: none;
+                margin-left: -5px;
+                margin-right: -5px;
+
+                .navBar-item {
+                    width: calc(100%/3);
+                    padding: 0 5px;
+
+                    .navBar-action {
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        border: 1px solid #cccccc;
+                        background: $color-white;
+                        color: $color-greyDark;
+
+                        &:hover {
+                            border: 1px solid $color-textBase;
+                            color: $color-textSecondary;
+                        }
+                    }
+
+                    &.is-active {
+                        .navBar-action {
+                            border: 1px solid $color-textBase;
+                        }
+
+                    }
+
+                    +.navBar-item {
+                        border-left: none;
+                    }
+                }
+            }
+        }
+
+        .navBar-section {
+            border: none;
+            margin-left: -5px;
+            margin-right: -5px;
+
+            .navBar-item {
+                width: calc(100%/6);
+                padding: 0 5px;
+
+                .navBar-action {
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    border: 1px solid #cccccc;
+                    background: $color-white;
+                    color: $color-greyDark;
+
+                    &:hover {
+                        border: 1px solid $color-textBase;
+                        color: $color-textSecondary;
+                    }
+                }
+
+                &.is-active {
+                    .navBar-action {
+                        border: 1px solid $color-textBase;
+                    }
+
+                }
+
+                +.navBar-item {
+                    border-left: none;
+                }
+            }
+        }
     }
 }
-
 
 // Account headings
 // -----------------------------------------------------------------------------
 
 .account-heading {
-    border-bottom: container("border");
+    font-size: $fontSize-root + 4px;
+    font-weight: $fontWeight-normal;
+    letter-spacing: $letterSpacing-base;
+    line-height: 28px;
+    border-bottom: 1px solid $color-custom-grey;
     margin: 0;
     padding-bottom: spacing("base");
 }
 
+.account-description {
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    color: $color-textSecondary;
+    letter-spacing: $letterSpacing-base;
+    line-height: 1.75;
+    margin: 30px 0 0 0;
+
+    +.account-list {
+        &.account-list2 {
+            margin-top: 15px;
+        }
+    }
+}
 
 // Account list
 // -----------------------------------------------------------------------------
 
 .account-list {
     list-style: none;
-    margin-left: 0;
+    margin: 0;
+
+    +.account-heading {
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    &.account-list2 {
+        list-style-type: decimal;
+        list-style-position: inside;
+    }
 }
 
 .account-listItem {
-    border-bottom: container("border");
-    padding: spacing("single") 0;
+    border-bottom: 1px solid $color-custom-grey;
+    padding: 45px 0 40px;
     position: relative;
 
     img {
@@ -43,11 +202,48 @@
     }
 
     .account-product-image {
-        @include lazy-loaded-img;
-
-        position: relative;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
 }
+
+.account-message {
+
+    .is-read {
+        color: stencilColor('color-textBase');
+    }
+
+    .account-listItem {
+        padding: 25px 0 15px 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    .account-list {
+        .account-listItem {
+            &:last-child {
+                margin-bottom: 42px;
+            }
+        }
+    }
+
+    .form-actions {
+        margin-top: 25px;
+    }
+
+    .account-orderStatus {
+        float: none;
+        position: inherit;
+        text-align: left;
+    }
+}
+
 
 .account-listShipping {
     border-bottom: container("border");
@@ -60,22 +256,24 @@
     }
 }
 
-// Account product
-// -----------------------------------------------------------------------------
-
 .account-product {
     @include media;
 }
 
 .account-product-figure {
-
-    @include lazy-loaded-padding("productthumb_size");
-    align-items: center;
     display: flex;
-    flex-direction: column;
-    margin: 0 spacing("single") + spacing("third") 0 0;
+    align-items: center;
+    margin: 0 30px 0 0;
     position: relative;
-    width: 70px;
+    width: 100px;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 100%;
+        padding-bottom: 128%;
+    }
 }
 
 .account-product-download {
@@ -101,48 +299,135 @@
 
 .account-product-body {
     overflow: hidden;
-    padding-bottom: spacing("double") + spacing("third");
+    padding: 0 0 50px 0;
     position: relative;
 
-    @include breakpoint("small") {
-        padding-bottom: 0;
+    .definitionList {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        margin: 0;
     }
 
-    .definitionList {
-        font-size: fontSize("smaller");
-        margin-bottom: 0;
+    @media (min-width: 551px) {
+        padding-bottom: 0;
     }
 }
 
 .account-product-title {
-    margin: 0 0 spacing("eighth");
-    text-transform: inherit;
+    font-size: $fontSize-root + 2px;
+    font-weight: $fontWeight-semibold;
+    line-height: 25px;
+    letter-spacing: $letterSpacing-base;
+    color: $color-textBase;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 
-    > a {
+    >a {
+        font-family: $fontFamily-headings;
+        position: relative;
         text-decoration: none;
+        top: -5px;
+
+        @media(min-width: 1025px) {
+            &:hover {
+                span {
+                    background-image: linear-gradient(transparent 96%, $color-custom-grey 4%);
+                    background-repeat: repeat-x;
+                    background-position-y: -3px;
+
+                    .home-layout-2 & {
+                        background-position-y: 0;
+                    }
+                }
+            }
+        }
     }
 
-    + .definitionList {
-        margin-top: spacing("half");
+    +.account-product-description {
+        position: relative;
+        top: -8px;
+        display: inline-block;
+    }
+}
+
+.account-product-description {
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    color: $color-textBase;
+    line-height: 26px;
+    letter-spacing: $letterSpacing-base;
+    margin: 0;
+
+    span {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-semibold;
+        color: #1e1e1e;
+    }
+
+    +.account-product-details {
+        margin-top: 24px;
     }
 }
 
 .account-product-subtitle {
     color: color("greys", "light");
     font-family: fontFamily("sans");
-    font-size: fontSize("smaller");
+    font-size: $fontSize-root;
     margin: -(spacing("eighth")) 0 spacing("base");
     text-transform: inherit;
 }
 
 .account-product-price {
     float: right;
-    font-size: fontSize("smaller");
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-medium;
+    color: $color-textBase;
+
+    @media(max-width: 550px) {
+        float: unset;
+    }
 }
 
-.account-product-description + .definitionList {
-    margin: -(spacing("base") + spacing("quarter")) 0 spacing("single");
+.account-product-description {
+    +.definitionList {
+        margin: -(spacing("base") + spacing("quarter")) 0 spacing("single");
+
+        .definitionList-value,
+        .definitionList-key {
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            color: $color-textSecondary;
+            line-height: 1.75;
+            letter-spacing: $letterSpacing-base;
+        }
+    }
 }
+
+.account-product-title {
+    +.definitionList {
+
+        .definitionList-value,
+        .definitionList-key {
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            color: $color-textSecondary;
+            line-height: 1.75;
+            letter-spacing: $letterSpacing-base;
+        }
+    }
+
+    +.is-read {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        color: $color-textBase;
+        line-height: 1.75;
+        letter-spacing: $letterSpacing-base;
+        margin: 0;
+        padding: 15px 0 0 0;
+    }
+}
+
 
 .account-product-refundQty {
     color: color("greys", "light");
@@ -156,26 +441,42 @@
 .account-product-detail {
     @include grid-column(12);
 
-    @include breakpoint("small") {
-        width: grid-calc(4, $total-columns);
-    }
-
-    @include breakpoint("large") {
-        width: grid-calc(3, $total-columns);
-    }
-
-    + .account-product-detail {
+    +.account-product-detail {
         margin-top: spacing("base");
+    }
+
+    +.account-product-detail--full {
 
         @include breakpoint("small") {
+            margin-top: spacing("single");
+        }
+    }
+
+    @media (min-width: 551px) {
+        width: 50%;
+
+        +.account-product-detail {
             margin-top: 0;
         }
     }
 
-    + .account-product-detail--full {
+    @media (min-width: 768px) {
+        width: 25%;
+    }
 
-        @include breakpoint("small") {
-            margin-top: spacing("single");
+    @media (min-width: 1025px) {
+        width: auto;
+
+        +.account-product-detail {
+            margin-left: 35px;
+        }
+    }
+
+    @media (min-width: 1600px) {
+        width: auto;
+
+        +.account-product-detail {
+            margin-left: 75px;
         }
     }
 }
@@ -192,10 +493,37 @@
 }
 
 .account-product-detail-heading {
-    color: stencilColor("color-textSecondary");
-    font-family: fontFamily("sans");
-    font-size: fontSize("tiny");
-    margin: 0 0 spacing("quarter");
+    color: $header-font-color;
+    font-family: $fontFamily-sans;
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-semibold;
+    font-style: normal;
+    text-transform: capitalize;
+    letter-spacing: $letterSpacing-base;
+    line-height: 35px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-underline-position: under;
+
+    span {
+        background-image: linear-gradient(transparent 96%, #3f3f3f 4%);
+        background-repeat: repeat-x;
+        background-position-y: -3px;
+
+        .home-layout-2 & {
+            background-position-y: 0;
+        }
+    }
+
+    +span {
+        display: block;
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        font-style: normal;
+        color: $color-textBase;
+        line-height: 26px;
+        letter-spacing: $letterSpacing-base;
+    }
 }
 
 
@@ -216,6 +544,7 @@
             left: -2.5rem;
         }
 
+        // scss-lint:disable SelectorDepth, NestingDepth
         .form-label {
             height: spacing("single");
             margin: 0;
@@ -254,21 +583,26 @@
 
 .account-orderTotal {
     float: right;
-    font-size: fontSize("smaller");
-    margin-top: -(spacing("single"));
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    margin: 0;
     width: grid-calc(8, $total-columns);
 }
 
 .account-orderTotal-key,
 .account-orderTotal-value {
     margin: 0;
-    padding: spacing("single") 0;
+    padding: 15px 0;
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    letter-spacing: $letterSpacing-base;
+    line-height: 1.75;
+    color: $color-textBase;
 }
 
 .account-orderTotal-key {
-    color: stencilColor("color-textSecondary");
+    color: $color-textBase;
     float: left;
-    font-weight: fontWeight("normal");
 
     &:last-of-type {
         position: relative;
@@ -277,12 +611,16 @@
 }
 
 .account-orderTotal-value {
-    border-bottom: container("border");
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-medium;
+    border-bottom: 1px solid $color-custom-grey;
+    color: $color-textBase;
     text-align: right;
 
     &:last-child {
         border-bottom: 0;
-        font-size: fontSize("small");
+        font-weight: $fontWeight-medium;
+        font-size: $fontSize-root + 4px;
     }
 }
 
@@ -291,70 +629,117 @@
 // -----------------------------------------------------------------------------
 
 .account-orderStatus {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-
-    @include breakpoint("small") {
+    @media (min-width: 551px) {
         float: right;
         position: inherit;
-        text-align: right;
+        text-align: center;
+        bottom: 0;
+        left: 0;
     }
 }
 
 .account-orderStatus-label {
-    background-color: stencilColor("label-backgroundColor");
-    color: stencilColor("label-color");
+    background-color: #835bd8;
+    color: $color-white;
     display: inline-block;
-    font-size: fontSize("tiny");
-    line-height: lineHeight("smallest");
-    margin: 0 0 spacing("quarter");
-    padding: spacing("eighth") spacing("third");
+    vertical-align: top;
+    font-family: $fontFamily-sans;
+    font-size: $fontSize-root - 2px;
+    font-weight: $fontWeight-normal;
+    font-style: italic;
+    line-height: 22px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    padding: 0 5px;
+    margin-top: 0;
+
+    @media (min-width: 551px) {
+        margin-top: 0;
+        margin-bottom: 0;
+        min-width: 122px;
+
+        +.account-orderStatus-action {
+            margin-top: 10px;
+            color: $color-textBase;
+
+            span {
+                background-image: linear-gradient(transparent 96%, $color-textBase 4%);
+                background-repeat: repeat-x;
+                background-position-y: -3px;
+
+                .home-layout-2 & {
+                    background-position-y: 0;
+                }
+            }
+        }
+    }
 }
 
 .account-orderStatus-action {
-    color: stencilColor("color-textSecondary");
     display: inline-block;
-    font-size: fontSize("tiny");
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
     font-style: italic;
-    letter-spacing: letterSpacing("large");
-    margin-left: spacing("half");
+    margin: 10px 0 0 15px;
     text-align: right;
-    text-decoration: underline;
-    vertical-align: top;
 
-    @include breakpoint("small") {
+    @media (min-width: 551px) {
         display: block;
+        margin-top: 0;
         margin-left: 0;
-    }
-
-    &:hover {
-        color: stencilColor("color-textSecondary--hover");
     }
 }
 
+.page-type-account_returns {
+    .account-product-title {
+        +.account-product-description {
+            top: unset;
+        }
+    }
+
+    .account-product-description {
+        a {
+            font-style: italic;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+
+        +.definitionList {
+            margin-top: 0;
+        }
+    }
+
+    .definitionList {
+        margin-bottom: 20px;
+    }
+}
 
 // Account pagination & panel
 // -----------------------------------------------------------------------------
 
 .account {
     .pagination {
-        color: color("greys", "light");
-        margin-top: spacing("double");
-        text-align: center;
+        display: block;
+        text-align: left;
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        color: $color-textBase;
+        letter-spacing: $letterSpacing-base;
+        line-height: 1.75;
+        margin-top: 18px;
+        margin-bottom: -12px;
+    }
+
+    .pagination-list--small {
+        .pagination-item {
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            color: $color-custom-black;
+            letter-spacing: $letterSpacing-base;
+            line-height: 35px;
+        }
     }
 }
-
-
-// Account inbox
-// -----------------------------------------------------------------------------
-
-.account-message {
-    .is-read {
-        color: color("greys", "light");
-    }
-}
-
 
 // Sidebar blocks
 // -----------------------------------------------------------------------------
@@ -362,17 +747,58 @@
 .account-sidebar-block {
     font-size: fontSize("smaller");
 
-    + .account-sidebar-block {
+    +.account-sidebar-block {
         margin-top: spacing("double");
     }
 
     .account-heading {
         margin-bottom: spacing("single");
     }
+
+    .definitionList {
+
+        .definitionList-key,
+        .definitionList-value {
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            color: $color-textSecondary;
+            line-height: 1.75;
+            letter-spacing: $letterSpacing-base;
+        }
+
+        .order-payments-description,
+        .order-payments-value {
+            font-size: $fontSize-root;
+            font-weight: $fontWeight-normal;
+            color: $color-textSecondary;
+            line-height: 1.75;
+            letter-spacing: $letterSpacing-base;
+        }
+
+        .order-payments-description,
+        .definitionList-key {
+            color: $color-textBase;
+            font-weight: $fontWeight-medium;
+        }
+    }
+
+    .button {
+        text-transform: uppercase;
+        min-width: 200px;
+        margin-bottom: 10px;
+    }
 }
 
 .account-order-address {
+    margin-bottom: 0;
     @include u-listBullets("none");
+
+    li {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        line-height: 1.625;
+        color: $color-textBase;
+    }
 }
 
 .account-reorder-form {
@@ -424,4 +850,81 @@
 
 .account-downloadsItem-availability {
     color: stencilColor("color-textSecondary");
+}
+
+.page {
+    &.account {
+        .button {
+            @media (min-width: 381px) {
+                min-width: 205px;
+            }
+        }
+    }
+}
+
+.page.page-giftcertificates,
+.page.page-account {
+    margin: 0;
+
+    .page-header {
+        margin-bottom: 28px;
+    }
+
+    .page-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.page.page-giftcertificates {
+    .page-content {
+        .account {
+            >h3 {
+                font-weight: 600;
+            }
+
+            .intro {
+                font-weight: 500;
+            }
+
+            .form-prefixPostfix {
+                max-width: 865px;
+
+                #giftcertificatecode {
+                    width: calc(100% - 225px);
+                }
+            }
+        }
+    }
+}
+
+.form-label {
+    color: $color-textSecondary;
+
+    small {
+        float: none;
+    }
+}
+
+.form-select {
+    height: 50px;
+    min-height: 50px;
+    border-color: stencilColor("input-border-color");
+}
+
+.page-account.account-created {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .page-header {
+        @media (max-width: 1024px) {
+            margin-bottom: 25px;
+        }
+    }
+
+    .button {
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+    }
 }

@@ -9,14 +9,16 @@
 .socialLinks {
     @include clearfix;
     @include u-listReset; // 2
-    line-height: lineHeight("largest");
 
-    .icon { // 1
+    .icon {
+        // 1
         @include square($socialLinks-iconSize);
         margin: 0;
         text-decoration: none;
 
+        // scss-lint:disable NestingDepth, SelectorDepth
         &:hover {
+
             svg {
                 fill: stencilColor("icon-color-hover");
             }
@@ -26,41 +28,89 @@
             fill: stencilColor("icon-color");
             transition: all 0.15s ease;
         }
+
+        // scss-lint:enable NestingDepth, SelectorDepth
+
+        &.icon--facebook {
+            svg {
+                width: 24px;
+                height: 26px;
+            }
+        }
+
+        &.icon--twitter {
+            svg {
+                width: 24px;
+                height: 26px;
+            }
+        }
+
+        &.icon--instagram {
+            svg {
+                width: 24px;
+                height: 26px;
+            }
+        }
+
+        &.icon--pinterest {
+            svg {
+                width: 24px;
+                height: 26px;
+            }
+        }
+
+        &.icon--youtube {
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        &.icon--snapchat {
+            svg {
+                width: 24px;
+                height: 26px;
+            }
+        }
     }
 }
 
+// scss-lint:enable SelectorFormat
+
+// scss-lint:disable SelectorFormat
 .socialLinks-item--pinterest {
     width: 25px;
 }
 
+// scss-lint:enable SelectorFormat
+
+// scss-lint:disable SelectorFormat
 .pin_it_iframe_widget {
     display: none;
 }
+
+// scss-lint:enable SelectorFormat
 
 .socialLinks-item {
     display: inline-block;
     font-size: 0; // 1
 
-    .socialLinks & { // 2
-        margin-bottom: spacing("quarter");
-        margin-right: spacing("half");
+    .socialLinks & {
+        // 2
+        margin-bottom: 15px;
+        margin-right: 28px;
+        text-align: center;
 
+        // scss-lint:disable NestingDepth
         &:last-child {
             margin-right: 0;
         }
+
+        // scss-lint:enable NestingDepth,
     }
 
-    .socialLinks__link {
-        @include addFocusTooltip;
-        height: 2rem;
-        position: relative;
-
-        // moving tooltip on the left side for avoiding by parent's cut with overflow: hidden
-        &:focus::after {
-            left: 0;
-            right: auto;
-            z-index: zIndex("low");
-        }
+    .icon--facebook {
+        margin-left: -5px;
     }
 }
 
@@ -71,10 +121,80 @@
 
 .socialLinks--alt {
     .icon {
-        @include square($socialLinks-alt-iconSize);
+        width: 28px;
+        height: 28px;
     }
 
     svg {
         fill: $socialLinks-alt-iconColor;
+    }
+
+    .icon--facebook{
+        width: 18px;
+    }
+
+    .icon--twitter {
+        width: 24px;
+
+    }
+
+    .icon--instagram {
+        width: 24px;
+
+    }
+
+    .icon--pinterest {
+        width: 24px;
+
+    }
+
+    .icon--youtube {
+        width: 28px;
+
+    }
+
+    .icon--snapchat {
+        width: 24px;
+
+    }
+}
+
+.at-share-btn-elements {
+    .at-icon-wrapper {
+        width: 22px !important;
+        height: 22px !important;
+        padding: 0 !important;
+        margin: 0 8px 0 0px !important;
+
+        svg {
+            width: 22px !important;
+            height: 22px !important;
+            fill: stencilColor('color-textBase') !important;
+        }
+
+        &:last-child {
+            margin-right: 0 !important;
+        }
+    }
+}
+
+.addthis_toolbox {
+    .socialLinks {
+        line-height: 20px;
+        margin-top: -8px;
+
+        .socialLinks-item {
+            margin-right: 8px;
+
+            .icon {
+                svg {
+                    height: 15px;
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 }

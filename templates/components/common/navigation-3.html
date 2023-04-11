@@ -1,0 +1,94 @@
+<nav class="navUser">
+    <ul class="navUser-section navUser-section--alt">
+        <li class="navUser-item navUser-item--account">
+            <div class="navUser-item__item">
+                <a class="navUser-action" {{#if customer}}href="{{urls.account.index}}"{{else}}href="{{urls.auth.login}}"{{/if}} aria-label="{{lang 'common.login'}}" data-login-form>
+                    <svg class="icon" role="img" aria-label="{{lang 'common.account'}}">
+                        <title>{{lang 'common.account'}}</title>
+                        <desc>{{lang 'common.account'}}</desc>
+                        <use xlink:href="#icon-user-2"></use>
+                    </svg>
+                </a>
+            </div>
+        </li>
+        {{#if settings.show_wishlist}}
+            <li class="navUser-item navUser-item--wishlist">
+                <div class="navUser-item__item">
+                    <a class="navUser-action" href="{{urls.account.wishlists.all}}">
+                        <div class="navUser-icon">
+                            <svg class="icon" role="img" aria-label="{{lang 'account.wishlists.heading'}}">
+                                <title>{{lang 'account.wishlists.heading'}}</title>
+                                <desc>{{lang 'account.wishlists.heading'}}</desc>
+                                <use xlink:href="#icon-heart"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        {{/if}}
+        <li class="navUser-item navUser-item--cart">
+            <a class="navUser-action" data-cart-preview data-options="align:right" href="{{urls.cart}}" aria-label="{{lang 'cart.nav_aria_label'}}">
+                <span class="navUser-item-cartLabel">
+                    <svg class="icon" role="img" aria-label="{{lang 'cart.cart_preview'}}">
+                        <title>{{lang 'cart.cart_preview'}}</title>
+                        <desc>{{lang 'cart.cart_preview'}}</desc>
+                        <use xlink:href="#icon-cart-2"></use>
+                    </svg>
+                </span>
+                <span class="countPill cart-quantity">{{cart.quantity}}</span>
+            </a>
+            <div class="dropdown-cart" id="cart-preview-dropdown" aria-hidden="true"></div>
+        </li>
+        {{#if theme_settings.haloLiveHelp}}
+            <li class="navUser-item navUser-item--liveHelp">
+                <a class="navUser-action" href="#" data-header-liveHelp>
+                    <div class="navUser-icon">
+                        <svg class="icon" role="img" aria-label="{{lang 'common.live_help'}}">
+                            <title>{{lang 'common.live_help'}}</title>
+                            <desc>{{lang 'common.live_help'}}</desc>
+                            <use xlink:href="#icon-headphone"></use>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+        {{/if}}
+        {{#if currency_selector.currencies.length '>' 1}}
+            <li class="navUser-item navUser-item--currency">
+                <a class="navUser-action navUser-action--currencySelector has-dropdown"
+                   href="#"
+                   data-dropdown="currencySelection"
+                   aria-controls="currencySelection"
+                   aria-expanded="false"
+                   aria-label="{{lang 'common.currency' code=currency_selector.active_currency_code}}"
+                >
+                    <span class="cur-flag">{{{currency_selector.active_currency_flag}}}</span>
+                    <i class="icon" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="#icon-chevron-down" />
+                        </svg>
+                    </i>
+                </a>
+                <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
+                    <li class="dropdown-menu-title">
+                        <span class="text">{{lang 'common.select_currency'}}</span>
+                    </li>
+                    {{#each currency_selector.currencies}}
+                        <li class="dropdown-menu-item">
+                            <a href="{{{switch_url}}}"
+                               data-currency-code="{{{code}}}"
+                               {{#if cart_currency_switch_url.length '>' 0 }}
+                               data-cart-currency-switch-url="{{{cart_currency_switch_url}}}"
+                               {{/if}}
+                               data-warning="{{lang 'common.currency_switch_promotion'}}"
+                               {{#if is_active}} class="is-active"{{/if}}
+                            >
+                                <span class="flag">{{{flag}}}</span>
+                                <span class="text">{{name}}</span>
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </li>
+        {{/if}}
+    </ul>
+</nav>

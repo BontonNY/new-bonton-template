@@ -10,4 +10,27 @@
     background-color: rgba(stencilColor("loadingOverlay-backgroundColor"), 0.9);
     display: none;
     z-index: zIndex("low");
+
+    &:before{
+        content: '';
+        background: url(../img/loading.svg) no-repeat;
+        background-size: contain;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 0;
+        right: 0;
+        border: 0;
+        border-radius: 0;
+        display: block;
+        margin: 0 auto;
+        transform: translateY(-50%) rotate(0);
+        transform-style: preserve-3d;
+        animation: unset;
+
+        .home-layout-2 & {
+            background: url(../img/loading_2.svg) no-repeat;
+        }
+    }
 }

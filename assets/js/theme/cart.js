@@ -4,8 +4,11 @@ import checkIsGiftCertValid from './common/gift-certificate-validator';
 import { createTranslationDictionary } from './common/utils/translations-utils';
 import utils from '@bigcommerce/stencil-utils';
 import ShippingEstimator from './cart/shipping-estimator';
-import { defaultModal, showAlertModal, ModalEvents } from './global/modal';
+import { defaultModal, ModalEvents } from './global/modal';
+import swal from './global/sweet-alert';
 import CartItemDetails from './common/cart-item-details';
+import haloQuickEditCart from './halothemes/haloQuickEditCart';
+import haloCalculateFreeShipping from './halothemes/haloCalculateFreeShipping';
 
 export default class Cart extends PageManager {
     onReady() {
@@ -14,7 +17,6 @@ export default class Cart extends PageManager {
         this.$cartContent = $('[data-cart-content]');
         this.$cartMessages = $('[data-cart-status]');
         this.$cartTotals = $('[data-cart-totals]');
-        this.$cartAdditionalCheckoutBtns = $('[data-cart-additional-checkout-buttons]');
         this.$overlay = $('[data-cart] .loadingOverlay')
             .hide(); // TODO: temporary until roper pulls in his cart components
         this.$activeCartItemId = null;
@@ -22,6 +24,32 @@ export default class Cart extends PageManager {
 
         this.setApplePaySupport();
         this.bindEvents();
+
+        haloCalculateFreeShipping(this.context);
+        if (this.context.themeSettings.halo_QuickEditCart) {
+            haloQuickEditCart(this.context);
+        }
+
+        if ($('body').hasClass('page-type-cart')) {
+            const $cart = $('[data-cart-preview]');
+
+            $cart.on('click', event => {
+                event.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: $('[data-cart]').offset().top,
+                }, 700);
+            });
+        }
+
+        if ($('.halo-cart-notification').length) {
+            if (!$('.halo-cart-notification').hasClass('is-running')) {
+                var duration = $('.halo-cart-notification').data('coundown') * 60,
+                    element = $('.halo-cart-notification .time');
+                $('.halo-cart-notification').addClass('is-running');
+                this.startTimer(duration, element);
+            }
+        }
     }
 
     setApplePaySupport() {
@@ -44,9 +72,15 @@ export default class Cart extends PageManager {
         const newQty = $target.data('action') === 'inc' ? oldQty + 1 : oldQty - 1;
         // Does not quality for min/max quantity
         if (newQty < minQty) {
-            return showAlertModal(minError);
+            return swal.fire({
+                text: minError,
+                icon: 'error',
+            });
         } else if (maxQty > 0 && newQty > maxQty) {
-            return showAlertModal(maxError);
+            return swal.fire({
+                text: maxError,
+                icon: 'error',
+            });
         }
 
         this.$overlay.show();
@@ -61,7 +95,10 @@ export default class Cart extends PageManager {
                 this.refreshContent(remove);
             } else {
                 $el.val(oldQty);
-                showAlertModal(response.data.errors.join('\n'));
+                swal.fire({
+                    text: response.data.errors.join('\n'),
+                    icon: 'error',
+                });
             }
         });
     }
@@ -78,16 +115,25 @@ export default class Cart extends PageManager {
         let invalidEntry;
 
         // Does not quality for min/max quantity
-        if (!Number.isInteger(newQty)) {
+        if (!newQty) {
             invalidEntry = $el.val();
             $el.val(oldQty);
-            return showAlertModal(this.context.invalidEntryMessage.replace('[ENTRY]', invalidEntry));
+            return swal.fire({
+                text: this.context.invalidEntryMessage.replace('[ENTRY]', invalidEntry),
+                icon: 'error',
+            });
         } else if (newQty < minQty) {
             $el.val(oldQty);
-            return showAlertModal(minError);
+            return swal.fire({
+                text: minError,
+                icon: 'error',
+            });
         } else if (maxQty > 0 && newQty > maxQty) {
             $el.val(oldQty);
-            return showAlertModal(maxError);
+            return swal.fire({
+                text: maxError,
+                icon: 'error',
+            });
         }
 
         this.$overlay.show();
@@ -101,8 +147,10 @@ export default class Cart extends PageManager {
                 this.refreshContent(remove);
             } else {
                 $el.val(oldQty);
-
-                return showAlertModal(response.data.errors.join('\n'));
+                swal.fire({
+                    text: response.data.errors.join('\n'),
+                    icon: 'error',
+                });
             }
         });
     }
@@ -113,8 +161,10 @@ export default class Cart extends PageManager {
             if (response.data.status === 'succeed') {
                 this.refreshContent(true);
             } else {
-                this.$overlay.hide();
-                showAlertModal(response.data.errors.join('\n'));
+                swal.fire({
+                    text: response.data.errors.join('\n'),
+                    icon: 'error',
+                });
             }
         });
     }
@@ -165,7 +215,10 @@ export default class Cart extends PageManager {
                 const data = result.data || {};
 
                 if (err) {
-                    showAlertModal(err);
+                    swal.fire({
+                        text: err,
+                        icon: 'error',
+                    });
                     return false;
                 }
 
@@ -196,7 +249,6 @@ export default class Cart extends PageManager {
                 totals: 'cart/totals',
                 pageTitle: 'cart/page-title',
                 statusMessages: 'cart/status-messages',
-                additionalCheckoutButtons: 'cart/additional-checkout-buttons',
             },
         };
 
@@ -211,7 +263,6 @@ export default class Cart extends PageManager {
             this.$cartContent.html(response.content);
             this.$cartTotals.html(response.totals);
             this.$cartMessages.html(response.statusMessages);
-            this.$cartAdditionalCheckoutBtns.html(response.additionalCheckoutButtons);
 
             $cartPageTitle.replaceWith(response.pageTitle);
             this.bindEvents();
@@ -225,6 +276,8 @@ export default class Cart extends PageManager {
                 .filter(`[data-action='${this.$activeCartItemBtnAction}']`)
                 .trigger('focus');
         });
+
+        haloCalculateFreeShipping(this.context);
     }
 
     bindCartEvents() {
@@ -258,24 +311,29 @@ export default class Cart extends PageManager {
         $('.cart-remove', this.$cartContent).on('click', event => {
             const itemId = $(event.currentTarget).data('cartItemid');
             const string = $(event.currentTarget).data('confirmDelete');
-            showAlertModal(string, {
+            swal.fire({
+                text: string,
                 icon: 'warning',
                 showCancelButton: true,
-                onConfirm: () => {
+                cancelButtonText: this.context.cancelButtonText,
+            }).then((result) => {
+                if (result.value) {
                     // remove item from cart
                     cartRemoveItem(itemId);
-                },
+                }
             });
             event.preventDefault();
         });
 
-        $('[data-item-edit]', this.$cartContent).on('click', event => {
-            const itemId = $(event.currentTarget).data('itemEdit');
-            const productId = $(event.currentTarget).data('productId');
-            event.preventDefault();
-            // edit item in cart
-            this.cartEditOptions(itemId, productId);
-        });
+        if (this.context.themeSettings.halo_QuickEditCart == false) {
+            $('[data-item-edit]', this.$cartContent).on('click', event => {
+                const itemId = $(event.currentTarget).data('itemEdit');
+                const productId = $(event.currentTarget).data('productId');
+                event.preventDefault();
+                // edit item in cart
+                this.cartEditOptions(itemId, productId);
+            });
+        }
     }
 
     bindPromoCodeEvents() {
@@ -307,14 +365,20 @@ export default class Cart extends PageManager {
 
             // Empty code
             if (!code) {
-                return showAlertModal($codeInput.data('error'));
+                return swal.fire({
+                    text: $codeInput.data('error'),
+                    icon: 'error',
+                });
             }
 
             utils.api.cart.applyCode(code, (err, response) => {
                 if (response.data.status === 'success') {
                     this.refreshContent();
                 } else {
-                    showAlertModal(response.data.errors.join('\n'));
+                    swal.fire({
+                        html: response.data.errors.join('\n'),
+                        icon: 'error',
+                    });
                 }
             });
         });
@@ -327,16 +391,19 @@ export default class Cart extends PageManager {
 
         $('.gift-certificate-add').on('click', event => {
             event.preventDefault();
-            $(event.currentTarget).toggle();
-            $certContainer.toggle();
-            $('.gift-certificate-cancel').toggle();
+
+            $(event.currentTarget).hide();
+            $certContainer.show();
+            $('.gift-certificate-cancel').show();
+            $certInput.trigger('focus');
         });
 
         $('.gift-certificate-cancel').on('click', event => {
             event.preventDefault();
-            $certContainer.toggle();
-            $('.gift-certificate-add').toggle();
-            $('.gift-certificate-cancel').toggle();
+
+            $certContainer.hide();
+            $('.gift-certificate-add').show();
+            $('.gift-certificate-cancel').hide();
         });
 
         $certForm.on('submit', event => {
@@ -421,6 +488,24 @@ export default class Cart extends PageManager {
         $('[name="giftwraptype"]').on('click', toggleViews);
 
         toggleViews();
+    }
+
+    startTimer(duration, element) {
+        var timer = duration, minutes, seconds;
+        var startCoundown = setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            element.text(minutes + ":" + seconds);
+
+            if (--timer < 0) {
+                clearInterval(startCoundown);
+                $('.halo-cart-notification').remove();
+            }
+        }, 1000);
     }
 
     bindEvents() {

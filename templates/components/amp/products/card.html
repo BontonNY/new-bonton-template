@@ -1,3 +1,5 @@
+{{inject "isProductCardPresented" true}}
+
 <article class="card {{#if alternate}}card--alternate{{/if}}">
     <figure class="card-figure">
         {{#or price.sale_price_with_tax.value price.sale_price_without_tax.value}}
@@ -27,7 +29,7 @@
         </h3>
 
         <div class="card-text" data-test-info-type="price">
-            {{#or customer (unless settings.hide_price_from_guests)}}
+            {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
                 {{> components/products/price price=price customer=customer}}
             {{else}}
                 {{> components/common/login-for-pricing}}

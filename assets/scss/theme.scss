@@ -12,6 +12,7 @@
 
 @import "../../node_modules/@bigcommerce/citadel/dist/tools/toolkit"; // 1
 @import "tools/tools";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Settings
 // -----------------------------------------------------------------------------
@@ -54,6 +55,17 @@
 @import "../../node_modules/@bigcommerce/citadel/dist/utilities/utilities";
 
 
+// Fonts
+// -----------------------------------------------------------------------------
+
+@import "fonts/fonts";
+
+// Library
+// -----------------------------------------------------------------------------
+
+@import "vendor/animate";
+
+
 // Components
 // -----------------------------------------------------------------------------
 //
@@ -77,3 +89,9 @@
 // -----------------------------------------------------------------------------
 
 @import "layouts/layouts"; // 1
+
+@import "vendor/jstree/style";
+
+@import "halothemes/halo";
+
+@import "custom";

@@ -3,39 +3,129 @@
 // =============================================================================
 
 .writeReview-productDetails {
-
-    @include breakpoint("medium") {
-        @include grid-column(6);
-    }
+    text-align: center;
 
     .product-brand {
-        color: color("greys", "light");
-        margin: 0;
+        font-family: $fontFamily-sans;
+        font-size: $fontSize-root - 2px;
+        font-weight: $fontWeight-normal;
+        color: $color-custom-greyDarker;
+        line-height: 28px;
+        text-transform: capitalize;
+        margin: 10px 0 0 0;
+
+        +.product-title {
+            margin-top: 0;
+        }
     }
 
     .product-title {
-        margin-top: 0;
+        font-family: $fontFamily-sans;
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-medium;
+        line-height: 30px;
+        letter-spacing: $letterSpacing-base;
+        text-transform: capitalize;
+        color: $color-textBase;
+        margin-top: 19px;
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 410px;
+        float: left;
+        padding-right: 15px;
+        margin-top: 10px;
     }
 }
 
-
 .writeReview-form {
+    margin-top: 30px;
 
-    @include breakpoint("medium") {
-        @include grid-column(6);
+    .form-field {
+        margin-bottom: 20px;
+
+        &.form-field--textarea {
+            margin-bottom: 15px;
+        }
+    }
+
+    .g-recaptcha {
+        margin-bottom: -2px;
+    }
+
+    .form-label {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-medium;
+        line-height: 20px;
+        letter-spacing: $letterSpacing-base;
+        color: $color-textBase;
+        margin-bottom: 10px;
+
+        small {
+            font-size: $fontSize-root - 2px;
+            font-weight: $fontWeight-normal;
+            font-style: italic;
+            letter-spacing: $letterSpacing-base;
+            line-height: 20px;
+            margin-top: 0;
+            text-transform: capitalize;
+            color: stencilColor('sale_price_color');
+        }
+    }
+
+    .form-select {
+        height: 50px;
+        max-width: 100%;
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        letter-spacing: $letterSpacing-base;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-position: right 10px top 15px;
+        color: $color-custom-greyDarker;
+    }
+
+    .form-input {
+        &[rows] {
+            height: 170px;
+        }
+    }
+
+    .button {
+        width: auto;
+        min-width: 210px;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 768px) {
+        position: relative;
+        top: -10px;
+        margin-top: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: calc(100% - 410px);
+        float: left;
+        padding-left: 15px;
     }
 }
 
 .writeReview-productImage-container {
-
-    @include lazy-loaded-padding("product_size");
     position: relative;
 
     img {
         @include lazy-loaded-img;
-        /* Object-fit polyfill */
-        font-family: "object-fit: contain;";
         height: 100%;
         object-fit: contain;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 100%;
+        padding-bottom: 127.63221%;
     }
 }

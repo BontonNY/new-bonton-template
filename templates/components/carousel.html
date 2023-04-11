@@ -1,5 +1,8 @@
-<section class="heroCarousel"
-    data-slick='{
+<div class="container heroCarousel-wrapper{{#if theme_settings.halo_homepage_layout_2}} container--full{{/if}}">
+    <div class="heroCarousel"
+        data-slick='{
+        "fade": true,
+        "dots": true,
         "arrows": {{arrows}},
         "mobileFirst": true,
         "slidesToShow": 1,
@@ -7,54 +10,88 @@
         "autoplay": true,
         "autoplaySpeed": {{carousel.swap_frequency}},
         "slide": "[data-hero-slide]"
-    }'
->
-    {{#each carousel.slides}}
-    {{#if button_text}}
-    <div data-hero-slide="{{@index}}">
-    {{else}}
-    <a href="{{url}}" data-hero-slide="{{@index}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}">
-    {{/if}}
-        <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
-            {{#if button_text}}
-            <a href="{{url}}" class="heroCarousel-image-wrapper">
-            {{else}}
-            <div class="heroCarousel-image-wrapper">
-            {{/if}}
-            {{#if @first}}
-                {{> components/common/responsive-img
-                    image=stencil_image
-                    class="heroCarousel-image"
-                    fallback_size='1280w'
-                    lazyload='disabled'
-                }}
-            {{else}}
-                {{> components/common/responsive-img
-                    image=stencil_image
-                    class="heroCarousel-image"
-                    fallback_size='1280w'
-                    lazyload='lazyload'
-                }}
-            {{/if}}
-            {{#if button_text}}
-            </a>
-            {{else}}
+    }'>
+        {{#each carousel.slides}}
+            <div class="heroCarousel-slide {{#if theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}" data-hero-slide="{{@index}}">
+                {{#if @index '==' 0}}
+                    {{#if (merge this subheading=../theme_settings.homepage_show_carousel_0_subheading)}}{{/if}}
+                    {{#if (merge this position=../theme_settings.homepage_show_carousel_0_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../theme_settings.homepage_show_carousel_0_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextBtn=../theme_settings.homepage_show_carousel_0_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../theme_settings.homepage_show_carousel_0_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 1}}
+                    {{#if (merge this subheading=../theme_settings.homepage_show_carousel_1_subheading)}}{{/if}}
+                    {{#if (merge this position=../theme_settings.homepage_show_carousel_1_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../theme_settings.homepage_show_carousel_1_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextBtn=../theme_settings.homepage_show_carousel_1_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../theme_settings.homepage_show_carousel_1_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 2}}
+                    {{#if (merge this subheading=../theme_settings.homepage_show_carousel_2_subheading)}}{{/if}}
+                    {{#if (merge this position=../theme_settings.homepage_show_carousel_2_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../theme_settings.homepage_show_carousel_2_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextBtn=../theme_settings.homepage_show_carousel_2_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../theme_settings.homepage_show_carousel_2_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 3}}
+                    {{#if (merge this subheading=../theme_settings.homepage_show_carousel_3_subheading)}}{{/if}}
+                    {{#if (merge this position=../theme_settings.homepage_show_carousel_3_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../theme_settings.homepage_show_carousel_3_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextBtn=../theme_settings.homepage_show_carousel_3_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../theme_settings.homepage_show_carousel_3_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 4}}
+                    {{#if (merge this subheading=../theme_settings.homepage_show_carousel_4_subheading)}}{{/if}}
+                    {{#if (merge this position=../theme_settings.homepage_show_carousel_4_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../theme_settings.homepage_show_carousel_4_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextBtn=../theme_settings.homepage_show_carousel_4_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../theme_settings.homepage_show_carousel_4_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                <div class="heroCarousel-image-wrapper">
+                    <a class="heroCarousel-image" href="{{url}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'common.carousel_slide_number' slide_number=(add @index 1)}}{{/if}}">
+                        {{#if @first}}
+                            {{> components/common/responsive-img
+                                image=stencil_image
+                                class="heroCarousel-image"
+                                fallback_size='1280w'
+                                lazyload='disabled'
+                            }}
+                        {{else}}
+                            {{> components/common/responsive-img
+                                image=stencil_image
+                                class="heroCarousel-image"
+                                fallback_size='1280w'
+                                lazyload='lazyload'
+                            }}
+                        {{/if}}
+                        {{#if imageMobile}}
+                            <img class="lazyload image-mobile" src="{{#if ../theme_settings.halo_homepage_layout_1}}{{cdn 'img/loading.svg'}}{{else}}{{cdn 'img/loading_2.svg'}}{{/if}}" data-src="https://cdn11.bigcommerce.com/s-{{../settings.store_hash}}/product_images/uploaded_images/{{imageMobile}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                        {{else}}
+                            <img class="lazyload image-mobile" src="{{#if ../theme_settings.halo_homepage_layout_1}}{{cdn 'img/loading.svg'}}{{else}}{{cdn 'img/loading_2.svg'}}{{/if}}" data-src="{{getImageSrcset stencil_image 1x=(default fallback_size '960w')}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="heroCarousel-content-wrapper {{position}}">
+                    {{#if heading}}
+                        {{> components/carousel-content show_background=true}}
+                    {{else}}
+                        {{#if text}}
+                            {{> components/carousel-content show_background=true}}
+                        {{else}}
+                            {{#if button_text}}
+                                {{> components/carousel-content show_background=false}}
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                </div>
             </div>
-            {{/if}}
-            {{#or heading text button_text}}
-                {{> components/carousel-content}}
-            {{/or}}
-        </div>
-    {{#if button_text}}
+        {{/each}}
     </div>
-    {{else}}
-    </a>
-    {{/if}}
-    {{/each}}
-    {{#if carousel.slides.length '>' 1}}
-        {{> components/carousel-content-announcement}}
-        {{#if play_pause_button}}
-            {{> components/carousel-play-pause-button}}
-        {{/if}}
-    {{/if}}
-</section>
+</div>
+

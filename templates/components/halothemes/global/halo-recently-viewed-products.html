@@ -1,0 +1,146 @@
+{{#if theme_settings.halo_recently_viewed_products }}
+    <section class="recently-viewed-products-sidebar">
+        <div class="lst-seen-widget">
+            <div class="in-content">
+                {{#if theme_settings.halo_recently_viewed_products_title '!=' ''}}
+                    <h3 class="title text-center">{{theme_settings.halo_recently_viewed_products_title}}</h3>
+                {{/if}}
+                <div class="products-grid" id="recently-viewed-products-list">
+                    <div class="no-products text-center" style="flex-direction: column;display:none;">
+                        <svg class="icon" role="img" aria-label="{{lang 'common.no_item'}}">
+                            <title>{{lang 'common.no_item'}}</title>
+                            <desc>{{lang 'common.no_item'}}</desc>
+                            <use xlink:href="#icon-no-products"></use>
+                        </svg>
+                         <span class="text">{{lang 'common.sorry_no_products'}}</span>
+                    </div>
+                </div>
+                <div id="recently-viewed-products-list-tmp" style="display: none !important;"></div>
+            </div>
+        </div>
+
+        <div class="lst-social-media">
+            <div class="in-content">
+                <h3 class="title text-center">Social</h3>
+                <div class="media-grid text-center" id="recently-viewed-products-share">
+                    <ul class="list-social">
+                        <li class="list-social__item">
+                            <a href="https://www.facebook.com/BigCommerce/" class="link link--text list-social__link"><svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon icon-facebook">
+                                    <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                                </svg><span class="visually-hidden">Facebook</span>
+                            </a>
+                            <div class="info list-social__info text-left">
+                                <a class="link link-underline" href="https://www.facebook.com/BigCommerce/">
+                                    <span class="text">Facebook</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-social__item">
+                            <a href="https://www.instagram.com/bigcommerce/" class="link link--text list-social__link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" aria-hidden="true" focusable="false" role="presentation" class="icon icon-instagram">
+                                    <g>
+                                        <path d="M256,152c-57.9,0-105,47.1-105,105s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z M256,152   c-57.9,0-105,47.1-105,105s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z M437,0H75C33.6,0,0,33.6,0,75v362   c0,41.4,33.6,75,75,75h362c41.4,0,75-33.6,75-75V75C512,33.6,478.4,0,437,0z M256,392c-74.399,0-135-60.601-135-135   c0-74.401,60.601-135,135-135s135,60.599,135,135C391,331.399,330.399,392,256,392z M421,122c-16.5,0-30-13.5-30-30s13.5-30,30-30   s30,13.5,30,30S437.5,122,421,122z M256,152c-57.9,0-105,47.1-105,105s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z    M256,152c-57.9,0-105,47.1-105,105s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z M256,152c-57.9,0-105,47.1-105,105   s47.1,105,105,105s105-47.1,105-105S313.9,152,256,152z"></path>
+                                    </g>
+                                </svg><span class="visually-hidden">Instagram</span>
+                            </a>
+                            <div class="info list-social__info text-left">
+                                <a class="link link-underline" href="https://www.instagram.com/bigcommerce/">
+                                    <span class="text">Instagram</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-social__item">
+                            <a href="https://www.pinterest.com/bigcommerce/" class="link link--text list-social__link"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pinterest" viewBox="0 0 17 18">
+                                    <path d="M8.48.58a8.42 8.42 0 015.9 2.45 8.42 8.42 0 011.33 10.08 8.28 8.28 0 01-7.23 4.16 8.5 8.5 0 01-2.37-.32c.42-.68.7-1.29.85-1.8l.59-2.29c.14.28.41.52.8.73.4.2.8.31 1.24.31.87 0 1.65-.25 2.34-.75a4.87 4.87 0 001.6-2.05 7.3 7.3 0 00.56-2.93c0-1.3-.5-2.41-1.49-3.36a5.27 5.27 0 00-3.8-1.43c-.93 0-1.8.16-2.58.48A5.23 5.23 0 002.85 8.6c0 .75.14 1.41.43 1.98.28.56.7.96 1.27 1.2.1.04.19.04.26 0 .07-.03.12-.1.15-.2l.18-.68c.05-.15.02-.3-.11-.45a2.35 2.35 0 01-.57-1.63A3.96 3.96 0 018.6 4.8c1.09 0 1.94.3 2.54.89.61.6.92 1.37.92 2.32 0 .8-.11 1.54-.33 2.21a3.97 3.97 0 01-.93 1.62c-.4.4-.87.6-1.4.6-.43 0-.78-.15-1.06-.47-.27-.32-.36-.7-.26-1.13a111.14 111.14 0 01.47-1.6l.18-.73c.06-.26.09-.47.09-.65 0-.36-.1-.66-.28-.89-.2-.23-.47-.35-.83-.35-.45 0-.83.2-1.13.62-.3.41-.46.93-.46 1.56a4.1 4.1 0 00.18 1.15l.06.15c-.6 2.58-.95 4.1-1.08 4.54-.12.55-.16 1.2-.13 1.94a8.4 8.4 0 01-5-7.65c0-2.3.81-4.28 2.44-5.9A8.04 8.04 0 018.48.57z">
+                                    </path>
+                                </svg>
+                                <span class="visually-hidden">Pinterest</span>
+                            </a>
+                            <div class="info list-social__info text-left">
+                                <a class="link link-underline" href="https://www.pinterest.com/bigcommerce/">
+                                    <span class="text">Pinterest</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-social__item">
+                            <a href="https://www.tiktok.com/@bigcommerceie" class="link link--text list-social__link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false" class="icon icon-tiktok">
+                                    <path d="m475.074 0h-438.148c-20.395 0-36.926 16.531-36.926 36.926v438.148c0 20.395 16.531 36.926 36.926 36.926h438.148c20.395 0 36.926-16.531 36.926-36.926v-438.148c0-20.395-16.531-36.926-36.926-36.926zm-90.827 195.959v34.613c-16.322.006-32.181-3.192-47.137-9.503-9.617-4.06-18.577-9.292-26.772-15.613l.246 106.542c-.103 23.991-9.594 46.532-26.772 63.51-13.98 13.82-31.695 22.609-50.895 25.453-4.512.668-9.103 1.011-13.746 1.011-20.553 0-40.067-6.659-56.029-18.943-3.004-2.313-5.876-4.82-8.612-7.521-18.617-18.4-28.217-43.34-26.601-69.575 1.234-19.971 9.229-39.017 22.558-53.945 17.635-19.754 42.306-30.719 68.684-30.719 4.643 0 9.234.348 13.746 1.017v12.798 35.601c-4.277-1.411-8.846-2.187-13.603-2.187-24.1 0-43.597 19.662-43.237 43.779.228 15.431 8.658 28.92 21.09 36.355 5.842 3.495 12.564 5.659 19.737 6.053 5.62.308 11.016-.474 16.013-2.124 17.218-5.688 29.639-21.861 29.639-40.935l.057-71.346v-130.252h47.668c.046 4.723.525 9.332 1.416 13.797 3.598 18.075 13.786 33.757 27.966 44.448 12.364 9.326 27.76 14.854 44.448 14.854.011 0 .148 0 .137-.011v12.843z"></path>
+                                </svg><span class="visually-hidden">TikTok</span>
+                            </a>
+                            <div class="info list-social__info text-left">
+                                <a class="link link-underline" href="https://www.tiktok.com/@bigcommerceie">
+                                    <span class="text">TikTok</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-social__item">
+                            <a href="https://www.youtube.com/bigcommerce" class="link link--text list-social__link"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-youtube" viewBox="0 0 100 70">
+                                    <path d="M98 11c2 7.7 2 24 2 24s0 16.3-2 24a12.5 12.5 0 01-9 9c-7.7 2-39 2-39 2s-31.3 0-39-2a12.5 12.5 0 01-9-9c-2-7.7-2-24-2-24s0-16.3 2-24c1.2-4.4 4.6-7.8 9-9 7.7-2 39-2 39-2s31.3 0 39 2c4.4 1.2 7.8 4.6 9 9zM40 50l26-15-26-15v30z">
+                                    </path>
+                                </svg>
+                                <span class="visually-hidden">YouTube</span>
+                            </a>
+                            <div class="info list-social__info text-left">
+                                <a class="link link-underline" href="https://www.youtube.com/bigcommerce">
+                                    <span class="text">YouTube</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-social__item">
+                            <a href="https://twitter.com/bigcommerce" class="link link--text list-social__link"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-twitter" viewBox="0 0 18 15">
+                                    <path d="M17.64 2.6a7.33 7.33 0 01-1.75 1.82c0 .05 0 .13.02.23l.02.23a9.97 9.97 0 01-1.69 5.54c-.57.85-1.24 1.62-2.02 2.28a9.09 9.09 0 01-2.82 1.6 10.23 10.23 0 01-8.9-.98c.34.02.61.04.83.04 1.64 0 3.1-.5 4.38-1.5a3.6 3.6 0 01-3.3-2.45A2.91 2.91 0 004 9.35a3.47 3.47 0 01-2.02-1.21 3.37 3.37 0 01-.8-2.22v-.03c.46.24.98.37 1.58.4a3.45 3.45 0 01-1.54-2.9c0-.61.14-1.2.45-1.79a9.68 9.68 0 003.2 2.6 10 10 0 004.08 1.07 3 3 0 01-.13-.8c0-.97.34-1.8 1.03-2.48A3.45 3.45 0 0112.4.96a3.49 3.49 0 012.54 1.1c.8-.15 1.54-.44 2.23-.85a3.4 3.4 0 01-1.54 1.94c.74-.1 1.4-.28 2.01-.54z">
+                                    </path>
+                                </svg>
+                                <span class="visually-hidden">Twitter</span>
+                            </a>
+                            <div class="info list-social__info text-left">
+                                <a class="link link-underline" href="https://twitter.com/bigcommerce">
+                                    <span class="text">Twitter</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-social__item mail-newsletter">
+                            <a href="#" data-open-newsletter-popup class="link link--text list-social__link" role="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="presentation" class="icon icon-mail">
+                                    <path d="M 1 3 L 1 5 L 1 18 L 3 18 L 3 5 L 19 5 L 19 3 L 3 3 L 1 3 z M 5 7 L 5 7.1777344 L 14 12.875 L 23 7.125 L 23 7 L 5 7 z M 23 9.2832031 L 14 15 L 5 9.4160156 L 5 21 L 14 21 L 14 17 L 17 17 L 17 14 L 23 14 L 23 9.2832031 z M 19 16 L 19 19 L 16 19 L 16 21 L 19 21 L 19 24 L 21 24 L 21 21 L 24 21 L 24 19 L 21 19 L 21 16 L 19 16 z"></path>
+                                </svg>
+                                <span class="visually-hidden">Newsletter Sign-up</span>
+                            </a>
+                            <div class="info list-social__info text-left">
+                                <a class="link link-underline" href="#" data-open-newsletter-popup role="button">
+                                    <span class="text">Newsletter Sign-up</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrap-icons">
+            <div class="expand-recently-viewed">
+                <svg class="icon" role="img" aria-label="Recently Viewed">
+                    <title>Recently Viewed</title>
+                    <desc>Recently Viewed</desc>
+                    <use xlink:href="#icon-recently-viewed"></use>
+                </svg>
+            </div>
+            <div class="expand-social-media">
+                <svg class="icon" role="img" aria-label="Social Media">
+                    <title>Social Media</title>
+                    <desc>Social Media</desc>
+                    <use xlink:href="#icon-social-media"></use>
+                </svg>
+            </div>
+            {{#if theme_settings.halo_recently_viewed_products_top}}
+                <div class="backtoTop">
+                    <svg class="icon" role="img" aria-label="{{lang 'common.top'}}">
+                        <title>{{lang 'common.top'}}</title>
+                        <desc>{{lang 'common.top'}}</desc>
+                        <use xlink:href="#icon-cross-line-top"></use>
+                    </svg>
+                </div>
+            {{/if}}
+        </div>
+    </section>
+{{/if}}
+

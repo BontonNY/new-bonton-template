@@ -5,9 +5,9 @@
 //
 // -----------------------------------------------------------------------------
 
-ul.inlineList { 
-    @include clearfix; // 1
-    overflow: visible;
+ul.inlineList { // 1
+    overflow: visible; 
+    @include clearfix;
 }
 
 .inlineList--labels {

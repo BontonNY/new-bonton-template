@@ -2,6 +2,64 @@
 // PAGINATION (CSS)
 // =============================================================================
 
+.pagination {
+    display: block;
+    text-align: center;
+    margin: 30px 0 0 0;
+
+    .pagination-info {
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        margin: 0 0 20px 0;
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        color: #424242;
+        letter-spacing: $letterSpacing-base;
+        line-height: 24px;
+    }
+
+    &.pagination-2 {
+        display: block;
+
+        .pagination-info {
+            display: block;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .halo-product-show-more {
+            +.pagination-list {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+
+        .pagination-info {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .page-blog & {
+            text-align: right;
+            justify-content: flex-end;
+        }
+    }
+
+    @media (min-width: 1025px) {
+        margin-top: 50px;
+
+        .page-blog & {
+            margin-top: 60px;
+        }
+    }
+}
 
 // Pagination list items
 // -----------------------------------------------------------------------------
@@ -12,14 +70,21 @@
 // -----------------------------------------------------------------------------
 
 .pagination-list {
+    display: block;
+    font-size: 0;
+    margin: 0;
+    text-align: center;
     @include clearfix;
 
-    font-size: 0; // 1
-    margin-bottom: spacing("single");
-    text-align: center;
-
-    .pagination-item { // 2
+    .pagination-item {
         display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 3px;
+    }
+
+    @media (min-width: 768px) {
+        display: inline-block;
+        vertical-align: top;
     }
 }
 
@@ -32,35 +97,60 @@
 // -----------------------------------------------------------------------------
 
 .pagination-item {
-    border: $pagination-item-border;
-    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+    margin: 0;
 
     .pagination-link {
+        padding: 0 5px;
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        color: $color-textSecondary;
+        min-width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
         text-decoration: none;
         transition: $pagination-link-transition;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        background-color: transparent;
 
         &:hover {
             color: $pagination-link-color-hover;
         }
     }
 
-    &.pagination-item--current { // 1
-        border-color: $pagination-link-current-borderColor;
-        border-radius: $pagination-link-current-borderRadius;
-        margin: $pagination-link-current-margin;
+    &.pagination-item--current {
+        .pagination-link {
+            background-color: $color-custom-greyLight;
+            border: 1px solid $color-custom-greyLight;
+        }
     }
 
-    &.pagination-item--previous, // 1
-    &.pagination-item--next { // 1
+    &.pagination-item--previous,
+    &.pagination-item--next {
+        .pagination-link {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: #e1e1e1;
+            background-color: transparent;
+        }
+    }
 
-        > a {
-            color: $pagination-item-previousNext-color;
+    @media (min-width: 1025px) {
 
-            &:hover {
-                color: $pagination-item-previousNext-color-hover;
+        &.pagination-item--previous,
+        &.pagination-item--next {
+            .pagination-link {
+                &:hover {
+                    background-color: $buttonStyle-primary-backgroundColorHover;
+                    border-color: $buttonStyle-primary-borderColorActive;
 
-                .icon > svg {
-                    fill: $pagination-item-previousNext-color-hover;
+                    .icon {
+                        fill: $buttonStyle-primary-colorActive;
+                    }
                 }
             }
         }
@@ -69,29 +159,20 @@
 
 .pagination-item--previous,
 .pagination-item--next {
-    .icon {
-        height: remCalc(20px);
-        margin-top: -(remCalc(2px));
-        width: remCalc(20px);
+    .pagination-link {
+        width: 40px;
+        height: 40px;
+        padding: 7px;
+
+        .icon {
+            display: inherit;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            fill: #787878;
+        }
     }
 }
-
-.pagination-item--previous {
-    float: left;
-
-    .icon {
-        margin-left: -(remCalc(12px));
-    }
-}
-
-.pagination-item--next {
-    float: right;
-
-    .icon {
-        margin-right: -(remCalc(12px));
-    }
-}
-
 
 // Simple/small pagination (Next/Previous arrows are the only way to navigate)
 // -----------------------------------------------------------------------------
@@ -121,5 +202,22 @@
 
     .pagination-item--next {
         right: 0;
+    }
+}
+
+.pagination-total-progress {
+    max-width: 255px;
+    height: 3px;
+    background-color: $color-custom-grey;
+    text-align: left;
+    margin: 7px auto 20px;
+    display: block;
+
+    .pagination-total-item {
+        width: 0;
+        height: 100%;
+        background-color: $color-textLink-hover;
+        display: block;
+        transition: all ease 1s;
     }
 }
