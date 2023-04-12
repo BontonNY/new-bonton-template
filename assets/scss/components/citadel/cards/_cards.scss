@@ -547,26 +547,26 @@
                         opacity: 1;
                         backface-visibility: visible;
                         z-index: 1;
-
-                        img {
-                            transform: scale3d(1.1, 1.1, 1);
-                        }
+                        // [Bonton] Removing hover zoom animation 2nd image
+                        // img {
+                        //     transform: scale3d(1.1, 1.1, 1);
+                        // }
                     }
                 }
             }
         }
+        // [Bonton] Removing hover animation 1st image
+        // &:not(.card-hover) {
+        //     .card-image {
+        //         transition: opacity .8s ease, transform 2s cubic-bezier(0, 0, .44, 1.18) 0s;
+        //     }
 
-        &:not(.card-hover) {
-            .card-image {
-                transition: opacity .8s ease, transform 2s cubic-bezier(0, 0, .44, 1.18) 0s;
-            }
-
-            &:hover {
-                .card-image {
-                    transform: scale3d(1.1, 1.1, 1);
-                }
-            }
-        }
+        //     &:hover {
+        //         .card-image {
+        //             transform: scale3d(1.1, 1.1, 1);
+        //         }
+        //     }
+        // }
     }
 }
 
