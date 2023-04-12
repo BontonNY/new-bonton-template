@@ -14,10 +14,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v1
 
-      - name: Set Node version to 14
+      - name: Set Node version to 16
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Install Dependencies
         run: |
