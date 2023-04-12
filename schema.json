@@ -3254,7 +3254,7 @@
         "type": "checkbox",
         "label": "Show Ratings On Card",
         "id": "halo_card_ratings",
-        "force_reload": true
+        "force_reload": false
       },
       {
         "type": "checkbox",
