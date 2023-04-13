@@ -32,6 +32,11 @@
                             <span class="text">{{{value}}}</span>
                         </div>
                     {{/if}}
+                    {{#if name '===' 'lxr_badge'}}
+                        <div class="custom-badge halo-badge">
+                            <span class="text">{{{value}}}</span>
+                        </div>
+                    {{/if}}                    
                 {{/each}}
                 {{#if product.out_of_stock_message}}
                     <div class="soldOut-badge halo-badge">

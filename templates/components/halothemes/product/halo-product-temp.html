@@ -60,6 +60,11 @@
                                     <span class="text">{{{value}}}</span>
                                 </div>
                             {{/if}}
+                            {{#if name '===' 'lxr_badge'}}
+                            <div class="custom-badge halo-badge">
+                                <span class="text">{{{value}}}</span>
+                            </div>
+                            {{/if}}                            
                             {{#if name '===' '__bundle'}}
                                 <div class="product-badge bundle-badge"><span class="text">{{lang 'common.badge_bundle'}}</span></div>
                             {{/if}}
