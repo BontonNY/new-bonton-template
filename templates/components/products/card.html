@@ -57,6 +57,11 @@
                             <span class="text">{{{value}}}</span>
                         </div>
                     {{/if}}
+                    {{#if name '===' 'lxr_badge'}}
+                        <div class="custom-badge halo-badge">
+                            <span class="text">{{{value}}}</span>
+                        </div>
+                    {{/if}}
                 {{/each}}
                 {{#if out_of_stock_message}}
                     <div class="soldOut-badge halo-badge">
@@ -152,6 +157,13 @@
         </figcaption>
     </figure>
     <div class="card-body">
+        {{#if theme_settings.halo_homepage_layout_1}}
+            {{#if theme_settings.haloAddOptionForProduct}}
+                <div class="card-option card-option-{{id}}">
+                    <div class="form-field"></div>
+                </div>
+            {{/if}}
+        {{/if}}        
         {{#if theme_settings.halo_homepage_layout_2}}
             {{#if theme_settings.haloAddOptionForProduct}}
                 <div class="card-option card-option-{{id}}">
@@ -217,14 +229,6 @@
             {{/and}}
         </div>
         {{> components/products/bulk-discount-rates}}
-
-        {{#if theme_settings.halo_homepage_layout_1}}
-            {{#if theme_settings.haloAddOptionForProduct}}
-                <div class="card-option card-option-{{id}}">
-                    <div class="form-field"></div>
-                </div>
-            {{/if}}
-        {{/if}}
 
         {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
             {{#if show_cart_action}}
