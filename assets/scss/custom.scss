@@ -3,3 +3,198 @@ ul.navUser-section.navUser-section--link {
     opacity: 0;
     visibility: hidden;
 }
+div#myHeaderser .container.bottomHeader-container {
+    display: block;
+}
+div#myHeaderser .bottomHeader-item.text-right {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+div#myHeaderser .bottomHeader-item.text-left {
+    width: 49%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+div#myHeaderser .container.bottomHeader-container {
+    display: block;
+    text-align: center;
+}
+.bottomHeader-item__item.item--sticky-logo {
+    margin: 0 auto;
+    margin-left: 0;
+    display: inline-block !important;
+    width: auto !important;
+}.navPages ul {
+    list-style: none;
+    display: inline-block;
+}.navPages {
+     padding-bottom: 0;
+ 
+    text-align: center !important;
+}.quickSearch {
+    padding: 0;
+    max-width: max-content;
+}.navPages-action {
+    display: inline-block;
+    padding: 12px 17px 0 18px;
+}.btfooter {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}.btfooter ul.footer-info-list li {
+    display: inline-block;
+    padding: 0px 13px;
+}.btfooter {
+    background: #f7f7f7;
+}.btfooter ul.footer-info-list {
+    margin-bottom: 0;
+}.footer-bottom {
+    background-color: #f7f7f7;
+    padding: 35px 0 0;
+}a.button.button--checkout:hover {
+    background: #d83934 !important;
+    border-color: #d83934 !important;
+}.quickSearch {
+    padding: 0;
+    max-width: -moz-max-content;
+    max-width: 100%;
+}.quickSearch .form-input {
+   
+    width: 100%;
+}.halo-bottomHeader .container .bottomHeader-item__item:not(.item--sticky-logo) {
+    padding-left: 0;
+}
+.navPages ul {
+   
+    width: 100%;
+}
+div#menu {
+    padding-left: 0;
+}
+.navPages {
+    
+    max-width: 100%;
+    margin: 0;
+}
+ul.navPages-list.navPages-list-megamenu.navPages-list-depth-max {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.halo-topHeader .navUser {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-evenly;
+    padding: 0;
+    align-content: flex-end;
+    flex-direction: column;
+}
+.quickSearch .form-input {
+    width: 100%;
+    border-radius: 50px;
+}
+.quickSearch .button {
+    min-width: 40px;
+    height: auto;
+    padding: 0;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    text-align: center;
+    line-height: 1;
+    border-radius: 20px;
+    right: 40px;
+    color: #000;
+}
+.quickSearch .button svg {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    fill: #000;
+}button.button.button--primary:hover {
+    background: transparent;
+    border: none;
+}
+
+
+.navUser-section--alt {
+    float: none;
+    margin-left: 0rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+.navUser {
+    padding: 0;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+  
+}
+
+.halo-topHeader {
+  
+    text-align: -webkit-center;
+}
+
+article.footer-info-col.footer-info-col--small {
+    width: 25%;
+}
+.cart-totals .cart-total .form-input {
+    display: inline-block;
+    vertical-align: top;
+    font-style: normal;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: auto;
+    line-height: 20px;
+    margin: 0;
+    border-color: #ccc;
+    min-height: auto;
+}
+.cart-gift-certificate-form .button, .coupon-form .button {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    width: 105px;
+    margin: 15px 0 28px 15px;
+    height: auto;
+    line-height: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    min-height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+button.coupon-code-add.cart-total-label {
+    background-image: none;
+}
+@media (max-width:1024px)
+{
+    article.footer-info-col.footer-info-col--small {
+    width: 49%;
+}
+
+    
+}@media (max-width:768px)
+{
+    article.footer-info-col.footer-info-col--small {
+    width: 100%;
+}
+
+    
+}

@@ -1,6 +1,6 @@
 {
-  "name": "Hera Bonton - PDP Configuration",
-  "version": "2.2.0",
+  "name": "Hera Bonton - Pritma Changes",
+  "version": "2.1.4",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 30000,

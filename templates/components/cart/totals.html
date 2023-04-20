@@ -21,14 +21,18 @@
             </div>
         </li>
     {{/if}}
-    {{#if cart.shipping_handling.show_estimator}}
+    
+    <!-- [START] Pritma removing shipping estimator -->
+    <!-- {{#if cart.shipping_handling.show_estimator}}
         <li class="cart-total">
             <div class="cart-total-label">
                 <strong>{{lang 'cart.checkout.shipping'}}:</strong>
             </div>
             {{> components/cart/shipping-estimator cart.shipping_handling}}
         </li>
-    {{/if}}
+    {{/if}} -->
+    <!-- [END] Pritma removing shipping estimator -->
+
     {{#each cart.taxes}}
         {{#unless included}}
             <li class="cart-total">
@@ -67,9 +71,11 @@
         {{/each}}
     {{else}}
         <li class="cart-total">
-            <div class="cart-total-label">
+            <!-- [START] Pritma Remove Coupon -->
+            <!-- <div class="cart-total-label">
                 <strong>{{lang 'cart.coupon_code'}}:</strong>
-            </div>
+            </div> -->
+            <!-- [END] Pritma Remove Coupon -->
             {{> components/cart/coupon-input}}
         </li>
     {{/if}}
@@ -105,6 +111,9 @@
                 {{> components/common/login-for-pricing}}
             {{/or}}
         </div>
+        <!-- [START] Pritma Taxes message -->
+        <span style="display: block;"> (Taxes and shipping calculated at checkout)</span>
+        <!-- [END] Pritma Taxes message -->
     </li>
     {{#each cart.taxes}}
         {{#if included}}

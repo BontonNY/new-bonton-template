@@ -37,6 +37,19 @@
             });
         </script>
 
+<!--[START] PRITAM - TODO MOVE THIS -->
+<style>
+    
+    .sticky {
+    position: fixed !important;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    transition: 600ms;
+}
+</style>
+<!--[END] PRITAM - TODO MOVE THIS -->
+
         {{ getFontsCollection }}
         {{{stylesheet '/assets/css/theme.css'}}}
 
@@ -88,5 +101,25 @@
               var arrNew = [0{{#each products.new}},{{id}}{{/each}}];
             </script>
         {{/if}}
+
+<!--[START] PRITAM - TODO MOVE THIS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("tpbar");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+</script>
+<!--[END] PRITAM - TODO MOVE THIS -->
+        
     </body>
 </html>
