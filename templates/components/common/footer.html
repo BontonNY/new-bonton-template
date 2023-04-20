@@ -24,41 +24,36 @@
 <footer class="footer" role="contentinfo">
     <div class="container">
         <section class="footer-info{{#all (if settings.address) (if theme_settings.footer-info-1-heading) (if theme_settings.footer-info-2-heading) (if theme_settings.footer-info-3-heading) (if theme_settings.footer-info-4-heading)}} footer-info-show-all{{/all}}">
-            {{#if settings.address}}
-                <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
-                    {{#if theme_settings.footer_info_logo}}
-                        <div class="footer-info__logo">
-                            <img src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.footer_info_logo}}" alt="Logo">
-                        </div>
-                    {{/if}}
-                    <address>{{nl2br settings.address}}</address>
-
-                    {{#if theme_settings.halo_homepage_layout_1}}
-                        {{#if settings.phone_number}}
-                            <p class="footer-info__phone"><a href="tel:{{settings.phone_number}}"><svg><use xlink:href="#icon-chat" /></svg> <span>{{lang 'footer.call_us' phone_number=settings.phone_number}}</span></a></p>
+            
+                 {{#if theme_settings.footer-info-3-heading}}
+                <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
+                    <h3 class="footer-info-heading footer-info-heading--toggle">{{theme_settings.footer-info-3-heading}}</h3>
+                    <ul class="footer-info-list">
+                        {{#if theme_settings.footer-info-3-text1}}
+                            <li><a href="{{theme_settings.footer-info-3-link1}}"><span>{{theme_settings.footer-info-3-text1}}</span></a></li>
                         {{/if}}
-
-                        {{#if theme_settings.info_email_support}}
-                            <p class="footer-info__phone"><a href="mailto:{{theme_settings.info_email_support}}"><svg><use xlink:href="#icon-mail" /></svg> <span>{{theme_settings.info_email_support}}</span></a></p>
+                        {{#if theme_settings.footer-info-3-text2}}
+                            <li><a href="{{theme_settings.footer-info-3-link2}}"><span>{{theme_settings.footer-info-3-text2}}</span></a></li>
                         {{/if}}
-                    {{else}}
-                        {{#if settings.phone_number}}
-                            <p class="footer-info__phone"><a href="tel:{{settings.phone_number}}"><span>{{lang 'footer.home2_call_us' phone_number=settings.phone_number}}</span></a></p>
+                        {{#if theme_settings.footer-info-3-text3}}
+                            <li><a href="{{theme_settings.footer-info-3-link3}}"><span>{{theme_settings.footer-info-3-text3}}</span></a></li>
                         {{/if}}
-
-                        {{#if theme_settings.info_email_support}}
-                            <p class="footer-info__phone"><a href="mailto:{{theme_settings.info_email_support}}"><span>{{lang 'footer.home2_email' email=theme_settings.info_email_support}}</span></a></p>
+                        {{#if theme_settings.footer-info-3-text4}}
+                            <li><a href="{{theme_settings.footer-info-3-link4}}"><span>{{theme_settings.footer-info-3-text4}}</span></a></li>
                         {{/if}}
-
-                        {{#if theme_settings.show_social-links}}
-                            <div class="footer-info-col--social">
-                                {{> components/common/social-links}}
-                            </div>
+                        {{#if theme_settings.footer-info-3-text5}}
+                            <li><a href="{{theme_settings.footer-info-3-link5}}"><span>{{theme_settings.footer-info-3-text5}}</span></a></li>
                         {{/if}}
-                    {{/if}}
+                        {{#if theme_settings.footer-info-3-text6}}
+                            <li><a href="{{theme_settings.footer-info-3-link6}}"><span>{{theme_settings.footer-info-3-text6}}</span></a></li>
+                        {{/if}}
+                        {{#if theme_settings.footer-info-3-text7}}
+                            <li><a href="{{theme_settings.footer-info-3-link7}}"><span>{{theme_settings.footer-info-3-text7}}</span></a></li>
+                        {{/if}}
+                    </ul>
                 </article>
             {{/if}}
-
+        
             {{#if theme_settings.footer-info-1-heading}}
                 <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
                     <h3 class="footer-info-heading footer-info-heading--toggle">{{theme_settings.footer-info-1-heading}}</h3>
@@ -71,6 +66,9 @@
                     </ul>
                 </article>
             {{/if}}
+            
+             
+
 
             {{#if theme_settings.footer-info-2-heading}}
                 <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
@@ -110,35 +108,7 @@
                 </article>
             {{/if}}
 
-            {{#if theme_settings.footer-info-3-heading}}
-                <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
-                    <h3 class="footer-info-heading footer-info-heading--toggle">{{theme_settings.footer-info-3-heading}}</h3>
-                    <ul class="footer-info-list">
-                        {{#if theme_settings.footer-info-3-text1}}
-                            <li><a href="{{theme_settings.footer-info-3-link1}}"><span>{{theme_settings.footer-info-3-text1}}</span></a></li>
-                        {{/if}}
-                        {{#if theme_settings.footer-info-3-text2}}
-                            <li><a href="{{theme_settings.footer-info-3-link2}}"><span>{{theme_settings.footer-info-3-text2}}</span></a></li>
-                        {{/if}}
-                        {{#if theme_settings.footer-info-3-text3}}
-                            <li><a href="{{theme_settings.footer-info-3-link3}}"><span>{{theme_settings.footer-info-3-text3}}</span></a></li>
-                        {{/if}}
-                        {{#if theme_settings.footer-info-3-text4}}
-                            <li><a href="{{theme_settings.footer-info-3-link4}}"><span>{{theme_settings.footer-info-3-text4}}</span></a></li>
-                        {{/if}}
-                        {{#if theme_settings.footer-info-3-text5}}
-                            <li><a href="{{theme_settings.footer-info-3-link5}}"><span>{{theme_settings.footer-info-3-text5}}</span></a></li>
-                        {{/if}}
-                        {{#if theme_settings.footer-info-3-text6}}
-                            <li><a href="{{theme_settings.footer-info-3-link6}}"><span>{{theme_settings.footer-info-3-text6}}</span></a></li>
-                        {{/if}}
-                        {{#if theme_settings.footer-info-3-text7}}
-                            <li><a href="{{theme_settings.footer-info-3-link7}}"><span>{{theme_settings.footer-info-3-text7}}</span></a></li>
-                        {{/if}}
-                    </ul>
-                </article>
-            {{/if}}
-
+      
             {{#if theme_settings.footer-info-4-heading}}
                 <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
                     <h3 class="footer-info-heading footer-info-heading--toggle">{{theme_settings.footer-info-4-heading}}</h3>
@@ -159,7 +129,7 @@
                 <article class="footer-info-col footer-info-col--small" data-section-type="newsletterSubscription">
                     {{#if theme_settings.halo_homepage_layout_1}}
                         {{#if theme_settings.show_social-links}}
-                            <h3 class="footer-info-heading footer-info-heading--toggle">{{lang 'social.follow'}}</h3>
+                            <h3 class="footer-info-heading footer-info-heading--toggle">Connect with Us</h3>
                             <div class="footer-info-col--social">
                                 {{> components/common/social-links}}
                             </div>
@@ -208,7 +178,23 @@
                 {{/if}}
             </div>
         </div>
+          
+    <div class="btfooter"><p>©2023 BrandX.com, Inc. All rights reserved.</p>
+<ul class="footer-info-list">
+                            <li><a href="#"><span>﻿Privacy Policy</span></a></li><li><a href="#"><span>CA Privacy Rights</span></a></li>
+                          <li><a href="#"><span>Prop 65</span></a></li>
+                            <li><a href="#"><span>Terms & Conditions</span></a></li>
+                            <li><a href="#"><span>Do Not Sell Personal Information</li>
+                            
+                       
+                            <li><a href="#"><span>Accessibility</span></a></li>
+							
+								  <li><a href="#"><span>Site Map</span></a></li>
+                    </ul>﻿
+					
+					</div>
     </div>
+  
     {{{region name="ssl_site_seal--global"}}}
 </footer>
 {{#unless theme_settings.halo_recently_viewed_products }}

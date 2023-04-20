@@ -14,7 +14,25 @@ cart: true
 <div class="container">
     <div class="page page-cart{{#if theme_settings.halo_CalculateFreeShipping}} has-calculate-shipping{{/if}}">
         <div class="page-header">
-            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            
+            <!-- [START] TODO turn this Pritma into own component for cart -->
+            <!-- {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}} -->
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumbs disable-srollbar">
+                    <li class="breadcrumb ">
+                        <a class="breadcrumb-label" href="/">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb is-active">
+                        <a class="breadcrumb-label" href="/cart.php" aria-current="page">
+                            <span>Your Bag</span>
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+            <!-- [END] TODO turn this Pritma into own component for cart -->
+
             {{> components/cart/page-title}}
         </div>
         {{#and (if theme_settings.halo_CalculateFreeShipping) (if cart.items.length)}}
