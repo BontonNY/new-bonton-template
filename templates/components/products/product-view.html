@@ -277,12 +277,34 @@
                             {{/if}}
                         {{/unless}}
                     </div>
+                    
+                    <!-- [START] Price component -->
+                    {{> components/halothemes/product/halo-product-countdown custom_fields=product.custom_fields id=product.id non_sale_price_with_tax=product.price.non_sale_price_with_tax non_sale_price_without_tax=product.price.non_sale_price_without_tax}}
+                    <div class="productView-price">
+                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                            {{> components/products/price price=product.price}}
+                        {{else}}
+                            {{> components/common/login-for-pricing}}
+                        {{/or}}
+                        {{#if product.call_for_price}}
+                            <p><span>{{product.call_for_price}}</span></p>
+                        {{/if}}
+                    </div>
+                    {{{region name="product_below_price"}}}
+                    
+                    {{#if product.detail_messages}}
+                        <div class="productView-messages">
+                            {{product.detail_messages}}
+                        </div>
+                    {{/if}}
+                    <!-- [END] Price component -->
+                    
                     {{#if theme_settings.productView_desShort}}
                         <div class="productView-desShort">
                             <span>{{{ellipsis product.description 160}}}</span>
                         </div>
                     {{/if}}
-                    <div class="productView-info">
+                    <!-- <div class="productView-info">
                         <div class="productView-info-item">
                             <span class="productView-info-name sku-label">{{lang 'products.sku'}}</span>
                             <span class="productView-info-value" data-product-sku>{{product.sku}}</span>
@@ -398,25 +420,7 @@
                                 {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
                             {{/if}}
                         {{/if}}
-                    </div>
-                    {{> components/halothemes/product/halo-product-countdown custom_fields=product.custom_fields id=product.id non_sale_price_with_tax=product.price.non_sale_price_with_tax non_sale_price_without_tax=product.price.non_sale_price_without_tax}}
-                    <div class="productView-price">
-                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-                            {{> components/products/price price=product.price}}
-                        {{else}}
-                            {{> components/common/login-for-pricing}}
-                        {{/or}}
-                        {{#if product.call_for_price}}
-                            <p><span>{{product.call_for_price}}</span></p>
-                        {{/if}}
-                    </div>
-                    {{{region name="product_below_price"}}}
-                    
-                    {{#if product.detail_messages}}
-                        <div class="productView-messages">
-                            {{product.detail_messages}}
-                        </div>
-                    {{/if}}
+                    </div> -->
                 </div>
             </section>
             <section class="productView-details product-options">
@@ -428,7 +432,7 @@
                       data-cart-item-add>
                         <input type="hidden" name="action" value="add">
                         <input type="hidden" name="product_id" value="{{product.id}}"/>
-                        <div data-product-option-change style="display:none;">
+                        <div data-product-option-change>
                             {{#each product.options}}
                                 {{{dynamicComponent 'components/products/options'}}}
                             {{/each}}
@@ -450,7 +454,7 @@
                             <div class="itemProduct-options-wrapper disable-srollbar">
                                 {{> components/halothemes/product/halo-product-size-chart}}
                                 {{> components/halothemes/product/halo-compare-colors}}
-                                {{> components/halothemes/product/halo-product-ask-an-expert}}
+                                <!-- {{> components/halothemes/product/halo-product-ask-an-expert}} -->
                             </div>
                         </div>
                         {{#if product.options}}

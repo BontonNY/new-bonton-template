@@ -2,11 +2,11 @@
     {{#if settings.data_tag_enabled}}
         <div class="banners" data-banner-location="bottom">
             {{#each (limit banners.bottom_metadata 1)}}
-                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
-                    <div data-event-type="promotion-click">
-                        {{{this.content}}}
-                    </div>
+            <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                <div data-event-type="promotion-click">
+                    {{{this.content}}}
                 </div>
+            </div>
             {{/each}}
         </div>
     {{else}}
@@ -59,9 +59,9 @@
                     <h3 class="footer-info-heading footer-info-heading--toggle">{{theme_settings.footer-info-1-heading}}</h3>
                     <ul class="footer-info-list">
                         {{#each (limit categories theme_settings.categories_show_footer_limit)}}
-                            <li>
-                                <a href="{{url}}"><span>{{name}}</span></a>
-                            </li>
+                        <li>
+                            <a href="{{url}}"><span>{{name}}</span></a>
+                        </li>
                         {{/each}}
                     </ul>
                 </article>
@@ -156,16 +156,7 @@
     <div class="footer-bottom">
         <div class="container footer-bottom__container{{#if theme_settings.show_copyright_footer_2}} has-item-center{{/if}}">
             <div class="footer-bottom__left">
-                {{#if theme_settings.show_copyright_footer}}
-                    <div class="footer-copyright">
-                        <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}}{{lang 'footer.dot'}}</p>
-                    </div>
-                {{/if}}
-                {{#if theme_settings.show_powered_by}}
-                    <div class="footer-copyright">
-                        {{{theme_settings.powered_by-text}}}
-                    </div>
-                {{/if}}
+
             </div>
             <div class="footer-bottom__right">
                 {{#if settings.paypal_commerce_credit_message}}
@@ -179,21 +170,31 @@
             </div>
         </div>
           
-    <div class="btfooter"><p>©2023 BrandX.com, Inc. All rights reserved.</p>
-<ul class="footer-info-list">
-                            <li><a href="#"><span>﻿Privacy Policy</span></a></li><li><a href="#"><span>CA Privacy Rights</span></a></li>
-                          <li><a href="#"><span>Prop 65</span></a></li>
-                            <li><a href="#"><span>Terms & Conditions</span></a></li>
-                            <li><a href="#"><span>Do Not Sell Personal Information</li>
-                            
-                       
-                            <li><a href="#"><span>Accessibility</span></a></li>
-							
-								  <li><a href="#"><span>Site Map</span></a></li>
-                    </ul>﻿
-					
-					</div>
-    </div>
+        <div class="btfooter">
+        
+            <ul class="footer-info-list">
+                <li><a href="#"><span>﻿Privacy Policy</span></a></li><li><a href="#"><span>CA Privacy Rights</span></a></li>
+                <li><a href="#"><span>Prop 65</span></a></li>
+                <li><a href="#"><span>Terms & Conditions</span></a></li>
+                <li><a href="#"><span>Do Not Sell Personal Information</li>
+                <li><a href="#"><span>Accessibility</span></a></li>
+                <li><a href="#"><span>Site Map</span></a></li>
+            </ul>
+                        
+            {{#if theme_settings.show_copyright_footer}}
+                <div class="footer-copyright">
+                    <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}}{{lang 'footer.dot'}}</p>
+                </div>
+            {{/if}}
+            {{#if theme_settings.show_powered_by}}
+                <div class="footer-copyright">
+                    {{{theme_settings.powered_by-text}}}
+                </div>
+            {{/if}}
+                        
+        </div>
+    </div>        
+
   
     {{{region name="ssl_site_seal--global"}}}
 </footer>
