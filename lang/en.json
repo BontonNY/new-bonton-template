@@ -266,7 +266,7 @@
         "header": "Comparing {products, plural, one {# Product} other {# Products}}",
         "remove": "Remove",
         "no_remove": "At least 2 products are needed to make a valid comparison.",
-        "add_to_cart": "Add to cart",
+        "add_to_cart": "Add to Bag",
         "no_compare": "You must select at least two products to compare"
     },
     "category": {
@@ -819,7 +819,7 @@
         "details_link3": "Add",
         "details_link4": "View Details",
         "wishlist_text": "Add to Wishlist",
-        "add_to_cart": "Add to Cart",
+        "add_to_cart": "Add to Bag",
         "quick_shop": "Quick Add",
         "adding_to_cart": "Adding to Cart…",
         "buy_it_now": "Buy it now",
