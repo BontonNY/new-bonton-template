@@ -230,7 +230,10 @@
                             <a href="{{product.brand.url}}">{{product.brand.name}}</span></a>
                         </h2>
                     {{/if}}
-                    <h1 class="productView-title">{{product.title}}</h1>
+                    <h1 class="productView-title">
+                        <a href="{{product.url}}">{{product.title}}</a>
+                    </h1>
+                        
                     <div class="productView-topInfo">
                         <div class="productView-rating">
                             {{#if settings.show_product_rating}}
@@ -262,7 +265,7 @@
                             {{/unless}}
                         </div>
                     </div>
-                    <div class="productView-info">
+                    <!-- <div class="productView-info">
                         {{#if product.sku}}
                             <div class="productView-info-item">
                                 <span class="productView-info-name sku-label">{{lang 'products.sku'}}</span>
@@ -380,7 +383,7 @@
                                 {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
                             {{/if}}
                         {{/if}}
-                    </div>
+                    </div> -->
 
                     {{> components/halothemes/product/halo-product-countdown custom_fields=product.custom_fields id=product.id non_sale_price_with_tax=product.price.non_sale_price_with_tax non_sale_price_without_tax=product.price.non_sale_price_without_tax}}
 
