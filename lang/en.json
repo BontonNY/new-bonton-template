@@ -50,17 +50,17 @@
         "title": "Checkout"
     },
     "cart": {
-        "cart_preview": "your cart",
-        "nav_aria_label": "Cart with 0 items",
+        "cart_preview": "your bag",
+        "nav_aria_label": "Bag with 0 items",
         "continue_shopping": "Click here to continue shopping",
         "items": "{NUM, plural, =0{0 items} one {# item} other {# items}}",
         "checkout": {
             "address": {
-                "multiple": "check out with multiple addresses",
+                "multiple": "checkout with multiple addresses",
                 "or": "or"
             },
-            "button": "Check out",
-            "empty_cart": "Your cart is empty",
+            "button": "Checkout",
+            "empty_cart": "Your bag is empty",
             "title": "Click here to proceed to checkout",
             "item": "Item",
             "price": "Price",
@@ -78,14 +78,14 @@
             "add_more": "Add more"
         },
         "preview": {
-            "checkout_now": "Check out",
-            "checkout_multiple": "or check out with multiple addresses",
-            "view_cart": "View Cart"
+            "checkout_now": "Checkout",
+            "checkout_multiple": "or checkout with multiple addresses",
+            "view_cart": "View Bag"
         },
-        "title": "Your Cart",
+        "title": "Your Bag",
         "quantity": "{quantity, plural, one {# item} other {# items}}",
-        "label": "Your Cart ({quantity, plural, one {# item} other {# items}})",
-        "is_empty": "Your cart is empty",
+        "label": "Your Bag ({quantity, plural, one {# item} other {# items}})",
+        "is_empty": "Your bag is empty",
         "invalid_entry_message": "[ENTRY] is not a valid entry",
         "coupon_code": "Coupon Code",
         "discount": "Discount",
@@ -95,14 +95,14 @@
         "reconfigure_product": "Configure '{name}'",
         "edit_product": "Edit '{name}'",
         "shipping_peritem": "Per Item Shipping",
-        "remove_item": "Remove {name} from cart",
+        "remove_item": "Remove {name} from bag",
         "confirm_delete": "Are you sure you want to delete this item?",
         "minutes": "minutes",
         "coupons": {
             "empty_error": "Please enter your coupon code.",
             "cancel": "Cancel",
             "add_code": "Add code",
-            "add_coupon": "Add Coupon",
+            "add_coupon": "Have a promo code?",
             "button": "Apply",
             "coupon_code": "Enter your coupon code",
             "code_label": "Coupon ({code})",
@@ -146,12 +146,12 @@
             "preview": "Preview"
         },
         "added_to_cart": {
-            "what_next": "Ok, {num_products, plural, one {1 item was} other {# items were}} added to your cart. What's next?",
-            "your_cart_contains": "Your cart contains {num_products, plural, one {1 item} other {# items}}",
+            "what_next": "Ok, {num_products, plural, one {1 item was} other {# items were}} added to your bag. What's next?",
+            "your_cart_contains": "Your bag contains {num_products, plural, one {1 item} other {# items}}",
             "proceed_to_checkout": "Proceed to checkout",
             "order_subtotal": "Order subtotal",
             "continue_shopping": "Continue Shopping",
-            "view_or_edit_cart": "View or edit your cart",
+            "view_or_edit_cart": "View or edit your bag",
             "you_might_also_like": "You may also like"
         }
     },
@@ -160,7 +160,7 @@
         "store_credit_overview": "{credit} Store Credit",
         "generic_error": "Oops! Something went wrong.",
         "currency": "{code}",
-        "currency_switch_promotion" : "Promotions and gift certificates that don't apply to the new currency will be removed from your cart. Are you sure you want to continue?",
+        "currency_switch_promotion" : "Promotions and gift certificates that don't apply to the new currency will be removed from your bag. Are you sure you want to continue?",
         "select_currency": "Select currency",
         "newsletter_signup": "Register for our newsletter",
         "form_submit": "Submit",
@@ -185,7 +185,7 @@
         "login": "Sign in",
         "logout": "Sign out",
         "account": "Account",
-        "cart": "Cart",
+        "cart": "Bag",
         "search": "Search",
         "gift_cert": "Gift Certificates",
         "save": "Save",
@@ -295,8 +295,8 @@
             "heading": "Redeem Gift Certificate",
             "intro": "To redeem a gift certificate at {store_name}, follow the simple steps below.",
             "item1": "You need your unique gift certificate code, which is part of the gift certificate that was emailed to you as an attachment. It will look something like Z50-Y6K-COS-402.",
-            "item2": "Browse the store and add items to your cart as you normally would.",
-            "item3": "Click the '<a href=\"{cart_url}\">View Cart</a>' link to view the contents of your shopping cart.",
+            "item2": "Browse the store and add items to your bag as you normally would.",
+            "item3": "Click the '<a href=\"{cart_url}\">View Bag</a>' link to view the contents of your shopping bag.",
             "item4": "Type your gift certificate code in to the 'Redeem Gift Certificate' box and click 'Go'."
         },
         "balance": {
@@ -325,7 +325,7 @@
         "new_customer": {
             "heading": "New Customer?",
             "intro": "Create an account with us and you'll be able to:",
-            "fact1": "Check out faster",
+            "fact1": "Checkout faster",
             "fact2": "Save multiple shipping addresses",
             "fact3": "Access your order history",
             "fact4": "Track new orders",
@@ -646,7 +646,7 @@
                 "agree2": "I agree that Gift Certificates are nonrefundable",
                 "preview": "Preview",
                 "preview_error": "There was a problem loading the preview. Please try again later.",
-                "submit_value": "Add Gift Certificate to Cart"
+                "submit_value": "Add Gift Certificate to Bag"
             },
             "balance": {
                 "code": "Gift Certificate Code",
@@ -821,7 +821,7 @@
         "wishlist_text": "Add to Wishlist",
         "add_to_cart": "Add to Bag",
         "quick_shop": "Quick Add",
-        "adding_to_cart": "Adding to Cart…",
+        "adding_to_cart": "Adding to Bag…",
         "buy_it_now": "Buy it now",
         "options": "Options",
         "none": "None",
@@ -1157,7 +1157,7 @@
             "digital_item_text": "Digital Item",
             "discount_text": "Discount",
             "downloads_action": "Go to Downloads",
-            "edit_cart_action": "Edit Cart",
+            "edit_cart_action": "Edit Bag",
             "estimated_total_text": "Estimated Total",
             "free_text": "Free",
             "gift_certificate_text": "Gift Certificate",
@@ -1175,7 +1175,7 @@
             "subtotal_text": "Subtotal",
             "taxes_text": "Taxes",
             "total_text": "Total",
-            "empty_cart_message": "Your cart is empty, you are being redirected. Please <a href=\"{url}\" target=\"_top\">click here</a> if your browser does not redirect you."
+            "empty_cart_message": "Your bag is empty, you are being redirected. Please <a href=\"{url}\" target=\"_top\">click here</a> if your browser does not redirect you."
         },
         "common": {
             "cancel_action": "Cancel",
@@ -1227,7 +1227,7 @@
             "email_required_error": "Email address is required",
             "forgot_password_action": "Forgot password?",
             "guest_customer_text": "Guest Customer",
-            "guest_subscribe_to_newsletter_text": "Subscribe to our newsletter.",
+            "guest_subscribe_to_newsletter_text": "Send me exclusive emails from Bonton with the latest styles, trends and offers.",
             "guest_marketing_consent": "I would like to receive updates and offers.",
             "login_action": "Sign in now",
             "login_text": "Already have an account?",
@@ -1487,11 +1487,11 @@
             "gift_certificate_text": "Gift Certificate",
             "remove_action": "Remove",
             "store_credit_available_text": "Your account currently has {storeCredit} total store credit available",
-            "toggle_action": "Promo/Gift Certificate"
+            "toggle_action": "Have a promo code?"
         },
         "remote": {
             "browser_unsupported": "The selected payment method requires a different web browser. Please choose another payment method.",
-            "connection_error": "Connection to remote checkout refused, please try later.",
+            "connection_error": "Connection to` remote checkout refused, please try later.",
             "continue_with_text": "Or continue with",
             "payment_method_error": "There was an error retrieving your remote payment method. Please try again.",
             "select_different_card_action": "Select a different card",
@@ -1504,7 +1504,7 @@
             "sign_out_before_action": ""
         },
         "shipping": {
-            "cart_change_error": "An update to your shopping cart has been detected and your available shipping costs have been updated. Please re-select a shipping method to continue.",
+            "cart_change_error": "An update to your shopping bag has been detected and your available shipping costs have been updated. Please re-select a shipping method to continue.",
             "enter_shipping_address_text": "Please enter a shipping address in order to see shipping quotes",
             "order_comment_label": "Order Comments",
             "assign_item_error": "An error occurred while assigning item to address. Please try again",

@@ -301,7 +301,8 @@
                     
                     {{#if theme_settings.productView_desShort}}
                         <div class="productView-desShort">
-                            <span>{{{ellipsis product.description 160}}}</span>
+                            <span>{{{ellipsis product.description 260}}}</span>
+                            <span><a href="#bx_product_description">(Read More)</a></span>
                         </div>
                     {{/if}}
                     <!-- <div class="productView-info">
@@ -491,7 +492,7 @@
                     {{#if theme_settings.product_viewingProduct}}
                         <div class="productView-ViewingProduct">
                             <svg class="icon"><use xlink:href="#icon-eye"></use></svg>
-                            5 {{theme_settings.product_viewingProduct_text}}
+                            {{theme_settings.product_viewingProduct_text}}
                         </div>
                     {{/if}}
                 </div>
