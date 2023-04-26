@@ -190,11 +190,15 @@ button.coupon-code-add.cart-total-label {
 }
 
     
-}@media (max-width:768px)
-{
-    article.footer-info-col.footer-info-col--small {
+}
+@media (max-width:768px){
+article.footer-info-col.footer-info-col--small {
     width: 100%;
 }
-
-    
+.toolbar-wrapper{
+    justify-content: flex-end;
+}
+li.product .card-title{
+    min-height: 61px;
+}   
 }
