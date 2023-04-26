@@ -27,7 +27,7 @@
     background-size: cover;
     border-color: stencilColor("optimizedCheckout-header-borderColor");
     color: stencilColor("optimizedCheckout-header-textColor");
-    border: none;
+    border-bottom: solid 1px #dddddd;
 
     //
     // TODO:
