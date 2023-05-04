@@ -1853,7 +1853,7 @@
         "type": "select",
         "label": "Product Block: Type",
         "id": "home_product_block-1",
-        "force_reload": true,
+        "force_reload": false,
         "options": [
           {
             "value": "0",
