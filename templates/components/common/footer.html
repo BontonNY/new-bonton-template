@@ -127,6 +127,11 @@
 
             {{#or theme_settings.show_social-links settings.show_newsletter_box}}
                 <article class="footer-info-col footer-info-col--small" data-section-type="newsletterSubscription">
+                    {{#if settings.show_newsletter_box}}
+                        {{#if theme_settings.halo_subscription_form}}
+                            {{> components/common/subscription-form}}
+                        {{/if}}
+                    {{/if}}
                     {{#if theme_settings.halo_homepage_layout_1}}
                         {{#if theme_settings.show_social-links}}
                             <h3 class="footer-info-heading footer-info-heading--toggle">Connect with Us</h3>
@@ -134,12 +139,7 @@
                                 {{> components/common/social-links}}
                             </div>
                         {{/if}}
-                    {{/if}}
-                    {{#if settings.show_newsletter_box}}
-                        {{#if theme_settings.halo_subscription_form}}
-                            {{> components/common/subscription-form}}
-                        {{/if}}
-                    {{/if}}
+                    {{/if}}                    
                     <div class="footer-info-rte">
                         <!-- <div class="typography_img">
                             <img src="https://cdn11.bigcommerce.com/s-wo0bjzph9t/images/stencil/original/image-manager/footer-typography-1.png" alt="Image Typography 1" />
