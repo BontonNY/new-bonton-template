@@ -534,7 +534,7 @@ export default function($scope, context) {
         if (symbolLocation == "left" || symbolLocation == 0){
             total = symbol + total;
         } else{
-            total = total + symbol;
+            total = symbol + total;
         }
 
         $bundle.find('.halo-product-total .price').html(total);
