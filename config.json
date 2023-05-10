@@ -1,6 +1,6 @@
 {
   "name": "Hera Bonton - Callout P2 Updates",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 30000,
