@@ -1345,7 +1345,7 @@
         &.non-sale-price--withoutTax,
         &.non-sale-price--withTax {
             text-decoration: line-through;
-            color: #969696;
+            color: #000;
             font-weight: $fontWeight-normal;
 
             .home-layout-2 & {

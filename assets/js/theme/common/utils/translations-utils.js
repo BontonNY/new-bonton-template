@@ -32,7 +32,7 @@ const defaultPageBuilderValues = {
     pdp_sold_out_label: 'Sold Out',
     'pdp-sale-price-label': 'Now:',
     'pdp-non-sale-price-label': 'Was:',
-    'pdp-retail-price-label': 'MSRP:',
+    'pdp-retail-price-label': '',
     'pdp-custom-fields-tab-label': 'Additional Information',
 };
 
