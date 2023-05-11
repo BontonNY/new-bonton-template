@@ -139,6 +139,9 @@
                                 {{> components/common/social-links}}
                             </div>
                         {{/if}}
+                        {{#if theme_settings.show_payments_footer}}
+                            {{> components/common/payment-icons}}
+                        {{/if}}
                     {{/if}}                    
                     <div class="footer-info-rte">
                         <!-- <div class="typography_img">
@@ -154,7 +157,7 @@
     </div>
 
     <div class="footer-bottom">
-        <div class="container footer-bottom__container{{#if theme_settings.show_copyright_footer_2}} has-item-center{{/if}}">
+        <!-- <div class="container footer-bottom__container{{#if theme_settings.show_copyright_footer_2}} has-item-center{{/if}}">
             <div class="footer-bottom__left">
 
             </div>
@@ -164,11 +167,8 @@
                     <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>
                 </div>
                 {{/if}}
-                {{#if theme_settings.show_payments_footer}}
-                    {{> components/common/payment-icons}}
-                {{/if}}
             </div>
-        </div>
+        </div> -->
           
         <div class="btfooter">
         
