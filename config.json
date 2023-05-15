@@ -1,6 +1,6 @@
 {
-  "name": "Hera Bonton - Before Search Spring",
-  "version": "2.3.1",
+  "name": "Hera Bonton - Merging Search Spring",
+  "version": "2.3.2",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 30000,
