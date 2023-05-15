@@ -62,8 +62,28 @@
         {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
         {{~inject 'token' settings.storefront_api.token}}
         {{~inject 'money' settings.money}}
+        
+        <!-- [START] SEARCHSPRING -->
+        {{assignVar 'ss_site_id' 'vg4clw'}}
+        {{#or category brand}}
+        	{{assignVar 'ss_defer_config' 'not-defer'}}
+        {{else}}
+        	{{assignVar 'ss_defer_config' 'defer'}}
+        {{/or}}
+        <script type="text/javascript" src="https://snapui.searchspring.io/{{getVar 'ss_site_id'}}/bundle.js" id="searchspring-context" {{getVar 'ss_defer_config'}}>
+        	{{#if customer}}shopper = { id : "{{ customer.id }}", group : "{{ customer.customer_group_id }}" };{{/if}}
+        	{{#if category}}
+        		{{#if category.id '===' 1202}}
+        		{{else}} 
+        			category = { id : "{{ category.id }}", name : "{{#replace '"' category.name}}&quot;{{else}}{{category.name}}{{/replace}}", path : "{{#each breadcrumbs}}{{#unless @first}}{{#replace '"' name}}&quot;{{else}}{{name}}{{/replace}}{{#unless @last}}>{{/unless}}{{/unless}}{{/each}}" };
+        		{{/if}}
+        	{{else if brand}}
+        		brand = "{{#replace '"' brand.name}}&quot;{{else}}{{brand.name}}{{/replace}}";
+        	{{/if}}
+        </script>
+        <!-- [END] SEARCHSPRING -->
     </head>
-    <body class="page-type-{{page_type}}{{#if customer}} is-login{{/if}}{{#if theme_settings.halo_homepage_layout_2}} home-layout-2{{/if}}" data-page-type="{{page_type}}" canonical-shop-url="{{settings.secure_base_url}}">
+    <body class="page-type-{{page_type}}{{#if customer}} is-login{{/if}}{{#if theme_settings.halo_homepage_layout_2}} home-layout-2{{/if}}{{#if category}}{{#if category.id '===' 1202}} ss-shop{{/if}}{{/if}}" data-page-type="{{page_type}}" canonical-shop-url="{{settings.secure_base_url}}">
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
         {{> components/common/header }}
