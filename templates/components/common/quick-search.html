@@ -1,13 +1,10 @@
 {{#if theme_settings.halo_homepage_layout_1}}
-
-    <form class="form" method="get" action="/shop/">
-    <!-- [START] SEARCHSPRING -->
-    <!-- <form class="form" onsubmit="return false" data-url="{{urls.search}}" data-quick-search-form> -->
+    
+    <form class="form" method="get" action="/shop/">    
         <fieldset class="form-fieldset">
             <div class="form-field">
                 <label class="is-srOnly" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
-                <!-- removed parameter "data-search-quick" in input element below -->
-                <input class="form-input"                        
+                <input class="form-input"
                        name="{{name}}" 
                        id="{{name}}" 
                        data-error-message="{{lang 'search.error.empty_field'}}" 
@@ -18,15 +15,12 @@
         </fieldset>
     </form>
 {{else}}
-
-    <form class="form" method="get" action="/shop/">
-    <!-- [START] SEARCHSPRING -->
-    <!-- <form class="form" onsubmit="return false" data-url="{{urls.search}}" data-quick-search-form> -->
+    
+        <form class="form" method="get" action="/shop/">
         <fieldset class="form-fieldset">
             <div class="form-field">
                 <label class="is-srOnly" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
-                <!-- removed parameter "data-search-quick" in form element below -->
-                <input class="form-input"
+                <input class="form-input"                         
                        name="{{name}}" 
                        id="{{name}}" 
                        data-error-message="{{lang 'search.error.empty_field'}}" 
