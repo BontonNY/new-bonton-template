@@ -74,9 +74,9 @@ products:
                             </svg>
                         </div>
                     </div>
-                    {{#if category.products}}
+                    <!-- {{#if category.products}} -->
                         {{> components/halothemes/gallery/halo-toolbar sort=pagination.category.sort}}
-                    {{/if}}
+                    <!-- {{/if}} -->
                 </div>
             {{else}}
                 {{#or (if theme_settings.haloStickyToolbar_viewAs) (if theme_settings.haloStickyToolbar_limit) (if theme_settings.haloStickyToolbar_sort)}}
@@ -103,7 +103,10 @@ products:
                 </aside>
             {{/if}}
             <main id="product-listing-container" class="page-content">
-                <div class="product-listing-content">
+                
+                <!-- [START] SEARCHSPRING -->
+                <div id="searchspring-content"></div>
+                <!-- <div class="product-listing-content">
                     {{#if category.products}}
                         {{> components/category/product-listing productsnew=products.new show_compare=category.show_compare}}
                     {{else}}
@@ -112,7 +115,8 @@ products:
                     {{#if theme_settings.halo-category-sidebar-right}}
                         <div class="footer-cetgory-product productGrid col-{{theme_settings.product_list_display_col}}"></div>
                     {{/if}}
-                </div>
+                </div> -->
+                <!-- [END] SEARCHSPRING -->
 
                 {{{region name="home_category_text--global"}}}
                 {{{region name="home_category_text"}}}
