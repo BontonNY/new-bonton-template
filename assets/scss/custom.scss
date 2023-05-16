@@ -183,6 +183,13 @@ button.coupon-code-add.cart-total-label {
     background-image: none;
 }
 
+h3.card-title a{
+    overflow: hidden;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 @media (max-width:1024px)
 {
     article.footer-info-col.footer-info-col--small {

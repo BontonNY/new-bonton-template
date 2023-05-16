@@ -662,7 +662,7 @@
 
     .card-ellipsis {
         overflow: hidden;
-        display: -webkit-box;
+        display: block;
         -webkit-line-clamp: stencilString('halo_card_title-line');
         text-overflow: ellipsis;
         -webkit-box-orient: vertical;
