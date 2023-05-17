@@ -92,8 +92,6 @@
 
     &.has-toolbar {
         @media(min-width: 1025px) {
-            margin-top: -67px;
-
             .page-listing & {
                 padding-top: 0;
             }
