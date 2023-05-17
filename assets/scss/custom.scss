@@ -190,6 +190,10 @@ h3.card-title a{
     white-space: nowrap;
 }
 
+.card-swatches .form{
+    height: 33px !important;
+}
+
 @media (max-width:1024px)
 {
     article.footer-info-col.footer-info-col--small {
@@ -207,5 +211,11 @@ article.footer-info-col.footer-info-col--small {
 }
 li.product .card-title{
     min-height: 61px;
-}   
+}  
+.card-swatches .form{
+    overflow: hidden;
+    max-width: 100px;
+    white-space: nowrap;
+} 
+
 }

@@ -301,9 +301,62 @@
                     
                     {{#if theme_settings.productView_desShort}}
                         <div class="productView-desShort">
-                            <span>{{{ellipsis product.description 160}}}</span>
-                            <span><a href="#bx_product_description">(Read More)</a></span>
+                            <!-- <span class="short-description">{{{ellipsis product.description 160}}}</span> -->
+                            <span class="short-description short-description-trigger">{{{product.description}}}</span>                                                        
+                            <span role="button" class="bx-accordion short-description-trigger">(Read More)</span>
                         </div>
+                        
+                        <style>
+                            .short-description,
+                            .bx-accordion{
+                                cursor: pointer;
+                            }
+
+                            span.bx-accordion{
+                                font-size: initial;
+                                letter-spacing: initial;
+                                border-bottom: solid 1px;
+                            }
+
+                            .productView-desShort{
+                                overflow: hidden;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                            }
+
+                            .bx-expand-description{
+                                display: inline-block;
+                            }
+                        </style>
+                        <script>
+                            var acc = document.querySelector(".short-description");
+                            var accTrig = document.querySelector(".short-description-trigger");
+                            var accTrigButton = document.querySelector(".bx-accordion");
+                            
+                            accTrig.addEventListener("click", function() {
+                                console.log('clickito');
+                                checkTruncated();
+                                acc.classList.toggle("bx-expand-description");                              
+                            });
+                            accTrigButton.addEventListener("click", function() {
+                                console.log('clickito button');
+                                checkTruncated();
+                                acc.classList.toggle("bx-expand-description");                              
+                            });
+                            
+                            function checkTruncated(){
+                                accTrig = document.querySelector(".bx-accordion");
+                                if (acc.scrollHeight < acc.offsetHeight  || acc.scrollWidth < acc.offsetWidth) {
+                                    console.log('NO truncated');
+                                    accTrig.innerHTML = 'Read Less';
+                                }
+                                else{
+                                    console.log('YES truncated');                                    
+                                    accTrig.innerHTML = 'Read More';
+                                }
+                            }
+                        </script>
                     {{/if}}
                     <!-- <div class="productView-info">
                         <div class="productView-info-item">
