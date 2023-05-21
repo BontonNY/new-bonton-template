@@ -12,7 +12,7 @@ export default function (context) {
 	        mega_menu_custom_style3_item = parseInt(context.themeSettings.mega_menu_custom_style3_item);
 
 	    function SetItemMegaMenu(){
-	        $('.navPages-list-megamenu > li:not(.navPages-item-toggle)').mouseover(event => {
+	        $('.navPages-list-megamenu > li:not(.navPages-item-toggle)').on('click', event => {
 	            var numberItem = $(event.currentTarget).index() + 1;
 
 	            if (!$(event.currentTarget).hasClass('has-megamenu')) {
@@ -34,7 +34,7 @@ export default function (context) {
 
 			if ($(window).width() > 1024) {
 	            if ($('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown').length) {
-	                $('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown').on('mouseover', event => {
+	                $('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown').on('click', event => {
 	                    $('body').addClass('openMenuPC');
 	                })
 	                .on('mouseleave', event => {

@@ -317,11 +317,13 @@ export default function(context){
     function hoverMenu(){
         if ($(window).width() > 1024) {
             if ($('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown').length) {
-                $('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown').on('mouseover', event => {
+                $('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown').on('click', event => {
                     $('body').addClass('openMenuPC');
+                    $('.navPages-container .navPages-item.has-megamenu >.navPage-subMenu').css('opacity', '1').css('visibility', 'visible');
                 })
                 .on('mouseleave', event => {
                     $('body').removeClass('openMenuPC');
+                    $('.navPages-container .navPages-item.has-megamenu >.navPage-subMenu').css('opacity', '0').css('visibility', 'hidden');
                 });
             }
         }
