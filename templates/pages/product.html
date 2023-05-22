@@ -80,22 +80,14 @@ products:
 
     {{> components/products/schema}}
 
-<!-- [TODO] MOVE THIS TO HEAD -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
 <script defer>
 (function(){
-    console.log('default PDP');
     var optionContainer = $('.productView-details');
     
     function selectFirstOptionAvailable(option){  
-        console.log(option);  
         $('.form-field[data-product-attribute='+ option +'] input').each(function( index ) {
-            console.log(this, "this");
             var label = $("label[for='" + $(this).attr('id') + "']");
-            console.log(label, "label");
             if (label[0].className.toLowerCase().indexOf("unavailable") === -1){
-                console.log(this, "final this");
                 $(this).click();
                 return false;
             }
@@ -103,9 +95,7 @@ products:
     }
 
     optionContainer.one("mouseenter mouseleave", function(e){
-        console.log('swatch:');
         selectFirstOptionAvailable('swatch');
-        console.log('size:');
         selectFirstOptionAvailable('set-rectangle');        
     });
     
