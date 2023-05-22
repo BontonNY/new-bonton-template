@@ -82,6 +82,9 @@
         {​{​/if}}
         </script>
         <!-- [END] SEARCHSPRING -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     </head>
     <body class="page-type-{{page_type}}{{#if customer}} is-login{{/if}}{{#if theme_settings.halo_homepage_layout_2}} home-layout-2{{/if}}{{#if category}}{{#if category.id '===' 1202}} ss-shop{{/if}}{{/if}}" data-page-type="{{page_type}}" canonical-shop-url="{{settings.secure_base_url}}">
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
@@ -109,8 +112,7 @@
             </script>
         {{/if}}
 
-<!--[START] PRITAM - TODO MOVE THIS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 <script>
 window.onscroll = function() {myFunction()};
 
@@ -125,8 +127,18 @@ function myFunction() {
   }
 }
 
+$(window).scroll(function() {
+   var hT = $('.footer-info').offset().top,
+       hH = $('.footer-info').outerHeight(),
+       wH = $(window).height(),
+       wS = $(this).scrollTop();
+   if (wS > (hT+hH-wH)){
+        $('a.footer-info-2-link3').attr("target",'_blank');    
+   }
+});
+
 </script>
-<!--[END] PRITAM - TODO MOVE THIS -->
-        
+
+
     </body>
 </html>
