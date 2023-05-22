@@ -25,12 +25,7 @@ products:
 
             {{{region name="product_below_content"}}}
 
-            {{> components/halothemes/product/halo-bundle-products}}
-            
-            <div class="productView-info-item">
-                <span class="sku-label"><b>{{lang 'products.sku'}}</b></span>
-                <span class="productView-info-value" data-product-sku>{{product.sku}}</span>
-            </div>    
+            {{> components/halothemes/product/halo-bundle-products}}            
             
         </div>
     </div>
@@ -84,5 +79,38 @@ products:
     {{{region name="category_below_content"}}}
 
     {{> components/products/schema}}
+
+<!-- [TODO] MOVE THIS TO HEAD -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script defer>
+(function(){
+    console.log('default PDP');
+    var optionContainer = $('.productView-details');
+    
+    function selectFirstOptionAvailable(option){  
+        console.log(option);  
+        $('.form-field[data-product-attribute='+ option +'] input').each(function( index ) {
+            console.log(this, "this");
+            var label = $("label[for='" + $(this).attr('id') + "']");
+            console.log(label, "label");
+            if (label[0].className.toLowerCase().indexOf("unavailable") === -1){
+                console.log(this, "final this");
+                $(this).click();
+                return false;
+            }
+        });
+    }
+
+    optionContainer.one("mouseenter mouseleave", function(e){
+        console.log('swatch:');
+        selectFirstOptionAvailable('swatch');
+        console.log('size:');
+        selectFirstOptionAvailable('set-rectangle');        
+    });
+    
+})();
+</script>
+
 {{/partial}}
 {{> layout/base}}
