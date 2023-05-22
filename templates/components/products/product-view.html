@@ -299,65 +299,7 @@
                     {{/if}}
                     <!-- [END] Price component -->
                     
-                    {{#if theme_settings.productView_desShort}}
-                        <div class="productView-desShort">
-                            <!-- <span class="short-description">{{{ellipsis product.description 160}}}</span> -->
-                            <span class="short-description short-description-trigger">{{{product.description}}}</span>                                                                                    
-                        </div>
-                            <span role="button" class="bx-accordion short-description-trigger">(Read More)</span>
-                        
-                        <style>
-                            .short-description,
-                            .bx-accordion{
-                                cursor: pointer;
-                            }
-
-                            span.bx-accordion{
-                                font-size: initial;
-                                letter-spacing: initial;
-                                border-bottom: solid 1px;
-                            }
-
-                            .productView-desShort{
-                                overflow: hidden;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 2;
-                                -webkit-box-orient: vertical;
-                            }
-
-                            .bx-expand-description{
-                                display: inline-block;
-                            }
-                        </style>
-                        <script>
-                            var acc = document.querySelector(".short-description");
-                            var accTrig = document.querySelector(".short-description-trigger");
-                            var accTrigButton = document.querySelector(".bx-accordion");
-                            
-                            accTrig.addEventListener("click", function() {
-                                console.log('clickito');
-                                checkTruncated();
-                                acc.classList.toggle("bx-expand-description");                              
-                            });
-                            accTrigButton.addEventListener("click", function() {
-                                console.log('clickito button');
-                                checkTruncated();
-                                acc.classList.toggle("bx-expand-description");                              
-                            });
-                            
-                            function checkTruncated(){
-                                accTrig = document.querySelector(".bx-accordion");
-                                if (acc.scrollHeight < acc.offsetHeight  || acc.scrollWidth < acc.offsetWidth) {
-                                    console.log('NO truncated');
-                                    accTrig.innerHTML = 'Read Less';
-                                }
-                                else{
-                                    console.log('YES truncated');                                    
-                                    accTrig.innerHTML = 'Read More';
-                                }
-                            }
-                        </script>
-                    {{/if}}
+                    
                     <!-- <div class="productView-info">
                         <div class="productView-info-item">
                             <span class="productView-info-name sku-label">{{lang 'products.sku'}}</span>
@@ -540,6 +482,70 @@
                     {{/if}}
                 </div>
                 {{> components/halothemes/product/halo-notify-me-out-of-stock}}
+
+                {{#if theme_settings.productView_desShort}}
+                    <div class="productView-desShort">
+                        <!-- <span class="short-description">{{{ellipsis product.description 160}}}</span> -->
+                        <span class="short-description short-description-trigger">{{{product.description}}}</span>                                                                                    
+                    </div>
+                        <span role="button" class="bx-accordion short-description-trigger">(Read More)</span>
+                    
+                    <style>
+                        .short-description,
+                        .bx-accordion{
+                            cursor: pointer;
+                        }
+
+                        span.bx-accordion{
+                            font-size: initial;
+                            letter-spacing: initial;
+                            border-bottom: solid 1px;
+                        }
+
+                        .productView-desShort{
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+
+                        .bx-expand-description{
+                            display: inline-block;
+                        }
+                    </style>
+                    <script>
+                        var acc = document.querySelector(".short-description");
+                        var accTrig = document.querySelector(".short-description-trigger");
+                        var accTrigButton = document.querySelector(".bx-accordion");
+                        
+                        accTrig.addEventListener("click", function() {
+                            console.log('clickito');
+                            checkTruncated();
+                            acc.classList.toggle("bx-expand-description");                              
+                        });
+                        accTrigButton.addEventListener("click", function() {
+                            console.log('clickito button');
+                            checkTruncated();
+                            acc.classList.toggle("bx-expand-description");                              
+                        });
+                        
+                        function checkTruncated(){
+                            accTrig = document.querySelector(".bx-accordion");
+                            if (acc.scrollHeight < acc.offsetHeight  || acc.scrollWidth < acc.offsetWidth) {
+                                console.log('NO truncated');
+                                accTrig.innerHTML = 'Read Less';
+                            }
+                            else{
+                                console.log('YES truncated');                                    
+                                accTrig.innerHTML = 'Read More';
+                            }
+                        }
+                    </script>
+                {{/if}}
+                <div class="productView-info-item">
+                    <span class="sku-label"><b>{{lang 'products.sku'}}</b></span>
+                    <span class="productView-info-value" data-product-sku>{{product.sku}}</span>
+                </div>    
 
                 <div class="productView-info-bottom">
                     {{#if theme_settings.product_viewingProduct}}
