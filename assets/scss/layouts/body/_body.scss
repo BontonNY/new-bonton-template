@@ -23,10 +23,12 @@
     .page-type-category &,
     .page-type-cart & {
         margin-bottom: 50px;
+        margin-top: 1em !important;
     }
 
     .page-type-product & {
         margin-bottom: 80px;
+        margin-top: 1em !important;
     }
 
     .page-type-default & {

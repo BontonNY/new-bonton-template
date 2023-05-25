@@ -70,16 +70,16 @@
         {{else}}
         	{{assignVar 'ss_defer_config' 'defer'}}
         {{/or}}
-        <script type="text/javascript" src="https://snapui.searchspring.io/{​{​getVar 'ss_site_id'}}/bundle.js" id="searchspring-context" {​{​getVar 'ss_defer_config'}}>
-        {​{​#if customer}}shopper = {​id : "{​{customer.id}}", group : "{​{​customer.customer_group_id}}"};{​{​/if}}
-        {​{​#if category}}
-        {​{​#if category.id '===' 1202}}
-        {​{​else}}
-        category = {​id : "{​{​category.id}}", name : "{​{​{​category.name}}}", path : "{​{​#each breadcrumbs}}{​{​#unless @first}}{​{​{​name}}}{​{​#unless @last}}>{​{​/unless}}{​{​/unless}}{​{​/each}}" };
-        {​{​/if}}
-        {​{​else if brand}}
-        brand = "{​{​{​brand.name}}}";
-        {​{​/if}}
+        <script type="text/javascript" src="https://snapui.searchspring.io/{{getVar 'ss_site_id'}}/bundle.js" id="searchspring-context" {{getVar 'ss_defer_config'}}>
+        {{#if customer}}shopper = {id : "{{customer.id}}", group : "{{customer.customer_group_id}}"};{{/if}}
+        {{#if category}}
+        {{#if category.id '===' 1202}}
+        {{else}}
+        category = {id : "{{category.id}}", name : "{{{category.name}}}", path : "{{#each breadcrumbs}}{{#unless @first}}{{{name}}}{{#unless @last}}>{{/unless}}{{/unless}}{{/each}}" };
+        {{/if}}
+        {{else if brand}}
+        brand = "{{{brand.name}}}";
+        {{/if}}
         </script>
         <!-- [END] SEARCHSPRING -->
 
@@ -136,6 +136,17 @@ $(window).scroll(function() {
         $('a.footer-info-2-link3').attr("target",'_blank');    
    }
 });
+
+$(window).load(function(){
+    console.log('laoding');
+    var currentURL = window.location.href;
+    var prevURL = document.referrer;
+    if(currentURL === prevURL ){
+        console.log('picas');
+        // $('body').addClass('openCartSidebar');
+        $('.navUser-item--cart a svg').trigger('click');
+    }
+});    
 
 </script>
 
