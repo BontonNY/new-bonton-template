@@ -25,12 +25,7 @@ products:
 
             {{{region name="product_below_content"}}}
 
-            {{> components/halothemes/product/halo-bundle-products}}
-            
-            <div class="productView-info-item">
-                <span class="sku-label"><b>{{lang 'products.sku'}}</b></span>
-                <span class="productView-info-value" data-product-sku>{{product.sku}}</span>
-            </div>    
+            {{> components/halothemes/product/halo-bundle-products}}            
             
         </div>
     </div>
@@ -84,5 +79,28 @@ products:
     {{{region name="category_below_content"}}}
 
     {{> components/products/schema}}
+
+<script defer>
+(function(){
+    var optionContainer = $('.productView-details');
+    
+    function selectFirstOptionAvailable(option){  
+        $('.form-field[data-product-attribute='+ option +'] input').each(function( index ) {
+            var label = $("label[for='" + $(this).attr('id') + "']");
+            if (label[0].className.toLowerCase().indexOf("unavailable") === -1){
+                $(this).click();
+                return false;
+            }
+        });
+    }
+
+    optionContainer.one("mouseenter mouseleave", function(e){
+        selectFirstOptionAvailable('swatch');
+        selectFirstOptionAvailable('set-rectangle');        
+    });
+    
+})();
+</script>
+
 {{/partial}}
 {{> layout/base}}
