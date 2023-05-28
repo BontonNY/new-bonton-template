@@ -935,7 +935,7 @@ export default function($scope, context) {
 
         if (price.saved) {
             viewModel.priceSaved.$div.show();
-            viewModel.priceSaved.$span.html();
+            viewModel.priceSaved.$span.html(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            );
         }
 
         if (price.non_sale_price_with_tax) {
