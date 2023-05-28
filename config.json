@@ -1,6 +1,6 @@
 {
-  "name": "Hera Bonton - AFTER SS MEETING 4",
-  "version": "3.1.3",
+  "name": "Hera Bonton - AFTER SS MEETING 6",
+  "version": "3.1.5",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 30000,
@@ -777,7 +777,7 @@
     "categories_show_footer_limit": 7,
     "pages_show_footer_limit": "7",
     "info_email_support": "example@domain.com",
-    "haloLiveHelp": true,
+    "haloLiveHelp": false,
     "haloLiveHelp-heading-1": "PRE-SALES",
     "haloLiveHelp-desc1": "If you have any questions before making a purchase chat with our online operators to get more information.",
     "haloLiveHelp-desc2": "or find our <a href='#' title='Questions & Answers' aria-label='Questions & Answers'>Questions & Answers</a>",
@@ -1677,7 +1677,7 @@
         "categories_show_footer_limit": 7,
         "pages_show_footer_limit": "7",
         "info_email_support": "example@domain.com",
-        "haloLiveHelp": true,
+        "haloLiveHelp": false,
         "haloLiveHelp-heading-1": "PRE-SALES",
         "haloLiveHelp-desc1": "If you have any questions before making a purchase chat with our online operators to get more information.",
         "haloLiveHelp-desc2": "or find our <a href='#' title='Questions & Answers' aria-label='Questions & Answers'>Questions & Answers</a>",

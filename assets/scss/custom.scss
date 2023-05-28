@@ -194,6 +194,19 @@ h3.card-title a{
     height: 33px !important;
 }
 
+.productView-desShort > p:not(:first-child){
+    opacity: 0;
+}
+
+.productView-desShort .bx-expand-description > p:not(:first-child){
+    opacity: 1;
+}
+
+.productView-desShort .bx-expand-description > p:first-child{
+    opacity: 1;
+}
+
+
 @media (max-width:1024px)
 {
     article.footer-info-col.footer-info-col--small {

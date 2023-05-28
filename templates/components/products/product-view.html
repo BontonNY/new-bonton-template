@@ -517,28 +517,34 @@
                         var acc = document.querySelector(".short-description");
                         var accTrig = document.querySelector(".short-description-trigger");
                         var accTrigButton = document.querySelector(".bx-accordion");
+                        var container = document.querySelector('.productView-desShort > span');                        
                         
                         accTrig.addEventListener("click", function() {
-                            console.log('clickito');
+                            console.log('clickito');                            
+                            acc.classList.toggle("bx-expand-description");
                             checkTruncated();
-                            acc.classList.toggle("bx-expand-description");                              
                         });
                         accTrigButton.addEventListener("click", function() {
-                            console.log('clickito button');
+                            console.log('clickito button');                            
+                            acc.classList.toggle("bx-expand-description");
                             checkTruncated();
-                            acc.classList.toggle("bx-expand-description");                              
                         });
                         
                         function checkTruncated(){
+                            var containerExpanded = container.classList.contains('bx-expand-description');
                             accTrig = document.querySelector(".bx-accordion");
-                            if (acc.scrollHeight < acc.offsetHeight  || acc.scrollWidth < acc.offsetWidth) {
-                                console.log('NO truncated');
-                                accTrig.innerHTML = 'Read Less';
-                            }
-                            else{
-                                console.log('YES truncated');                                    
-                                accTrig.innerHTML = 'Read More';
-                            }
+                            
+                            // setTimeout(function() { 
+                                if (containerExpanded) {
+                                    console.log('NO truncated');
+                                    accTrig.innerHTML = 'Read Less';
+                                }
+                                else{
+                                    console.log('YES truncated');                                    
+                                    accTrig.innerHTML = 'Read More';
+                                }
+                            // }, 333);
+        
                         }
                     </script>
                 {{/if}}
