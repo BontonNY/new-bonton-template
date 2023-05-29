@@ -781,8 +781,8 @@
                 .navPage-subMenu-item-child:hover {
                     >.navPage-subMenu {
                         .menu-is-load & {
-                            opacity: 1;
-                            visibility: visible;
+                            // opacity: 1;
+                            // visibility: visible;
                             pointer-events: auto;
                             transform: translate3d(0, 0, 0);
                         }
@@ -908,10 +908,17 @@
 
                 >.navPage-subMenu {
                     top: auto;
-                    opacity: 1;
-                    visibility: visible;
+                    // opacity: 1;
+                    // visibility: visible;
                     pointer-events: auto;
                     transform: translate3d(0, 0, 0);
+                }
+            }
+            &:active:hover,
+            &:focus:hover {
+                >.navPage-subMenu {                 
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
         }
