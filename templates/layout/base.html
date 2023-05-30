@@ -142,8 +142,6 @@ $(window).load(function(){
     var currentURL = window.location.href;
     var prevURL = document.referrer;
     if(currentURL === prevURL ){
-        console.log('picas');
-        // $('body').addClass('openCartSidebar');
         $('.navUser-item--cart a svg').trigger('click');
     }
 });    

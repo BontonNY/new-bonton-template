@@ -566,7 +566,7 @@
             transition: $anchor-transition;
             background-color: stencilColor('navPages-subMenu-backgroundColor');
             box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
-            transform: translate3d(0, 50px, 0);
+            // transform: translate3d(0, 50px, 0);
         }
 
         &.navPages-item-user {
@@ -727,7 +727,7 @@
         }
 
         .navPages-item {
-            position: relative;
+            // position: relative;
 
             >.navPages-action {
                 position: relative;
@@ -740,7 +740,7 @@
                     opacity: 0;
                     visibility: hidden;
                     pointer-events: none;
-                    transform: translate3d(-50px, 0, 0);
+                    // transform: translate3d(-50px, 0, 0);
                     -webkit-transition: $anchor-transition;
                     -moz-transition: $anchor-transition;
                     -ms-transition: $anchor-transition;
@@ -781,8 +781,8 @@
                 .navPage-subMenu-item-child:hover {
                     >.navPage-subMenu {
                         .menu-is-load & {
-                            opacity: 1;
-                            visibility: visible;
+                            // opacity: 1;
+                            // visibility: visible;
                             pointer-events: auto;
                             transform: translate3d(0, 0, 0);
                         }
@@ -794,7 +794,7 @@
 
                     >.navPage-subMenu {
                         top: 0;
-                        left: 95%;
+                        left: 0%;
                     }
                 }
             }
@@ -812,12 +812,12 @@
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
-                transform: translate3d(-50px, 0, 0);
-                -webkit-transition: $anchor-transition;
-                -moz-transition: $anchor-transition;
-                -ms-transition: $anchor-transition;
-                -o-transition: $anchor-transition;
-                transition: $anchor-transition;
+                // transform: translate3d(-50px, 0, 0);
+                // -webkit-transition: $anchor-transition;
+                // -moz-transition: $anchor-transition;
+                // -ms-transition: $anchor-transition;
+                // -o-transition: $anchor-transition;
+                // transition: $anchor-transition;
                 margin-top: 0;
                 z-index: 1;
 
@@ -908,10 +908,17 @@
 
                 >.navPage-subMenu {
                     top: auto;
-                    opacity: 1;
-                    visibility: visible;
+                    // opacity: 1;
+                    // visibility: visible;
                     pointer-events: auto;
                     transform: translate3d(0, 0, 0);
+                }
+            }
+            &:active:hover,
+            &:focus:hover {
+                >.navPage-subMenu {                 
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
         }
