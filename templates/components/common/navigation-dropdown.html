@@ -1,5 +1,5 @@
 <div class="navPage-subMenu navPage-subMenu-horizontal level-2" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
-    <ul class="navPage-subMenu-list">
+    <ul class="navPage-subMenu-list-mob">
         <li class="navPage-subMenu-item-parent navPage-subMenu-item-child navPage-subMenu-title">
             <p class="navPage-subMenu-action navPages-action navPages-action-lv1 navPages-action-depth-max has-subMenu">
                 <span class="navPages-action-moreIcon" aria-hidden="true">
@@ -7,11 +7,6 @@
                 </span>
                 <a class="text" href="{{url}}"><span>{{name}}</span></a>
             </p>
-        </li>
-        <li class="navPage-subMenu-item-child navPages-action-end navPage-subMenu-all">
-            <a class="navPage-subMenu-action navPages-action navPages-action-lv1 no-subMenu" href="{{url}}">
-                <span class="text">{{lang 'category.view_all.name' category=name}}</span>
-            </a>
         </li>
         {{#each children}}
             {{#if children}}
@@ -51,5 +46,10 @@
                 </li>
             {{/if}}
         {{/each}}
+        <li class="navPage-subMenu-item-child navPages-action-end navPage-subMenu-all">
+            <a class="navPage-subMenu-action navPages-action navPages-action-lv1 no-subMenu" href="{{url}}">
+                <span class="text">{{lang 'category.view_all.name' category=name}}</span>
+            </a>
+        </li>
     </ul>
 </div>
