@@ -8,6 +8,8 @@
   "dependencies": {
     "@bigcommerce/stencil-utils": "^6.8.1",
     "@fancyapps/ui": "^4.0.27",
+    "@mojoactive/lib": "^1.6.1",
+    "@mojoactive/swatches": "^1.15.3",
     "bootstrap": "^5.0.1",
     "core-js": "^3.9.0",
     "creditcards": "^3.0.1",
