@@ -131,6 +131,9 @@ export default class ProductDetails extends ProductDetailsBase {
         $productOptionsElement.show();
 
         this.previewModal = modalFactory('#previewModal')[0];
+
+        // Changes Swatches to Images of Product
+        this.imageSwatchesPDP();
     }
 
     registerAddToCartValidation() {
@@ -864,5 +867,68 @@ export default class ProductDetails extends ProductDetailsBase {
     updateProductAttributes(data) {
         super.updateProductAttributes(data);
         this.showProductImage(data.image);
+    }
+
+    // Changes Swatches to Images of Product
+    imageSwatchesPDP() {
+        console.log('Start: Swatches PDP');
+        const productId = $('[name="product_id"]', document.getElementsByClassName("productView-options")).val();
+        var currentLoc = window.location.protocol + '//' + window.location.hostname
+        if(currentLoc === 'http://localhost') {
+        currentLoc = 'https://staging-bonton.mybigcommerce.com';
+        }
+
+        fetch(currentLoc + `/content/pdpcolorswatches/product_mapping.json`, {
+            method: "GET",
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (pdata) {
+            if (pdata) {
+                const pIndex = pdata.findIndex((mapf) => mapf.id==productId);
+
+                fetch(currentLoc + pdata[pIndex].mapfile, {
+                method: "GET",
+                })
+                    .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    if(data) {
+                    const swatches = document.getElementsByClassName("form-option-swatch");
+                    [].forEach.call(swatches,(swatch) => {
+                        const swatchID = swatch.getAttribute("data-product-attribute-value");
+                        let changedToImage = false;
+                        data.variants?.map(({ option_values, image_url, swatch_image_url }) => {
+                            
+                            //const imgLarge = image_url;
+                            [].forEach.call(option_values, (oneOption) => {
+                                if (oneOption.option_display_name.toLowerCase() === 'color') {
+                                    if (oneOption.id == swatchID) {
+                                        //if (imgLarge.length && !changedToImage) {
+                                        if(swatch_image_url.length && !changedToImage) {
+
+                                        //const index = imgLarge.lastIndexOf('/');
+                                        //const imgFileName = imgLarge.substring(index + 1);
+                                        //const imgSmall = "/images/stencil/60w/attribute_rule_images/" + imgFileName;
+                                        
+                                        //swatch.firstElementChild.style.backgroundImage = `url(${imgSmall})`;
+                                        swatch.firstElementChild.style.backgroundImage = `url(${swatch_image_url})`;
+                                        changedToImage = true;
+                                        }
+                                    }
+                                }
+                            });
+                        });
+                    });
+                    }
+                });
+            
+                document.querySelector("[data-product-attribute='swatch']").style.display = "block";
+
+            }
+
+        }); 
     }
 }
