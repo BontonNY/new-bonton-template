@@ -1,6 +1,6 @@
 {{#if children}}
     <p class="navPages-action navPages-action-lv1 navPages-action-depth-max has-subMenu is-root{{#if is_active}} activePage{{/if}}" data-label="{{url}}" data-index="{{@index}}">
-        <a onclick="clickEventMenu('navPages-'+{{id}})" class="text {{name}}" href="javascript:void(0)" aria-label="{{name}}">
+        <a onclick="clickEventMenu('navPages-'+{{id}})" class="text {{name}} navPages-{{id}}" href="javascript:void(0)" aria-label="{{name}}">
           <span>{{name}}</span>
         </a>
         <span class="navPages-action-moreIcon" aria-hidden="true">
@@ -13,11 +13,3 @@
       <span class="text">{{name}}</span>
     </a>
 {{/if}}
-
-<script>
-function clickEventMenu(id){
-  console.log(id);
-  $('.navPage-subMenu').removeClass('control-megamenu');
-  $('#'+id).addClass('control-megamenu');
-}
-</script>

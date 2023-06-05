@@ -21,3 +21,18 @@
         {{/unless}}
     </ul>
 </nav>
+
+<script>
+
+
+function clickEventMenu(id){
+    console.log(id);
+    $('.navPage-subMenu').removeClass('control-megamenu');    
+    $('#'+id).addClass('control-megamenu');
+    $('.'+id).parent().addClass('bx-menu-open');
+    $('.navPages-list:not(.navPages-list--user) > .navPages-item.has-dropdown').on('mouseleave', event => {
+        $('.'+id).parent().removeClass('bx-menu-open');
+    });
+}
+
+</script>

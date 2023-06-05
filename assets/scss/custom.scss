@@ -38,7 +38,7 @@ div#myHeaderser .container.bottomHeader-container {
     max-width: max-content;
 }.navPages-action {
     display: inline-block;
-    padding: 12px 17px 0 18px;
+    padding: 6px 17px 4px 18px;
 }.btfooter {
     text-align: center;
     padding-left: 20px;
@@ -216,16 +216,45 @@ div.navPages-container .control-megamenu .navPage-subMenu.level-3{
     position: initial;
 }
 
+// [START] CUSTOM PAGES
+#returns-lp iframe{
+    width: 100%;
+    height: 777px;
+    min-height: 777px;
+    visibility: visible;
+    border: none !important;
+}
+
+// [END] CUSTOM PAGES
+
 @media (min-width:1025px){
     div.navPages-container {
         .navPages-item{
+            .bx-menu-open{
+                background: #2e2e2e;
+                a{
+                    text-decoration: none !important;
+                    border: none !important;
+                    span{
+                        color:#fff;
+                    }
+                }
+                
+            }
             .level-2{            
-                max-width: 1390px !important;
-                width: 95vw !important;
+                max-width: 1660px !important;
+                width: 96vw !important;
                 left: 1.5vw;
                 ul{
                     display: grid;
                     grid-template-columns: repeat(auto-fill,minmax(233px, 1fr));
+                    .navPage-subMenu{
+                        box-shadow: none !important;
+                        background: #fff !important;
+                        a{
+                            background: #fff;
+                        }
+                    }
                 }
                 & > ul{
                     padding: 0 0 5vw;
@@ -263,7 +292,7 @@ div.navPages-container .control-megamenu .navPage-subMenu.level-3{
                             }
                         }
                         .level-3{
-                            background-color: #f7f7f7;
+                            background-color: #fff;
                             & > ul{
                                 & > li.navPage-subMenu-item-child{
                                     padding: 0;
