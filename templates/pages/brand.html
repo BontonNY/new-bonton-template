@@ -108,13 +108,17 @@ products:
             <main class="page-content" id="product-listing-container">
                 <!-- [START] SEARCHSPRING -->
 
-                <!-- <div class="product-listing-content">
+                {{!--  <div class="product-listing-content">
                     {{#if brand.products}}
                         {{> components/brand/product-listing productsnew=products.new show_compare=brand.show_compare}}
                     {{else}}
                         <p class="page-no-products">{{lang 'brands.no_products'}}</p>
                     {{/if}}
-                </div> -->
+                </div> 
+                --}}
+                
+                <div id="searchspring-content"></div>
+                
                 <!-- [END] SEARCHSPRING -->
 
                 {{{region name="home_brand_text--global"}}}

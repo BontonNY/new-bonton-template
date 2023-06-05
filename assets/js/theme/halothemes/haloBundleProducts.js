@@ -289,7 +289,7 @@ export default function($scope, context) {
                 infinite: false,
                 responsive: [
                     {
-                        breakpoint: 1400,
+                        breakpoint: 1440,
                         settings: {
                             slidesToShow: 4,
                             slidesToScroll: 1,
