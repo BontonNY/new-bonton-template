@@ -1,6 +1,6 @@
 {
-  "name": "Hera Bonton - Post 1 - First Live Version",
-  "version": "4.0.1",
+  "name": "Hera Bonton - Post 2 - First Live Version",
+  "version": "4.0.2",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 30000,
