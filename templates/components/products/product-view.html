@@ -486,7 +486,12 @@
                 {{#if theme_settings.productView_desShort}}
                     <div class="productView-desShort">
                         <!-- <span class="short-description">{{{ellipsis product.description 160}}}</span> -->
-                        <span class="short-description short-description-trigger">{{{product.description}}}</span>                                                                                    
+                        <span class="short-description short-description-trigger">{{{product.description}}}</span>
+                        
+                        <div class="productView-info-item">
+                            <span class="sku-label"><b>{{lang 'products.sku'}}</b></span>
+                            <span class="productView-info-value" data-product-sku>{{product.sku}}</span>
+                        </div>  
                     </div>
                         <span role="button" class="bx-accordion short-description-trigger">(Read More)</span>
                     
@@ -547,11 +552,7 @@
         
                         }
                     </script>
-                {{/if}}
-                <div class="productView-info-item">
-                    <span class="sku-label"><b>{{lang 'products.sku'}}</b></span>
-                    <span class="productView-info-value" data-product-sku>{{product.sku}}</span>
-                </div>    
+                {{/if}}  
 
                 <div class="productView-info-bottom">
                     {{#if theme_settings.product_viewingProduct}}
