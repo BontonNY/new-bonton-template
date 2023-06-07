@@ -59,7 +59,7 @@
                     <h3 class="footer-info-heading footer-info-heading--toggle">{{theme_settings.footer-info-1-heading}}</h3>
                     <ul class="footer-info-list">
                         {{#each (limit categories theme_settings.categories_show_footer_limit)}}
-                        <li>
+                        <li class="cat-item-{{name}}">
                             <a href="{{url}}"><span>{{name}}</span></a>
                         </li>
                         {{/each}}
@@ -193,7 +193,7 @@
                         
         </div>
     </div>        
-
+    
   
     {{{region name="ssl_site_seal--global"}}}
 </footer>
