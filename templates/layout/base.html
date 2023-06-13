@@ -63,7 +63,6 @@
         {{~inject 'token' settings.storefront_api.token}}
         {{~inject 'money' settings.money}}
         
-        <!-- [START] SEARCHSPRING -->
         {{assignVar 'ss_site_id' 'vg4clw'}}
         {{#or category brand}}
         	{{assignVar 'ss_defer_config' 'not-defer'}}
@@ -81,7 +80,6 @@
         brand = "{{{brand.name}}}";
         {{/if}}
         </script>
-        <!-- [END] SEARCHSPRING -->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -149,7 +147,6 @@ $(window).load(function(){
 });    
 
 </script>
-
 
     </body>
 </html>
