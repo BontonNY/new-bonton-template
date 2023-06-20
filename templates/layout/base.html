@@ -149,8 +149,11 @@ $(window).load(function(){
 $('#form-action-addToCart').click(function(){
     console.log('before');
     setTimeout(function(){
-        $('.navUser-item-cartLabel svg').click();
-        console.log('after');    
+        var miniCartOpen = $('body').attr('class').indexOf("openCartSidebar") >= 0;
+        if(miniCartOpen){
+            $('.navUser-item-cartLabel svg').click();
+            console.log('after end');
+        }        
     }, 500);
     
 });    
