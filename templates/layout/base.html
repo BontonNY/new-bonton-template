@@ -144,6 +144,15 @@ $(window).load(function(){
     if(currentURL === prevURL && cartItemsDesktop != '0' && cartItemsMobile != '0'){
         $('.navUser-item--cart a svg').trigger('click');
     }
+});
+
+$('#form-action-addToCart').click(function(){
+    console.log('before');
+    setTimeout(function(){
+        $('.navUser-item-cartLabel svg').click();
+        console.log('after');    
+    }, 500);
+    
 });    
 
 </script>

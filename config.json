@@ -1,6 +1,6 @@
 {
-  "name": "Hera Bonton - Post 6 - Final PDP Pricing",
-  "version": "4.1.1",
+  "name": "Hera Bonton - Post 7 - Mini Cart Fix",
+  "version": "4.1.2",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 30000,
