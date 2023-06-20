@@ -83,11 +83,27 @@ products:
 <script defer>
 (function(){
     var optionContainer = $('.productView-details');
-    
-    function selectFirstOptionAvailable(option){  
+    var availableOptionColors = BCData.product_attributes.in_stock_attributes;
+    var itemsAvailable = availableOptionColors.length > 0;
+    var inputValue = '';
+    var asideLabel = '';
+    console.log('the array : ',availableOptionColors, "buri : ",availableOptionColors.length);
+    function selectFirstOptionAvailable(option){
         $('.form-field[data-product-attribute='+ option +'] input').each(function( index ) {
+            inputValue = $(this).attr('value');
+            asideLabel = $(this).next('label[data-product-attribute-value="'+inputValue+'"]')
+            asideLabelDisplaying = asideLabel.attr('style') === undefined;
+            console.log('doin1 :', inputValue);
+            console.log('doin2 :' , asideLabelDisplaying);
+            var numberVariants = $(this)[0].parentElement;
             var label = $("label[for='" + $(this).attr('id') + "']");
-            if (label[0].className.toLowerCase().indexOf("unavailable") === -1){
+            var thisVisible = $(this)[0].nextElementSibling;
+            var optionsAvailable = availableOptionColors[0].toString().indexOf("unavailable") === -1;
+            console.log('label', $(numberVariants).children(".form-option").length);
+            console.log('thisVisible', $(thisVisible));
+            console.log('itemsAvailable : ',itemsAvailable);
+            console.log('optionsAvailable : ',optionsAvailable);
+            if (asideLabelDisplaying && itemsAvailable && optionsAvailable){             
                 $(this).click();
                 return false;
             }

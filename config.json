@@ -1,6 +1,6 @@
 {
-  "name": "Hera Bonton - Post 5 - Final PDP Pricing",
-  "version": "4.1.0",
+  "name": "Hera Bonton - Post 6 - Final PDP Pricing",
+  "version": "4.1.1",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 30000,
