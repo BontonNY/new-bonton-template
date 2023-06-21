@@ -146,17 +146,25 @@ $(window).load(function(){
     }
 });
 
-$('#form-action-addToCart').click(function(){
-    console.log('before');
-    setTimeout(function(){
-        var miniCartOpen = $('body').attr('class').indexOf("openCartSidebar") >= 0;
-        if(miniCartOpen){
-            $('.navUser-item-cartLabel svg').click();
-            console.log('after end');
-        }        
-    }, 500);
-    
-});    
+$('#form-action-addToCart').click(function(){        
+    var miniCartEvent = setInterval(miniCartEventFunction, 33);
+    function miniCartEventFunction(){
+        console.log('before');    
+        for(var i = 1; i <= 3; i++) {
+            var miniCartOpen = $('body').attr('class').indexOf("openCartSidebar") >= 0;
+            setTimeout(function(){
+                console.log('for : ',i);
+                if(miniCartOpen){
+                    clearInterval(miniCartEvent);
+                    $('body .navUser-item-cartLabel svg').click();
+                    
+                    console.log('after end');
+                }
+            }, 530);
+        }
+    }
+});
+
 
 </script>
 
