@@ -92,7 +92,8 @@
      <div class="price-section price-section--saving price" style="display: none;">
             <span class="price">{{lang 'products.you_save_opening_text'}}</span>
             <span data-product-price-saved class="price price--saving">
-                {{toFixed ( subtract '100' (divide (multiply price.without_tax.value '100') price.rrp_without_tax.value) ) 0}}%
+                {{price.saved.formatted}}
+                <!-- {{toFixed ( subtract '100' (divide (multiply price.without_tax.value '100') price.rrp_without_tax.value) ) 0}}% -->
             </span>
             <span class="price">{{lang 'products.you_save_closing_bracket'}}</span>
      </div>
