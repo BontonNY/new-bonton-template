@@ -1,6 +1,6 @@
 {
-  "name": "Hera Bonton - Post 8 - Mini Cart Fix",
-  "version": "4.1.3",
+  "name": "Hera Bonton - Post 9 - Mini Cart Done",
+  "version": "4.1.4",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 30000,
