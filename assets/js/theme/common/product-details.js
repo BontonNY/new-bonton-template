@@ -738,7 +738,7 @@ export default class ProductDetails extends ProductDetailsBase {
 
             // Open preview modal and update content
             if (this.context.themeSettings.haloAddToCartAction === 'sidebar'){
-                $('.modal-background').trigger('click');
+                // $('.modal-background').trigger('click');
                 const options = {
                     template: 'common/cart-preview'
                 };
@@ -747,7 +747,7 @@ export default class ProductDetails extends ProductDetailsBase {
                 const $cartDropdown = $('#halo-cart-sidebar .halo-sidebar-wrapper');
                 const $cartLoading = $('<div class="loadingOverlay"></div>');
 
-                $body.toggleClass('openCartSidebar'); 
+                $body.toggleClass('openCartSidebar');
 
                 $cartDropdown
                     .addClass(loadingClass)
