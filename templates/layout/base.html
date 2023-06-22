@@ -148,17 +148,21 @@ $(window).load(function(){
 
 $('#form-action-addToCart').click(function(event){
     console.log('before');
-    event.preventDefault();
-    var miniCartOpen = $('body').attr('class').indexOf("openCartSidebar") >= 0;
+    event.preventDefault();    
+    $('#bx_add_to_cart').trigger('submit');
+    console.log('no forcing reopen preview cart yet');
+    console.log('no timeout');
     setTimeout(function(){
-        console.log('enter timeout');
-        if(!miniCartOpen){
-            console.log('minicart not open');
-            $('#bx_add_to_cart').trigger('submit');
+        var miniCartOpen = $('body').hasClass('openCartSidebar');
+        console.log('enter timeout');              
+        if(!miniCartOpen){            
             $('body .navUser-item--cart a').trigger('click');            
-            console.log('after end');
+            console.log('force reopen preview cart');
         }
-    }, 1333);
+        else{
+            return false;
+        }
+    }, 2333);
     console.log('after timeout');
 });
 
