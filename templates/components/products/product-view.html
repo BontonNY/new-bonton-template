@@ -424,7 +424,7 @@
                     {{#if product.release_date }}
                         <p class="productView-releaseDate">{{product.release_date}}</p>
                     {{/if}}
-                    <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
+                    <form id="bx_add_to_cart" class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
                       data-cart-item-add>
                         <input type="hidden" name="action" value="add">
                         <input type="hidden" name="product_id" value="{{product.id}}"/>

@@ -154,7 +154,8 @@ $('#form-action-addToCart').click(function(event){
         console.log('enter timeout');
         if(!miniCartOpen){
             console.log('minicart not open');
-            $('body .navUser-item--cart a').trigger('click');
+            $('#bx_add_to_cart').trigger('submit');
+            $('body .navUser-item--cart a').trigger('click');            
             console.log('after end');
         }
     }, 1333);
