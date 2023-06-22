@@ -148,14 +148,16 @@ $(window).load(function(){
 
 $('#form-action-addToCart').click(function(){  
     console.log('before');
-    var miniCartOpen = $('body').attr('class').indexOf("openCartSidebar") >= 0;            
+    var miniCartOpen = $('body').attr('class').indexOf("openCartSidebar") >= 0;
     setTimeout(function(){
+        console.log('enter timeout');
         if(!miniCartOpen){
+            console.log('minicart not open');
             $('body .navUser-item--cart a').trigger('click');
             console.log('after end');
-            return false;
         }
-    }, 1030);
+    }, 1333);
+    console.log('after timeout');
 });
 
 

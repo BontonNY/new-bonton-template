@@ -747,7 +747,7 @@ export default class ProductDetails extends ProductDetailsBase {
                 const $cartDropdown = $('#halo-cart-sidebar .halo-sidebar-wrapper');
                 const $cartLoading = $('<div class="loadingOverlay"></div>');
 
-                $body.toggleClass('openCartSidebar');
+                $body.toggleClass('openCartSidebar'); 
 
                 $cartDropdown
                     .addClass(loadingClass)
