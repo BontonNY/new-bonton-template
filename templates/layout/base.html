@@ -146,8 +146,9 @@ $(window).load(function(){
     }
 });
 
-$('#form-action-addToCart').click(function(){  
+$('#form-action-addToCart').click(function(event){
     console.log('before');
+    event.preventDefault();
     var miniCartOpen = $('body').attr('class').indexOf("openCartSidebar") >= 0;
     setTimeout(function(){
         console.log('enter timeout');
