@@ -203,7 +203,7 @@ h3.card-title a{
 }
 
 .productView-desShort .bx-expand-description > p:first-child{
-    opacity: 1;
+    opacity: 1;                                                                                         
 }
 
 .openMenuPC .control-megamenu{
@@ -231,6 +231,10 @@ div.navPages-container .control-megamenu .navPage-subMenu.level-3{
 }
 
 // [END] CUSTOM PAGES
+.halo-productOptions .form-option-swatch > span.form-option-variant{
+    background-size:100%;
+    background-position:0 0;
+}
 
 .cat-item-Furniture,
 .cat-item-Beauty,

@@ -166,6 +166,68 @@ $('#form-action-addToCart').click(function(event){
     console.log('after timeout');
 });
 
+function populateSwatches(id,url){
+    var swatchImageContainer = $('label[data-product-attribute-value="'+id+'"] > span');
+    swatchImageContainer.css('background-image','url('+ url +')');
+}
+
+function getSwatchesImages(data2){
+    console.log('data22 : ',data2.variants);
+    console.log('data22Length : ',data2.variants.length);
+    var swatchesColor = $('div.form-field label.form-option-swatch');
+    swatchesColor.each(function( index ) {
+        console.log('swatchesColor : ',$(this));
+        var currentSwatchID = $(this).attr('data-product-attribute-value');
+        //console.log( 'SWATCH[',index, '] : ', currentSwatchID);
+        for (var i = 0; i < data2.variants.length; i++) {
+            var variantSwatchID  = data2.variants[i].option_values[0].id; 
+            var swatchURLimage = data2.variants[i].swatch_image_url;
+            if(variantSwatchID.toString() === currentSwatchID){
+                // console.log('data22-child [',i,'] : ', variantSwatchID.toString());
+                populateSwatches(currentSwatchID,swatchURLimage);
+                return;
+            }
+        }
+    });
+}
+
+function getURLforThisSwatches(mapfile){
+    console.log('url : ',mapfile);
+    $.ajax({
+        url:      mapfile,
+        type:     'GET',
+        dataType: 'json',
+        success:  function(data) {
+            getSwatchesImages(data);
+        }
+    });
+}
+
+var currentProductID = $('.productView-nextProducts').attr('data-product-id');
+// console.log('currentProductID : ', currentProductID);
+
+function updateMainProductSwatches(data){    
+    $.each(data, function(k, v) {
+        var productIDItem = v.id.toString();
+        if(currentProductID == productIDItem){
+            // console.log("Found! ");
+            // console.log('currentProductID : ', currentProductID);
+            // console.log("data : ",v.mapfile);
+            getURLforThisSwatches(v.mapfile);
+        }
+    });
+}
+
+var url = "/content/pdpcolorswatches/product_mapping.json";
+
+$.ajax({
+    url:      url,
+    type:     'GET',
+    dataType: 'json',
+    success:  function(data) {
+        updateMainProductSwatches(data);
+    }
+});
 
 </script>
 
