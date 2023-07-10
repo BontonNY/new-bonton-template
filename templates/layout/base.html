@@ -218,6 +218,29 @@ function updateMainProductSwatches(data){
     });
 }
 
+function recommerdedProductsSwatches(){
+    var allRecommenderProducts = $('.halo-block-product .productCarousel-slide label');
+    allRecommenderProducts.each(function( index ) {
+        var url_image = $(this).attr('data-image');
+        parts = url_image.split("/"),
+        last_part = parts[parts.length-1];
+        swatch_url = '/images/stencil/60w/attribute_rule_images/'+last_part;
+        $(this).find('span.form-option-variant').css("background-image", "url(" + swatch_url + ")");
+    });
+}
+
+setTimeout(function() { 
+    var x = 0;
+    var intervalID = setInterval(function () {
+        console.log('boom!');
+        recommerdedProductsSwatches();
+        if (++x === 3) {
+            window.clearInterval(intervalID);
+        }
+    }, 1000);
+    // recommerdedProductsSwatches();
+}, 3000);
+
 var url = "/content/pdpcolorswatches/product_mapping.json";
 
 $.ajax({
@@ -228,6 +251,7 @@ $.ajax({
         updateMainProductSwatches(data);
     }
 });
+
 
 </script>
 
